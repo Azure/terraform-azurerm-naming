@@ -437,6 +437,15 @@ output "storage_account" {
   }
 }
 
+output "storage_managed_encryption_key" {
+  value = {
+    name        = substr(join("", compact([local.prefix_safe, local.az.storage_managed_encryption_key, local.suffix_safe])), 0, 24)
+    name_unique = substr(join("", compact([local.prefix_safe, local.az.storage_managed_encryption_key, local.suffix_unique_safe])), 0, 24)
+    dashes      = true
+    slug        = local.az.storage_managed_encryption_key
+  }
+}
+
 output "storagesimple" {
   value = {
     name        = substr(join("", compact([local.prefix_safe, local.az.azure_storsimple, local.suffix_safe])), 0, 24)

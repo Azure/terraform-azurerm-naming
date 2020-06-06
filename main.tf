@@ -74,8 +74,9 @@ locals {
     sql_server_strech_database = "sqlstrdb"
 
     // Storage
-    storage_account  = "st"
-    azure_storsimple = "ssimp"
+    storage_account                = "st"
+    azure_storsimple               = "ssimp"
+    storage_managed_encryption_key = "smek" # Not in the specs
 
     // AI + Machine Learning
     azure_cognitive_search           = "srch"
