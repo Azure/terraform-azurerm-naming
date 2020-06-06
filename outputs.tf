@@ -708,8 +708,8 @@ output "blueprint" {
 
 output "key_vault" {
   value = {
-    name        = join("-", compact([local.prefix, local.az.key_vault, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.key_vault, local.suffix_unique]))
+    name        = join("-", compact([local.prefix, local.az.key_vault, substr(local.random, 0, 3), local.suffix]))
+    name_unique = join("-", compact([local.prefix, local.az.key_vault, substr(local.random, 0, 3), local.suffix_unique]))
     dashes      = true
     slug        = local.az.key_vault
   }
