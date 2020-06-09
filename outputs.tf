@@ -1,6 +1,6 @@
 
 output "unique-seed" {
-  value = coalesce(var.unique-seed, random_string.main.result)
+  value = coalesce(var.unique-seed, local.random_safe_generation)
 }
 
 // General

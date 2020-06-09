@@ -1,4 +1,9 @@
 
+
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+Error: Failed to read module directory: Module directory /tmp/terraform-docs-KvHDzFhema.tf does not exist or cannot be read.
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

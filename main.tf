@@ -9,23 +9,34 @@ resource "random_string" "main" {
   number  = var.unique-include-numbers
 }
 
+resource "random_string" "first_letter" {
+  length  = 1
+  special = false
+  upper   = false
+  number  = false
+}
+
+
+
 locals {
-  random             = substr(coalesce(var.unique-seed, random_string.main.result), 0, var.unique-length)
-  prefix             = join("-", var.prefix)
-  prefix_safe        = lower(join("", var.prefix))
-  suffix             = join("-", var.suffix)
-  suffix_unique      = join("-", concat(var.suffix, [local.random]))
-  suffix_safe        = lower(join("", var.suffix))
-  suffix_unique_safe = lower(join("", concat(var.suffix, [local.random])))
-  // Names based in the recomendations of 
+  // adding a first letter to guarantee that you always start with a letter
+  random_safe_generation = join("", [random_string.first_letter.result, random_string.main.result])
+  random                 = substr(coalesce(var.unique-seed, local.random_safe_generation), 0, var.unique-length)
+  prefix                 = join("-", var.prefix)
+  prefix_safe            = lower(join("", var.prefix))
+  suffix                 = join("-", var.suffix)
+  suffix_unique          = join("-", concat(var.suffix, [local.random]))
+  suffix_safe            = lower(join("", var.suffix))
+  suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
+  // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
-    // General 
+    // General
     resource_group = "rg"
     policy         = "policy"
     api_management = "apim"
 
-    // Networking 
+    // Networking
     virtual_network            = "vnet"
     subnet                     = "snet"
     network_interface          = "nic"
