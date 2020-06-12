@@ -3,13 +3,15 @@
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| random | ~>2.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| random | n/a |
+| random | ~>2.2 |
 
 ## Inputs
 
