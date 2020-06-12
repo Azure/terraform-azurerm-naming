@@ -1,0 +1,18 @@
+[
+    {
+        "name": "key_vault_vault",
+        "min_length": 3,
+        "max_length": 24,
+        "regex": "^(?=.{3,24}$)(?!.*--)[a-zA-Z][a-zA-Z0-9\\-]+$",
+        "scope": "global",
+        "slug": "kv"
+    },
+    {
+        "name": "key_vault_secret",
+        "min_length": 1,
+        "max_length": 127,
+        "regex": "^(?=.{1,127}$)[a-zA-Z0-9\\-]+$",
+        "scope": "parent",
+        "slug": "kvk"
+    }
+]

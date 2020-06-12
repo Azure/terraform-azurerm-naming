@@ -7,10 +7,13 @@ output "unique-seed" {
 
 output "resource_group" {
   value = {
-    name        = join("-", compact([local.prefix, local.az.resource_group, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.resource_group, local.suffix_unique]))
+    name        = substr(join("-", compact([local.prefix, local.az.resource_group, local.suffix])), 0, 90)
+    name_unique = substr(join("-", compact([local.prefix, local.az.resource_group, local.suffix_unique])), 0, 90)
     dashes      = true
     slug        = local.az.resource_group
+    min_length  = 1
+    max_length  = 90
+    scope       = "subscription"
   }
 }
 
@@ -20,6 +23,9 @@ output "policy" {
     name_unique = join("-", compact([local.prefix, local.az.policy, local.suffix_unique]))
     dashes      = true
     slug        = local.az.policy
+    min_length  = 1
+    max_length  = 64
+    scope       = "subscription"
   }
 }
 
@@ -29,6 +35,9 @@ output "api_management" {
     name_unique = join("-", compact([local.prefix, local.az.api_management, local.suffix_unique]))
     dashes      = true
     slug        = local.az.api_management
+    min_length  = 1
+    max_length  = 50
+    scope       = "global"
   }
 }
 
@@ -41,6 +50,9 @@ output "virtual_network" {
     name_unique = join("-", compact([local.prefix, local.az.virtual_network, local.suffix_unique]))
     dashes      = true
     slug        = local.az.virtual_network
+    min_length  = 2
+    max_length  = 64
+    scope       = "resourceGroup"
   }
 }
 
@@ -50,6 +62,9 @@ output "subnet" {
     name_unique = join("-", compact([local.prefix, local.az.subnet, local.suffix_unique]))
     dashes      = true
     slug        = local.az.subnet
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -59,6 +74,9 @@ output "network_interface" {
     name_unique = join("-", compact([local.prefix, local.az.network_interface, local.suffix_unique]))
     dashes      = true
     slug        = local.az.network_interface
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -68,6 +86,9 @@ output "public_ip" {
     name_unique = join("-", compact([local.prefix, local.az.public_ip, local.suffix_unique]))
     dashes      = true
     slug        = local.az.public_ip
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -77,6 +98,9 @@ output "load_balancer_internal" {
     name_unique = join("-", compact([local.prefix, local.az.load_balancer_internal, local.suffix_unique]))
     dashes      = true
     slug        = local.az.load_balancer_internal
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -86,6 +110,9 @@ output "load_balancer_external" {
     name_unique = join("-", compact([local.prefix, local.az.load_balancer_external, local.suffix_unique]))
     dashes      = true
     slug        = local.az.load_balancer_external
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -95,6 +122,9 @@ output "network_security_group" {
     name_unique = join("-", compact([local.prefix, local.az.network_security_group, local.suffix_unique]))
     dashes      = true
     slug        = local.az.network_security_group
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -104,6 +134,9 @@ output "application_security_group" {
     name_unique = join("-", compact([local.prefix, local.az.application_security_group, local.suffix_unique]))
     dashes      = true
     slug        = local.az.application_security_group
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -122,6 +155,9 @@ output "virtual_network_gateway" {
     name_unique = join("-", compact([local.prefix, local.az.virtual_network_gateway, local.suffix_unique]))
     dashes      = true
     slug        = local.az.virtual_network_gateway
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -131,6 +167,9 @@ output "vpn_connection" {
     name_unique = join("-", compact([local.prefix, local.az.vpn_connection, local.suffix_unique]))
     dashes      = true
     slug        = local.az.vpn_connection
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -140,6 +179,9 @@ output "application_gateway" {
     name_unique = join("-", compact([local.prefix, local.az.application_gateway, local.suffix_unique]))
     dashes      = true
     slug        = local.az.application_gateway
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -149,6 +191,9 @@ output "traffic_manager_profile" {
     name_unique = join("-", compact([local.prefix, local.az.traffic_manager_profile, local.suffix_unique]))
     dashes      = true
     slug        = local.az.traffic_manager_profile
+    min_length  = 1
+    max_length  = 63
+    scope       = "global"
   }
 }
 
@@ -176,6 +221,9 @@ output "firewall" {
     name_unique = join("-", compact([local.prefix, local.az.firewall, local.suffix_unique]))
     dashes      = true
     slug        = local.az.firewall
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -196,6 +244,9 @@ output "virtual_machine" {
     name_unique = substr(join("", compact([local.prefix_safe, local.az.virtual_machine, local.suffix_unique_safe])), 0, 15)
     dashes      = false
     slug        = local.az.virtual_machine
+    min_length  = 1
+    max_length  = 15
+    scope       = "resourceGroup"
   }
 }
 
@@ -205,6 +256,9 @@ output "virtual_machine_linux" {
     name_unique = substr(join("", compact([local.prefix, local.az.virtual_machine, local.suffix_unique])), 0, 64)
     dashes      = false
     slug        = local.az.virtual_machine
+    min_length  = 1
+    max_length  = 64
+    scope       = "resourceGroup"
   }
 }
 
@@ -214,6 +268,9 @@ output "virtual_machine_scale_set" {
     name_unique = substr(join("", compact([local.prefix_safe, local.az.virtual_machine_scale_set, local.suffix_unique_safe])), 0, 15)
     dashes      = false
     slug        = local.az.virtual_machine_scale_set
+    min_length  = 1
+    max_length  = 15
+    scope       = "resourceGroup"
   }
 }
 
@@ -223,6 +280,9 @@ output "virtual_machine_scale_set_linux" {
     name_unique = substr(join("", compact([local.prefix, local.az.virtual_machine_scale_set, local.suffix_unique])), 0, 64)
     dashes      = false
     slug        = local.az.virtual_machine_scale_set
+    min_length  = 1
+    max_length  = 64
+    scope       = "resourceGroup"
   }
 }
 
@@ -232,6 +292,9 @@ output "availability_set" {
     name_unique = join("-", compact([local.prefix, local.az.availability_set, local.suffix_unique]))
     dashes      = true
     slug        = local.az.availability_set
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
   }
 }
 
@@ -241,6 +304,9 @@ output "vm_storage_account" {
     name_unique = substr(join("", compact([local.prefix, local.az.traffic_manager_profile, local.suffix_unique])), 0, 24)
     dashes      = true
     slug        = local.az.traffic_manager_profile
+    min_length  = 3
+    max_length  = 24
+    scope       = "global"
   }
 }
 
@@ -259,6 +325,9 @@ output "container_instance" {
     name_unique = join("-", compact([local.prefix, local.az.container_instance, local.suffix_unique]))
     dashes      = true
     slug        = local.az.container_instance
+    min_length  = 1
+    max_length  = 63
+    scope       = "resourceGroup"
   }
 }
 
@@ -268,6 +337,9 @@ output "aks_cluster" {
     name_unique = join("-", compact([local.prefix, local.az.aks_cluster, local.suffix_unique]))
     dashes      = true
     slug        = local.az.aks_cluster
+    min_length  = 1
+    max_length  = 63
+    scope       = "resourceGroup"
   }
 }
 
@@ -277,6 +349,9 @@ output "service_fabric" {
     name_unique = join("-", compact([local.prefix, local.az.service_fabric, local.suffix_unique]))
     dashes      = true
     slug        = local.az.service_fabric
+    min_length  = 4
+    max_length  = 23
+    scope       = "region"
   }
 }
 
@@ -295,6 +370,9 @@ output "app_service_plan" {
     name_unique = join("-", compact([local.prefix, local.az.app_service_plan, local.suffix_unique]))
     dashes      = true
     slug        = local.az.app_service_plan
+    min_length  = 1
+    max_length  = 40
+    scope       = "resourceGroup"
   }
 }
 
@@ -304,6 +382,9 @@ output "web_app" {
     name_unique = join("-", compact([local.prefix, local.az.web_app, local.suffix_unique]))
     dashes      = true
     slug        = local.az.web_app
+    min_length  = 2
+    max_length  = 60
+    scope       = "global"
   }
 }
 
@@ -313,6 +394,9 @@ output "function_app" {
     name_unique = join("-", compact([local.prefix, local.az.function_app, local.suffix_unique]))
     dashes      = true
     slug        = local.az.function_app
+    min_length  = 2
+    max_length  = 60
+    scope       = "global"
   }
 }
 
@@ -331,6 +415,9 @@ output "notification_hubs" {
     name_unique = join("-", compact([local.prefix, local.az.notification_hubs, local.suffix_unique]))
     dashes      = true
     slug        = local.az.notification_hubs
+    min_length  = 1
+    max_length  = 260
+    scope       = "namespace"
   }
 }
 
@@ -340,6 +427,9 @@ output "notification_hubs_namespace" {
     name_unique = join("-", compact([local.prefix, local.az.notification_hubs_namespace, local.suffix_unique]))
     dashes      = true
     slug        = local.az.notification_hubs_namespace
+    min_length  = 6
+    max_length  = 50
+    scope       = "global"
   }
 }
 
@@ -351,6 +441,9 @@ output "sql_server" {
     name_unique = join("-", compact([local.prefix, local.az.azure_sql_database_server, local.suffix_unique]))
     dashes      = true
     slug        = local.az.azure_sql_database_server
+    min_length  = 1
+    max_length  = 63
+    scope       = "global"
   }
 }
 
@@ -360,6 +453,9 @@ output "sql_database" {
     name_unique = join("-", compact([local.prefix, local.az.azure_sql_database, local.suffix_unique]))
     dashes      = true
     slug        = local.az.azure_sql_database
+    min_length  = 1
+    max_length  = 128
+    scope       = "server"
   }
 }
 
@@ -369,6 +465,9 @@ output "cosmos_db" {
     name_unique = join("-", compact([local.prefix, local.az.cosmos_db, local.suffix_unique]))
     dashes      = true
     slug        = local.az.cosmos_db
+    min_length  = 3
+    max_length  = 44
+    scope       = "global"
   }
 }
 
@@ -378,6 +477,9 @@ output "redis_cache" {
     name_unique = join("-", compact([local.prefix, local.az.azure_cache_redis, local.suffix_unique]))
     dashes      = true
     slug        = local.az.azure_cache_redis
+    min_length  = 1
+    max_length  = 63
+    scope       = "global"
   }
 }
 
@@ -387,6 +489,9 @@ output "mysql" {
     name_unique = join("-", compact([local.prefix, local.az.mysql_database, local.suffix_unique]))
     dashes      = true
     slug        = local.az.mysql_database
+    min_length  = 3
+    max_length  = 63
+    scope       = "global"
   }
 }
 
@@ -396,6 +501,9 @@ output "postgre" {
     name_unique = join("-", compact([local.prefix, local.az.postgre_database, local.suffix_unique]))
     dashes      = true
     slug        = local.az.postgre_database
+    min_length  = 3
+    max_length  = 63
+    scope       = "global"
   }
 }
 
@@ -434,6 +542,8 @@ output "storage_account" {
     name_unique = substr(join("", compact([local.prefix_safe, local.az.storage_account, local.suffix_unique_safe])), 0, 24)
     dashes      = false
     slug        = local.az.storage_account
+    min_length  = 3
+    max_length  = 24
   }
 }
 
@@ -708,10 +818,13 @@ output "blueprint" {
 
 output "key_vault" {
   value = {
-    name        = join("-", compact([local.prefix, local.az.key_vault, substr(local.random, 0, 3), local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.key_vault, substr(local.random, 0, 3), local.suffix_unique]))
+    name        = substr(join("-", compact([local.prefix, local.az.key_vault, local.suffix])), 0, 24)
+    name_unique = substr(join("-", compact([local.prefix, local.az.key_vault, local.suffix_unique])), 0, 24)
     dashes      = true
     slug        = local.az.key_vault
+    min_length  = 2
+    max_length  = 24
+    scope       = "global"
   }
 }
 
