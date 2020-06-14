@@ -1,0 +1,25 @@
+{{ define "output" }}
+output "{{ .Name }}" {
+  value = {
+    name        = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, local.az.{{ .Name }}, local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
+    name_unique = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, local.az.{{ .Name }}, local.suffix_unique{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
+    dashes      = {{ .Dashes }}
+    slug        = local.az.{{ .Name }}
+    min_length  = {{ .Length.Min }}
+    max_length  = {{ .Length.Max }}
+    scope       = "{{ .Scope }}"
+    regex       = "{{ .Regex }}"
+  }
+}
+{{ end }}
+
+{{ define "outputs" }}
+output "unique-seed" {
+  value = coalesce(var.unique-seed, local.random_safe_generation)
+}
+
+{{- range . }}
+    {{- template  "output" .}}
+{{- end }}
+
+{{ end }}

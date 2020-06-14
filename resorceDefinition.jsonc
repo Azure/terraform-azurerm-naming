@@ -1,18 +1,1796 @@
 [
+    // Getting naming restrictions from https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftanalysisservices
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftanalysisservices
     {
-        "name": "key_vault_vault",
-        "min_length": 3,
-        "max_length": 24,
-        "regex": "^(?=.{3,24}$)(?!.*--)[a-zA-Z][a-zA-Z0-9\\-]+$",
+        "name": "analysis_services_server",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)[a-z][a-z0-9]+$",
+        "scope": "resourceGroup",
+        "slug": "as",
+        "dashes": false
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftapimanagement
+    {
+        "name": "api_managment_service",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-z][a-zA-Z0-9]+$",
         "scope": "global",
-        "slug": "kv"
+        "slug": "apim",
+        "dashes": false
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftappconfiguration
+    {
+        "name": "app_configuration",
+        "length": {
+            "min": 5,
+            "max": 50
+        },
+        "regex": "^(?=.{5,50}$)[a-zA-Z0-9_\\-]+$",
+        "scope": "resourceGroup",
+        "slug": "appcg", // Not in the specs
+        "dashes": true
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftauthorization
+    {
+        "name": "role_assignment",
+        "length": {
+            "min": 1,
+            "max": 64
+        },
+        "regex": "^(?=.{1,64}$)[^%]+[^ %\\.]$",
+        "scope": "assignment",
+        "slug": "ra", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "role_definition",
+        "length": {
+            "min": 1,
+            "max": 64
+        },
+        "regex": "^(?=.{1,64}$)[^%]+[^ %\\.]$",
+        "scope": "definition",
+        "slug": "rd", // Not in the specs
+        "dashes": true
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftautomation
+    {
+        "name": "automation_account",
+        "length": {
+            "min": 6,
+            "max": 50
+        },
+        "regex": "^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "resourceGroup",
+        "slug": "aa", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "automation_certificate",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "scope": "parent",
+        "slug": "aacert", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "automation_credential",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "scope": "parent",
+        "slug": "aacred", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "automation_runbook",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z][a-zA-Z0-9\\-]+$",
+        "scope": "parent",
+        "slug": "aacred", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "automation_schedule",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "scope": "parent",
+        "slug": "aasched", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "automation_variable",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "scope": "parent",
+        "slug": "aavar", // Not in the specs
+        "dashes": true
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftbatch
+    {
+        "name": "batch_account",
+        "length": {
+            "min": 3,
+            "max": 24
+        },
+        "regex": "^(?=.{3,24}$)[a-z0-9]+$",
+        "scope": "region",
+        "slug": "ba", // Not in the specs
+        "dashes": false
+    },
+    {
+        "name": "batch_application",
+        "length": {
+            "min": 1,
+            "max": 64
+        },
+        "regex": "^(?=.{1,64}$)[a-zA-Z0-9_\\-]+$",
+        "scope": "parent",
+        "slug": "baapp", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "batch_certificate",
+        "length": {
+            "min": 5,
+            "max": 45
+        },
+        "regex": "^(?=.{5,45}$)[a-zA-Z0-9_\\-]+$",
+        "scope": "parent",
+        "slug": "bacert", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "batch_pool",
+        "length": {
+            "min": 3,
+            "max": 24
+        },
+        "regex": "^(?=.{1,64}$)[a-zA-Z0-9_\\-]+$",
+        "scope": "parent",
+        "slug": "bapool", // Not in the specs
+        "dashes": true
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftbotservice
+    {
+        "name": "bot_web_app",
+        "length": {
+            "min": 2,
+            "max": 64
+        },
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "scope": "global",
+        "slug": "bot", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "bot_channel_Email",
+        "length": {
+            "min": 2,
+            "max": 64
+        },
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "scope": "parent",
+        "slug": "botmail", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "bot_channel_ms_teams",
+        "length": {
+            "min": 2,
+            "max": 64
+        },
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "scope": "parent",
+        "slug": "botteams", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "bot_channel_slack",
+        "length": {
+            "min": 2,
+            "max": 64
+        },
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "scope": "parent",
+        "slug": "botslack", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "bot_channel_directline",
+        "length": {
+            "min": 2,
+            "max": 64
+        },
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "scope": "parent",
+        "slug": "botline", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "bot_channels_registration",
+        "length": {
+            "min": 2,
+            "max": 64
+        },
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "scope": "parent",
+        "slug": "botchan", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "bot_connection",
+        "length": {
+            "min": 2,
+            "max": 64
+        },
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "scope": "parent",
+        "slug": "botcon", // Not in the specs
+        "dashes": true
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftcache
+    {
+        "name": "redis_cache",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,50}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "redis",
+        "dashes": true
+    },
+    {
+        "name": "redis_firewall_rule",
+        "length": {
+            "min": 1,
+            "max": 256
+        },
+        "regex": "^(?=.{1,256}$)[a-zA-Z0-9]+$",
+        "scope": "parent",
+        "slug": "redisfw", // Not in the specs
+        "dashes": false
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftcdn
+    {
+        "name": "cdn_profile",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "resourceGroup",
+        "slug": "cdnprof", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "cdn_endpoint",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "cdn", // Not in the specs
+        "dashes": true
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftcognitiveservices
+    {
+        "name": "cognitive_account",
+        "length": {
+            "min": 2,
+            "max": 64
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+$",
+        "scope": "resourceGroup",
+        "slug": "cog",
+        "dashes": true
+    },
+    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftcompute
+    {
+        "name": "availability_set",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "avail",
+        "dashes": true
+    },
+    {
+        "name": "disk_encryption_set",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9_]+$",
+        "scope": "resourceGroup",
+        "slug": "des", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "image",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "img", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "linux_virtual_machine",
+        "length": {
+            "min": 1,
+            "max": 64
+        },
+        "regex": "^(?=.{1,64}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "scope": "resourceGroup",
+        "slug": "vm",
+        "dashes": true
+    },
+    {
+        "name": "linux_virtual_machine_scale_set",
+        "length": {
+            "min": 1,
+            "max": 64
+        },
+        "regex": "^(?=.{1,64}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "scope": "resourceGroup",
+        "slug": "vmss",
+        "dashes": true
+    },
+    {
+        "name": "managed_disk",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9_]+$",
+        "scope": "resourceGroup",
+        "slug": "dsk",
+        "dashes": true
+    },
+    {
+        "name": "virtual_machine",
+        "length": {
+            "min": 1,
+            "max": 15
+        },
+        "regex": "^(?=.{1,15}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "scope": "resourceGroup",
+        "slug": "vm",
+        "dashes": true
+    },
+    {
+        "name": "virtual_machine_scale_set",
+        "length": {
+            "min": 1,
+            "max": 15
+        },
+        "regex": "^(?=.{1,15}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "scope": "resourceGroup",
+        "slug": "vmss",
+        "dashes": true
+    },
+    {
+        "name": "windows_virtual_machine",
+        "length": {
+            "min": 1,
+            "max": 15
+        },
+        "regex": "^(?=.{1,15}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "scope": "resourceGroup",
+        "slug": "vm",
+        "dashes": true
+    },
+    {
+        "name": "windows_virtual_machine_scale_set",
+        "length": {
+            "min": 1,
+            "max": 15
+        },
+        "regex": "^(?=.{1,15}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "scope": "resourceGroup",
+        "slug": "vmss",
+        "dashes": true
+    },
+    {
+        "name": "containerGroups",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "resourceGroup",
+        "slug": "cg", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "container_registry",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9]+$",
+        "scope": "resourceGroup",
+        "slug": "cr", //Not in the spec
+        "dashes": false
+    },
+    {
+        "name": "container_registry_webhook",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{5,50}$)[a-zA-Z0-9]+$",
+        "scope": "resourceGroup",
+        "slug": "crwh", //Not in the spec
+        "dashes": false
+    },
+    {
+        "name": "kubernetes_cluster",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+[a-zA-Z0-9]$",
+        "scope": "resourceGroup",
+        "slug": "aks",
+        "dashes": true
+    },
+    {
+        "name": "cosmosdb_account",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-z0-9][a-zA-Z0-9\\-_\\.]+[a-zA-Z0-9]$",
+        "scope": "resourceGroup",
+        "slug": "cosmos",
+        "dashes": true
+    },
+    {
+        "name": "custom_provider",
+        "length": {
+            "min": 3,
+            "max": 64
+        },
+        "regex": "^(?=.{3,64}$)[^&%?\\\/]+[^&%\\.?\/ ]$",
+        "scope": "resourceGroup",
+        "slug": "prov", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "mariadb_server",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9\\-]+[a-z0-9]$",
+        "scope": "global",
+        "slug": "maria", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "mariadb_firewall_rule",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "mariafw", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "mariadb_database",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "mariadb", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "mariadb_virtual_network_rule",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "mariavn", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "mysql_server",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9\\-]+[a-z0-9]$",
+        "scope": "global",
+        "slug": "mysql",
+        "dashes": true
+    },
+    {
+        "name": "mysql_firewall_rule",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "mysqlfw", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "mysql_database",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "mysqldb", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "mysql_virtual_network_rule",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "mysqlvn", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "postgresql_server",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9\\-]+[a-z0-9]$",
+        "scope": "global",
+        "slug": "psql",
+        "dashes": true
+    },
+    {
+        "name": "postgresql_firewall_rule",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "psqlfw", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "postgresql_database",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "psqldb", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "postgresql_virtual_network_rule",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "psqlvn", //Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "database_migration_project",
+        "length": {
+            "min": 2,
+            "max": 57
+        },
+        "regex": "^(?=.{2,57}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+$",
+        "scope": "parent",
+        "slug": "migr",
+        "dashes": true
+    },
+    {
+        "name": "database_migration_service",
+        "length": {
+            "min": 2,
+            "max": 62
+        },
+        "regex": "^(?=.{2,62}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+$",
+        "scope": "resourceGroup",
+        "slug": "dms",
+        "dashes": true
+    },
+    {
+        "name": "databricks_workspace",
+        "length": {
+            "min": 3,
+            "max": 30
+        },
+        "regex": "^(?=.{3,30}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "resourceGroup",
+        "slug": "dbw",
+        "dashes": true
+    },
+    {
+        "name": "kusto_cluster",
+        "length": {
+            "min": 4,
+            "max": 22
+        },
+        "regex": "^(?=.{4,22}$)[a-z][a-z0-9]+$",
+        "scope": "global",
+        "slug": "kc", // Not in the spec
+        "dashes": false
+    },
+    {
+        "name": "kusto_database",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9\\- \\.]+$",
+        "scope": "parent",
+        "slug": "kdb", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "kusto_eventhub_data_connection",
+        "length": {
+            "min": 1,
+            "max": 40
+        },
+        "regex": "^(?=.{1,40}$)[a-zA-Z0-9\\- \\.]+$",
+        "scope": "parent",
+        "slug": "kehc", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "adf",
+        "dashes": true
+    },
+    {
+        "name": "data_factory_dataset_mysql",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "adfmysql", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_dataset_postgresql",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "adfpsql", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_dataset_sql_server_table",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "adfmssql", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_integration_runtime_managed",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "adfir", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_pipeline",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "adfpl", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_linked_service_data_lake_storage_gen2",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "scope": "parent",
+        "slug": "adfsvst", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_linked_service_key_vault",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "scope": "parent",
+        "slug": "adfsvkv", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_linked_service_mysql",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "scope": "parent",
+        "slug": "adfsvmysql", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_linked_service_postgresql",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "scope": "parent",
+        "slug": "adfsvpsql", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_linked_service_sql_server",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "scope": "parent",
+        "slug": "adfsvmssql", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_factory_trigger_schedule",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "scope": "parent",
+        "slug": "adftg", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_lake_analytics_account",
+        "length": {
+            "min": 3,
+            "max": 24
+        },
+        "regex": "^(?=.{3,24}$)[a-z0-9]+$",
+        "scope": "global",
+        "slug": "dla",
+        "dashes": false
+    },
+    {
+        "name": "data_lake_analytics_firewall_rule",
+        "length": {
+            "min": 3,
+            "max": 50
+        },
+        "regex": "^(?=.{3,50}$)[a-z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "dlfw", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "data_lake_store",
+        "length": {
+            "min": 3,
+            "max": 24
+        },
+        "regex": "^(?=.{3,24}$)[a-z0-9]+$",
+        "scope": "parent",
+        "slug": "dls",
+        "dashes": false
+    },
+    {
+        "name": "data_lake_store_firewall_rule",
+        "length": {
+            "min": 3,
+            "max": 50
+        },
+        "regex": "^(?=.{3,50}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "dlsfw",
+        "dashes": true
+    },
+    {
+        "name": "dev_test_lab",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "resourceGroup",
+        "slug": "lab",
+        "dashes": true
+    },
+    {
+        "name": "dev_test_linux_virtual_machine",
+        "length": {
+            "min": 1,
+            "max": 64
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9\\-]+$",
+        "scope": "parent",
+        "slug": "labvm", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "dev_test_windows_virtual_machine",
+        "length": {
+            "min": 1,
+            "max": 15
+        },
+        "regex": "^(?=.{1,15}$)[a-zA-Z0-9\\-]+$",
+        "scope": "parent",
+        "slug": "labvm", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "frontdoor",
+        "length": {
+            "min": 5,
+            "max": 64
+        },
+        "regex": "^(?=.{5,64}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "fd", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "frontdoor_firewall_policy",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "global",
+        "slug": "fdfw", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "hdinsight_hadoop_cluster",
+        "length": {
+            "min": 3,
+            "max": 59
+        },
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "hadoop",
+        "dashes": true
+    },
+    {
+        "name": "hdinsight_hbase_cluster",
+        "length": {
+            "min": 3,
+            "max": 59
+        },
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "hbase",
+        "dashes": true
+    },
+    {
+        "name": "hdinsight_kafka_cluster",
+        "length": {
+            "min": 3,
+            "max": 59
+        },
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "kafka",
+        "dashes": true
+    },
+    {
+        "name": "hdinsight_interactive_query_cluster",
+        "length": {
+            "min": 3,
+            "max": 59
+        },
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "iqr", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "hdinsight_ml_services_cluster",
+        "length": {
+            "min": 3,
+            "max": 59
+        },
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "mls",
+        "dashes": true
+    },
+    {
+        "name": "hdinsight_rserver_cluster",
+        "length": {
+            "min": 3,
+            "max": 59
+        },
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "rsv", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "hdinsight_spark_cluster",
+        "length": {
+            "min": 3,
+            "max": 59
+        },
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "spark",
+        "dashes": true
+    },
+    {
+        "name": "hdinsight_storm_cluster",
+        "length": {
+            "min": 3,
+            "max": 59
+        },
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "storm",
+        "dashes": true
+    },
+    {
+        "name": "iotcentral_application",
+        "length": {
+            "min": 2,
+            "max": 63
+        },
+        "regex": "^(?=.{2,63}$)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "global",
+        "slug": "iotapp", // Not in the specc
+        "dashes": true
+    },
+    {
+        "name": "iothub",
+        "length": {
+            "min": 3,
+            "max": 50
+        },
+        "regex": "^(?=.{3,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-z0-9]$",
+        "scope": "global",
+        "slug": "iot",
+        "dashes": true
+    },
+    {
+        "name": "iothub_consumer_group",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9\\-\\._]+$",
+        "scope": "parent",
+        "slug": "iotcg", // Not in the specc
+        "dashes": true
+    },
+    {
+        "name": "iothub_dps",
+        "length": {
+            "min": 3,
+            "max": 64
+        },
+        "regex": "^(?=.{3,64}$)[a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "resoureceGroup",
+        "slug": "dps", // Not in the specc
+        "dashes": true
+    },
+    {
+        "name": "iothub_dps_certificate",
+        "length": {
+            "min": 1,
+            "max": 64
+        },
+        "regex": "^(?=.{3,64}$)[a-zA-Z0-9\\-\\._]+$",
+        "scope": "parent",
+        "slug": "dpscert", // Not in the specc
+        "dashes": true
+    },
+    {
+        "name": "key_vault",
+        "length": {
+            "min": 3,
+            "max": 24
+        },
+        "regex": "^(?=.{3,24}$)(?!.*--)[a-zA-Z][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "kv",
+        "dashes": true
+    },
+    {
+        "name": "key_vault_key",
+        "length": {
+            "min": 1,
+            "max": 127
+        },
+        "regex": "^(?=.{1,127}$)[a-zA-Z0-9\\-]+$",
+        "scope": "parent",
+        "slug": "kvk",
+        "dashes": true
     },
     {
         "name": "key_vault_secret",
-        "min_length": 1,
-        "max_length": 127,
+        "length": {
+            "min": 1,
+            "max": 127
+        },
         "regex": "^(?=.{1,127}$)[a-zA-Z0-9\\-]+$",
         "scope": "parent",
-        "slug": "kvk"
+        "slug": "kvs", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "key_vault_certificate",
+        "length": {
+            "min": 1,
+            "max": 127
+        },
+        "regex": "^(?=.{1,127}$)[a-zA-Z0-9\\-]+$",
+        "scope": "parent",
+        "slug": "kvc", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "lb",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "lb", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "lb_nat_rule",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "parent",
+        "slug": "lbnatrl", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "public_ip",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "parent",
+        "slug": "pip",
+        "dashes": true
+    },
+    {
+        "name": "public_ip_prefix",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "parent",
+        "slug": "pippf", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "public_ip_prefix",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "pippf", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "public_ip_prefix",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "pippf", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "route",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "parent",
+        "slug": "rt", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "route_table",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "route",
+        "dashes": true
+    },
+    {
+        "name": "subnet",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "parent",
+        "slug": "snet",
+        "dashes": true
+    },
+    {
+        "name": "traffic_manager_profile",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\.]+[a-zA-Z0-9_]$",
+        "scope": "global",
+        "slug": "traf",
+        "dashes": true
+    },
+    {
+        "name": "virtual_wan",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "parent",
+        "slug": "vwan",
+        "dashes": true
+    },
+    {
+        "name": "virtual_network",
+        "length": {
+            "min": 2,
+            "max": 64
+        },
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "vnet",
+        "dashes": true
+    },
+    {
+        "name": "virtual_network_gateway",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "vgw",
+        "dashes": true
+    },
+    {
+        "name": "virtual_network_peering",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "parent",
+        "slug": "vpeer", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "network_interface",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "nic",
+        "dashes": true
+    },
+    {
+        "name": "firewall",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "fw",
+        "dashes": true
+    },
+    {
+        "name": "eventhub",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "evh",
+        "dashes": true
+    },
+    {
+        "name": "eventhub_namespace",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "global",
+        "slug": "ehn", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "eventhub_authorization_rule",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "ehar", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "eventhub_namespace_authorization_rule",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "ehnar", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "eventhub_namespace_disaster_recovery_config",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "ehdr", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "eventhub_consumer_group",
+        "length": {
+            "min": 1,
+            "max": 50
+        },
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "ehcg", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_job",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "resourceGroup",
+        "slug": "asa",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_function_javascript_udf",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asafunc",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_output_blob",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asaoblob",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_output_mssql",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asaomssql",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_output_eventhub",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asaoeh",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_output_servicebus_queue",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asaosbq",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_output_servicebus_topic",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asaosbt",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_reference_input_blob",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asarblob",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_stream_input_blob",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asaiblob",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_stream_input_eventhub",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asaieh",
+        "dashes": true
+    },
+    {
+        "name": "stream_analytics_stream_input_iothub",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "scope": "parent",
+        "slug": "asaiiot",
+        "dashes": true
+    },
+    {
+        "name": "shared_image_gallery",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\.]+[a-zA-Z0-9]$",
+        "scope": "resourceGroup",
+        "slug": "sig",
+        "dashes": false
+    },
+    {
+        "name": "shared_image",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "si",
+        "dashes": true
+    },
+    {
+        "name": "snapshots",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "parent",
+        "slug": "snap",
+        "dashes": true
+    },
+    {
+        "name": "storage_account",
+        "length": {
+            "min": 3,
+            "max": 24
+        },
+        "regex": "^(?=.{3,24}$)[a-z0-9]+$",
+        "scope": "global",
+        "slug": "st",
+        "dashes": false
+    },
+    {
+        "name": "storage_container",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+$",
+        "scope": "parent",
+        "slug": "stct",
+        "dashes": true
+    },
+    {
+        "name": "storage_data_lake_gen2_filesystem",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "parent",
+        "slug": "stdl",
+        "dashes": true
+    },
+    {
+        "name": "storage_queue",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "parent",
+        "slug": "stq",
+        "dashes": true
+    },
+    {
+        "name": "storage_table",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "parent",
+        "slug": "stt",
+        "dashes": true
+    },
+    {
+        "name": "storage_share",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "parent",
+        "slug": "sts",
+        "dashes": true
+    },
+    {
+        "name": "storage_share_directory",
+        "length": {
+            "min": 3,
+            "max": 63
+        },
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "parent",
+        "slug": "sts",
+        "dashes": true
+    },
+    {
+        "name": "machine_learning_workspace",
+        "length": {
+            "min": 1,
+            "max": 260
+        },
+        "regex": "^(?=.{1,260}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "scope": "resourceGroup",
+        "slug": "mlw",
+        "dashes": true
+    },
+    {
+        "name": "storage_blob",
+        "length": {
+            "min": 1,
+            "max": 1024
+        },
+        "regex": "^(?=.{1,1024}$)[^\\s\/$#&]+$",
+        "scope": "parent",
+        "slug": "blob",
+        "dashes": true
+    },
+    {
+        "name": "bastion_host",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "parent",
+        "slug": "snap",
+        "dashes": true
+    },
+    {
+        "name": "local_network_gateway",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "lgw",
+        "dashes": true
+    },
+    {
+        "name": "application_gateway",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "agw",
+        "dashes": true
+    },
+    {
+        "name": "express_route_gateway",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "ergw", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "express_route_circuit",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "erc", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "point_to_site_vpn_gateway",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "erc", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "template_deployment",
+        "length": {
+            "min": 1,
+            "max": 64
+        },
+        "regex": "^(?=.{1,64}$)[a-zA-Z0-9\\-\\._\\(\\)]+$",
+        "scope": "resourceGroup",
+        "slug": "deploy", // Not in the spec
+        "dashes": true
+    },
+    {
+        "name": "sql_server",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "global",
+        "slug": "deploy",
+        "dashes": true
+    },
+    {
+        "name": "mssql_server",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "global",
+        "slug": "deploy",
+        "dashes": true
+    },
+    {
+        "name": "mssql_database",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "scope": "parent",
+        "slug": "sqldb", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "sql_elasticpool",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "scope": "parent",
+        "slug": "sqlep", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "mssql_elasticpool",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "scope": "parent",
+        "slug": "sqlep", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "sql_failover_group",
+        "length": {
+            "min": 1,
+            "max": 63
+        },
+        "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "global",
+        "slug": "sqlfg", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "sql_firewall_rule",
+        "length": {
+            "min": 1,
+            "max": 128
+        },
+        "regex": "^(?=.{1,128}$)[^<>*%:?\\+\/]+[^<>*%:.?\\+\/]$",
+        "scope": "parent",
+        "slug": "sqlfw", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "log_analytics_workspace",
+        "length": {
+            "min": 4,
+            "max": 63
+        },
+        "regex": "^(?=.{4,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "scope": "parent",
+        "slug": "log", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "service_fabric_cluster",
+        "length": {
+            "min": 4,
+            "max": 23
+        },
+        "regex": "^(?=.{4,23}$)[a-z][a-z0-9\\-]+[a-z0-9]$",
+        "scope": "region",
+        "slug": "sf", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "maps_account",
+        "length": {
+            "min": 1,
+            "max": 98
+        },
+        "regex": "^(?=.{1,98}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+$",
+        "scope": "resourceGroup",
+        "slug": "map", // Not in the specs
+        "dashes": true
+    },
+    {
+        "name": "network_watcher",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "nw", // Not in the spec
+        "dashes": true
     }
 ]
