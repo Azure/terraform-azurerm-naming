@@ -1,5 +1,5 @@
 provider "random" {
-  version = "~>2.2"
+  version = "~> 2.2"
 }
 
 resource "random_string" "main" {
