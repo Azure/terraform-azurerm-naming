@@ -184,10 +184,13 @@ You can find a list bellow of all the resources that are currently implemented. 
 | postgresql\_firewall\_rule | n/a |
 | postgresql\_server | n/a |
 | postgresql\_virtual\_network\_rule | n/a |
+| private\_endpoint | n/a |
+| private\_service\_connection | n/a |
 | public\_ip | n/a |
 | public\_ip\_prefix | n/a |
 | redis\_cache | n/a |
 | redis\_firewall\_rule | n/a |
+| resource\_group | n/a |
 | role\_assignment | n/a |
 | role\_definition | n/a |
 | route | n/a |

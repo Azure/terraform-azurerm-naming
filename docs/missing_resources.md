@@ -1,93 +1,93 @@
-managed_application_definition
-managed_application
-proximity_placement_group
-shared_image_version
-virtual_machine_extension
-virtual_machine_scale_set_extension
-orchestrated_virtual_machine_scale_set / preview
-sql_virtual_network_rule
-dns_a_record
-dns_aaaa_record
-dns_caa_record
-dns_cname_record
-dns_mx_record
-dns_ns_record
-dns_ptr_record
-dns_srv_record
-dns_txt_record
-dns_zone
-private_dns_a_record
-private_dns_a_record
-private_dns_aaaa_record
-private_dns_cname_record
-private_dns_mx_record
-private_dns_ptr_record
-private_dns_srv_record
-private_dns_txt_record
-private_dns_zone
-private_dns_zone_virtual_network_link
-iot_time_series_insights_access_policy
-iot_time_series_insights_standard_environment
-iot_time_series_insights_reference_data_set
-log_analytics_datasource_windows_event
-log_analytics_datasource_windows_performance_counter
-log_analytics_linked_service
-log_analytics_solution
-logic_app_action_custom
-logic_app_action_http
-logic_app_integration_account
-logic_app_trigger_custom
-logic_app_trigger_http_request
-logic_app_trigger_recurrence
-logic_app_workflow
-maintenance_configuration
-management_lock
-management_group
-media_services_account
-spatial_anchors_account
-eventgrid_domain
-eventgrid_domain_topic
-eventgrid_event_subscription
-eventgrid_topic
-notification_hub
-notification_hub_authorization_rule
-notification_hub_namespace
-relay_hybrid_connection
-relay_namespace
-servicebus_namespace
-servicebus_namespace_authorization_rule
-servicebus_queue
-servicebus_queue_authorization_rule
-servicebus_subscription
-servicebus_subscription_rule
-servicebus_topic
-servicebus_topic_authorization_rule
-signalr_service
-scheduled_query_rule_log
-application_security_group
-network_ddos_protection_plan
-express_route_circuit_authorization
-nat_gateway
-network_packet_capture
-network_profile
-network_security_group
-network_security_rule
-packet_capture //deprecated
-private_link_service
-web_application_firewall_policy
-netapp_account
-netapp_pool
-netapp_volume
-netapp_snapshot
-dashboard
-powerbi_embedded
-recovery_services_vault
-site_recovery_fabric
-site_recovery_network_mapping
-site_recovery_protection_container_mapping
-site_recovery_protection_container
-site_recovery_replicated_vm
-site_recovery_replication_policy
-hpc_cache
-hpc_cache_nfs_target
-hpc_cache_blob_target
+- managed_application_definition
+- managed_application
+- proximity_placement_group
+- shared_image_version
+- virtual_machine_extension
+- virtual_machine_scale_set_extension
+- orchestrated_virtual_machine_scale_set / preview
+- sql_virtual_network_rule
+- dns_a_record
+- dns_aaaa_record
+- dns_caa_record
+- dns_cname_record
+- dns_mx_record
+- dns_ns_record
+- dns_ptr_record
+- dns_srv_record
+- dns_txt_record
+- dns_zone
+- private_dns_a_record
+- private_dns_a_record
+- private_dns_aaaa_record
+- private_dns_cname_record
+- private_dns_mx_record
+- private_dns_ptr_record
+- private_dns_srv_record
+- private_dns_txt_record
+- private_dns_zone
+- private_dns_zone_virtual_network_link
+- iot_time_series_insights_access_policy
+- iot_time_series_insights_standard_environment
+- iot_time_series_insights_reference_data_set
+- log_analytics_datasource_windows_event
+- log_analytics_datasource_windows_performance_counter
+- log_analytics_linked_service
+- log_analytics_solution
+- logic_app_action_custom
+- logic_app_action_http
+- logic_app_integration_account
+- logic_app_trigger_custom
+- logic_app_trigger_http_request
+- logic_app_trigger_recurrence
+- logic_app_workflow
+- maintenance_configuration
+- management_lock
+- management_group
+- media_services_account
+- spatial_anchors_account
+- eventgrid_domain
+- eventgrid_domain_topic
+- eventgrid_event_subscription
+- eventgrid_topic
+- notification_hub
+- notification_hub_authorization_rule
+- notification_hub_namespace
+- relay_hybrid_connection
+- relay_namespace
+- servicebus_namespace
+- servicebus_namespace_authorization_rule
+- servicebus_queue
+- servicebus_queue_authorization_rule
+- servicebus_subscription
+- servicebus_subscription_rule
+- servicebus_topic
+- servicebus_topic_authorization_rule
+- signalr_service
+- scheduled_query_rule_log
+- application_security_group
+- network_ddos_protection_plan
+- express_route_circuit_authorization
+- nat_gateway
+- network_packet_capture
+- network_profile
+- network_security_group
+- network_security_rule
+- packet_capture //deprecated
+- private_link_service
+- web_application_firewall_policy
+- netapp_account
+- netapp_pool
+- netapp_volume
+- netapp_snapshot
+- dashboard
+- powerbi_embedded
+- recovery_services_vault
+- site_recovery_fabric
+- site_recovery_network_mapping
+- site_recovery_protection_container_mapping
+- site_recovery_protection_container
+- site_recovery_replicated_vm
+- site_recovery_replication_policy
+- hpc_cache
+- hpc_cache_nfs_target
+- hpc_cache_blob_target

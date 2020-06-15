@@ -51,6 +51,19 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// Undocumented resource definitions
+	sourceDefinitionsUndocumented, err := ioutil.ReadFile("resourceDefinition_out_of_docs.jsonc")
+	if err != nil {
+		log.Fatal(err)
+	}
+	var dataUndocumented []Resource
+	jcUndoc := jsonc.ToJSON(sourceDefinitionsUndocumented)
+	err = json.Unmarshal(jcUndoc, &dataUndocumented)
+	if err != nil {
+		log.Fatal(err)
+	}
+	data = append(data, dataUndocumented...)
+
 	mainFile, err := os.OpenFile("main.tf", os.O_TRUNC|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatal(err)
