@@ -32,8 +32,8 @@ func main() {
 		log.Fatal(err)
 	}
 	var fileNames = make([]string, len(files))
-	for _, file := range files {
-		fileNames = append(fileNames, "templates/"+file.Name())
+	for i, file := range files {
+		fileNames[i] = "templates/" + file.Name()
 	}
 	parsedTemplate, err := template.ParseFiles(fileNames...)
 	if err != nil {
