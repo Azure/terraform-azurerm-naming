@@ -1,0 +1,103 @@
+az = {
+    // General
+    resource_group = "rg"
+    policy         = "policy"
+    api_management = "apim"
+
+    // Networking
+    virtual_network            = "vnet"
+    subnet                     = "snet"
+    network_interface          = "nic"
+    public_ip                  = "pip"
+    load_balancer_internal     = "lbi"
+    load_balancer_external     = "lbe"
+    network_security_group     = "nsg"
+    application_security_group = "asg"
+    local_network_gateway      = "lgw"
+    virtual_network_gateway    = "vgw"
+    vpn_connection             = "cn"
+    application_gateway        = "agw"
+    route_table                = "route"
+    traffic_manager_profile    = "traf"
+    private_endpoint           = "pe"    // Not in the specs
+    private_service_connection = "psc"   // Not in the specs
+    firewall                   = "fw"    // Not in the specs
+    firewall_ip_configuration  = "fwipc" // Not in the specs
+
+    // Compute and Web
+    virtual_machine             = "vm"
+    virtual_machine_scale_set   = "vmss"
+    availability_set            = "avail"
+    vm_storage_account          = "stvm"
+    azure_arc_connected_machine = "arcm"
+    container_instance          = "aci"
+    aks_cluster                 = "aks"
+    service_fabric              = "sf"
+    app_service_environment     = "ase"
+    app_service_plan            = "plan"
+    web_app                     = "app"
+    function_app                = "func"
+    cloud_service               = "cld"
+    notification_hubs           = "ntf"
+    notification_hubs_namespace = "ntfns"
+
+    // Databases
+    azure_sql_database_server  = "sql"
+    azure_sql_database         = "sqldb"
+    cosmos_db                  = "cosmos"
+    azure_cache_redis          = "redis"
+    mysql_database             = "mysql"
+    postgre_database           = "psql"
+    azure_data_warehouse       = "sqldw"
+    azure_synapse_analytics    = "syn"
+    sql_server_strech_database = "sqlstrdb"
+
+    // Storage
+    storage_account                = "st"
+    azure_storsimple               = "ssimp"
+    storage_managed_encryption_key = "smek" # Not in the specs
+
+    // AI + Machine Learning
+    azure_cognitive_search           = "srch"
+    azure_cognitive_services         = "cog"
+    azure_machine_learning_workspace = "mlw"
+
+    // Analytics and IoT
+    azure_analysis_services_server         = "as"
+    azure_databricks_workspace             = "dbw"
+    azure_stream_analytics                 = "asa"
+    azure_data_factory                     = "adf"
+    data_lake_store_account                = "dls"
+    data_lake_file_system                  = "dlfs" // Not in the specs
+    data_lake_analytics_account            = "dla"
+    event_hub                              = "evh"
+    event_hub_namespace                    = "ehn"   // Not in the specs
+    event_hub_namespace_authorization_rule = "ehnar" // Not in the specs
+    event_hub_authorization_rule           = "ehar"  // Not in the specs
+    hdinsights_hadoop_cluster              = "hadoop"
+    hdinsights_hbase_cluster               = "hbase"
+    hdinsights_kafka_cluster               = "kafka"
+    hdinsights_spark_cluster               = "spark"
+    hdinsights_storm_cluster               = "storm"
+    hdinsights_ml_services_cluster         = "mls"
+    iot_hub                                = "iot"
+
+    // Integration
+    logic_apps         = "logic"
+    service_bus        = "sb"
+    service_bus_queue  = "sbq"
+    service_bus_topic  = "sbt"
+    automation_account = "aa" // Not in the specs
+
+    // Managment and governance
+    blueprint               = "bp"
+    key_vault               = "kv"
+    key_vault_key           = "kvk"
+    log_analytics_workspace = "log"
+    application_insights    = "appi"
+    recovery_services_vault = "rsv"
+
+    //Migration
+    azure_migrate_project               = "migr"
+    database_migration_service_instance = "dms"
+  }

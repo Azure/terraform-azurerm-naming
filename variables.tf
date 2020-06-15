@@ -11,16 +11,19 @@ variable "suffix" {
 }
 
 variable "unique-seed" {
-  type    = string
-  default = ""
+  description = "Custom value for the randon charecters to be used"
+  type        = string
+  default     = ""
 }
 
 variable "unique-length" {
-  type    = number
-  default = 4
+  description = "Max length of the uniquiness suffix to be added"
+  type        = number
+  default     = 4
 }
 
 variable "unique-include-numbers" {
-  type    = bool
-  default = true
+  description = "If you want to iunclude numbers in the unique generation"
+  type        = bool
+  default     = true
 }

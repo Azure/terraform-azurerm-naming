@@ -1,0 +1,16 @@
+{{ define "output" }}
+output "{{ .Name }}" {
+  value = local.az.{{ .Name }}
+}
+{{ end }}
+
+{{ define "outputs" }}
+output "unique-seed" {
+  value = coalesce(var.unique-seed, local.random_safe_generation)
+}
+
+{{- range . }}
+    {{- template  "output" .}}
+{{- end }}
+
+{{ end }}
