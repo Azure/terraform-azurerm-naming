@@ -31,7 +31,7 @@
             "min": 5,
             "max": 50
         },
-        "regex": "^(?=.{5,50}$)[a-zA-Z0-9_\\-]+$",
+        "regex": "^(?=.{5,50}$)[a-zA-Z0-9_-]+$",
         "scope": "resourceGroup",
         "slug": "appcg", // Not in the specs
         "dashes": true
@@ -43,7 +43,7 @@
             "min": 1,
             "max": 64
         },
-        "regex": "^(?=.{1,64}$)[^%]+[^ %\\.]$",
+        "regex": "^(?=.{1,64}$)[^%]+[^ %.]$",
         "scope": "assignment",
         "slug": "ra", // Not in the specs
         "dashes": true
@@ -54,7 +54,7 @@
             "min": 1,
             "max": 64
         },
-        "regex": "^(?=.{1,64}$)[^%]+[^ %\\.]$",
+        "regex": "^(?=.{1,64}$)[^%]+[^ %.]$",
         "scope": "definition",
         "slug": "rd", // Not in the specs
         "dashes": true
@@ -66,7 +66,7 @@
             "min": 6,
             "max": 50
         },
-        "regex": "^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "resourceGroup",
         "slug": "aa", // Not in the specs
         "dashes": true
@@ -77,7 +77,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
         "slug": "aacert", // Not in the specs
         "dashes": true
@@ -88,7 +88,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
         "slug": "aacred", // Not in the specs
         "dashes": true
@@ -99,7 +99,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z][a-zA-Z0-9\\-]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z][a-zA-Z0-9-]+$",
         "scope": "parent",
         "slug": "aacred", // Not in the specs
         "dashes": true
@@ -110,7 +110,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
         "slug": "aasched", // Not in the specs
         "dashes": true
@@ -121,7 +121,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
         "slug": "aavar", // Not in the specs
         "dashes": true
@@ -144,7 +144,7 @@
             "min": 1,
             "max": 64
         },
-        "regex": "^(?=.{1,64}$)[a-zA-Z0-9_\\-]+$",
+        "regex": "^(?=.{1,64}$)[a-zA-Z0-9_-]+$",
         "scope": "parent",
         "slug": "baapp", // Not in the specs
         "dashes": true
@@ -155,7 +155,7 @@
             "min": 5,
             "max": 45
         },
-        "regex": "^(?=.{5,45}$)[a-zA-Z0-9_\\-]+$",
+        "regex": "^(?=.{5,45}$)[a-zA-Z0-9_-]+$",
         "scope": "parent",
         "slug": "bacert", // Not in the specs
         "dashes": true
@@ -166,7 +166,7 @@
             "min": 3,
             "max": 24
         },
-        "regex": "^(?=.{1,64}$)[a-zA-Z0-9_\\-]+$",
+        "regex": "^(?=.{1,64}$)[a-zA-Z0-9_-]+$",
         "scope": "parent",
         "slug": "bapool", // Not in the specs
         "dashes": true
@@ -178,7 +178,7 @@
             "min": 2,
             "max": 64
         },
-        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "global",
         "slug": "bot", // Not in the specs
         "dashes": true
@@ -189,7 +189,7 @@
             "min": 2,
             "max": 64
         },
-        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
         "slug": "botmail", // Not in the specs
         "dashes": true
@@ -200,7 +200,7 @@
             "min": 2,
             "max": 64
         },
-        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
         "slug": "botteams", // Not in the specs
         "dashes": true
@@ -211,7 +211,7 @@
             "min": 2,
             "max": 64
         },
-        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
         "slug": "botslack", // Not in the specs
         "dashes": true
@@ -222,7 +222,7 @@
             "min": 2,
             "max": 64
         },
-        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
         "slug": "botline", // Not in the specs
         "dashes": true
@@ -233,7 +233,7 @@
             "min": 2,
             "max": 64
         },
-        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
         "slug": "botchan", // Not in the specs
         "dashes": true
@@ -244,7 +244,7 @@
             "min": 2,
             "max": 64
         },
-        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\\-\\.]+$",
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
         "slug": "botcon", // Not in the specs
         "dashes": true
@@ -256,7 +256,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,50}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,50}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "redis",
         "dashes": true
@@ -279,7 +279,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "resourceGroup",
         "slug": "cdnprof", // Not in the specs
         "dashes": true
@@ -290,7 +290,7 @@
             "min": 1,
             "max": 50
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "cdn", // Not in the specs
         "dashes": true
@@ -302,7 +302,7 @@
             "min": 2,
             "max": 64
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-]+$",
         "scope": "resourceGroup",
         "slug": "cog",
         "dashes": true
@@ -314,7 +314,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "avail",
         "dashes": true
@@ -336,7 +336,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "img", //Not in the spec
         "dashes": true
@@ -347,7 +347,7 @@
             "min": 1,
             "max": 64
         },
-        "regex": "^(?=.{1,64}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "regex": "^(?=.{1,64}$)[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&_][^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&]+[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&.-]$",
         "scope": "resourceGroup",
         "slug": "vm",
         "dashes": true
@@ -358,7 +358,7 @@
             "min": 1,
             "max": 64
         },
-        "regex": "^(?=.{1,64}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "regex": "^(?=.{1,64}$)[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&_][^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&]+[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&.-]$",
         "scope": "resourceGroup",
         "slug": "vmss",
         "dashes": true
@@ -380,7 +380,7 @@
             "min": 1,
             "max": 15
         },
-        "regex": "^(?=.{1,15}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "regex": "^(?=.{1,15}$)[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&_][^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&]+[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&.-]$",
         "scope": "resourceGroup",
         "slug": "vm",
         "dashes": true
@@ -391,7 +391,7 @@
             "min": 1,
             "max": 15
         },
-        "regex": "^(?=.{1,15}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "regex": "^(?=.{1,15}$)[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&_][^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&]+[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&.-]$",
         "scope": "resourceGroup",
         "slug": "vmss",
         "dashes": true
@@ -402,7 +402,7 @@
             "min": 1,
             "max": 15
         },
-        "regex": "^(?=.{1,15}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "regex": "^(?=.{1,15}$)[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&_][^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&]+[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&.-]$",
         "scope": "resourceGroup",
         "slug": "vm",
         "dashes": true
@@ -413,7 +413,7 @@
             "min": 1,
             "max": 15
         },
-        "regex": "^(?=.{1,15}$)[^\\\/\"'\\[\\]:|<>+=;,?*@&_][^\\\/\"'\\[\\]:|<>+=;,?*@&]+[^\\\/\"'\\[\\]:|<>+=;,?*@&\\.\\-]$",
+        "regex": "^(?=.{1,15}$)[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&_][^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&]+[^\\\\/\\\"\\\\[\\\\]:|<>+=;,?*@&.-]$",
         "scope": "resourceGroup",
         "slug": "vmss",
         "dashes": true
@@ -424,7 +424,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,63}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "resourceGroup",
         "slug": "cg", //Not in the spec
         "dashes": true
@@ -457,7 +457,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$",
         "scope": "resourceGroup",
         "slug": "aks",
         "dashes": true
@@ -468,7 +468,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-z0-9][a-zA-Z0-9\\-_\\.]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,63}$)[a-z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$",
         "scope": "resourceGroup",
         "slug": "cosmos",
         "dashes": true
@@ -479,7 +479,7 @@
             "min": 3,
             "max": 64
         },
-        "regex": "^(?=.{3,64}$)[^&%?\\\/]+[^&%\\.?\/ ]$",
+        "regex": "^(?=.{3,64}$)[^&%?\\\\/]+[^&%.?\\\\/ ]$",
         "scope": "resourceGroup",
         "slug": "prov", //Not in the spec
         "dashes": true
@@ -490,7 +490,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$",
         "scope": "global",
         "slug": "maria", //Not in the spec
         "dashes": true
@@ -501,7 +501,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "mariafw", //Not in the spec
         "dashes": true
@@ -512,7 +512,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "mariadb", //Not in the spec
         "dashes": true
@@ -523,7 +523,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "mariavn", //Not in the spec
         "dashes": true
@@ -534,7 +534,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$",
         "scope": "global",
         "slug": "mysql",
         "dashes": true
@@ -545,7 +545,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "mysqlfw", //Not in the spec
         "dashes": true
@@ -556,7 +556,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "mysqldb", //Not in the spec
         "dashes": true
@@ -567,7 +567,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "mysqlvn", //Not in the spec
         "dashes": true
@@ -578,7 +578,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$",
         "scope": "global",
         "slug": "psql",
         "dashes": true
@@ -589,7 +589,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "psqlfw", //Not in the spec
         "dashes": true
@@ -600,7 +600,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "psqldb", //Not in the spec
         "dashes": true
@@ -611,7 +611,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "psqlvn", //Not in the spec
         "dashes": true
@@ -622,7 +622,7 @@
             "min": 2,
             "max": 57
         },
-        "regex": "^(?=.{2,57}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+$",
+        "regex": "^(?=.{2,57}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$",
         "scope": "parent",
         "slug": "migr",
         "dashes": true
@@ -633,7 +633,7 @@
             "min": 2,
             "max": 62
         },
-        "regex": "^(?=.{2,62}$)[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]+$",
+        "regex": "^(?=.{2,62}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$",
         "scope": "resourceGroup",
         "slug": "dms",
         "dashes": true
@@ -644,7 +644,7 @@
             "min": 3,
             "max": 30
         },
-        "regex": "^(?=.{3,30}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{3,30}$)[a-zA-Z0-9-_]+$",
         "scope": "resourceGroup",
         "slug": "dbw",
         "dashes": true
@@ -666,7 +666,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9\\- \\.]+$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9- .]+$",
         "scope": "parent",
         "slug": "kdb", // Not in the spec
         "dashes": true
@@ -677,7 +677,7 @@
             "min": 1,
             "max": 40
         },
-        "regex": "^(?=.{1,40}$)[a-zA-Z0-9\\- \\.]+$",
+        "regex": "^(?=.{1,40}$)[a-zA-Z0-9- .]+$",
         "scope": "parent",
         "slug": "kehc", // Not in the spec
         "dashes": true
@@ -688,7 +688,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "adf",
         "dashes": true
@@ -699,7 +699,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "adfmysql", // Not in the spec
         "dashes": true
@@ -710,7 +710,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "adfpsql", // Not in the spec
         "dashes": true
@@ -721,7 +721,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "adfmssql", // Not in the spec
         "dashes": true
@@ -732,7 +732,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "adfir", // Not in the spec
         "dashes": true
@@ -743,7 +743,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "adfpl", // Not in the spec
         "dashes": true
@@ -754,7 +754,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
         "slug": "adfsvst", // Not in the spec
         "dashes": true
@@ -765,7 +765,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
         "slug": "adfsvkv", // Not in the spec
         "dashes": true
@@ -776,7 +776,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
         "slug": "adfsvmysql", // Not in the spec
         "dashes": true
@@ -787,7 +787,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
         "slug": "adfsvpsql", // Not in the spec
         "dashes": true
@@ -798,7 +798,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
         "slug": "adfsvmssql", // Not in the spec
         "dashes": true
@@ -809,7 +809,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\/]+$",
+        "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
         "slug": "adftg", // Not in the spec
         "dashes": true
@@ -831,7 +831,7 @@
             "min": 3,
             "max": 50
         },
-        "regex": "^(?=.{3,50}$)[a-z0-9\\-_]+$",
+        "regex": "^(?=.{3,50}$)[a-z0-9-_]+$",
         "scope": "parent",
         "slug": "dlfw", // Not in the spec
         "dashes": true
@@ -853,7 +853,7 @@
             "min": 3,
             "max": 50
         },
-        "regex": "^(?=.{3,50}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{3,50}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "dlsfw",
         "dashes": true
@@ -864,7 +864,7 @@
             "min": 1,
             "max": 50
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9-_]+$",
         "scope": "resourceGroup",
         "slug": "lab",
         "dashes": true
@@ -875,7 +875,7 @@
             "min": 1,
             "max": 64
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z0-9\\-]+$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9-]+$",
         "scope": "parent",
         "slug": "labvm", // Not in the specs
         "dashes": true
@@ -886,7 +886,7 @@
             "min": 1,
             "max": 15
         },
-        "regex": "^(?=.{1,15}$)[a-zA-Z0-9\\-]+$",
+        "regex": "^(?=.{1,15}$)[a-zA-Z0-9-]+$",
         "scope": "parent",
         "slug": "labvm", // Not in the specs
         "dashes": true
@@ -897,7 +897,7 @@
             "min": 5,
             "max": 64
         },
-        "regex": "^(?=.{5,64}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{5,64}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "fd", // Not in the spec
         "dashes": true
@@ -908,7 +908,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "global",
         "slug": "fdfw", // Not in the spec
         "dashes": true
@@ -919,7 +919,7 @@
             "min": 3,
             "max": 59
         },
-        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "hadoop",
         "dashes": true
@@ -930,7 +930,7 @@
             "min": 3,
             "max": 59
         },
-        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "hbase",
         "dashes": true
@@ -941,7 +941,7 @@
             "min": 3,
             "max": 59
         },
-        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "kafka",
         "dashes": true
@@ -952,7 +952,7 @@
             "min": 3,
             "max": 59
         },
-        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "iqr", // Not in the spec
         "dashes": true
@@ -963,7 +963,7 @@
             "min": 3,
             "max": 59
         },
-        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "mls",
         "dashes": true
@@ -974,7 +974,7 @@
             "min": 3,
             "max": 59
         },
-        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "rsv", // Not in the spec
         "dashes": true
@@ -985,7 +985,7 @@
             "min": 3,
             "max": 59
         },
-        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "spark",
         "dashes": true
@@ -996,7 +996,7 @@
             "min": 3,
             "max": 59
         },
-        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "storm",
         "dashes": true
@@ -1007,7 +1007,7 @@
             "min": 2,
             "max": 63
         },
-        "regex": "^(?=.{2,63}$)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{2,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "global",
         "slug": "iotapp", // Not in the specc
         "dashes": true
@@ -1018,7 +1018,7 @@
             "min": 3,
             "max": 50
         },
-        "regex": "^(?=.{3,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{3,50}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-z0-9]$",
         "scope": "global",
         "slug": "iot",
         "dashes": true
@@ -1029,7 +1029,7 @@
             "min": 1,
             "max": 50
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z0-9\\-\\._]+$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9-._]+$",
         "scope": "parent",
         "slug": "iotcg", // Not in the specc
         "dashes": true
@@ -1040,7 +1040,7 @@
             "min": 3,
             "max": 64
         },
-        "regex": "^(?=.{3,64}$)[a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,64}$)[a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "resoureceGroup",
         "slug": "dps", // Not in the specc
         "dashes": true
@@ -1051,7 +1051,7 @@
             "min": 1,
             "max": 64
         },
-        "regex": "^(?=.{3,64}$)[a-zA-Z0-9\\-\\._]+$",
+        "regex": "^(?=.{3,64}$)[a-zA-Z0-9-._]+$",
         "scope": "parent",
         "slug": "dpscert", // Not in the specc
         "dashes": true
@@ -1062,7 +1062,7 @@
             "min": 3,
             "max": 24
         },
-        "regex": "^(?=.{3,24}$)(?!.*--)[a-zA-Z][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{3,24}$)(?!.*--)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "kv",
         "dashes": true
@@ -1073,7 +1073,7 @@
             "min": 1,
             "max": 127
         },
-        "regex": "^(?=.{1,127}$)[a-zA-Z0-9\\-]+$",
+        "regex": "^(?=.{1,127}$)[a-zA-Z0-9-]+$",
         "scope": "parent",
         "slug": "kvk",
         "dashes": true
@@ -1084,7 +1084,7 @@
             "min": 1,
             "max": 127
         },
-        "regex": "^(?=.{1,127}$)[a-zA-Z0-9\\-]+$",
+        "regex": "^(?=.{1,127}$)[a-zA-Z0-9-]+$",
         "scope": "parent",
         "slug": "kvs", // Not in the spec
         "dashes": true
@@ -1095,7 +1095,7 @@
             "min": 1,
             "max": 127
         },
-        "regex": "^(?=.{1,127}$)[a-zA-Z0-9\\-]+$",
+        "regex": "^(?=.{1,127}$)[a-zA-Z0-9-]+$",
         "scope": "parent",
         "slug": "kvc", // Not in the spec
         "dashes": true
@@ -1106,7 +1106,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "lb", // Not in the spec
         "dashes": true
@@ -1117,7 +1117,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
         "slug": "lbnatrl", // Not in the spec
         "dashes": true
@@ -1128,7 +1128,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
         "slug": "pip",
         "dashes": true
@@ -1139,30 +1139,8 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
-        "slug": "pippf", // Not in the spec
-        "dashes": true
-    },
-    {
-        "name": "public_ip_prefix",
-        "length": {
-            "min": 1,
-            "max": 80
-        },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
-        "scope": "resourceGroup",
-        "slug": "pippf", // Not in the spec
-        "dashes": true
-    },
-    {
-        "name": "public_ip_prefix",
-        "length": {
-            "min": 1,
-            "max": 80
-        },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
-        "scope": "resourceGroup",
         "slug": "pippf", // Not in the spec
         "dashes": true
     },
@@ -1172,7 +1150,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
         "slug": "rt", // Not in the spec
         "dashes": true
@@ -1183,7 +1161,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "route",
         "dashes": true
@@ -1194,7 +1172,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
         "slug": "snet",
         "dashes": true
@@ -1205,7 +1183,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\.]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$",
         "scope": "global",
         "slug": "traf",
         "dashes": true
@@ -1216,7 +1194,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
         "slug": "vwan",
         "dashes": true
@@ -1227,7 +1205,7 @@
             "min": 2,
             "max": 64
         },
-        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "vnet",
         "dashes": true
@@ -1238,7 +1216,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "vgw",
         "dashes": true
@@ -1249,7 +1227,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
         "slug": "vpeer", // Not in the spec
         "dashes": true
@@ -1260,7 +1238,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "nic",
         "dashes": true
@@ -1271,7 +1249,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "fw",
         "dashes": true
@@ -1282,7 +1260,7 @@
             "min": 1,
             "max": 50
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "evh",
         "dashes": true
@@ -1293,7 +1271,7 @@
             "min": 1,
             "max": 50
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
         "slug": "ehn", // Not in the spec
         "dashes": true
@@ -1304,7 +1282,7 @@
             "min": 1,
             "max": 50
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "ehar", // Not in the spec
         "dashes": true
@@ -1315,7 +1293,7 @@
             "min": 1,
             "max": 50
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "ehnar", // Not in the spec
         "dashes": true
@@ -1326,7 +1304,7 @@
             "min": 1,
             "max": 50
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "ehdr", // Not in the spec
         "dashes": true
@@ -1337,7 +1315,7 @@
             "min": 1,
             "max": 50
         },
-        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "ehcg", // Not in the spec
         "dashes": true
@@ -1348,7 +1326,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "resourceGroup",
         "slug": "asa",
         "dashes": true
@@ -1359,7 +1337,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asafunc",
         "dashes": true
@@ -1370,7 +1348,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asaoblob",
         "dashes": true
@@ -1381,7 +1359,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asaomssql",
         "dashes": true
@@ -1392,7 +1370,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asaoeh",
         "dashes": true
@@ -1403,7 +1381,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asaosbq",
         "dashes": true
@@ -1414,7 +1392,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asaosbt",
         "dashes": true
@@ -1425,7 +1403,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asarblob",
         "dashes": true
@@ -1436,7 +1414,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asaiblob",
         "dashes": true
@@ -1447,7 +1425,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asaieh",
         "dashes": true
@@ -1458,7 +1436,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-zA-Z0-9\\-_]+$",
+        "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
         "slug": "asaiiot",
         "dashes": true
@@ -1469,7 +1447,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\.]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9.]+[a-zA-Z0-9]$",
         "scope": "resourceGroup",
         "slug": "sig",
         "dashes": false
@@ -1480,7 +1458,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "si",
         "dashes": true
@@ -1491,7 +1469,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
         "slug": "snap",
         "dashes": true
@@ -1513,7 +1491,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+$",
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+$",
         "scope": "parent",
         "slug": "stct",
         "dashes": true
@@ -1524,7 +1502,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "parent",
         "slug": "stdl",
         "dashes": true
@@ -1535,7 +1513,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "parent",
         "slug": "stq",
         "dashes": true
@@ -1546,7 +1524,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "parent",
         "slug": "stt",
         "dashes": true
@@ -1557,7 +1535,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "parent",
         "slug": "sts",
         "dashes": true
@@ -1568,7 +1546,7 @@
             "min": 3,
             "max": 63
         },
-        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "parent",
         "slug": "sts",
         "dashes": true
@@ -1579,7 +1557,7 @@
             "min": 1,
             "max": 260
         },
-        "regex": "^(?=.{1,260}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "regex": "^(?=.{1,260}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "resourceGroup",
         "slug": "mlw",
         "dashes": true
@@ -1590,7 +1568,7 @@
             "min": 1,
             "max": 1024
         },
-        "regex": "^(?=.{1,1024}$)[^\\s\/$#&]+$",
+        "regex": "^(?=.{1,1024}$)[^\\\\s\\\\/$#&]+$",
         "scope": "parent",
         "slug": "blob",
         "dashes": true
@@ -1601,7 +1579,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
         "slug": "snap",
         "dashes": true
@@ -1612,7 +1590,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "lgw",
         "dashes": true
@@ -1623,7 +1601,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "agw",
         "dashes": true
@@ -1634,7 +1612,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "ergw", // Not in the spec
         "dashes": true
@@ -1645,7 +1623,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "erc", // Not in the spec
         "dashes": true
@@ -1656,9 +1634,9 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
-        "slug": "erc", // Not in the spec
+        "slug": "vpngw", // Not in the spec
         "dashes": true
     },
     {
@@ -1667,7 +1645,7 @@
             "min": 1,
             "max": 64
         },
-        "regex": "^(?=.{1,64}$)[a-zA-Z0-9\\-\\._\\(\\)]+$",
+        "regex": "^(?=.{1,64}$)[a-zA-Z0-9-._\\\\(\\\\)]+$",
         "scope": "resourceGroup",
         "slug": "deploy", // Not in the spec
         "dashes": true
@@ -1678,9 +1656,9 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "global",
-        "slug": "deploy",
+        "slug": "sql",
         "dashes": true
     },
     {
@@ -1689,9 +1667,9 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "global",
-        "slug": "deploy",
+        "slug": "sql",
         "dashes": true
     },
     {
@@ -1700,7 +1678,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
         "slug": "sqldb", // Not in the specs
         "dashes": true
@@ -1711,7 +1689,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
         "slug": "sqlep", // Not in the specs
         "dashes": true
@@ -1722,7 +1700,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[^<>*%:.?\\+\/]+[^<>*%:.?\\+\/ ]$",
+        "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
         "slug": "sqlep", // Not in the specs
         "dashes": true
@@ -1733,7 +1711,7 @@
             "min": 1,
             "max": 63
         },
-        "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "global",
         "slug": "sqlfg", // Not in the specs
         "dashes": true
@@ -1744,7 +1722,7 @@
             "min": 1,
             "max": 128
         },
-        "regex": "^(?=.{1,128}$)[^<>*%:?\\+\/]+[^<>*%:.?\\+\/]$",
+        "regex": "^(?=.{1,128}$)[^<>*%:?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/]$",
         "scope": "parent",
         "slug": "sqlfw", // Not in the specs
         "dashes": true
@@ -1755,7 +1733,7 @@
             "min": 4,
             "max": 63
         },
-        "regex": "^(?=.{4,63}$)[a-zA-Z0-9][a-zA-Z0-9\\-]+[a-zA-Z0-9]$",
+        "regex": "^(?=.{4,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "parent",
         "slug": "log", // Not in the specs
         "dashes": true
@@ -1766,7 +1744,7 @@
             "min": 4,
             "max": 23
         },
-        "regex": "^(?=.{4,23}$)[a-z][a-z0-9\\-]+[a-z0-9]$",
+        "regex": "^(?=.{4,23}$)[a-z][a-z0-9-]+[a-z0-9]$",
         "scope": "region",
         "slug": "sf", // Not in the specs
         "dashes": true
@@ -1777,7 +1755,7 @@
             "min": 1,
             "max": 98
         },
-        "regex": "^(?=.{1,98}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+$",
+        "regex": "^(?=.{1,98}$)[a-zA-Z0-9][a-zA-Z0-9-._]+$",
         "scope": "resourceGroup",
         "slug": "map", // Not in the specs
         "dashes": true
@@ -1788,7 +1766,7 @@
             "min": 1,
             "max": 80
         },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$",
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
         "slug": "nw", // Not in the spec
         "dashes": true

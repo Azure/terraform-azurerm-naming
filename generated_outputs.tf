@@ -11,7 +11,7 @@ output "analysis_services_server" {
     min_length  = 3
     max_length  = 63
     scope       = "resourceGroup"
-    regex       = "^(?=.{3,63}$)[a-z][a-z0-9]+$"
+    regex       = "/^(?=.{3,63}$)[a-z][a-z0-9]+$/"
   }
 }
 
@@ -24,7 +24,7 @@ output "api_managment_service" {
     min_length  = 1
     max_length  = 50
     scope       = "global"
-    regex       = "^(?=.{1,50}$)[a-z][a-zA-Z0-9]+$"
+    regex       = "/^(?=.{1,50}$)[a-z][a-zA-Z0-9]+$/"
   }
 }
 
@@ -37,7 +37,7 @@ output "app_configuration" {
     min_length  = 5
     max_length  = 50
     scope       = "resourceGroup"
-    regex       = "^(?=.{5,50}$)[a-zA-Z0-9_\-]+$"
+    regex       = "/^(?=.{5,50}$)[a-zA-Z0-9_-]+$/"
   }
 }
 
@@ -50,7 +50,7 @@ output "role_assignment" {
     min_length  = 1
     max_length  = 64
     scope       = "assignment"
-    regex       = "^(?=.{1,64}$)[^%]+[^ %\.]$"
+    regex       = "/^(?=.{1,64}$)[^%]+[^ %.]$/"
   }
 }
 
@@ -63,7 +63,7 @@ output "role_definition" {
     min_length  = 1
     max_length  = 64
     scope       = "definition"
-    regex       = "^(?=.{1,64}$)[^%]+[^ %\.]$"
+    regex       = "/^(?=.{1,64}$)[^%]+[^ %.]$/"
   }
 }
 
@@ -76,7 +76,7 @@ output "automation_account" {
     min_length  = 6
     max_length  = 50
     scope       = "resourceGroup"
-    regex       = "^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -89,7 +89,7 @@ output "automation_certificate" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[^<>*%:.?\+/]+[^<>*%:.?\+/ ]$"
+    regex       = "/^(?=.{1,128}$)[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$/"
   }
 }
 
@@ -102,7 +102,7 @@ output "automation_credential" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[^<>*%:.?\+/]+[^<>*%:.?\+/ ]$"
+    regex       = "/^(?=.{1,128}$)[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$/"
   }
 }
 
@@ -115,7 +115,7 @@ output "automation_runbook" {
     min_length  = 1
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z][a-zA-Z0-9\-]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z][a-zA-Z0-9-]+$/"
   }
 }
 
@@ -128,7 +128,7 @@ output "automation_schedule" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[^<>*%:.?\+/]+[^<>*%:.?\+/ ]$"
+    regex       = "/^(?=.{1,128}$)[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$/"
   }
 }
 
@@ -141,7 +141,7 @@ output "automation_variable" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[^<>*%:.?\+/]+[^<>*%:.?\+/ ]$"
+    regex       = "/^(?=.{1,128}$)[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$/"
   }
 }
 
@@ -154,7 +154,7 @@ output "batch_account" {
     min_length  = 3
     max_length  = 24
     scope       = "region"
-    regex       = "^(?=.{3,24}$)[a-z0-9]+$"
+    regex       = "/^(?=.{3,24}$)[a-z0-9]+$/"
   }
 }
 
@@ -167,7 +167,7 @@ output "batch_application" {
     min_length  = 1
     max_length  = 64
     scope       = "parent"
-    regex       = "^(?=.{1,64}$)[a-zA-Z0-9_\-]+$"
+    regex       = "/^(?=.{1,64}$)[a-zA-Z0-9_-]+$/"
   }
 }
 
@@ -180,7 +180,7 @@ output "batch_certificate" {
     min_length  = 5
     max_length  = 45
     scope       = "parent"
-    regex       = "^(?=.{5,45}$)[a-zA-Z0-9_\-]+$"
+    regex       = "/^(?=.{5,45}$)[a-zA-Z0-9_-]+$/"
   }
 }
 
@@ -193,7 +193,7 @@ output "batch_pool" {
     min_length  = 3
     max_length  = 24
     scope       = "parent"
-    regex       = "^(?=.{1,64}$)[a-zA-Z0-9_\-]+$"
+    regex       = "/^(?=.{1,64}$)[a-zA-Z0-9_-]+$/"
   }
 }
 
@@ -206,7 +206,7 @@ output "bot_web_app" {
     min_length  = 2
     max_length  = 64
     scope       = "global"
-    regex       = "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\-\.]+$"
+    regex       = "/^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$/"
   }
 }
 
@@ -219,7 +219,7 @@ output "bot_channel_Email" {
     min_length  = 2
     max_length  = 64
     scope       = "parent"
-    regex       = "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\-\.]+$"
+    regex       = "/^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$/"
   }
 }
 
@@ -232,7 +232,7 @@ output "bot_channel_ms_teams" {
     min_length  = 2
     max_length  = 64
     scope       = "parent"
-    regex       = "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\-\.]+$"
+    regex       = "/^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$/"
   }
 }
 
@@ -245,7 +245,7 @@ output "bot_channel_slack" {
     min_length  = 2
     max_length  = 64
     scope       = "parent"
-    regex       = "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\-\.]+$"
+    regex       = "/^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$/"
   }
 }
 
@@ -258,7 +258,7 @@ output "bot_channel_directline" {
     min_length  = 2
     max_length  = 64
     scope       = "parent"
-    regex       = "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\-\.]+$"
+    regex       = "/^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$/"
   }
 }
 
@@ -271,7 +271,7 @@ output "bot_channels_registration" {
     min_length  = 2
     max_length  = 64
     scope       = "parent"
-    regex       = "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\-\.]+$"
+    regex       = "/^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$/"
   }
 }
 
@@ -284,7 +284,7 @@ output "bot_connection" {
     min_length  = 2
     max_length  = 64
     scope       = "parent"
-    regex       = "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_\-\.]+$"
+    regex       = "/^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$/"
   }
 }
 
@@ -297,7 +297,7 @@ output "redis_cache" {
     min_length  = 1
     max_length  = 63
     scope       = "global"
-    regex       = "^(?=.{1,50}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,50}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -310,7 +310,7 @@ output "redis_firewall_rule" {
     min_length  = 1
     max_length  = 256
     scope       = "parent"
-    regex       = "^(?=.{1,256}$)[a-zA-Z0-9]+$"
+    regex       = "/^(?=.{1,256}$)[a-zA-Z0-9]+$/"
   }
 }
 
@@ -323,7 +323,7 @@ output "cdn_profile" {
     min_length  = 1
     max_length  = 260
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -336,7 +336,7 @@ output "cdn_endpoint" {
     min_length  = 1
     max_length  = 50
     scope       = "global"
-    regex       = "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -349,7 +349,7 @@ output "cognitive_account" {
     min_length  = 2
     max_length  = 64
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9\-]+$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-]+$/"
   }
 }
 
@@ -362,7 +362,7 @@ output "availability_set" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-_\.]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -375,7 +375,7 @@ output "disk_encryption_set" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9_]+$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9_]+$/"
   }
 }
 
@@ -388,7 +388,7 @@ output "image" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-_\.]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -401,7 +401,7 @@ output "linux_virtual_machine" {
     min_length  = 1
     max_length  = 64
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,64}$)[^\/"'\[\]:|<>+=;,?*@&_][^\/"'\[\]:|<>+=;,?*@&]+[^\/"'\[\]:|<>+=;,?*@&\.\-]$"
+    regex       = "/^(?=.{1,64}$)[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$/"
   }
 }
 
@@ -414,7 +414,7 @@ output "linux_virtual_machine_scale_set" {
     min_length  = 1
     max_length  = 64
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,64}$)[^\/"'\[\]:|<>+=;,?*@&_][^\/"'\[\]:|<>+=;,?*@&]+[^\/"'\[\]:|<>+=;,?*@&\.\-]$"
+    regex       = "/^(?=.{1,64}$)[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$/"
   }
 }
 
@@ -427,7 +427,7 @@ output "managed_disk" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9_]+$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9_]+$/"
   }
 }
 
@@ -440,7 +440,7 @@ output "virtual_machine" {
     min_length  = 1
     max_length  = 15
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,15}$)[^\/"'\[\]:|<>+=;,?*@&_][^\/"'\[\]:|<>+=;,?*@&]+[^\/"'\[\]:|<>+=;,?*@&\.\-]$"
+    regex       = "/^(?=.{1,15}$)[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$/"
   }
 }
 
@@ -453,7 +453,7 @@ output "virtual_machine_scale_set" {
     min_length  = 1
     max_length  = 15
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,15}$)[^\/"'\[\]:|<>+=;,?*@&_][^\/"'\[\]:|<>+=;,?*@&]+[^\/"'\[\]:|<>+=;,?*@&\.\-]$"
+    regex       = "/^(?=.{1,15}$)[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$/"
   }
 }
 
@@ -466,7 +466,7 @@ output "windows_virtual_machine" {
     min_length  = 1
     max_length  = 15
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,15}$)[^\/"'\[\]:|<>+=;,?*@&_][^\/"'\[\]:|<>+=;,?*@&]+[^\/"'\[\]:|<>+=;,?*@&\.\-]$"
+    regex       = "/^(?=.{1,15}$)[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$/"
   }
 }
 
@@ -479,7 +479,7 @@ output "windows_virtual_machine_scale_set" {
     min_length  = 1
     max_length  = 15
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,15}$)[^\/"'\[\]:|<>+=;,?*@&_][^\/"'\[\]:|<>+=;,?*@&]+[^\/"'\[\]:|<>+=;,?*@&\.\-]$"
+    regex       = "/^(?=.{1,15}$)[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$/"
   }
 }
 
@@ -492,7 +492,7 @@ output "containerGroups" {
     min_length  = 1
     max_length  = 63
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,63}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,63}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -505,7 +505,7 @@ output "container_registry" {
     min_length  = 1
     max_length  = 63
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9]+$/"
   }
 }
 
@@ -518,7 +518,7 @@ output "container_registry_webhook" {
     min_length  = 1
     max_length  = 50
     scope       = "resourceGroup"
-    regex       = "^(?=.{5,50}$)[a-zA-Z0-9]+$"
+    regex       = "/^(?=.{5,50}$)[a-zA-Z0-9]+$/"
   }
 }
 
@@ -531,7 +531,7 @@ output "kubernetes_cluster" {
     min_length  = 1
     max_length  = 63
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9\-_\.]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -544,7 +544,7 @@ output "cosmosdb_account" {
     min_length  = 1
     max_length  = 63
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,63}$)[a-z0-9][a-zA-Z0-9\-_\.]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,63}$)[a-z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -557,7 +557,7 @@ output "custom_provider" {
     min_length  = 3
     max_length  = 64
     scope       = "resourceGroup"
-    regex       = "^(?=.{3,64}$)[^&%?\/]+[^&%\.?/ ]$"
+    regex       = "/^(?=.{3,64}$)[^&%?\\/]+[^&%.?\\/ ]$/"
   }
 }
 
@@ -570,7 +570,7 @@ output "mariadb_server" {
     min_length  = 3
     max_length  = 63
     scope       = "global"
-    regex       = "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -583,7 +583,7 @@ output "mariadb_firewall_rule" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,128}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -596,7 +596,7 @@ output "mariadb_database" {
     min_length  = 1
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -609,7 +609,7 @@ output "mariadb_virtual_network_rule" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,128}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -622,7 +622,7 @@ output "mysql_server" {
     min_length  = 3
     max_length  = 63
     scope       = "global"
-    regex       = "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -635,7 +635,7 @@ output "mysql_firewall_rule" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,128}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -648,7 +648,7 @@ output "mysql_database" {
     min_length  = 1
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -661,7 +661,7 @@ output "mysql_virtual_network_rule" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,128}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -674,7 +674,7 @@ output "postgresql_server" {
     min_length  = 3
     max_length  = 63
     scope       = "global"
-    regex       = "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -687,7 +687,7 @@ output "postgresql_firewall_rule" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,128}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -700,7 +700,7 @@ output "postgresql_database" {
     min_length  = 1
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -713,7 +713,7 @@ output "postgresql_virtual_network_rule" {
     min_length  = 1
     max_length  = 128
     scope       = "parent"
-    regex       = "^(?=.{1,128}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,128}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -726,7 +726,7 @@ output "database_migration_project" {
     min_length  = 2
     max_length  = 57
     scope       = "parent"
-    regex       = "^(?=.{2,57}$)[a-zA-Z0-9][a-zA-Z0-9\-_\.]+$"
+    regex       = "/^(?=.{2,57}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$/"
   }
 }
 
@@ -739,7 +739,7 @@ output "database_migration_service" {
     min_length  = 2
     max_length  = 62
     scope       = "resourceGroup"
-    regex       = "^(?=.{2,62}$)[a-zA-Z0-9][a-zA-Z0-9\-_\.]+$"
+    regex       = "/^(?=.{2,62}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$/"
   }
 }
 
@@ -752,7 +752,7 @@ output "databricks_workspace" {
     min_length  = 3
     max_length  = 30
     scope       = "resourceGroup"
-    regex       = "^(?=.{3,30}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{3,30}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -765,7 +765,7 @@ output "kusto_cluster" {
     min_length  = 4
     max_length  = 22
     scope       = "global"
-    regex       = "^(?=.{4,22}$)[a-z][a-z0-9]+$"
+    regex       = "/^(?=.{4,22}$)[a-z][a-z0-9]+$/"
   }
 }
 
@@ -778,7 +778,7 @@ output "kusto_database" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9\- \.]+$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9- .]+$/"
   }
 }
 
@@ -791,7 +791,7 @@ output "kusto_eventhub_data_connection" {
     min_length  = 1
     max_length  = 40
     scope       = "parent"
-    regex       = "^(?=.{1,40}$)[a-zA-Z0-9\- \.]+$"
+    regex       = "/^(?=.{1,40}$)[a-zA-Z0-9- .]+$/"
   }
 }
 
@@ -804,7 +804,7 @@ output "data_factory" {
     min_length  = 3
     max_length  = 63
     scope       = "global"
-    regex       = "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -817,7 +817,7 @@ output "data_factory_dataset_mysql" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -830,7 +830,7 @@ output "data_factory_dataset_postgresql" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -843,7 +843,7 @@ output "data_factory_dataset_sql_server_table" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -856,7 +856,7 @@ output "data_factory_integration_runtime_managed" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -869,7 +869,7 @@ output "data_factory_pipeline" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -882,7 +882,7 @@ output "data_factory_linked_service_data_lake_storage_gen2" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+$/"
   }
 }
 
@@ -895,7 +895,7 @@ output "data_factory_linked_service_key_vault" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+$/"
   }
 }
 
@@ -908,7 +908,7 @@ output "data_factory_linked_service_mysql" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+$/"
   }
 }
 
@@ -921,7 +921,7 @@ output "data_factory_linked_service_postgresql" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+$/"
   }
 }
 
@@ -934,7 +934,7 @@ output "data_factory_linked_service_sql_server" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+$/"
   }
 }
 
@@ -947,7 +947,7 @@ output "data_factory_trigger_schedule" {
     min_length  = 1
     max_length  = 260
     scope       = "parent"
-    regex       = "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\+/]+$"
+    regex       = "/^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\+\\/]+$/"
   }
 }
 
@@ -960,7 +960,7 @@ output "data_lake_analytics_account" {
     min_length  = 3
     max_length  = 24
     scope       = "global"
-    regex       = "^(?=.{3,24}$)[a-z0-9]+$"
+    regex       = "/^(?=.{3,24}$)[a-z0-9]+$/"
   }
 }
 
@@ -973,7 +973,7 @@ output "data_lake_analytics_firewall_rule" {
     min_length  = 3
     max_length  = 50
     scope       = "parent"
-    regex       = "^(?=.{3,50}$)[a-z0-9\-_]+$"
+    regex       = "/^(?=.{3,50}$)[a-z0-9-_]+$/"
   }
 }
 
@@ -986,7 +986,7 @@ output "data_lake_store" {
     min_length  = 3
     max_length  = 24
     scope       = "parent"
-    regex       = "^(?=.{3,24}$)[a-z0-9]+$"
+    regex       = "/^(?=.{3,24}$)[a-z0-9]+$/"
   }
 }
 
@@ -999,7 +999,7 @@ output "data_lake_store_firewall_rule" {
     min_length  = 3
     max_length  = 50
     scope       = "parent"
-    regex       = "^(?=.{3,50}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{3,50}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1012,7 +1012,7 @@ output "dev_test_lab" {
     min_length  = 1
     max_length  = 50
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,50}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1025,7 +1025,7 @@ output "dev_test_linux_virtual_machine" {
     min_length  = 1
     max_length  = 64
     scope       = "parent"
-    regex       = "^(?=.{1,50}$)[a-zA-Z0-9\-]+$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z0-9-]+$/"
   }
 }
 
@@ -1038,7 +1038,7 @@ output "dev_test_windows_virtual_machine" {
     min_length  = 1
     max_length  = 15
     scope       = "parent"
-    regex       = "^(?=.{1,15}$)[a-zA-Z0-9\-]+$"
+    regex       = "/^(?=.{1,15}$)[a-zA-Z0-9-]+$/"
   }
 }
 
@@ -1051,7 +1051,7 @@ output "frontdoor" {
     min_length  = 5
     max_length  = 64
     scope       = "global"
-    regex       = "^(?=.{5,64}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{5,64}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1064,7 +1064,7 @@ output "frontdoor_firewall_policy" {
     min_length  = 1
     max_length  = 80
     scope       = "global"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1077,7 +1077,7 @@ output "hdinsight_hadoop_cluster" {
     min_length  = 3
     max_length  = 59
     scope       = "global"
-    regex       = "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1090,7 +1090,7 @@ output "hdinsight_hbase_cluster" {
     min_length  = 3
     max_length  = 59
     scope       = "global"
-    regex       = "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1103,7 +1103,7 @@ output "hdinsight_kafka_cluster" {
     min_length  = 3
     max_length  = 59
     scope       = "global"
-    regex       = "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1116,7 +1116,7 @@ output "hdinsight_interactive_query_cluster" {
     min_length  = 3
     max_length  = 59
     scope       = "global"
-    regex       = "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1129,7 +1129,7 @@ output "hdinsight_ml_services_cluster" {
     min_length  = 3
     max_length  = 59
     scope       = "global"
-    regex       = "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1142,7 +1142,7 @@ output "hdinsight_rserver_cluster" {
     min_length  = 3
     max_length  = 59
     scope       = "global"
-    regex       = "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1155,7 +1155,7 @@ output "hdinsight_spark_cluster" {
     min_length  = 3
     max_length  = 59
     scope       = "global"
-    regex       = "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1168,7 +1168,7 @@ output "hdinsight_storm_cluster" {
     min_length  = 3
     max_length  = 59
     scope       = "global"
-    regex       = "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1181,7 +1181,7 @@ output "iotcentral_application" {
     min_length  = 2
     max_length  = 63
     scope       = "global"
-    regex       = "^(?=.{2,63}$)[a-z0-9][a-z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{2,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -1194,7 +1194,7 @@ output "iothub" {
     min_length  = 3
     max_length  = 50
     scope       = "global"
-    regex       = "^(?=.{3,50}$)[a-zA-Z0-9][a-zA-Z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{3,50}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -1207,7 +1207,7 @@ output "iothub_consumer_group" {
     min_length  = 1
     max_length  = 50
     scope       = "parent"
-    regex       = "^(?=.{1,50}$)[a-zA-Z0-9\-\._]+$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z0-9-._]+$/"
   }
 }
 
@@ -1220,7 +1220,7 @@ output "iothub_dps" {
     min_length  = 3
     max_length  = 64
     scope       = "resoureceGroup"
-    regex       = "^(?=.{3,64}$)[a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,64}$)[a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1233,7 +1233,7 @@ output "iothub_dps_certificate" {
     min_length  = 1
     max_length  = 64
     scope       = "parent"
-    regex       = "^(?=.{3,64}$)[a-zA-Z0-9\-\._]+$"
+    regex       = "/^(?=.{3,64}$)[a-zA-Z0-9-._]+$/"
   }
 }
 
@@ -1246,7 +1246,7 @@ output "key_vault" {
     min_length  = 3
     max_length  = 24
     scope       = "global"
-    regex       = "^(?=.{3,24}$)(?!.*--)[a-zA-Z][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{3,24}$)(?!.*--)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1259,7 +1259,7 @@ output "key_vault_key" {
     min_length  = 1
     max_length  = 127
     scope       = "parent"
-    regex       = "^(?=.{1,127}$)[a-zA-Z0-9\-]+$"
+    regex       = "/^(?=.{1,127}$)[a-zA-Z0-9-]+$/"
   }
 }
 
@@ -1272,7 +1272,7 @@ output "key_vault_secret" {
     min_length  = 1
     max_length  = 127
     scope       = "parent"
-    regex       = "^(?=.{1,127}$)[a-zA-Z0-9\-]+$"
+    regex       = "/^(?=.{1,127}$)[a-zA-Z0-9-]+$/"
   }
 }
 
@@ -1285,7 +1285,7 @@ output "key_vault_certificate" {
     min_length  = 1
     max_length  = 127
     scope       = "parent"
-    regex       = "^(?=.{1,127}$)[a-zA-Z0-9\-]+$"
+    regex       = "/^(?=.{1,127}$)[a-zA-Z0-9-]+$/"
   }
 }
 
@@ -1298,7 +1298,7 @@ output "lb" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1311,7 +1311,7 @@ output "lb_nat_rule" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1324,7 +1324,7 @@ output "public_ip" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1337,33 +1337,7 @@ output "public_ip_prefix" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
-  }
-}
-
-output "public_ip_prefix" {
-  value = {
-    name        = substr(join("-", compact([local.prefix, local.az.public_ip_prefix, local.suffix])), 0, 80)
-    name_unique = substr(join("-", compact([local.prefix, local.az.public_ip_prefix, local.suffix_unique])), 0, 80)
-    dashes      = true
-    slug        = local.az.public_ip_prefix
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
-  }
-}
-
-output "public_ip_prefix" {
-  value = {
-    name        = substr(join("-", compact([local.prefix, local.az.public_ip_prefix, local.suffix])), 0, 80)
-    name_unique = substr(join("-", compact([local.prefix, local.az.public_ip_prefix, local.suffix_unique])), 0, 80)
-    dashes      = true
-    slug        = local.az.public_ip_prefix
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1376,7 +1350,7 @@ output "route" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1389,7 +1363,7 @@ output "route_table" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1402,7 +1376,7 @@ output "subnet" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1415,7 +1389,7 @@ output "traffic_manager_profile" {
     min_length  = 1
     max_length  = 63
     scope       = "global"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9\-\.]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1428,7 +1402,7 @@ output "virtual_wan" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1441,7 +1415,7 @@ output "virtual_network" {
     min_length  = 2
     max_length  = 64
     scope       = "resourceGroup"
-    regex       = "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1454,7 +1428,7 @@ output "virtual_network_gateway" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1467,7 +1441,7 @@ output "virtual_network_peering" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1480,7 +1454,7 @@ output "network_interface" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1493,7 +1467,7 @@ output "firewall" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1506,7 +1480,7 @@ output "eventhub" {
     min_length  = 1
     max_length  = 50
     scope       = "parent"
-    regex       = "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1519,7 +1493,7 @@ output "eventhub_namespace" {
     min_length  = 1
     max_length  = 50
     scope       = "global"
-    regex       = "^(?=.{1,50}$)[a-zA-Z][a-zA-Z0-9\-]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1532,7 +1506,7 @@ output "eventhub_authorization_rule" {
     min_length  = 1
     max_length  = 50
     scope       = "parent"
-    regex       = "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1545,7 +1519,7 @@ output "eventhub_namespace_authorization_rule" {
     min_length  = 1
     max_length  = 50
     scope       = "parent"
-    regex       = "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1558,7 +1532,7 @@ output "eventhub_namespace_disaster_recovery_config" {
     min_length  = 1
     max_length  = 50
     scope       = "parent"
-    regex       = "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1571,7 +1545,7 @@ output "eventhub_consumer_group" {
     min_length  = 1
     max_length  = 50
     scope       = "parent"
-    regex       = "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1584,7 +1558,7 @@ output "stream_analytics_job" {
     min_length  = 3
     max_length  = 63
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1597,7 +1571,7 @@ output "stream_analytics_function_javascript_udf" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1610,7 +1584,7 @@ output "stream_analytics_output_blob" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1623,7 +1597,7 @@ output "stream_analytics_output_mssql" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1636,7 +1610,7 @@ output "stream_analytics_output_eventhub" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1649,7 +1623,7 @@ output "stream_analytics_output_servicebus_queue" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1662,7 +1636,7 @@ output "stream_analytics_output_servicebus_topic" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1675,7 +1649,7 @@ output "stream_analytics_reference_input_blob" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1688,7 +1662,7 @@ output "stream_analytics_stream_input_blob" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1701,7 +1675,7 @@ output "stream_analytics_stream_input_eventhub" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1714,7 +1688,7 @@ output "stream_analytics_stream_input_iothub" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{1,63}$)[a-zA-Z0-9\-_]+$"
+    regex       = "/^(?=.{1,63}$)[a-zA-Z0-9-_]+$/"
   }
 }
 
@@ -1727,7 +1701,7 @@ output "shared_image_gallery" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\.]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9.]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1740,7 +1714,7 @@ output "shared_image" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$/"
   }
 }
 
@@ -1753,7 +1727,7 @@ output "snapshots" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1766,7 +1740,7 @@ output "storage_account" {
     min_length  = 3
     max_length  = 24
     scope       = "global"
-    regex       = "^(?=.{3,24}$)[a-z0-9]+$"
+    regex       = "/^(?=.{3,24}$)[a-z0-9]+$/"
   }
 }
 
@@ -1779,7 +1753,7 @@ output "storage_container" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\-]+$"
+    regex       = "/^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+$/"
   }
 }
 
@@ -1792,7 +1766,7 @@ output "storage_data_lake_gen2_filesystem" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -1805,7 +1779,7 @@ output "storage_queue" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -1818,7 +1792,7 @@ output "storage_table" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -1831,7 +1805,7 @@ output "storage_share" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -1844,7 +1818,7 @@ output "storage_share_directory" {
     min_length  = 3
     max_length  = 63
     scope       = "parent"
-    regex       = "^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9\-]+[a-z0-9]$"
+    regex       = "/^(?=.{3,63}$)(?!.*--)[a-z0-9][a-z0-9-]+[a-z0-9]$/"
   }
 }
 
@@ -1857,7 +1831,7 @@ output "machine_learning_workspace" {
     min_length  = 1
     max_length  = 260
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,260}$)[^<>*%:.?\+/]+[^<>*%:.?\+/ ]$"
+    regex       = "/^(?=.{1,260}$)[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$/"
   }
 }
 
@@ -1870,7 +1844,7 @@ output "storage_blob" {
     min_length  = 1
     max_length  = 1024
     scope       = "parent"
-    regex       = "^(?=.{1,1024}$)[^\s/$#&]+$"
+    regex       = "/^(?=.{1,1024}$)[^\\s\\/$#&]+$/"
   }
 }
 
@@ -1883,7 +1857,7 @@ output "bastion_host" {
     min_length  = 1
     max_length  = 80
     scope       = "parent"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1896,7 +1870,7 @@ output "local_network_gateway" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1909,7 +1883,7 @@ output "application_gateway" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1922,7 +1896,7 @@ output "express_route_gateway" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1935,7 +1909,7 @@ output "express_route_circuit" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1948,7 +1922,7 @@ output "point_to_site_vpn_gateway" {
     min_length  = 1
     max_length  = 80
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\-\._]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
   }
 }
 
@@ -1961,10 +1935,151 @@ output "template_deployment" {
     min_length  = 1
     max_length  = 64
     scope       = "resourceGroup"
-    regex       = "^(?=.{1,64}$)[a-zA-Z0-9\-\._\(\)]+[a-zA-Z0-9_]$"
+    regex       = "/^(?=.{1,64}$)[a-zA-Z0-9-._\\(\\)]+$/"
   }
 }
 
-output "" {
+output "sql_server" {
   value = {
-    name        = substr(join("", compact([local.prefix_safe, local.az., local.suffix_safe])), 0,
+    name        = substr(join("-", compact([local.prefix, local.az.sql_server, local.suffix])), 0, 63)
+    name_unique = substr(join("-", compact([local.prefix, local.az.sql_server, local.suffix_unique])), 0, 63)
+    dashes      = true
+    slug        = local.az.sql_server
+    min_length  = 1
+    max_length  = 63
+    scope       = "global"
+    regex       = "/^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$/"
+  }
+}
+
+output "mssql_server" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.mssql_server, local.suffix])), 0, 63)
+    name_unique = substr(join("-", compact([local.prefix, local.az.mssql_server, local.suffix_unique])), 0, 63)
+    dashes      = true
+    slug        = local.az.mssql_server
+    min_length  = 1
+    max_length  = 63
+    scope       = "global"
+    regex       = "/^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$/"
+  }
+}
+
+output "mssql_database" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.mssql_database, local.suffix])), 0, 128)
+    name_unique = substr(join("-", compact([local.prefix, local.az.mssql_database, local.suffix_unique])), 0, 128)
+    dashes      = true
+    slug        = local.az.mssql_database
+    min_length  = 1
+    max_length  = 128
+    scope       = "parent"
+    regex       = "/^(?=.{1,128}$)[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$/"
+  }
+}
+
+output "sql_elasticpool" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.sql_elasticpool, local.suffix])), 0, 128)
+    name_unique = substr(join("-", compact([local.prefix, local.az.sql_elasticpool, local.suffix_unique])), 0, 128)
+    dashes      = true
+    slug        = local.az.sql_elasticpool
+    min_length  = 1
+    max_length  = 128
+    scope       = "parent"
+    regex       = "/^(?=.{1,128}$)[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$/"
+  }
+}
+
+output "mssql_elasticpool" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.mssql_elasticpool, local.suffix])), 0, 128)
+    name_unique = substr(join("-", compact([local.prefix, local.az.mssql_elasticpool, local.suffix_unique])), 0, 128)
+    dashes      = true
+    slug        = local.az.mssql_elasticpool
+    min_length  = 1
+    max_length  = 128
+    scope       = "parent"
+    regex       = "/^(?=.{1,128}$)[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$/"
+  }
+}
+
+output "sql_failover_group" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.sql_failover_group, local.suffix])), 0, 63)
+    name_unique = substr(join("-", compact([local.prefix, local.az.sql_failover_group, local.suffix_unique])), 0, 63)
+    dashes      = true
+    slug        = local.az.sql_failover_group
+    min_length  = 1
+    max_length  = 63
+    scope       = "global"
+    regex       = "/^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$/"
+  }
+}
+
+output "sql_firewall_rule" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.sql_firewall_rule, local.suffix])), 0, 128)
+    name_unique = substr(join("-", compact([local.prefix, local.az.sql_firewall_rule, local.suffix_unique])), 0, 128)
+    dashes      = true
+    slug        = local.az.sql_firewall_rule
+    min_length  = 1
+    max_length  = 128
+    scope       = "parent"
+    regex       = "/^(?=.{1,128}$)[^<>*%:?\\+\\/]+[^<>*%:.?\\+\\/]$/"
+  }
+}
+
+output "log_analytics_workspace" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.log_analytics_workspace, local.suffix])), 0, 63)
+    name_unique = substr(join("-", compact([local.prefix, local.az.log_analytics_workspace, local.suffix_unique])), 0, 63)
+    dashes      = true
+    slug        = local.az.log_analytics_workspace
+    min_length  = 4
+    max_length  = 63
+    scope       = "parent"
+    regex       = "/^(?=.{4,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$/"
+  }
+}
+
+output "service_fabric_cluster" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.service_fabric_cluster, local.suffix])), 0, 23)
+    name_unique = substr(join("-", compact([local.prefix, local.az.service_fabric_cluster, local.suffix_unique])), 0, 23)
+    dashes      = true
+    slug        = local.az.service_fabric_cluster
+    min_length  = 4
+    max_length  = 23
+    scope       = "region"
+    regex       = "/^(?=.{4,23}$)[a-z][a-z0-9-]+[a-z0-9]$/"
+  }
+}
+
+output "maps_account" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.maps_account, local.suffix])), 0, 98)
+    name_unique = substr(join("-", compact([local.prefix, local.az.maps_account, local.suffix_unique])), 0, 98)
+    dashes      = true
+    slug        = local.az.maps_account
+    min_length  = 1
+    max_length  = 98
+    scope       = "resourceGroup"
+    regex       = "/^(?=.{1,98}$)[a-zA-Z0-9][a-zA-Z0-9-._]+$/"
+  }
+}
+
+output "network_watcher" {
+  value = {
+    name        = substr(join("-", compact([local.prefix, local.az.network_watcher, local.suffix])), 0, 80)
+    name_unique = substr(join("-", compact([local.prefix, local.az.network_watcher, local.suffix_unique])), 0, 80)
+    dashes      = true
+    slug        = local.az.network_watcher
+    min_length  = 1
+    max_length  = 80
+    scope       = "resourceGroup"
+    regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
+  }
+}
+
+

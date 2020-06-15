@@ -8,7 +8,7 @@ output "{{ .Name }}" {
     min_length  = {{ .Length.Min }}
     max_length  = {{ .Length.Max }}
     scope       = "{{ .Scope }}"
-    regex       = "{{ .Regex }}"
+    regex       = "/{{ .Regex }}/"
   }
 }
 {{ end }}
