@@ -35,11 +35,11 @@ There are other advances usages that will be explained in the [Advanced usages](
 
 ## Modifying resources
 
-The resources are automatically generated usign `go` to change the generation please change the file on the `templates` folder. To add a new resource, correct one implemented or implement one of the missing ones add the resource definition to the `resourceDefinition.jsonc` file it will be automatically generated.
+The resources are automatically generated using `go` to change the generation please change the file on the `templates` folder. To add a new resource, include their definition at `resourceDefinition.jsonc` file it will be automatically generated.
 
 # Current implementation
 
-You can find a list bellow of all the resources that are current implemented. To get a list of the ones that are missing implementation you can check at [Missing resources](docs/missing_ressources.md) the resources that have no documentation about their limitation on naming currently on Microsoft docs are on the [Not defined](docs/not_defined.md) list.
+You can find a list bellow of all the resources that are currently implemented. To get a list of the ones that are missing implementation you can check at [Missing resources](docs/missing_ressources.md) the resources that have no documentation about their limitation on naming currently on Microsoft docs are on the [Not defined](docs/not_defined.md) list.
 
 
 

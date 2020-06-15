@@ -31,7 +31,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	var fileNames = make([]string, 0)
+	var fileNames = make([]string, len(files))
 	for _, file := range files {
 		fileNames = append(fileNames, "templates/"+file.Name())
 	}
