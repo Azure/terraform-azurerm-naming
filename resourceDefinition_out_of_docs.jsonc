@@ -9,5 +9,16 @@
         "scope": "resourceGroup",
         "slug": "pe", // Not in the specs
         "dashes": true
+    },
+    {
+        "name": "private_service_connection",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "psc", // Not in the specs
+        "dashes": true
     }
 ]
