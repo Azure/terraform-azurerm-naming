@@ -1651,5 +1651,15 @@ locals {
       scope       = "resourceGroup"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
     }
+    private_service_connection = {
+      name        = substr(join("-", compact([local.prefix, "psc", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "psc", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "psc"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
+    }
   }
 }

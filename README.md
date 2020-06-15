@@ -185,6 +185,7 @@ You can find a list bellow of all the resources that are currently implemented. 
 | postgresql\_server | n/a |
 | postgresql\_virtual\_network\_rule | n/a |
 | private\_endpoint | n/a |
+| private\_service\_connection | n/a |
 | public\_ip | n/a |
 | public\_ip\_prefix | n/a |
 | redis\_cache | n/a |
