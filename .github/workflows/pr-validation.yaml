@@ -1,6 +1,6 @@
 name: PR Validation
-# This workflow is triggered on pushes to the repository.
-on: [pull_request]
+
+on: [push, pull_request]
 
 jobs:
   build:
