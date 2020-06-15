@@ -40,7 +40,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sourceDefinitions, err := ioutil.ReadFile("resorceDefinition.jsonc")
+	sourceDefinitions, err := ioutil.ReadFile("resourceDefinition.jsonc")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -51,12 +51,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	mainFile, err := os.OpenFile("generated_main.tf", os.O_TRUNC|os.O_CREATE|os.O_WRONLY, 0644)
+	mainFile, err := os.OpenFile("main.tf", os.O_TRUNC|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
 	parsedTemplate.ExecuteTemplate(mainFile, "main", data)
-	outputsFile, err := os.OpenFile("generated_outputs.tf", os.O_TRUNC|os.O_CREATE|os.O_WRONLY, 0644)
+	outputsFile, err := os.OpenFile("outputs.tf", os.O_TRUNC|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}

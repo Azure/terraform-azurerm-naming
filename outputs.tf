@@ -2,884 +2,644 @@
 output "unique-seed" {
   value = coalesce(var.unique-seed, local.random_safe_generation)
 }
-
-// General
-
-output "resource_group" {
-  value = {
-    name        = substr(join("-", compact([local.prefix, local.az.resource_group, local.suffix])), 0, 90)
-    name_unique = substr(join("-", compact([local.prefix, local.az.resource_group, local.suffix_unique])), 0, 90)
-    dashes      = true
-    slug        = local.az.resource_group
-    min_length  = 1
-    max_length  = 90
-    scope       = "subscription"
-  }
-}
-
-output "policy" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.policy, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.policy, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.policy
-    min_length  = 1
-    max_length  = 64
-    scope       = "subscription"
-  }
-}
-
-output "api_management" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.api_management, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.api_management, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.api_management
-    min_length  = 1
-    max_length  = 50
-    scope       = "global"
-  }
-}
-
-
-// Network
-
-output "virtual_network" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.virtual_network, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.virtual_network, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.virtual_network
-    min_length  = 2
-    max_length  = 64
-    scope       = "resourceGroup"
-  }
-}
-
-output "subnet" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.subnet, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.subnet, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.subnet
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "network_interface" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.network_interface, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.network_interface, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.network_interface
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "public_ip" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.public_ip, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.public_ip, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.public_ip
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "load_balancer_internal" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.load_balancer_internal, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.load_balancer_internal, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.load_balancer_internal
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "load_balancer_external" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.load_balancer_external, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.load_balancer_external, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.load_balancer_external
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "network_security_group" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.network_security_group, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.network_security_group, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.network_security_group
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "application_security_group" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.application_security_group, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.application_security_group, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.application_security_group
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "local_network_gateway" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.local_network_gateway, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.local_network_gateway, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.local_network_gateway
-  }
-}
-
-output "virtual_network_gateway" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.virtual_network_gateway, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.virtual_network_gateway, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.virtual_network_gateway
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "vpn_connection" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.vpn_connection, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.vpn_connection, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.vpn_connection
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "application_gateway" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.application_gateway, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.application_gateway, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.application_gateway
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "traffic_manager_profile" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.traffic_manager_profile, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.traffic_manager_profile, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.traffic_manager_profile
-    min_length  = 1
-    max_length  = 63
-    scope       = "global"
-  }
-}
-
-output "private_endpoint" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.private_endpoint, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.private_endpoint, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.private_endpoint
-  }
-}
-
-output "private_service_connection" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.private_service_connection, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.private_service_connection, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.private_service_connection
-  }
-}
-
-output "firewall" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.firewall, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.firewall, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.firewall
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "firewall_ip_configuration" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.firewall_ip_configuration, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.firewall_ip_configuration, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.firewall_ip_configuration
-  }
-}
-
-// Compute and Web
-
-output "virtual_machine" {
-  value = {
-    name        = substr(join("", compact([local.prefix_safe, local.az.virtual_machine, local.suffix_safe])), 0, 15)
-    name_unique = substr(join("", compact([local.prefix_safe, local.az.virtual_machine, local.suffix_unique_safe])), 0, 15)
-    dashes      = false
-    slug        = local.az.virtual_machine
-    min_length  = 1
-    max_length  = 15
-    scope       = "resourceGroup"
-  }
-}
-
-output "virtual_machine_linux" {
-  value = {
-    name        = substr(join("", compact([local.prefix, local.az.virtual_machine, local.suffix])), 0, 64)
-    name_unique = substr(join("", compact([local.prefix, local.az.virtual_machine, local.suffix_unique])), 0, 64)
-    dashes      = false
-    slug        = local.az.virtual_machine
-    min_length  = 1
-    max_length  = 64
-    scope       = "resourceGroup"
-  }
-}
-
-output "virtual_machine_scale_set" {
-  value = {
-    name        = substr(join("", compact([local.prefix_safe, local.az.virtual_machine_scale_set, local.suffix_safe])), 0, 15)
-    name_unique = substr(join("", compact([local.prefix_safe, local.az.virtual_machine_scale_set, local.suffix_unique_safe])), 0, 15)
-    dashes      = false
-    slug        = local.az.virtual_machine_scale_set
-    min_length  = 1
-    max_length  = 15
-    scope       = "resourceGroup"
-  }
-}
-
-output "virtual_machine_scale_set_linux" {
-  value = {
-    name        = substr(join("", compact([local.prefix, local.az.virtual_machine_scale_set, local.suffix])), 0, 64)
-    name_unique = substr(join("", compact([local.prefix, local.az.virtual_machine_scale_set, local.suffix_unique])), 0, 64)
-    dashes      = false
-    slug        = local.az.virtual_machine_scale_set
-    min_length  = 1
-    max_length  = 64
-    scope       = "resourceGroup"
-  }
-}
-
-output "availability_set" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.availability_set, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.availability_set, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.availability_set
-    min_length  = 1
-    max_length  = 80
-    scope       = "resourceGroup"
-  }
-}
-
-output "vm_storage_account" {
-  value = {
-    name        = substr(join("", compact([local.prefix, local.az.traffic_manager_profile, local.suffix])), 0, 24)
-    name_unique = substr(join("", compact([local.prefix, local.az.traffic_manager_profile, local.suffix_unique])), 0, 24)
-    dashes      = true
-    slug        = local.az.traffic_manager_profile
-    min_length  = 3
-    max_length  = 24
-    scope       = "global"
-  }
-}
-
-output "azure_arc_connected_machine" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_arc_connected_machine, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_arc_connected_machine, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_arc_connected_machine
-  }
-}
-
-output "container_instance" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.container_instance, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.container_instance, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.container_instance
-    min_length  = 1
-    max_length  = 63
-    scope       = "resourceGroup"
-  }
-}
-
-output "aks_cluster" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.aks_cluster, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.aks_cluster, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.aks_cluster
-    min_length  = 1
-    max_length  = 63
-    scope       = "resourceGroup"
-  }
-}
-
-output "service_fabric" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.service_fabric, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.service_fabric, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.service_fabric
-    min_length  = 4
-    max_length  = 23
-    scope       = "region"
-  }
-}
-
-output "app_service_environment" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.app_service_environment, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.app_service_environment, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.app_service_environment
-  }
-}
-
-output "app_service_plan" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.app_service_plan, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.app_service_plan, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.app_service_plan
-    min_length  = 1
-    max_length  = 40
-    scope       = "resourceGroup"
-  }
-}
-
-output "web_app" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.web_app, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.web_app, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.web_app
-    min_length  = 2
-    max_length  = 60
-    scope       = "global"
-  }
-}
-
-output "function_app" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.function_app, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.function_app, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.function_app
-    min_length  = 2
-    max_length  = 60
-    scope       = "global"
-  }
-}
-
-output "cloud_service" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.cloud_service, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.cloud_service, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.cloud_service
-  }
-}
-
-output "notification_hubs" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.notification_hubs, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.notification_hubs, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.notification_hubs
-    min_length  = 1
-    max_length  = 260
-    scope       = "namespace"
-  }
-}
-
-output "notification_hubs_namespace" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.notification_hubs_namespace, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.notification_hubs_namespace, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.notification_hubs_namespace
-    min_length  = 6
-    max_length  = 50
-    scope       = "global"
-  }
-}
-
-// Databases
-
-output "sql_server" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_sql_database_server, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_sql_database_server, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_sql_database_server
-    min_length  = 1
-    max_length  = 63
-    scope       = "global"
-  }
-}
-
-output "sql_database" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_sql_database, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_sql_database, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_sql_database
-    min_length  = 1
-    max_length  = 128
-    scope       = "server"
-  }
-}
-
-output "cosmos_db" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.cosmos_db, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.cosmos_db, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.cosmos_db
-    min_length  = 3
-    max_length  = 44
-    scope       = "global"
-  }
-}
-
-output "redis_cache" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_cache_redis, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_cache_redis, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_cache_redis
-    min_length  = 1
-    max_length  = 63
-    scope       = "global"
-  }
-}
-
-output "mysql" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.mysql_database, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.mysql_database, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.mysql_database
-    min_length  = 3
-    max_length  = 63
-    scope       = "global"
-  }
-}
-
-output "postgre" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.postgre_database, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.postgre_database, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.postgre_database
-    min_length  = 3
-    max_length  = 63
-    scope       = "global"
-  }
-}
-
-output "data_warehouse" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_data_warehouse, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_data_warehouse, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_data_warehouse
-  }
-}
-
-output "synapse" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_synapse_analytics, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_synapse_analytics, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_synapse_analytics
-  }
-}
-
-output "sql_server_strech_database" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.sql_server_strech_database, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.sql_server_strech_database, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.sql_server_strech_database
-  }
-}
-
-// Storage
-
-output "storage_account" {
-  value = {
-    name        = substr(join("", compact([local.prefix_safe, local.az.storage_account, local.suffix_safe])), 0, 24)
-    name_unique = substr(join("", compact([local.prefix_safe, local.az.storage_account, local.suffix_unique_safe])), 0, 24)
-    dashes      = false
-    slug        = local.az.storage_account
-    min_length  = 3
-    max_length  = 24
-  }
-}
-
-output "storage_managed_encryption_key" {
-  value = {
-    name        = substr(join("", compact([local.prefix_safe, local.az.storage_managed_encryption_key, local.suffix_safe])), 0, 24)
-    name_unique = substr(join("", compact([local.prefix_safe, local.az.storage_managed_encryption_key, local.suffix_unique_safe])), 0, 24)
-    dashes      = true
-    slug        = local.az.storage_managed_encryption_key
-  }
-}
-
-output "storagesimple" {
-  value = {
-    name        = substr(join("", compact([local.prefix_safe, local.az.azure_storsimple, local.suffix_safe])), 0, 24)
-    name_unique = substr(join("", compact([local.prefix_safe, local.az.azure_storsimple, local.suffix_unique_safe])), 0, 24)
-    dashes      = false
-    slug        = local.az.azure_storsimple
-  }
-}
-
-// AI + Machine Learning
-
-output "cognitive_search" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_cognitive_search, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_cognitive_search, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_cognitive_search
-  }
-}
-
-output "cognitive_services" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_cognitive_services, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_cognitive_services, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_cognitive_services
-  }
-}
-
-output "machine_learning_workspace" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_machine_learning_workspace, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_machine_learning_workspace, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_machine_learning_workspace
-  }
-}
-
-// Analytics and IoT
-
 output "analysis_services_server" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_analysis_services_server, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_analysis_services_server, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_analysis_services_server
-  }
+  value = local.az.analysis_services_server
 }
 
-output "databricks_workspace" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_databricks_workspace, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_databricks_workspace, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_databricks_workspace
-  }
+output "api_managment_service" {
+  value = local.az.api_managment_service
 }
 
-output "stream_analytics" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_stream_analytics, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_stream_analytics, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_stream_analytics
-  }
+output "app_configuration" {
+  value = local.az.app_configuration
 }
 
-output "data_factory" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_data_factory, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_data_factory, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_data_factory
-  }
+output "role_assignment" {
+  value = local.az.role_assignment
 }
 
-output "data_lake_store_account" {
-  value = {
-    name        = substr(join("", compact([local.prefix_safe, local.az.data_lake_store_account, local.suffix_safe])), 0, 24)
-    name_unique = substr(join("", compact([local.prefix_safe, local.az.data_lake_store_account, local.suffix_unique_safe])), 0, 24)
-    dashes      = false
-    slug        = local.az.data_lake_store_account
-  }
-}
-
-output "data_lake_analytics_account" {
-  value = {
-    name        = substr(join("", compact([local.prefix_safe, local.az.data_lake_analytics_account, local.suffix_safe])), 0, 24)
-    name_unique = substr(join("", compact([local.prefix_safe, local.az.data_lake_analytics_account, local.suffix_unique_safe])), 0, 24)
-    dashes      = false
-    slug        = local.az.data_lake_analytics_account
-  }
-}
-
-output "data_lake_file_system" {
-  value = {
-    name        = substr(join("", compact([local.prefix_safe, local.az.data_lake_file_system, local.suffix_safe])), 0, 24)
-    name_unique = substr(join("", compact([local.prefix_safe, local.az.data_lake_file_system, local.suffix_unique_safe])), 0, 24)
-    dashes      = false
-    slug        = local.az.data_lake_file_system
-  }
-}
-
-output "event_hub" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.event_hub, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.event_hub, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.event_hub
-  }
-}
-
-output "event_hub_namespace" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.event_hub_namespace, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.event_hub_namespace, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.event_hub_namespace
-  }
-}
-
-output "event_hub_namespace_authorization_rule" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.event_hub_namespace_authorization_rule, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.event_hub_namespace_authorization_rule, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.event_hub_namespace_authorization_rule
-  }
-}
-
-output "event_hub_authorization_rule" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.event_hub_authorization_rule, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.event_hub_authorization_rule, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.event_hub_authorization_rule
-  }
-}
-
-output "hdinsights_hadoop_cluster" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.hdinsights_hadoop_cluster, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.hdinsights_hadoop_cluster, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.hdinsights_hadoop_cluster
-  }
-}
-
-output "hdinsights_hbase_cluster" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.hdinsights_hbase_cluster, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.hdinsights_hbase_cluster, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.hdinsights_hbase_cluster
-  }
-}
-
-output "hdinsights_kafka_cluster" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.hdinsights_kafka_cluster, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.hdinsights_kafka_cluster, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.hdinsights_kafka_cluster
-  }
-}
-
-output "hdinsights_spark_cluster" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.hdinsights_spark_cluster, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.hdinsights_spark_cluster, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.hdinsights_spark_cluster
-  }
-}
-
-output "hdinsights_storm_cluster" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.hdinsights_storm_cluster, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.hdinsights_storm_cluster, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.hdinsights_storm_cluster
-  }
-}
-
-output "hdinsights_ml_services_cluster" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.hdinsights_ml_services_cluster, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.hdinsights_ml_services_cluster, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.hdinsights_ml_services_cluster
-  }
-}
-
-output "iot_hub" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.iot_hub, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.iot_hub, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.iot_hub
-  }
-}
-
-// Integration
-
-output "logic_apps" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.logic_apps, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.logic_apps, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.logic_apps
-  }
-}
-
-output "service_bus" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.service_bus, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.service_bus, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.service_bus
-  }
-}
-
-output "service_bus_queue" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.service_bus_queue, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.service_bus_queue, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.service_bus_queue
-  }
-}
-
-output "service_bus_topic" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.service_bus_topic, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.service_bus_topic, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.service_bus_topic
-  }
+output "role_definition" {
+  value = local.az.role_definition
 }
 
 output "automation_account" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.automation_account, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.automation_account, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.automation_account
-  }
+  value = local.az.automation_account
 }
 
-// Managment and governance
+output "automation_certificate" {
+  value = local.az.automation_certificate
+}
 
-output "blueprint" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.blueprint, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.blueprint, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.blueprint
-  }
+output "automation_credential" {
+  value = local.az.automation_credential
+}
+
+output "automation_runbook" {
+  value = local.az.automation_runbook
+}
+
+output "automation_schedule" {
+  value = local.az.automation_schedule
+}
+
+output "automation_variable" {
+  value = local.az.automation_variable
+}
+
+output "batch_account" {
+  value = local.az.batch_account
+}
+
+output "batch_application" {
+  value = local.az.batch_application
+}
+
+output "batch_certificate" {
+  value = local.az.batch_certificate
+}
+
+output "batch_pool" {
+  value = local.az.batch_pool
+}
+
+output "bot_web_app" {
+  value = local.az.bot_web_app
+}
+
+output "bot_channel_Email" {
+  value = local.az.bot_channel_Email
+}
+
+output "bot_channel_ms_teams" {
+  value = local.az.bot_channel_ms_teams
+}
+
+output "bot_channel_slack" {
+  value = local.az.bot_channel_slack
+}
+
+output "bot_channel_directline" {
+  value = local.az.bot_channel_directline
+}
+
+output "bot_channels_registration" {
+  value = local.az.bot_channels_registration
+}
+
+output "bot_connection" {
+  value = local.az.bot_connection
+}
+
+output "redis_cache" {
+  value = local.az.redis_cache
+}
+
+output "redis_firewall_rule" {
+  value = local.az.redis_firewall_rule
+}
+
+output "cdn_profile" {
+  value = local.az.cdn_profile
+}
+
+output "cdn_endpoint" {
+  value = local.az.cdn_endpoint
+}
+
+output "cognitive_account" {
+  value = local.az.cognitive_account
+}
+
+output "availability_set" {
+  value = local.az.availability_set
+}
+
+output "disk_encryption_set" {
+  value = local.az.disk_encryption_set
+}
+
+output "image" {
+  value = local.az.image
+}
+
+output "linux_virtual_machine" {
+  value = local.az.linux_virtual_machine
+}
+
+output "linux_virtual_machine_scale_set" {
+  value = local.az.linux_virtual_machine_scale_set
+}
+
+output "managed_disk" {
+  value = local.az.managed_disk
+}
+
+output "virtual_machine" {
+  value = local.az.virtual_machine
+}
+
+output "virtual_machine_scale_set" {
+  value = local.az.virtual_machine_scale_set
+}
+
+output "windows_virtual_machine" {
+  value = local.az.windows_virtual_machine
+}
+
+output "windows_virtual_machine_scale_set" {
+  value = local.az.windows_virtual_machine_scale_set
+}
+
+output "containerGroups" {
+  value = local.az.containerGroups
+}
+
+output "container_registry" {
+  value = local.az.container_registry
+}
+
+output "container_registry_webhook" {
+  value = local.az.container_registry_webhook
+}
+
+output "kubernetes_cluster" {
+  value = local.az.kubernetes_cluster
+}
+
+output "cosmosdb_account" {
+  value = local.az.cosmosdb_account
+}
+
+output "custom_provider" {
+  value = local.az.custom_provider
+}
+
+output "mariadb_server" {
+  value = local.az.mariadb_server
+}
+
+output "mariadb_firewall_rule" {
+  value = local.az.mariadb_firewall_rule
+}
+
+output "mariadb_database" {
+  value = local.az.mariadb_database
+}
+
+output "mariadb_virtual_network_rule" {
+  value = local.az.mariadb_virtual_network_rule
+}
+
+output "mysql_server" {
+  value = local.az.mysql_server
+}
+
+output "mysql_firewall_rule" {
+  value = local.az.mysql_firewall_rule
+}
+
+output "mysql_database" {
+  value = local.az.mysql_database
+}
+
+output "mysql_virtual_network_rule" {
+  value = local.az.mysql_virtual_network_rule
+}
+
+output "postgresql_server" {
+  value = local.az.postgresql_server
+}
+
+output "postgresql_firewall_rule" {
+  value = local.az.postgresql_firewall_rule
+}
+
+output "postgresql_database" {
+  value = local.az.postgresql_database
+}
+
+output "postgresql_virtual_network_rule" {
+  value = local.az.postgresql_virtual_network_rule
+}
+
+output "database_migration_project" {
+  value = local.az.database_migration_project
+}
+
+output "database_migration_service" {
+  value = local.az.database_migration_service
+}
+
+output "databricks_workspace" {
+  value = local.az.databricks_workspace
+}
+
+output "kusto_cluster" {
+  value = local.az.kusto_cluster
+}
+
+output "kusto_database" {
+  value = local.az.kusto_database
+}
+
+output "kusto_eventhub_data_connection" {
+  value = local.az.kusto_eventhub_data_connection
+}
+
+output "data_factory" {
+  value = local.az.data_factory
+}
+
+output "data_factory_dataset_mysql" {
+  value = local.az.data_factory_dataset_mysql
+}
+
+output "data_factory_dataset_postgresql" {
+  value = local.az.data_factory_dataset_postgresql
+}
+
+output "data_factory_dataset_sql_server_table" {
+  value = local.az.data_factory_dataset_sql_server_table
+}
+
+output "data_factory_integration_runtime_managed" {
+  value = local.az.data_factory_integration_runtime_managed
+}
+
+output "data_factory_pipeline" {
+  value = local.az.data_factory_pipeline
+}
+
+output "data_factory_linked_service_data_lake_storage_gen2" {
+  value = local.az.data_factory_linked_service_data_lake_storage_gen2
+}
+
+output "data_factory_linked_service_key_vault" {
+  value = local.az.data_factory_linked_service_key_vault
+}
+
+output "data_factory_linked_service_mysql" {
+  value = local.az.data_factory_linked_service_mysql
+}
+
+output "data_factory_linked_service_postgresql" {
+  value = local.az.data_factory_linked_service_postgresql
+}
+
+output "data_factory_linked_service_sql_server" {
+  value = local.az.data_factory_linked_service_sql_server
+}
+
+output "data_factory_trigger_schedule" {
+  value = local.az.data_factory_trigger_schedule
+}
+
+output "data_lake_analytics_account" {
+  value = local.az.data_lake_analytics_account
+}
+
+output "data_lake_analytics_firewall_rule" {
+  value = local.az.data_lake_analytics_firewall_rule
+}
+
+output "data_lake_store" {
+  value = local.az.data_lake_store
+}
+
+output "data_lake_store_firewall_rule" {
+  value = local.az.data_lake_store_firewall_rule
+}
+
+output "dev_test_lab" {
+  value = local.az.dev_test_lab
+}
+
+output "dev_test_linux_virtual_machine" {
+  value = local.az.dev_test_linux_virtual_machine
+}
+
+output "dev_test_windows_virtual_machine" {
+  value = local.az.dev_test_windows_virtual_machine
+}
+
+output "frontdoor" {
+  value = local.az.frontdoor
+}
+
+output "frontdoor_firewall_policy" {
+  value = local.az.frontdoor_firewall_policy
+}
+
+output "hdinsight_hadoop_cluster" {
+  value = local.az.hdinsight_hadoop_cluster
+}
+
+output "hdinsight_hbase_cluster" {
+  value = local.az.hdinsight_hbase_cluster
+}
+
+output "hdinsight_kafka_cluster" {
+  value = local.az.hdinsight_kafka_cluster
+}
+
+output "hdinsight_interactive_query_cluster" {
+  value = local.az.hdinsight_interactive_query_cluster
+}
+
+output "hdinsight_ml_services_cluster" {
+  value = local.az.hdinsight_ml_services_cluster
+}
+
+output "hdinsight_rserver_cluster" {
+  value = local.az.hdinsight_rserver_cluster
+}
+
+output "hdinsight_spark_cluster" {
+  value = local.az.hdinsight_spark_cluster
+}
+
+output "hdinsight_storm_cluster" {
+  value = local.az.hdinsight_storm_cluster
+}
+
+output "iotcentral_application" {
+  value = local.az.iotcentral_application
+}
+
+output "iothub" {
+  value = local.az.iothub
+}
+
+output "iothub_consumer_group" {
+  value = local.az.iothub_consumer_group
+}
+
+output "iothub_dps" {
+  value = local.az.iothub_dps
+}
+
+output "iothub_dps_certificate" {
+  value = local.az.iothub_dps_certificate
 }
 
 output "key_vault" {
-  value = {
-    name        = substr(join("-", compact([local.prefix, local.az.key_vault, local.suffix])), 0, 24)
-    name_unique = substr(join("-", compact([local.prefix, local.az.key_vault, local.suffix_unique])), 0, 24)
-    dashes      = true
-    slug        = local.az.key_vault
-    min_length  = 2
-    max_length  = 24
-    scope       = "global"
-  }
+  value = local.az.key_vault
 }
 
 output "key_vault_key" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.key_vault_key, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.key_vault_key, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.key_vault_key
-  }
+  value = local.az.key_vault_key
+}
+
+output "key_vault_secret" {
+  value = local.az.key_vault_secret
+}
+
+output "key_vault_certificate" {
+  value = local.az.key_vault_certificate
+}
+
+output "lb" {
+  value = local.az.lb
+}
+
+output "lb_nat_rule" {
+  value = local.az.lb_nat_rule
+}
+
+output "public_ip" {
+  value = local.az.public_ip
+}
+
+output "public_ip_prefix" {
+  value = local.az.public_ip_prefix
+}
+
+output "route" {
+  value = local.az.route
+}
+
+output "route_table" {
+  value = local.az.route_table
+}
+
+output "subnet" {
+  value = local.az.subnet
+}
+
+output "traffic_manager_profile" {
+  value = local.az.traffic_manager_profile
+}
+
+output "virtual_wan" {
+  value = local.az.virtual_wan
+}
+
+output "virtual_network" {
+  value = local.az.virtual_network
+}
+
+output "virtual_network_gateway" {
+  value = local.az.virtual_network_gateway
+}
+
+output "virtual_network_peering" {
+  value = local.az.virtual_network_peering
+}
+
+output "network_interface" {
+  value = local.az.network_interface
+}
+
+output "firewall" {
+  value = local.az.firewall
+}
+
+output "eventhub" {
+  value = local.az.eventhub
+}
+
+output "eventhub_namespace" {
+  value = local.az.eventhub_namespace
+}
+
+output "eventhub_authorization_rule" {
+  value = local.az.eventhub_authorization_rule
+}
+
+output "eventhub_namespace_authorization_rule" {
+  value = local.az.eventhub_namespace_authorization_rule
+}
+
+output "eventhub_namespace_disaster_recovery_config" {
+  value = local.az.eventhub_namespace_disaster_recovery_config
+}
+
+output "eventhub_consumer_group" {
+  value = local.az.eventhub_consumer_group
+}
+
+output "stream_analytics_job" {
+  value = local.az.stream_analytics_job
+}
+
+output "stream_analytics_function_javascript_udf" {
+  value = local.az.stream_analytics_function_javascript_udf
+}
+
+output "stream_analytics_output_blob" {
+  value = local.az.stream_analytics_output_blob
+}
+
+output "stream_analytics_output_mssql" {
+  value = local.az.stream_analytics_output_mssql
+}
+
+output "stream_analytics_output_eventhub" {
+  value = local.az.stream_analytics_output_eventhub
+}
+
+output "stream_analytics_output_servicebus_queue" {
+  value = local.az.stream_analytics_output_servicebus_queue
+}
+
+output "stream_analytics_output_servicebus_topic" {
+  value = local.az.stream_analytics_output_servicebus_topic
+}
+
+output "stream_analytics_reference_input_blob" {
+  value = local.az.stream_analytics_reference_input_blob
+}
+
+output "stream_analytics_stream_input_blob" {
+  value = local.az.stream_analytics_stream_input_blob
+}
+
+output "stream_analytics_stream_input_eventhub" {
+  value = local.az.stream_analytics_stream_input_eventhub
+}
+
+output "stream_analytics_stream_input_iothub" {
+  value = local.az.stream_analytics_stream_input_iothub
+}
+
+output "shared_image_gallery" {
+  value = local.az.shared_image_gallery
+}
+
+output "shared_image" {
+  value = local.az.shared_image
+}
+
+output "snapshots" {
+  value = local.az.snapshots
+}
+
+output "storage_account" {
+  value = local.az.storage_account
+}
+
+output "storage_container" {
+  value = local.az.storage_container
+}
+
+output "storage_data_lake_gen2_filesystem" {
+  value = local.az.storage_data_lake_gen2_filesystem
+}
+
+output "storage_queue" {
+  value = local.az.storage_queue
+}
+
+output "storage_table" {
+  value = local.az.storage_table
+}
+
+output "storage_share" {
+  value = local.az.storage_share
+}
+
+output "storage_share_directory" {
+  value = local.az.storage_share_directory
+}
+
+output "machine_learning_workspace" {
+  value = local.az.machine_learning_workspace
+}
+
+output "storage_blob" {
+  value = local.az.storage_blob
+}
+
+output "bastion_host" {
+  value = local.az.bastion_host
+}
+
+output "local_network_gateway" {
+  value = local.az.local_network_gateway
+}
+
+output "application_gateway" {
+  value = local.az.application_gateway
+}
+
+output "express_route_gateway" {
+  value = local.az.express_route_gateway
+}
+
+output "express_route_circuit" {
+  value = local.az.express_route_circuit
+}
+
+output "point_to_site_vpn_gateway" {
+  value = local.az.point_to_site_vpn_gateway
+}
+
+output "template_deployment" {
+  value = local.az.template_deployment
+}
+
+output "sql_server" {
+  value = local.az.sql_server
+}
+
+output "mssql_server" {
+  value = local.az.mssql_server
+}
+
+output "mssql_database" {
+  value = local.az.mssql_database
+}
+
+output "sql_elasticpool" {
+  value = local.az.sql_elasticpool
+}
+
+output "mssql_elasticpool" {
+  value = local.az.mssql_elasticpool
+}
+
+output "sql_failover_group" {
+  value = local.az.sql_failover_group
+}
+
+output "sql_firewall_rule" {
+  value = local.az.sql_firewall_rule
 }
 
 output "log_analytics_workspace" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.log_analytics_workspace, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.log_analytics_workspace, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.log_analytics_workspace
-  }
+  value = local.az.log_analytics_workspace
 }
 
-output "application_insights" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.application_insights, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.application_insights, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.application_insights
-  }
+output "service_fabric_cluster" {
+  value = local.az.service_fabric_cluster
 }
 
-output "recovery_services_vault" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.recovery_services_vault, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.recovery_services_vault, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.recovery_services_vault
-  }
+output "maps_account" {
+  value = local.az.maps_account
 }
 
-//Migration
-
-output "migrate_project" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.azure_migrate_project, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.azure_migrate_project, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.azure_migrate_project
-  }
+output "network_watcher" {
+  value = local.az.network_watcher
 }
 
-output "database_migration_service_instance" {
-  value = {
-    name        = join("-", compact([local.prefix, local.az.database_migration_service_instance, local.suffix]))
-    name_unique = join("-", compact([local.prefix, local.az.database_migration_service_instance, local.suffix_unique]))
-    dashes      = true
-    slug        = local.az.database_migration_service_instance
-  }
-}
+
