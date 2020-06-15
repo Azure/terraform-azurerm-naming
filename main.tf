@@ -1631,5 +1631,15 @@ locals {
       scope       = "resourceGroup"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
+    resource_group = {
+      name        = substr(join("-", compact([local.prefix, "rg", local.suffix])), 0, 90)
+      name_unique = substr(join("-", compact([local.prefix, "rg", local.suffix_unique])), 0, 90)
+      dashes      = true
+      slug        = "rg"
+      min_length  = 1
+      max_length  = 90
+      scope       = "subscription"
+      regex       = "/^(?=.{1,90}$)[a-zA-Z0-9-._\\(\\)]+[a-zA-Z0-9-_\\(\\)]$/"
+    }
   }
 }

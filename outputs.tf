@@ -642,4 +642,8 @@ output "network_watcher" {
   value = local.az.network_watcher
 }
 
+output "resource_group" {
+  value = local.az.resource_group
+}
+
 

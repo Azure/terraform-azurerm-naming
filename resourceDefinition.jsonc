@@ -1770,5 +1770,16 @@
         "scope": "resourceGroup",
         "slug": "nw", // Not in the spec
         "dashes": true
+    },
+    {
+        "name": "resource_group",
+        "length": {
+            "min": 1,
+            "max": 90
+        },
+        "regex": "^(?=.{1,90}$)[a-zA-Z0-9-._\\\\(\\\\)]+[a-zA-Z0-9-_\\\\(\\\\)]$",
+        "scope": "subscription",
+        "slug": "rg",
+        "dashes": true
     }
 ]
