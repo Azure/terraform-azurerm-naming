@@ -654,4 +654,20 @@ output "private_service_connection" {
   value = local.az.private_service_connection
 }
 
+output "firewall_ip_configuration" {
+  value = local.az.firewall_ip_configuration
+}
+
+output "firewall_application_rule_collection" {
+  value = local.az.firewall_application_rule_collection
+}
+
+output "firewall_nat_rule_collection" {
+  value = local.az.firewall_nat_rule_collection
+}
+
+output "firewall_network_rule_collection" {
+  value = local.az.firewall_network_rule_collection
+}
+
 

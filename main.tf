@@ -1661,5 +1661,45 @@ locals {
       scope       = "resourceGroup"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
     }
+    firewall_ip_configuration = {
+      name        = substr(join("-", compact([local.prefix, "fwipconf", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "fwipconf", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "fwipconf"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
+    }
+    firewall_application_rule_collection = {
+      name        = substr(join("-", compact([local.prefix, "fwapp", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "fwapp", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "fwapp"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
+    }
+    firewall_nat_rule_collection = {
+      name        = substr(join("-", compact([local.prefix, "fwnatrc", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "fwnatrc", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "fwnatrc"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
+    }
+    firewall_network_rule_collection = {
+      name        = substr(join("-", compact([local.prefix, "fwnetrc", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "fwnetrc", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "fwnetrc"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
+    }
   }
 }

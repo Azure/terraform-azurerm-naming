@@ -6,8 +6,6 @@ import (
 	"log"
 	"os"
 	"text/template"
-
-	"muzzammil.xyz/jsonc"
 )
 
 // Resource definityion for the package
@@ -40,25 +38,23 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sourceDefinitions, err := ioutil.ReadFile("resourceDefinition.jsonc")
+	sourceDefinitions, err := ioutil.ReadFile("resourceDefinition.json")
 	if err != nil {
 		log.Fatal(err)
 	}
 	var data []Resource
-	jc := jsonc.ToJSON(sourceDefinitions)
-	err = json.Unmarshal(jc, &data)
+	err = json.Unmarshal(sourceDefinitions, &data)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// Undocumented resource definitions
-	sourceDefinitionsUndocumented, err := ioutil.ReadFile("resourceDefinition_out_of_docs.jsonc")
+	sourceDefinitionsUndocumented, err := ioutil.ReadFile("resourceDefinition_out_of_docs.json")
 	if err != nil {
 		log.Fatal(err)
 	}
 	var dataUndocumented []Resource
-	jcUndoc := jsonc.ToJSON(sourceDefinitionsUndocumented)
-	err = json.Unmarshal(jcUndoc, &dataUndocumented)
+	err = json.Unmarshal(sourceDefinitionsUndocumented, &dataUndocumented)
 	if err != nil {
 		log.Fatal(err)
 	}
