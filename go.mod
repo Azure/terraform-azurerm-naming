@@ -2,4 +2,7 @@ module github.com/azure/terraform-azurerm-naming
 
 go 1.13
 
-require muzzammil.xyz/jsonc v0.0.0-20200303171503-1e787b591db7
+require (
+	github.com/liamg/tfsec v0.21.0 // indirect
+	github.com/terraform-linters/tflint v0.16.2 // indirect
+)

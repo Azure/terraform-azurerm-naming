@@ -133,6 +133,10 @@ You can find a list bellow of all the resources that are currently implemented. 
 | express\_route\_circuit | n/a |
 | express\_route\_gateway | n/a |
 | firewall | n/a |
+| firewall\_application\_rule\_collection | n/a |
+| firewall\_ip\_configuration | n/a |
+| firewall\_nat\_rule\_collection | n/a |
+| firewall\_network\_rule\_collection | n/a |
 | frontdoor | n/a |
 | frontdoor\_firewall\_policy | n/a |
 | hdinsight\_hadoop\_cluster | n/a |

@@ -1,6 +1,4 @@
 [
-    // Getting naming restrictions from https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftanalysisservices
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftanalysisservices
     {
         "name": "analysis_services_server",
         "length": {
@@ -12,7 +10,6 @@
         "slug": "as",
         "dashes": false
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftapimanagement
     {
         "name": "api_managment_service",
         "length": {
@@ -24,7 +21,6 @@
         "slug": "apim",
         "dashes": false
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftappconfiguration
     {
         "name": "app_configuration",
         "length": {
@@ -33,10 +29,9 @@
         },
         "regex": "^(?=.{5,50}$)[a-zA-Z0-9_-]+$",
         "scope": "resourceGroup",
-        "slug": "appcg", // Not in the specs
+        "slug": "appcg",
         "dashes": true
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftauthorization
     {
         "name": "role_assignment",
         "length": {
@@ -45,7 +40,7 @@
         },
         "regex": "^(?=.{1,64}$)[^%]+[^ %.]$",
         "scope": "assignment",
-        "slug": "ra", // Not in the specs
+        "slug": "ra",
         "dashes": true
     },
     {
@@ -56,10 +51,9 @@
         },
         "regex": "^(?=.{1,64}$)[^%]+[^ %.]$",
         "scope": "definition",
-        "slug": "rd", // Not in the specs
+        "slug": "rd",
         "dashes": true
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftautomation
     {
         "name": "automation_account",
         "length": {
@@ -68,7 +62,7 @@
         },
         "regex": "^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "resourceGroup",
-        "slug": "aa", // Not in the specs
+        "slug": "aa",
         "dashes": true
     },
     {
@@ -79,7 +73,7 @@
         },
         "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
-        "slug": "aacert", // Not in the specs
+        "slug": "aacert",
         "dashes": true
     },
     {
@@ -90,7 +84,7 @@
         },
         "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
-        "slug": "aacred", // Not in the specs
+        "slug": "aacred",
         "dashes": true
     },
     {
@@ -101,7 +95,7 @@
         },
         "regex": "^(?=.{1,63}$)[a-zA-Z][a-zA-Z0-9-]+$",
         "scope": "parent",
-        "slug": "aacred", // Not in the specs
+        "slug": "aacred",
         "dashes": true
     },
     {
@@ -112,7 +106,7 @@
         },
         "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
-        "slug": "aasched", // Not in the specs
+        "slug": "aasched",
         "dashes": true
     },
     {
@@ -123,10 +117,9 @@
         },
         "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
-        "slug": "aavar", // Not in the specs
+        "slug": "aavar",
         "dashes": true
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftbatch
     {
         "name": "batch_account",
         "length": {
@@ -135,7 +128,7 @@
         },
         "regex": "^(?=.{3,24}$)[a-z0-9]+$",
         "scope": "region",
-        "slug": "ba", // Not in the specs
+        "slug": "ba",
         "dashes": false
     },
     {
@@ -146,7 +139,7 @@
         },
         "regex": "^(?=.{1,64}$)[a-zA-Z0-9_-]+$",
         "scope": "parent",
-        "slug": "baapp", // Not in the specs
+        "slug": "baapp",
         "dashes": true
     },
     {
@@ -157,7 +150,7 @@
         },
         "regex": "^(?=.{5,45}$)[a-zA-Z0-9_-]+$",
         "scope": "parent",
-        "slug": "bacert", // Not in the specs
+        "slug": "bacert",
         "dashes": true
     },
     {
@@ -168,10 +161,9 @@
         },
         "regex": "^(?=.{1,64}$)[a-zA-Z0-9_-]+$",
         "scope": "parent",
-        "slug": "bapool", // Not in the specs
+        "slug": "bapool",
         "dashes": true
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftbotservice
     {
         "name": "bot_web_app",
         "length": {
@@ -180,7 +172,7 @@
         },
         "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "global",
-        "slug": "bot", // Not in the specs
+        "slug": "bot",
         "dashes": true
     },
     {
@@ -191,7 +183,7 @@
         },
         "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
-        "slug": "botmail", // Not in the specs
+        "slug": "botmail",
         "dashes": true
     },
     {
@@ -202,7 +194,7 @@
         },
         "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
-        "slug": "botteams", // Not in the specs
+        "slug": "botteams",
         "dashes": true
     },
     {
@@ -213,7 +205,7 @@
         },
         "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
-        "slug": "botslack", // Not in the specs
+        "slug": "botslack",
         "dashes": true
     },
     {
@@ -224,7 +216,7 @@
         },
         "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
-        "slug": "botline", // Not in the specs
+        "slug": "botline",
         "dashes": true
     },
     {
@@ -235,7 +227,7 @@
         },
         "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
-        "slug": "botchan", // Not in the specs
+        "slug": "botchan",
         "dashes": true
     },
     {
@@ -246,10 +238,9 @@
         },
         "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
         "scope": "parent",
-        "slug": "botcon", // Not in the specs
+        "slug": "botcon",
         "dashes": true
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftcache
     {
         "name": "redis_cache",
         "length": {
@@ -269,10 +260,9 @@
         },
         "regex": "^(?=.{1,256}$)[a-zA-Z0-9]+$",
         "scope": "parent",
-        "slug": "redisfw", // Not in the specs
+        "slug": "redisfw",
         "dashes": false
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftcdn
     {
         "name": "cdn_profile",
         "length": {
@@ -281,7 +271,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "resourceGroup",
-        "slug": "cdnprof", // Not in the specs
+        "slug": "cdnprof",
         "dashes": true
     },
     {
@@ -292,10 +282,9 @@
         },
         "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
-        "slug": "cdn", // Not in the specs
+        "slug": "cdn",
         "dashes": true
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftcognitiveservices
     {
         "name": "cognitive_account",
         "length": {
@@ -307,7 +296,6 @@
         "slug": "cog",
         "dashes": true
     },
-    // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftcompute
     {
         "name": "availability_set",
         "length": {
@@ -327,7 +315,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9_]+$",
         "scope": "resourceGroup",
-        "slug": "des", // Not in the spec
+        "slug": "des",
         "dashes": true
     },
     {
@@ -338,7 +326,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
-        "slug": "img", //Not in the spec
+        "slug": "img",
         "dashes": true
     },
     {
@@ -426,7 +414,7 @@
         },
         "regex": "^(?=.{1,63}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "resourceGroup",
-        "slug": "cg", //Not in the spec
+        "slug": "cg",
         "dashes": true
     },
     {
@@ -437,7 +425,7 @@
         },
         "regex": "^(?=.{1,63}$)[a-zA-Z0-9]+$",
         "scope": "resourceGroup",
-        "slug": "cr", //Not in the spec
+        "slug": "cr",
         "dashes": false
     },
     {
@@ -448,7 +436,7 @@
         },
         "regex": "^(?=.{5,50}$)[a-zA-Z0-9]+$",
         "scope": "resourceGroup",
-        "slug": "crwh", //Not in the spec
+        "slug": "crwh",
         "dashes": false
     },
     {
@@ -481,7 +469,7 @@
         },
         "regex": "^(?=.{3,64}$)[^&%?\\\\/]+[^&%.?\\\\/ ]$",
         "scope": "resourceGroup",
-        "slug": "prov", //Not in the spec
+        "slug": "prov",
         "dashes": true
     },
     {
@@ -492,7 +480,7 @@
         },
         "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$",
         "scope": "global",
-        "slug": "maria", //Not in the spec
+        "slug": "maria",
         "dashes": true
     },
     {
@@ -503,7 +491,7 @@
         },
         "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
-        "slug": "mariafw", //Not in the spec
+        "slug": "mariafw",
         "dashes": true
     },
     {
@@ -514,7 +502,7 @@
         },
         "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
-        "slug": "mariadb", //Not in the spec
+        "slug": "mariadb",
         "dashes": true
     },
     {
@@ -525,7 +513,7 @@
         },
         "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
-        "slug": "mariavn", //Not in the spec
+        "slug": "mariavn",
         "dashes": true
     },
     {
@@ -547,7 +535,7 @@
         },
         "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
-        "slug": "mysqlfw", //Not in the spec
+        "slug": "mysqlfw",
         "dashes": true
     },
     {
@@ -558,7 +546,7 @@
         },
         "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
-        "slug": "mysqldb", //Not in the spec
+        "slug": "mysqldb",
         "dashes": true
     },
     {
@@ -569,7 +557,7 @@
         },
         "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
-        "slug": "mysqlvn", //Not in the spec
+        "slug": "mysqlvn",
         "dashes": true
     },
     {
@@ -591,7 +579,7 @@
         },
         "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
-        "slug": "psqlfw", //Not in the spec
+        "slug": "psqlfw",
         "dashes": true
     },
     {
@@ -602,7 +590,7 @@
         },
         "regex": "^(?=.{1,63}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
-        "slug": "psqldb", //Not in the spec
+        "slug": "psqldb",
         "dashes": true
     },
     {
@@ -613,7 +601,7 @@
         },
         "regex": "^(?=.{1,128}$)[a-zA-Z0-9-_]+$",
         "scope": "parent",
-        "slug": "psqlvn", //Not in the spec
+        "slug": "psqlvn",
         "dashes": true
     },
     {
@@ -657,7 +645,7 @@
         },
         "regex": "^(?=.{4,22}$)[a-z][a-z0-9]+$",
         "scope": "global",
-        "slug": "kc", // Not in the spec
+        "slug": "kc",
         "dashes": false
     },
     {
@@ -668,7 +656,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9- .]+$",
         "scope": "parent",
-        "slug": "kdb", // Not in the spec
+        "slug": "kdb",
         "dashes": true
     },
     {
@@ -679,7 +667,7 @@
         },
         "regex": "^(?=.{1,40}$)[a-zA-Z0-9- .]+$",
         "scope": "parent",
-        "slug": "kehc", // Not in the spec
+        "slug": "kehc",
         "dashes": true
     },
     {
@@ -701,7 +689,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "adfmysql", // Not in the spec
+        "slug": "adfmysql",
         "dashes": true
     },
     {
@@ -712,7 +700,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "adfpsql", // Not in the spec
+        "slug": "adfpsql",
         "dashes": true
     },
     {
@@ -723,7 +711,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "adfmssql", // Not in the spec
+        "slug": "adfmssql",
         "dashes": true
     },
     {
@@ -734,7 +722,7 @@
         },
         "regex": "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "adfir", // Not in the spec
+        "slug": "adfir",
         "dashes": true
     },
     {
@@ -745,7 +733,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "adfpl", // Not in the spec
+        "slug": "adfpl",
         "dashes": true
     },
     {
@@ -756,7 +744,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
-        "slug": "adfsvst", // Not in the spec
+        "slug": "adfsvst",
         "dashes": true
     },
     {
@@ -767,7 +755,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
-        "slug": "adfsvkv", // Not in the spec
+        "slug": "adfsvkv",
         "dashes": true
     },
     {
@@ -778,7 +766,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
-        "slug": "adfsvmysql", // Not in the spec
+        "slug": "adfsvmysql",
         "dashes": true
     },
     {
@@ -789,7 +777,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
-        "slug": "adfsvpsql", // Not in the spec
+        "slug": "adfsvpsql",
         "dashes": true
     },
     {
@@ -800,7 +788,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
-        "slug": "adfsvmssql", // Not in the spec
+        "slug": "adfsvmssql",
         "dashes": true
     },
     {
@@ -811,7 +799,7 @@
         },
         "regex": "^(?=.{1,260}$)[a-zA-Z0-9][^<>*%:.?\\\\+\\\\/]+$",
         "scope": "parent",
-        "slug": "adftg", // Not in the spec
+        "slug": "adftg",
         "dashes": true
     },
     {
@@ -833,7 +821,7 @@
         },
         "regex": "^(?=.{3,50}$)[a-z0-9-_]+$",
         "scope": "parent",
-        "slug": "dlfw", // Not in the spec
+        "slug": "dlfw",
         "dashes": true
     },
     {
@@ -877,7 +865,7 @@
         },
         "regex": "^(?=.{1,50}$)[a-zA-Z0-9-]+$",
         "scope": "parent",
-        "slug": "labvm", // Not in the specs
+        "slug": "labvm",
         "dashes": true
     },
     {
@@ -888,7 +876,7 @@
         },
         "regex": "^(?=.{1,15}$)[a-zA-Z0-9-]+$",
         "scope": "parent",
-        "slug": "labvm", // Not in the specs
+        "slug": "labvm",
         "dashes": true
     },
     {
@@ -899,7 +887,7 @@
         },
         "regex": "^(?=.{5,64}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
-        "slug": "fd", // Not in the spec
+        "slug": "fd",
         "dashes": true
     },
     {
@@ -910,7 +898,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "global",
-        "slug": "fdfw", // Not in the spec
+        "slug": "fdfw",
         "dashes": true
     },
     {
@@ -954,7 +942,7 @@
         },
         "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
-        "slug": "iqr", // Not in the spec
+        "slug": "iqr",
         "dashes": true
     },
     {
@@ -976,7 +964,7 @@
         },
         "regex": "^(?=.{3,59}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
-        "slug": "rsv", // Not in the spec
+        "slug": "rsv",
         "dashes": true
     },
     {
@@ -1009,7 +997,7 @@
         },
         "regex": "^(?=.{2,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "global",
-        "slug": "iotapp", // Not in the specc
+        "slug": "iotapp",
         "dashes": true
     },
     {
@@ -1031,7 +1019,7 @@
         },
         "regex": "^(?=.{1,50}$)[a-zA-Z0-9-._]+$",
         "scope": "parent",
-        "slug": "iotcg", // Not in the specc
+        "slug": "iotcg",
         "dashes": true
     },
     {
@@ -1042,7 +1030,7 @@
         },
         "regex": "^(?=.{3,64}$)[a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "resoureceGroup",
-        "slug": "dps", // Not in the specc
+        "slug": "dps",
         "dashes": true
     },
     {
@@ -1053,7 +1041,7 @@
         },
         "regex": "^(?=.{3,64}$)[a-zA-Z0-9-._]+$",
         "scope": "parent",
-        "slug": "dpscert", // Not in the specc
+        "slug": "dpscert",
         "dashes": true
     },
     {
@@ -1086,7 +1074,7 @@
         },
         "regex": "^(?=.{1,127}$)[a-zA-Z0-9-]+$",
         "scope": "parent",
-        "slug": "kvs", // Not in the spec
+        "slug": "kvs",
         "dashes": true
     },
     {
@@ -1097,7 +1085,7 @@
         },
         "regex": "^(?=.{1,127}$)[a-zA-Z0-9-]+$",
         "scope": "parent",
-        "slug": "kvc", // Not in the spec
+        "slug": "kvc",
         "dashes": true
     },
     {
@@ -1108,7 +1096,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
-        "slug": "lb", // Not in the spec
+        "slug": "lb",
         "dashes": true
     },
     {
@@ -1119,7 +1107,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
-        "slug": "lbnatrl", // Not in the spec
+        "slug": "lbnatrl",
         "dashes": true
     },
     {
@@ -1141,7 +1129,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
-        "slug": "pippf", // Not in the spec
+        "slug": "pippf",
         "dashes": true
     },
     {
@@ -1152,7 +1140,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
-        "slug": "rt", // Not in the spec
+        "slug": "rt",
         "dashes": true
     },
     {
@@ -1229,7 +1217,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "parent",
-        "slug": "vpeer", // Not in the spec
+        "slug": "vpeer",
         "dashes": true
     },
     {
@@ -1273,7 +1261,7 @@
         },
         "regex": "^(?=.{1,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "global",
-        "slug": "ehn", // Not in the spec
+        "slug": "ehn",
         "dashes": true
     },
     {
@@ -1284,7 +1272,7 @@
         },
         "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "ehar", // Not in the spec
+        "slug": "ehar",
         "dashes": true
     },
     {
@@ -1295,7 +1283,7 @@
         },
         "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "ehnar", // Not in the spec
+        "slug": "ehnar",
         "dashes": true
     },
     {
@@ -1306,7 +1294,7 @@
         },
         "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "ehdr", // Not in the spec
+        "slug": "ehdr",
         "dashes": true
     },
     {
@@ -1317,7 +1305,7 @@
         },
         "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "ehcg", // Not in the spec
+        "slug": "ehcg",
         "dashes": true
     },
     {
@@ -1614,7 +1602,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
-        "slug": "ergw", // Not in the spec
+        "slug": "ergw",
         "dashes": true
     },
     {
@@ -1625,7 +1613,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
-        "slug": "erc", // Not in the spec
+        "slug": "erc",
         "dashes": true
     },
     {
@@ -1636,7 +1624,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
-        "slug": "vpngw", // Not in the spec
+        "slug": "vpngw",
         "dashes": true
     },
     {
@@ -1647,7 +1635,7 @@
         },
         "regex": "^(?=.{1,64}$)[a-zA-Z0-9-._\\\\(\\\\)]+$",
         "scope": "resourceGroup",
-        "slug": "deploy", // Not in the spec
+        "slug": "deploy",
         "dashes": true
     },
     {
@@ -1680,7 +1668,7 @@
         },
         "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
-        "slug": "sqldb", // Not in the specs
+        "slug": "sqldb",
         "dashes": true
     },
     {
@@ -1691,7 +1679,7 @@
         },
         "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
-        "slug": "sqlep", // Not in the specs
+        "slug": "sqlep",
         "dashes": true
     },
     {
@@ -1702,7 +1690,7 @@
         },
         "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
         "scope": "parent",
-        "slug": "sqlep", // Not in the specs
+        "slug": "sqlep",
         "dashes": true
     },
     {
@@ -1713,7 +1701,7 @@
         },
         "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
         "scope": "global",
-        "slug": "sqlfg", // Not in the specs
+        "slug": "sqlfg",
         "dashes": true
     },
     {
@@ -1724,7 +1712,7 @@
         },
         "regex": "^(?=.{1,128}$)[^<>*%:?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/]$",
         "scope": "parent",
-        "slug": "sqlfw", // Not in the specs
+        "slug": "sqlfw",
         "dashes": true
     },
     {
@@ -1735,7 +1723,7 @@
         },
         "regex": "^(?=.{4,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
         "scope": "parent",
-        "slug": "log", // Not in the specs
+        "slug": "log",
         "dashes": true
     },
     {
@@ -1746,7 +1734,7 @@
         },
         "regex": "^(?=.{4,23}$)[a-z][a-z0-9-]+[a-z0-9]$",
         "scope": "region",
-        "slug": "sf", // Not in the specs
+        "slug": "sf",
         "dashes": true
     },
     {
@@ -1757,7 +1745,7 @@
         },
         "regex": "^(?=.{1,98}$)[a-zA-Z0-9][a-zA-Z0-9-._]+$",
         "scope": "resourceGroup",
-        "slug": "map", // Not in the specs
+        "slug": "map",
         "dashes": true
     },
     {
@@ -1768,7 +1756,7 @@
         },
         "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
         "scope": "resourceGroup",
-        "slug": "nw", // Not in the spec
+        "slug": "nw",
         "dashes": true
     },
     {
