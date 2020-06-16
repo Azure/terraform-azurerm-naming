@@ -48,13 +48,13 @@ You can find a list bellow of all the resources that are currently implemented. 
 
 | Name | Version |
 |------|---------|
-| random | ~>2.2 |
+| random | ~> 2.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| random | ~>2.2 |
+| random | ~> 2.2 |
 
 ## Inputs
 
