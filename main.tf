@@ -1641,6 +1641,16 @@ locals {
       scope       = "subscription"
       regex       = "/^(?=.{1,90}$)[a-zA-Z0-9-._\\(\\)]+[a-zA-Z0-9-_\\(\\)]$/"
     }
+    network_security_group = {
+      name        = substr(join("-", compact([local.prefix, "nsg", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "nsg", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "nsg"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
+    }
     private_endpoint = {
       name        = substr(join("-", compact([local.prefix, "pe", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "pe", local.suffix_unique])), 0, 80)
