@@ -646,6 +646,10 @@ output "resource_group" {
   value = local.az.resource_group
 }
 
+output "network_security_group" {
+  value = local.az.network_security_group
+}
+
 output "private_endpoint" {
   value = local.az.private_endpoint
 }
