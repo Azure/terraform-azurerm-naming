@@ -1793,7 +1793,7 @@
         "dashes": true
     },
     {
-        "name": "network_security_group",
+        "name": "application_security_group",
         "length": {
             "min": 1,
             "max": 80
