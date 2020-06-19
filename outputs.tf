@@ -654,6 +654,10 @@ output "network_security_group_rule" {
   value = local.az.network_security_group_rule
 }
 
+output "application_security_group" {
+  value = local.az.application_security_group
+}
+
 output "private_endpoint" {
   value = local.az.private_endpoint
 }
