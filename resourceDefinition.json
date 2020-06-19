@@ -1791,5 +1791,16 @@
         "scope": "parent",
         "slug": "nsgr",
         "dashes": true
+    },
+    {
+        "name": "application_security_group",
+        "length": {
+            "min": 1,
+            "max": 80
+        },
+        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+        "scope": "resourceGroup",
+        "slug": "nsg",
+        "dashes": true
     }
 ]
