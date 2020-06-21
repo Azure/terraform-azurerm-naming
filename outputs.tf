@@ -662,6 +662,10 @@ output "private_endpoint" {
   value = local.az.private_endpoint
 }
 
+output "private_dns_zone_group" {
+  value = local.az.private_dns_zone_group
+}
+
 output "private_service_connection" {
   value = local.az.private_service_connection
 }
