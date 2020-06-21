@@ -1811,7 +1811,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
-    "slug": "nsg",
+    "slug": "asg",
     "dashes": true
   },
   {
