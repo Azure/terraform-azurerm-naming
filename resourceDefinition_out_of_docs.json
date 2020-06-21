@@ -1,68 +1,266 @@
 [
-    {
-        "name": "private_endpoint",
-        "length": {
-            "min": 1,
-            "max": 80
-        },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-        "scope": "resourceGroup",
-        "slug": "pe",
-        "dashes": true
+  {
+    "name": "private_endpoint",
+    "length": {
+      "min": 1,
+      "max": 80
     },
-    {
-        "name": "private_service_connection",
-        "length": {
-            "min": 1,
-            "max": 80
-        },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-        "scope": "resourceGroup",
-        "slug": "psc",
-        "dashes": true
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "pe",
+    "dashes": true
+  },
+  {
+    "name": "private_service_connection",
+    "length": {
+      "min": 1,
+      "max": 80
     },
-    {
-        "name": "firewall_ip_configuration",
-        "length": {
-            "min": 1,
-            "max": 80
-        },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-        "scope": "resourceGroup",
-        "slug": "fwipconf",
-        "dashes": true
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "psc",
+    "dashes": true
+  },
+  {
+    "name": "firewall_ip_configuration",
+    "length": {
+      "min": 1,
+      "max": 80
     },
-    {
-        "name": "firewall_application_rule_collection",
-        "length": {
-            "min": 1,
-            "max": 80
-        },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-        "scope": "parent",
-        "slug": "fwapp",
-        "dashes": true
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "fwipconf",
+    "dashes": true
+  },
+  {
+    "name": "firewall_application_rule_collection",
+    "length": {
+      "min": 1,
+      "max": 80
     },
-    {
-        "name": "firewall_nat_rule_collection",
-        "length": {
-            "min": 1,
-            "max": 80
-        },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-        "scope": "parent",
-        "slug": "fwnatrc",
-        "dashes": true
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "fwapp",
+    "dashes": true
+  },
+  {
+    "name": "firewall_nat_rule_collection",
+    "length": {
+      "min": 1,
+      "max": 80
     },
-    {
-        "name": "firewall_network_rule_collection",
-        "length": {
-            "min": 1,
-            "max": 80
-        },
-        "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-        "scope": "parent",
-        "slug": "fwnetrc",
-        "dashes": true
-    }
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "fwnatrc",
+    "dashes": true
+  },
+  {
+    "name": "firewall_network_rule_collection",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "fwnetrc",
+    "dashes": true
+  },
+  {
+    "name": "dns_a_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "dns_aaaa_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "dns_caa_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "dns_cname_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "dns_mx_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "dns_ns_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "dns_ptr_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "dns_txt_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "private_dns_a_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "private_dns_aaaa_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "private_dns_cname_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "private_dns_mx_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "private_dns_ptr_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "private_dns_srv_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "private_dns_txt_record",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "dnsrec",
+    "dashes": true
+  },
+  {
+    "name": "virtual_machine_extension",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "vmx",
+    "dashes": true
+  },
+  {
+    "name": "virtual_machine_scale_set_extension",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "vmssx",
+    "dashes": true
+  },
+  {
+    "name": "network_ddos_protection_plan",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "ddospp",
+    "dashes": true
+  }
 ]
