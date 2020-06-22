@@ -170,7 +170,7 @@
       "min": 2,
       "max": 64
     },
-    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$",
     "scope": "global",
     "slug": "bot",
     "dashes": true
@@ -181,7 +181,7 @@
       "min": 2,
       "max": 64
     },
-    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$",
     "scope": "parent",
     "slug": "botmail",
     "dashes": true
@@ -192,7 +192,7 @@
       "min": 2,
       "max": 64
     },
-    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$",
     "scope": "parent",
     "slug": "botteams",
     "dashes": true
@@ -203,7 +203,7 @@
       "min": 2,
       "max": 64
     },
-    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$",
     "scope": "parent",
     "slug": "botslack",
     "dashes": true
@@ -214,7 +214,7 @@
       "min": 2,
       "max": 64
     },
-    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$",
     "scope": "parent",
     "slug": "botline",
     "dashes": true
@@ -225,7 +225,7 @@
       "min": 2,
       "max": 64
     },
-    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$",
     "scope": "parent",
     "slug": "botchan",
     "dashes": true
@@ -236,7 +236,7 @@
       "min": 2,
       "max": 64
     },
-    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9_-.]+$",
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+$",
     "scope": "parent",
     "slug": "botcon",
     "dashes": true
@@ -1985,8 +1985,8 @@
       "min": 3,
       "max": 63
     },
-    "regex": "^(?=.{3,63$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
-    "scope": "parent",
+    "regex": "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
     "slug": "sgnlr",
     "dashes": true
   },
@@ -2032,6 +2032,28 @@
     "regex": "^(?=.{3,50}$)[a-zA-Z0-9-]+$",
     "scope": "resourceGroup",
     "slug": "egt",
+    "dashes": true
+  },
+  {
+    "name": "relay_namespace",
+    "length": {
+      "min": 6,
+      "max": 50
+    },
+    "regex": "^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "rln",
+    "dashes": true
+  },
+  {
+    "name": "relay_hybrid_connection",
+    "length": {
+      "min": 1,
+      "max": 260
+    },
+    "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
+    "scope": "parent",
+    "slug": "rlhc",
     "dashes": true
   }
 ]

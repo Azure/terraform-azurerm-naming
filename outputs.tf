@@ -742,6 +742,14 @@ output "eventgrid_topic" {
   value = local.az.eventgrid_topic
 }
 
+output "relay_namespace" {
+  value = local.az.relay_namespace
+}
+
+output "relay_hybrid_connection" {
+  value = local.az.relay_hybrid_connection
+}
+
 output "private_endpoint" {
   value = local.az.private_endpoint
 }
@@ -840,6 +848,14 @@ output "network_ddos_protection_plan" {
 
 output "private_dns_zone_group" {
   value = local.az.private_dns_zone_group
+}
+
+output "proximity_placement_group" {
+  value = local.az.proximity_placement_group
+}
+
+output "private_link_service" {
+  value = local.az.private_link_service
 }
 
 
