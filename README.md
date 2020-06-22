@@ -219,6 +219,7 @@ You can find a list bellow of all the resources that are currently implemented. 
 | private\_dns\_srv\_record | n/a |
 | private\_dns\_txt\_record | n/a |
 | private\_dns\_zone | n/a |
+| private\_dns\_zone\_group | n/a |
 | private\_endpoint | n/a |
 | private\_service\_connection | n/a |
 | public\_ip | n/a |
