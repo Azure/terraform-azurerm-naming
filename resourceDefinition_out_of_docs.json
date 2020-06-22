@@ -161,7 +161,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "dnsrec",
+    "slug": "pdnsrec",
     "dashes": true
   },
   {
@@ -172,7 +172,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "dnsrec",
+    "slug": "pdnsrec",
     "dashes": true
   },
   {
@@ -183,7 +183,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "dnsrec",
+    "slug": "pdnsrec",
     "dashes": true
   },
   {
@@ -194,7 +194,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "dnsrec",
+    "slug": "pdnsrec",
     "dashes": true
   },
   {
@@ -205,7 +205,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "dnsrec",
+    "slug": "pdnsrec",
     "dashes": true
   },
   {
@@ -216,7 +216,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "dnsrec",
+    "slug": "pdnsrec",
     "dashes": true
   },
   {
@@ -227,7 +227,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "dnsrec",
+    "slug": "pdnsrec",
     "dashes": true
   },
   {
@@ -264,17 +264,6 @@
     "dashes": true
   },
   {
-    "name": "private_endpoint",
-    "length": {
-      "min": 1,
-      "max": 80
-    },
-    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-    "scope": "resourceGroup",
-    "slug": "pe",
-    "dashes": true
-  },
-  {
     "name": "private_dns_zone_group",
     "length": {
       "min": 1,
@@ -283,61 +272,6 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
     "slug": "pdnszg",
-    "dashes": true
-  },
-  {
-    "name": "private_service_connection",
-    "length": {
-      "min": 1,
-      "max": 80
-    },
-    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-    "scope": "resourceGroup",
-    "slug": "psc",
-    "dashes": true
-  },
-  {
-    "name": "firewall_ip_configuration",
-    "length": {
-      "min": 1,
-      "max": 80
-    },
-    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-    "scope": "resourceGroup",
-    "slug": "fwipconf",
-    "dashes": true
-  },
-  {
-    "name": "firewall_application_rule_collection",
-    "length": {
-      "min": 1,
-      "max": 80
-    },
-    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-    "scope": "parent",
-    "slug": "fwapp",
-    "dashes": true
-  },
-  {
-    "name": "firewall_nat_rule_collection",
-    "length": {
-      "min": 1,
-      "max": 80
-    },
-    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-    "scope": "parent",
-    "slug": "fwnatrc",
-    "dashes": true
-  },
-  {
-    "name": "firewall_network_rule_collection",
-    "length": {
-      "min": 1,
-      "max": 80
-    },
-    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
-    "scope": "parent",
-    "slug": "fwnetrc",
     "dashes": true
   }
 ]

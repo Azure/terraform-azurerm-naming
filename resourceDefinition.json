@@ -1833,7 +1833,7 @@
     },
     "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
-    "slug": "dns",
+    "slug": "pdns",
     "dashes": true
   },
   {

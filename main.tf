@@ -1672,10 +1672,10 @@ locals {
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
     application_security_group = {
-      name        = substr(join("-", compact([local.prefix, "nsg", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "nsg", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "asg", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "asg", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "nsg"
+      slug        = "asg"
       min_length  = 1
       max_length  = 80
       scope       = "resourceGroup"
@@ -1692,10 +1692,10 @@ locals {
       regex       = "/^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
     private_dns_zone = {
-      name        = substr(join("-", compact([local.prefix, "dns", local.suffix])), 0, 63)
-      name_unique = substr(join("-", compact([local.prefix, "dns", local.suffix_unique])), 0, 63)
+      name        = substr(join("-", compact([local.prefix, "pdns", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "pdns", local.suffix_unique])), 0, 63)
       dashes      = true
-      slug        = "dns"
+      slug        = "pdns"
       min_length  = 1
       max_length  = 63
       scope       = "resourceGroup"
@@ -1891,16 +1891,6 @@ locals {
       scope       = "resourceGroup"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
     }
-    private_dns_zone_group = {
-      name        = substr(join("-", compact([local.prefix, "pdnszg", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "pdnszg", local.suffix_unique])), 0, 80)
-      dashes      = true
-      slug        = "pdnszg"
-      min_length  = 1
-      max_length  = 80
-      scope       = "resourceGroup"
-      regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
-    }
     private_service_connection = {
       name        = substr(join("-", compact([local.prefix, "psc", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "psc", local.suffix_unique])), 0, 80)
@@ -2032,70 +2022,70 @@ locals {
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
     private_dns_a_record = {
-      name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "dnsrec", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "dnsrec"
+      slug        = "pdnsrec"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
     private_dns_aaaa_record = {
-      name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "dnsrec", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "dnsrec"
+      slug        = "pdnsrec"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
     private_dns_cname_record = {
-      name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "dnsrec", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "dnsrec"
+      slug        = "pdnsrec"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
     private_dns_mx_record = {
-      name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "dnsrec", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "dnsrec"
+      slug        = "pdnsrec"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
     private_dns_ptr_record = {
-      name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "dnsrec", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "dnsrec"
+      slug        = "pdnsrec"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
     private_dns_srv_record = {
-      name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "dnsrec", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "dnsrec"
+      slug        = "pdnsrec"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
     }
     private_dns_txt_record = {
-      name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "dnsrec", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "dnsrec"
+      slug        = "pdnsrec"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
@@ -2130,6 +2120,16 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$/"
+    }
+    private_dns_zone_group = {
+      name        = substr(join("-", compact([local.prefix, "pdnszg", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pdnszg", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "pdnszg"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "/^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$/"
     }
   }
 }

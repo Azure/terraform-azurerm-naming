@@ -746,10 +746,6 @@ output "private_endpoint" {
   value = local.az.private_endpoint
 }
 
-output "private_dns_zone_group" {
-  value = local.az.private_dns_zone_group
-}
-
 output "private_service_connection" {
   value = local.az.private_service_connection
 }
@@ -840,6 +836,10 @@ output "virtual_machine_scale_set_extension" {
 
 output "network_ddos_protection_plan" {
   value = local.az.network_ddos_protection_plan
+}
+
+output "private_dns_zone_group" {
+  value = local.az.private_dns_zone_group
 }
 
 
