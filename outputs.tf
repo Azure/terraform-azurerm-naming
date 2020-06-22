@@ -654,16 +654,96 @@ output "network_security_group_rule" {
   value = local.az.network_security_group_rule
 }
 
+output "network_security_rule" {
+  value = local.az.network_security_rule
+}
+
 output "application_security_group" {
   value = local.az.application_security_group
 }
 
-output "private_endpoint" {
-  value = local.az.private_endpoint
+output "dns_zone" {
+  value = local.az.dns_zone
 }
 
-output "private_dns_zone_group" {
-  value = local.az.private_dns_zone_group
+output "private_dns_zone" {
+  value = local.az.private_dns_zone
+}
+
+output "notification_hub" {
+  value = local.az.notification_hub
+}
+
+output "notification_hub_namespace" {
+  value = local.az.notification_hub_namespace
+}
+
+output "notification_hub_authorization_rule" {
+  value = local.az.notification_hub_authorization_rule
+}
+
+output "servicebus_namespace" {
+  value = local.az.servicebus_namespace
+}
+
+output "servicebus_namespace_authorization_rule" {
+  value = local.az.servicebus_namespace_authorization_rule
+}
+
+output "servicebus_queue" {
+  value = local.az.servicebus_queue
+}
+
+output "servicebus_queue_authorization_rule" {
+  value = local.az.servicebus_queue_authorization_rule
+}
+
+output "servicebus_subscription" {
+  value = local.az.servicebus_subscription
+}
+
+output "servicebus_subscription_rule" {
+  value = local.az.servicebus_subscription_rule
+}
+
+output "servicebus_topic" {
+  value = local.az.servicebus_topic
+}
+
+output "servicebus_topic_authorization_rule" {
+  value = local.az.servicebus_topic_authorization_rule
+}
+
+output "powerbi_embedded" {
+  value = local.az.powerbi_embedded
+}
+
+output "dashboard" {
+  value = local.az.dashboard
+}
+
+output "signalr_service" {
+  value = local.az.signalr_service
+}
+
+output "eventgrid_domain" {
+  value = local.az.eventgrid_domain
+}
+
+output "eventgrid_domain_topic" {
+  value = local.az.eventgrid_domain_topic
+}
+
+output "eventgrid_event_subscription" {
+  value = local.az.eventgrid_event_subscription
+}
+
+output "eventgrid_topic" {
+  value = local.az.eventgrid_topic
+}
+
+output "private_endpoint" {
+  value = local.az.private_endpoint
 }
 
 output "private_service_connection" {
@@ -684,6 +764,82 @@ output "firewall_nat_rule_collection" {
 
 output "firewall_network_rule_collection" {
   value = local.az.firewall_network_rule_collection
+}
+
+output "dns_a_record" {
+  value = local.az.dns_a_record
+}
+
+output "dns_aaaa_record" {
+  value = local.az.dns_aaaa_record
+}
+
+output "dns_caa_record" {
+  value = local.az.dns_caa_record
+}
+
+output "dns_cname_record" {
+  value = local.az.dns_cname_record
+}
+
+output "dns_mx_record" {
+  value = local.az.dns_mx_record
+}
+
+output "dns_ns_record" {
+  value = local.az.dns_ns_record
+}
+
+output "dns_ptr_record" {
+  value = local.az.dns_ptr_record
+}
+
+output "dns_txt_record" {
+  value = local.az.dns_txt_record
+}
+
+output "private_dns_a_record" {
+  value = local.az.private_dns_a_record
+}
+
+output "private_dns_aaaa_record" {
+  value = local.az.private_dns_aaaa_record
+}
+
+output "private_dns_cname_record" {
+  value = local.az.private_dns_cname_record
+}
+
+output "private_dns_mx_record" {
+  value = local.az.private_dns_mx_record
+}
+
+output "private_dns_ptr_record" {
+  value = local.az.private_dns_ptr_record
+}
+
+output "private_dns_srv_record" {
+  value = local.az.private_dns_srv_record
+}
+
+output "private_dns_txt_record" {
+  value = local.az.private_dns_txt_record
+}
+
+output "virtual_machine_extension" {
+  value = local.az.virtual_machine_extension
+}
+
+output "virtual_machine_scale_set_extension" {
+  value = local.az.virtual_machine_scale_set_extension
+}
+
+output "network_ddos_protection_plan" {
+  value = local.az.network_ddos_protection_plan
+}
+
+output "private_dns_zone_group" {
+  value = local.az.private_dns_zone_group
 }
 
 
