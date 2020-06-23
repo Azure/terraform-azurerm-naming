@@ -611,11 +611,21 @@ locals {
       scope       = "resourceGroup"
       regex       = "/^(?=.{3,30}$)[a-zA-Z0-9-_]+$/"
     }
-    databricks_cluster = {
-      name        = substr(join("-", compact([local.prefix, "dbc", local.suffix])), 0, 30)
-      name_unique = substr(join("-", compact([local.prefix, "dbc", local.suffix_unique])), 0, 30)
+    databricks_standard_cluster = {
+      name        = substr(join("-", compact([local.prefix, "dbsc", local.suffix])), 0, 30)
+      name_unique = substr(join("-", compact([local.prefix, "dbsc", local.suffix_unique])), 0, 30)
       dashes      = true
-      slug        = "dbc"
+      slug        = "dbsc"
+      min_length  = 3
+      max_length  = 30
+      scope       = "parent"
+      regex       = "/^(?=.{3,30}$)[a-zA-Z0-9-_]+$/"
+    }
+    databricks_high_concurrency_cluster = {
+      name        = substr(join("-", compact([local.prefix, "dbhcc", local.suffix])), 0, 30)
+      name_unique = substr(join("-", compact([local.prefix, "dbhcc", local.suffix_unique])), 0, 30)
+      dashes      = true
+      slug        = "dbhcc"
       min_length  = 3
       max_length  = 30
       scope       = "parent"
