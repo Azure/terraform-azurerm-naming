@@ -127,8 +127,8 @@ You can find a list bellow of all the resources that are currently implemented. 
 | data\_lake\_store\_firewall\_rule | n/a |
 | database\_migration\_project | n/a |
 | database\_migration\_service | n/a |
-| databricks\_workspace | n/a |
 | databricks\_cluster | n/a |
+| databricks\_workspace | n/a |
 | dev\_test\_lab | n/a |
 | dev\_test\_linux\_virtual\_machine | n/a |
 | dev\_test\_windows\_virtual\_machine | n/a |

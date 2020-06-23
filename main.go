@@ -78,8 +78,3 @@ func main() {
 	}
 	parsedTemplate.ExecuteTemplate(outputsFile, "outputs", data)
 }
-
-func cleanRegex(dirtyString string) string {
-	var re = regexp.MustCompile(`(?m)\(\?=.{\d+,\d+}\$\)`)
-	return re.ReplaceAllString(dirtyString, "")
-}
