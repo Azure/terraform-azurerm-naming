@@ -273,5 +273,27 @@
     "scope": "resourceGroup",
     "slug": "pdnszg",
     "dashes": true
+  },
+  {
+    "name": "proximity_placement_group",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ppg",
+    "dashes": true
+  },
+  {
+    "name": "private_link_service",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "pls",
+    "dashes": true
   }
 ]
