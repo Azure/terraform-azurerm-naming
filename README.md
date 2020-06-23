@@ -33,9 +33,15 @@ There are other advances usages that will be explained in the [Advanced usages](
 
 # Internals
 
+## Prerequisites and setup
+
+- Install [tflint](https://github.com/terraform-linters/tflint) as suitable for your OS.
+
+- Run `make install` in the root directory of the repo.
+
 ## Modifying resources
 
-The resources are automatically generated using `go` to change the generation please change the file on the `templates` folder. To add a new resource, include their definition at `resourceDefinition.jsonc` file it will be automatically generated.
+The resources are automatically generated using `go` to change the generation please change the file on the `templates` folder. To add a new resource, include its definition in the file `resourceDefinition.json`, and it will be automatically generated when `main.go` is run.
 
 # Current implementation
 
