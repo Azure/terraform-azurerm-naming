@@ -316,7 +316,7 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9_]+$",
     "scope": "resourceGroup",
     "slug": "des",
-    "dashes": true
+    "dashes": false
   },
   {
     "name": "image",
@@ -360,7 +360,7 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9_]+$",
     "scope": "resourceGroup",
     "slug": "dsk",
-    "dashes": true
+    "dashes": false
   },
   {
     "name": "virtual_machine",
@@ -1897,7 +1897,7 @@
       "min": 1,
       "max": 260
     },
-    "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-._\\\\/\\\\]+[a-zA-Z0-9_]$",
+    "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
     "slug": "sbq",
     "dashes": true
@@ -1941,7 +1941,7 @@
       "min": 1,
       "max": 260
     },
-    "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-._\\\\/\\\\]+[a-zA-Z0-9]$",
+    "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
     "scope": "parent",
     "slug": "sbt",
     "dashes": true

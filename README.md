@@ -275,6 +275,7 @@ You can find a list bellow of all the resources that are currently implemented. 
 | template\_deployment | n/a |
 | traffic\_manager\_profile | n/a |
 | unique-seed | n/a |
+| validation | n/a |
 | virtual\_machine | n/a |
 | virtual\_machine\_extension | n/a |
 | virtual\_machine\_scale\_set | n/a |

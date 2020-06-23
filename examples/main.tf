@@ -46,3 +46,7 @@ module "everything" {
 output "everything" {
   value = module.everything.storage_account.name_unique
 }
+
+output "validation_everything" {
+  value = module.everything.validation
+}
