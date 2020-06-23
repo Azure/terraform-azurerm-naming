@@ -238,6 +238,10 @@ output "databricks_workspace" {
   value = local.az.databricks_workspace
 }
 
+output "databricks_cluster" {
+  value = local.az.databricks_cluster
+}
+
 output "kusto_cluster" {
   value = local.az.kusto_cluster
 }
