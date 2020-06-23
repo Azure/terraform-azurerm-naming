@@ -638,6 +638,17 @@
     "dashes": true
   },
   {
+    "name": "databricks_cluster",
+    "length": {
+      "min": 3,
+      "max": 30
+    },
+    "regex": "^(?=.{3,30}$)[a-zA-Z0-9-_]+$",
+    "scope": "parent",
+    "slug": "dbc",
+    "dashes": true
+  },
+  {
     "name": "databricks_standard_cluster",
     "length": {
       "min": 3,

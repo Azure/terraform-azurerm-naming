@@ -234,6 +234,10 @@ output "databricks_workspace" {
   value = local.az.databricks_workspace
 }
 
+output "databricks_cluster" {
+  value = local.az.databricks_cluster
+}
+
 output "databricks_standard_cluster" {
   value = local.az.databricks_standard_cluster
 }
