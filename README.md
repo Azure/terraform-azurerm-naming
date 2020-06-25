@@ -55,7 +55,7 @@ You can find a list bellow of all the resources that are currently implemented. 
 
 ## Output
 
-Each one of the resources spits out more than just the name of the resource but also other properties:
+Each one of the resources emits the name of the resource and other properties:
 
 | Property | Type | Description |
 | ----- |----- | ---- |
