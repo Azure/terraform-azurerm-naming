@@ -55,11 +55,11 @@ You can find a list bellow of all the resources that are currently implemented. 
 
 ## Output
 
-Each one of the resources spits out more than just the name of the resource but also other properties:
+Each one of the resources emits the name of the resource and other properties:
 
 | Property | Type | Description |
 | ----- |----- | ---- |
-| name | string | name of the resource including their respective suffixes and prefixes applied |
+| name | string | name of the resource including respective suffixes and prefixes applied |
 | name_unique | string | same as the name but with random chars added for uniqueness |
 | dashes | bool | if these resources support dashes |
 | slug | string | letters to identify this resource among others |
