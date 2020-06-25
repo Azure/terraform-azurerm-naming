@@ -31,7 +31,7 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 ```
-Other advances usages will be explained in the [Advanced usage](#advancedusage) part of this docs.
+Other advanced usages will be explained in the [Advanced usage](#advancedusage) part of this docs.
 
 # Internals
 
