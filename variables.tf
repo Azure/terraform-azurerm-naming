@@ -7,23 +7,23 @@ variable "prefix" {
 variable "suffix" {
   type        = list(string)
   default     = []
-  description = "It is recommended that you specify a suffix for consistency. please use only lowercase charactes when possible"
+  description = "It is recommended that you specify a suffix for consistency. please use only lowercase characters when possible"
 }
 
 variable "unique-seed" {
-  description = "Custom value for the randon charecters to be used"
+  description = "Custom value for the random characters to be used"
   type        = string
   default     = ""
 }
 
 variable "unique-length" {
-  description = "Max length of the uniquiness suffix to be added"
+  description = "Max length of the uniqueness suffix to be added"
   type        = number
   default     = 4
 }
 
 variable "unique-include-numbers" {
-  description = "If you want to iunclude numbers in the unique generation"
+  description = "If you want to include numbers in the unique generation"
   type        = bool
   default     = true
 }
