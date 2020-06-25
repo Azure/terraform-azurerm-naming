@@ -1,6 +1,6 @@
 # Azure Naming
 
-This module helps you to keep consistency on your resources names for terraform The goal of this module it is that for each resource that requires a name in terraform you would be easialy able to compose this name using this module and this will keep the consistency in your repositories.
+This module helps you to keep consistency on your resources names for Terraform The goal of this module it is that for each resource that requires a name in Terraform you would be easily able to compose this name using this module and this will keep the consistency in your repositories.
 
 # Usage
 
@@ -10,6 +10,7 @@ example for `azurerm_resource_group` you can use :
 
 ```tf
 module "naming" "main" {
+  source  = "Azure/naming/azurerm"
   suffix = [ "test" ]
 }
 resource "azurerm_resource_group" "example" {
@@ -22,6 +23,7 @@ if you want this to be unique for this module and not shared with other instance
 
 ```tf
 module "naming" "main" {
+  source  = "Azure/naming/azurerm"
   suffix = [ "test" ]
 }
 resource "azurerm_resource_group" "example" {
@@ -29,7 +31,7 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 ```
-There are other advances usages that will be explained in the [Advanced usages](#advancedusages) part og this docs.
+Other advances usages will be explained in the [Advanced usage](#advancedusage) part of this docs.
 
 # Internals
 
@@ -41,13 +43,47 @@ There are other advances usages that will be explained in the [Advanced usages](
 
 ## Modifying resources
 
-The resources are automatically generated using `go` to change the generation please change the file on the `templates` folder. To add a new resource, include its definition in the file `resourceDefinition.json`, and it will be automatically generated when `main.go` is run.
+The resources are automatically generated using `go` to change the generation please change the file on the `templates` folder. To add a new resource, including its definition in the file `resourceDefinition.json`, and it will be automatically generated when `main.go` is run.
 
 # Current implementation
 
 You can find a list bellow of all the resources that are currently implemented. To get a list of the ones that are missing implementation you can check at [Missing resources](docs/missing_ressources.md) the resources that have no documentation about their limitation on naming currently on Microsoft docs are on the [Not defined](docs/not_defined.md) list.
 
 
+# Advanced usage
+
+
+## Output
+
+Each one of the resources spits out more than just the name of the resource but also other properties:
+
+| Property | Type | Description |
+| ----- |----- | ---- |
+| name | string | name of the resource including their respective suffixes and prefixes applied |
+| name_unique | string | same as the name but with random chars added for uniqueness |
+| dashes | bool | if these resources support dashes |
+| slug | string | letters to identify this resource among others |
+| min_length | integer | Minimum length required for this resource name |
+| max_length | integer | Maximum length allowed for this resource name |
+| scope | string | scope which this name needs to be unique, such as `resourcegroup` or `global`  |
+| regex | | |
+
+### Example Output
+
+Every resource will have an output with the following format:
+
+```go
+postgresql_server = {
+      name        = "pre-fix-psql-su-fix"
+      name_unique = "pre-fix-psql-su-fix-asdfg"
+      dashes      = true
+      slug        = "psql"
+      min_length  = 3
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
+```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -67,10 +103,10 @@ You can find a list bellow of all the resources that are currently implemented. 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | prefix | It is not recommended that you use prefix by azure you should be using a suffix for your resources. | `list(string)` | `[]` | no |
-| suffix | It is recommended that you specify a suffix for consistency. please use only lowercase charactes when possible | `list(string)` | `[]` | no |
-| unique-include-numbers | If you want to iunclude numbers in the unique generation | `bool` | `true` | no |
-| unique-length | Max length of the uniquiness suffix to be added | `number` | `4` | no |
-| unique-seed | Custom value for the randon charecters to be used | `string` | `""` | no |
+| suffix | It is recommended that you specify a suffix for consistency. please use only lowercase characters when possible | `list(string)` | `[]` | no |
+| unique-include-numbers | If you want to include numbers in the unique generation | `bool` | `true` | no |
+| unique-length | Max length of the uniqueness suffix to be added | `number` | `4` | no |
+| unique-seed | Custom value for the random characters to be used | `string` | `""` | no |
 
 ## Outputs
 
