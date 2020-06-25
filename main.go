@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"regexp"
 	"text/template"
 )
 
@@ -33,7 +34,13 @@ func main() {
 	for i, file := range files {
 		fileNames[i] = "templates/" + file.Name()
 	}
-	parsedTemplate, err := template.ParseFiles(fileNames...)
+	parsedTemplate, err := template.New("templates").Funcs(template.FuncMap{
+		// Terraform not yet support lookahead in their regex function
+		"cleanRegex": func(dirtyString string) string {
+			var re = regexp.MustCompile(`(?m)\(\?=.{\d+,\d+}\$\)|\(\?!\.\*--\)`)
+			return re.ReplaceAllString(dirtyString, "")
+		},
+	}).ParseFiles(fileNames...)
 	if err != nil {
 		log.Fatal(err)
 	}

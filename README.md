@@ -127,10 +127,10 @@ You can find a list bellow of all the resources that are currently implemented. 
 | data\_lake\_store\_firewall\_rule | n/a |
 | database\_migration\_project | n/a |
 | database\_migration\_service | n/a |
-| databricks\_workspace | n/a |
 | databricks\_cluster | n/a |
-| databricks\_standard\_cluster | n/a |
 | databricks\_high\_concurrency\_cluster | n/a |
+| databricks\_standard\_cluster | n/a |
+| databricks\_workspace | n/a |
 | dev\_test\_lab | n/a |
 | dev\_test\_linux\_virtual\_machine | n/a |
 | dev\_test\_windows\_virtual\_machine | n/a |
@@ -230,11 +230,15 @@ You can find a list bellow of all the resources that are currently implemented. 
 | private\_dns\_zone | n/a |
 | private\_dns\_zone\_group | n/a |
 | private\_endpoint | n/a |
+| private\_link\_service | n/a |
 | private\_service\_connection | n/a |
+| proximity\_placement\_group | n/a |
 | public\_ip | n/a |
 | public\_ip\_prefix | n/a |
 | redis\_cache | n/a |
 | redis\_firewall\_rule | n/a |
+| relay\_hybrid\_connection | n/a |
+| relay\_namespace | n/a |
 | resource\_group | n/a |
 | role\_assignment | n/a |
 | role\_definition | n/a |
@@ -280,6 +284,7 @@ You can find a list bellow of all the resources that are currently implemented. 
 | template\_deployment | n/a |
 | traffic\_manager\_profile | n/a |
 | unique-seed | n/a |
+| validation | n/a |
 | virtual\_machine | n/a |
 | virtual\_machine\_extension | n/a |
 | virtual\_machine\_scale\_set | n/a |
