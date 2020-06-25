@@ -66,7 +66,7 @@ Each one of the resources spits out more than just the name of the resource but 
 | min_length | integer | Minimum length required for this resource name |
 | max_length | integer | Maximum length allowed for this resource name |
 | scope | string | scope which this name needs to be unique, such as `resourcegroup` or `global`  |
-| regex | | |
+| regex | string | Terraform compatible version of the regex |
 
 ### Example Output
 
