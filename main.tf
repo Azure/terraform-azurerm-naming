@@ -621,26 +621,6 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
     }
-    databricks_standard_cluster = {
-      name        = substr(join("-", compact([local.prefix, "dbsc", local.suffix])), 0, 30)
-      name_unique = substr(join("-", compact([local.prefix, "dbsc", local.suffix_unique])), 0, 30)
-      dashes      = true
-      slug        = "dbsc"
-      min_length  = 3
-      max_length  = 30
-      scope       = "parent"
-      regex       = "^[a-zA-Z0-9-_]+$"
-    }
-    databricks_high_concurrency_cluster = {
-      name        = substr(join("-", compact([local.prefix, "dbhcc", local.suffix])), 0, 30)
-      name_unique = substr(join("-", compact([local.prefix, "dbhcc", local.suffix_unique])), 0, 30)
-      dashes      = true
-      slug        = "dbhcc"
-      min_length  = 3
-      max_length  = 30
-      scope       = "parent"
-      regex       = "^[a-zA-Z0-9-_]+$"
-    }
     kusto_cluster = {
       name        = substr(join("", compact([local.prefix_safe, "kc", local.suffix_safe])), 0, 22)
       name_unique = substr(join("", compact([local.prefix_safe, "kc", local.suffix_unique_safe])), 0, 22)
@@ -2468,14 +2448,6 @@ locals {
     databricks_cluster = {
       valid_name        = length(regexall(local.az.databricks_cluster.regex, local.az.databricks_cluster.name)) > 0 && length(local.az.databricks_cluster.name) > local.az.databricks_cluster.min_length
       valid_name_unique = length(regexall(local.az.databricks_cluster.regex, local.az.databricks_cluster.name_unique)) > 0
-    }
-    databricks_standard_cluster = {
-      valid_name        = length(regexall(local.az.databricks_standard_cluster.regex, local.az.databricks_standard_cluster.name)) > 0 && length(local.az.databricks_standard_cluster.name) > local.az.databricks_standard_cluster.min_length
-      valid_name_unique = length(regexall(local.az.databricks_standard_cluster.regex, local.az.databricks_standard_cluster.name_unique)) > 0
-    }
-    databricks_high_concurrency_cluster = {
-      valid_name        = length(regexall(local.az.databricks_high_concurrency_cluster.regex, local.az.databricks_high_concurrency_cluster.name)) > 0 && length(local.az.databricks_high_concurrency_cluster.name) > local.az.databricks_high_concurrency_cluster.min_length
-      valid_name_unique = length(regexall(local.az.databricks_high_concurrency_cluster.regex, local.az.databricks_high_concurrency_cluster.name_unique)) > 0
     }
     kusto_cluster = {
       valid_name        = length(regexall(local.az.kusto_cluster.regex, local.az.kusto_cluster.name)) > 0 && length(local.az.kusto_cluster.name) > local.az.kusto_cluster.min_length
