@@ -9,12 +9,12 @@ For every resource in `terraform_azurerm` just remove the `azurerm` part of the 
 example for `azurerm_resource_group` you can use :
 
 ```tf
-module "naming" "main" {
+module "naming" {
   source  = "Azure/naming/azurerm"
   suffix = [ "test" ]
 }
 resource "azurerm_resource_group" "example" {
-  name     = module.naming.main.resource_group.name
+  name     = module.naming.resource_group.name
   location = "West Europe"
 }
 ```
@@ -22,12 +22,12 @@ resource "azurerm_resource_group" "example" {
 if you want this to be unique for this module and not shared with other instances of this module you can use `name_unique`
 
 ```tf
-module "naming" "main" {
+module "naming" {
   source  = "Azure/naming/azurerm"
   suffix = [ "test" ]
 }
 resource "azurerm_resource_group" "example" {
-  name     = module.naming.main.resource_group.name
+  name     = module.naming.resource_group.name
   location = "West Europe"
 }
 ```
