@@ -314,7 +314,7 @@ locals {
     disk_encryption_set = {
       name        = substr(join("", compact([local.prefix_safe, "des", local.suffix_safe])), 0, 80)
       name_unique = substr(join("", compact([local.prefix_safe, "des", local.suffix_unique_safe])), 0, 80)
-      dashes      = true
+      dashes      = false
       slug        = "des"
       min_length  = 1
       max_length  = 80
@@ -354,7 +354,7 @@ locals {
     managed_disk = {
       name        = substr(join("", compact([local.prefix_safe, "dsk", local.suffix_safe])), 0, 80)
       name_unique = substr(join("", compact([local.prefix_safe, "dsk", local.suffix_unique_safe])), 0, 80)
-      dashes      = true
+      dashes      = false
       slug        = "dsk"
       min_length  = 1
       max_length  = 80
