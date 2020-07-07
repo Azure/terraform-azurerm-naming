@@ -312,9 +312,9 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$"
     }
     disk_encryption_set = {
-      name        = substr(join("", compact([local.prefix_safe, "des", local.suffix_safe])), 0, 80)
-      name_unique = substr(join("", compact([local.prefix_safe, "des", local.suffix_unique_safe])), 0, 80)
-      dashes      = false
+      name        = substr(join("-", compact([local.prefix, "des", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "des", local.suffix_unique])), 0, 80)
+      dashes      = true
       slug        = "des"
       min_length  = 1
       max_length  = 80
@@ -352,9 +352,9 @@ locals {
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
     }
     managed_disk = {
-      name        = substr(join("", compact([local.prefix_safe, "dsk", local.suffix_safe])), 0, 80)
-      name_unique = substr(join("", compact([local.prefix_safe, "dsk", local.suffix_unique_safe])), 0, 80)
-      dashes      = false
+      name        = substr(join("-", compact([local.prefix, "dsk", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "dsk", local.suffix_unique])), 0, 80)
+      dashes      = true
       slug        = "dsk"
       min_length  = 1
       max_length  = 80
