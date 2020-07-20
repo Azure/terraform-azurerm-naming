@@ -412,10 +412,10 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     container_registry = {
-      name        = substr(join("", compact([local.prefix_safe, "cr", local.suffix_safe])), 0, 63)
-      name_unique = substr(join("", compact([local.prefix_safe, "cr", local.suffix_unique_safe])), 0, 63)
+      name        = substr(join("", compact([local.prefix_safe, "acr", local.suffix_safe])), 0, 63)
+      name_unique = substr(join("", compact([local.prefix_safe, "acr", local.suffix_unique_safe])), 0, 63)
       dashes      = false
-      slug        = "cr"
+      slug        = "acr"
       min_length  = 1
       max_length  = 63
       scope       = "resourceGroup"
