@@ -425,7 +425,7 @@
     },
     "regex": "^(?=.{1,63}$)[a-zA-Z0-9]+$",
     "scope": "resourceGroup",
-    "slug": "cr",
+    "slug": "acr",
     "dashes": false
   },
   {
