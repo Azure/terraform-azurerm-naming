@@ -1,4 +1,4 @@
-# Not Difined limits
+# Not Defined limits
 
 // https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftdocumentdb
 - kubernetes_cluster_node_pool
