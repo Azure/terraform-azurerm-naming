@@ -11,7 +11,7 @@
     "dashes": false
   },
   {
-    "name": "api_managment_service",
+    "name": "api_management",
     "length": {
       "min": 1,
       "max": 50

@@ -89,7 +89,7 @@ az = {
     service_bus_topic  = "sbt"
     automation_account = "aa" // Not in the specs
 
-    // Managment and governance
+    // Management and governance
     blueprint               = "bp"
     key_vault               = "kv"
     key_vault_key           = "kvk"
