@@ -113,7 +113,7 @@ postgresql_server = {
 | Name | Description |
 |------|-------------|
 | analysis\_services\_server | n/a |
-| api\_managment\_service | n/a |
+| api\_management | n/a |
 | app\_configuration | n/a |
 | application\_gateway | n/a |
 | application\_security\_group | n/a |

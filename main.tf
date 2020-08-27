@@ -41,7 +41,7 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-z][a-z0-9]+$"
     }
-    api_managment_service = {
+    api_management = {
       name        = substr(join("", compact([local.prefix_safe, "apim", local.suffix_safe])), 0, 50)
       name_unique = substr(join("", compact([local.prefix_safe, "apim", local.suffix_unique_safe])), 0, 50)
       dashes      = false
@@ -2207,9 +2207,9 @@ locals {
       valid_name        = length(regexall(local.az.analysis_services_server.regex, local.az.analysis_services_server.name)) > 0 && length(local.az.analysis_services_server.name) > local.az.analysis_services_server.min_length
       valid_name_unique = length(regexall(local.az.analysis_services_server.regex, local.az.analysis_services_server.name_unique)) > 0
     }
-    api_managment_service = {
-      valid_name        = length(regexall(local.az.api_managment_service.regex, local.az.api_managment_service.name)) > 0 && length(local.az.api_managment_service.name) > local.az.api_managment_service.min_length
-      valid_name_unique = length(regexall(local.az.api_managment_service.regex, local.az.api_managment_service.name_unique)) > 0
+    api_management = {
+      valid_name        = length(regexall(local.az.api_management.regex, local.az.api_management.name)) > 0 && length(local.az.api_management.name) > local.az.api_management.min_length
+      valid_name_unique = length(regexall(local.az.api_management.regex, local.az.api_management.name_unique)) > 0
     }
     app_configuration = {
       valid_name        = length(regexall(local.az.app_configuration.regex, local.az.app_configuration.name)) > 0 && length(local.az.app_configuration.name) > local.az.app_configuration.min_length

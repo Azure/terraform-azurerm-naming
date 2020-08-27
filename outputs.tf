@@ -10,8 +10,8 @@ output "analysis_services_server" {
   value = local.az.analysis_services_server
 }
 
-output "api_managment_service" {
-  value = local.az.api_managment_service
+output "api_management" {
+  value = local.az.api_management
 }
 
 output "app_configuration" {
