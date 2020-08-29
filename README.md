@@ -27,7 +27,7 @@ module "naming" {
   suffix = [ "test" ]
 }
 resource "azurerm_resource_group" "example" {
-  name     = module.naming.resource_group.name
+  name     = module.naming.resource_group.name_unique
   location = "West Europe"
 }
 ```
