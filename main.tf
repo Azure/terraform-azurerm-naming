@@ -61,6 +61,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9_-]+$"
     }
+    application_insights = {
+      name        = substr(join("", compact([local.prefix_safe, "ai", local.suffix_safe])), 0, 63)
+      name_unique = substr(join("", compact([local.prefix_safe, "ai", local.suffix_unique_safe])), 0, 63)
+      dashes      = false
+      slug        = "ai"
+      min_length  = 3
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-z][a-z0-9]+$"
+    }
     role_assignment = {
       name        = substr(join("-", compact([local.prefix, "ra", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "ra", local.suffix_unique])), 0, 64)
