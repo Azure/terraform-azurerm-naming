@@ -62,14 +62,14 @@ locals {
       regex       = "^[a-zA-Z0-9_-]+$"
     }
     application_insights = {
-      name        = substr(join("", compact([local.prefix_safe, "appi", local.suffix_safe])), 0, 63)
-      name_unique = substr(join("", compact([local.prefix_safe, "appi", local.suffix_unique_safe])), 0, 63)
+      name        = substr(join("", compact([local.prefix_safe, "appi", local.suffix_safe])), 0, 260)
+      name_unique = substr(join("", compact([local.prefix_safe, "appi", local.suffix_unique_safe])), 0, 260)
       dashes      = false
       slug        = "appi"
-      min_length  = 4
-      max_length  = 63
+      min_length  = 10
+      max_length  = 260
       scope       = "resourceGroup"
-      regex       = "^[a-z][a-z0-9]+$"
+      regex       = "^[^%\\\\&\\?/]+$"
     }
     role_assignment = {
       name        = substr(join("-", compact([local.prefix, "ra", local.suffix])), 0, 64)
