@@ -62,11 +62,11 @@ locals {
       regex       = "^[a-zA-Z0-9_-]+$"
     }
     application_insights = {
-      name        = substr(join("", compact([local.prefix_safe, "ai", local.suffix_safe])), 0, 63)
-      name_unique = substr(join("", compact([local.prefix_safe, "ai", local.suffix_unique_safe])), 0, 63)
+      name        = substr(join("", compact([local.prefix_safe, "appi", local.suffix_safe])), 0, 63)
+      name_unique = substr(join("", compact([local.prefix_safe, "appi", local.suffix_unique_safe])), 0, 63)
       dashes      = false
-      slug        = "ai"
-      min_length  = 3
+      slug        = "appi"
+      min_length  = 4
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-z][a-z0-9]+$"
