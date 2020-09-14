@@ -66,6 +66,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9_-]+$"
     }
+    application_insights = {
+      name        = substr(join("-", compact([local.prefix, "appi", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "appi", local.suffix_unique])), 0, 260)
+      dashes      = true
+      slug        = "appi"
+      min_length  = 10
+      max_length  = 260
+      scope       = "resourceGroup"
+      regex       = "^[^%\\&?/]+$"
+    }
     role_assignment = {
       name        = substr(join("-", compact([local.prefix, "ra", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "ra", local.suffix_unique])), 0, 64)
@@ -2219,6 +2229,10 @@ locals {
     app_configuration = {
       valid_name        = length(regexall(local.az.app_configuration.regex, local.az.app_configuration.name)) > 0 && length(local.az.app_configuration.name) > local.az.app_configuration.min_length
       valid_name_unique = length(regexall(local.az.app_configuration.regex, local.az.app_configuration.name_unique)) > 0
+    }
+    application_insights = {
+      valid_name        = length(regexall(local.az.application_insights.regex, local.az.application_insights.name)) > 0 && length(local.az.application_insights.name) > local.az.application_insights.min_length
+      valid_name_unique = length(regexall(local.az.application_insights.regex, local.az.application_insights.name_unique)) > 0
     }
     role_assignment = {
       valid_name        = length(regexall(local.az.role_assignment.regex, local.az.role_assignment.name)) > 0 && length(local.az.role_assignment.name) > local.az.role_assignment.min_length

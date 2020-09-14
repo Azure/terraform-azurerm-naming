@@ -33,6 +33,17 @@
     "dashes": true
   },
   {
+    "name": "application_insights",
+    "length": {
+      "min": 10,
+      "max": 260
+    },
+    "regex": "^[^%\\\\&?/]+$",
+    "scope": "resourceGroup",
+    "slug": "appi",
+    "dashes": true
+  },
+  {
     "name": "role_assignment",
     "length": {
       "min": 1,

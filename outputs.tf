@@ -18,6 +18,10 @@ output "app_configuration" {
   value = local.az.app_configuration
 }
 
+output "application_insights" {
+  value = local.az.application_insights
+}
+
 output "role_assignment" {
   value = local.az.role_assignment
 }
