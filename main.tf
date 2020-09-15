@@ -1916,6 +1916,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
     }
+    function_app = {
+      name        = substr(join("-", compact([local.prefix, "func", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "func", local.suffix_unique])), 0, 60)
+      dashes      = true
+      slug        = "func"
+      min_length  = 2
+      max_length  = 60
+      scope       = "global"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
     private_endpoint = {
       name        = substr(join("-", compact([local.prefix, "pe", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "pe", local.suffix_unique])), 0, 80)
@@ -2969,6 +2979,10 @@ locals {
     relay_hybrid_connection = {
       valid_name        = length(regexall(local.az.relay_hybrid_connection.regex, local.az.relay_hybrid_connection.name)) > 0 && length(local.az.relay_hybrid_connection.name) > local.az.relay_hybrid_connection.min_length
       valid_name_unique = length(regexall(local.az.relay_hybrid_connection.regex, local.az.relay_hybrid_connection.name_unique)) > 0
+    }
+    function_app = {
+      valid_name        = length(regexall(local.az.function_app.regex, local.az.function_app.name)) > 0 && length(local.az.function_app.name) > local.az.function_app.min_length
+      valid_name_unique = length(regexall(local.az.function_app.regex, local.az.function_app.name_unique)) > 0
     }
     private_endpoint = {
       valid_name        = length(regexall(local.az.private_endpoint.regex, local.az.private_endpoint.name)) > 0 && length(local.az.private_endpoint.name) > local.az.private_endpoint.min_length

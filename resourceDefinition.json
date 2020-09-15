@@ -2066,5 +2066,16 @@
     "scope": "parent",
     "slug": "rlhc",
     "dashes": true
+  },
+  {
+    "name": "function_app",
+    "length": {
+      "min": 2,
+      "max": 60
+    },
+    "regex": "^(?=.{2,60}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "func",
+    "dashes": true
   }
 ]

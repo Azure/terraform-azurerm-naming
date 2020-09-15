@@ -758,6 +758,10 @@ output "relay_hybrid_connection" {
   value = local.az.relay_hybrid_connection
 }
 
+output "function_app" {
+  value = local.az.function_app
+}
+
 output "private_endpoint" {
   value = local.az.private_endpoint
 }

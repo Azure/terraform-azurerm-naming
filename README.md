@@ -200,6 +200,7 @@ postgresql_server = {
 | firewall\_network\_rule\_collection | n/a |
 | frontdoor | n/a |
 | frontdoor\_firewall\_policy | n/a |
+| function\_app | n/a |
 | hdinsight\_hadoop\_cluster | n/a |
 | hdinsight\_hbase\_cluster | n/a |
 | hdinsight\_interactive\_query\_cluster | n/a |
