@@ -74,8 +74,8 @@ output "bot_web_app" {
   value = local.az.bot_web_app
 }
 
-output "bot_channel_Email" {
-  value = local.az.bot_channel_Email
+output "bot_channel_email" {
+  value = local.az.bot_channel_email
 }
 
 output "bot_channel_ms_teams" {
@@ -158,8 +158,8 @@ output "windows_virtual_machine_scale_set" {
   value = local.az.windows_virtual_machine_scale_set
 }
 
-output "containerGroups" {
-  value = local.az.containerGroups
+output "container_group" {
+  value = local.az.container_group
 }
 
 output "container_registry" {

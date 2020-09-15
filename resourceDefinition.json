@@ -187,7 +187,7 @@
     "dashes": true
   },
   {
-    "name": "bot_channel_Email",
+    "name": "bot_channel_email",
     "length": {
       "min": 2,
       "max": 64
@@ -418,7 +418,7 @@
     "dashes": true
   },
   {
-    "name": "containerGroups",
+    "name": "container_group",
     "length": {
       "min": 1,
       "max": 63

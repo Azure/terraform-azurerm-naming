@@ -206,7 +206,7 @@ locals {
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
     }
-    bot_channel_Email = {
+    bot_channel_email = {
       name        = substr(join("-", compact([local.prefix, "botmail", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "botmail", local.suffix_unique])), 0, 64)
       dashes      = true
@@ -416,7 +416,7 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
     }
-    containerGroups = {
+    container_group = {
       name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "cg", local.suffix_unique])), 0, 63)
       dashes      = true
@@ -2296,9 +2296,9 @@ locals {
       valid_name        = length(regexall(local.az.bot_web_app.regex, local.az.bot_web_app.name)) > 0 && length(local.az.bot_web_app.name) > local.az.bot_web_app.min_length
       valid_name_unique = length(regexall(local.az.bot_web_app.regex, local.az.bot_web_app.name_unique)) > 0
     }
-    bot_channel_Email = {
-      valid_name        = length(regexall(local.az.bot_channel_Email.regex, local.az.bot_channel_Email.name)) > 0 && length(local.az.bot_channel_Email.name) > local.az.bot_channel_Email.min_length
-      valid_name_unique = length(regexall(local.az.bot_channel_Email.regex, local.az.bot_channel_Email.name_unique)) > 0
+    bot_channel_email = {
+      valid_name        = length(regexall(local.az.bot_channel_email.regex, local.az.bot_channel_email.name)) > 0 && length(local.az.bot_channel_email.name) > local.az.bot_channel_email.min_length
+      valid_name_unique = length(regexall(local.az.bot_channel_email.regex, local.az.bot_channel_email.name_unique)) > 0
     }
     bot_channel_ms_teams = {
       valid_name        = length(regexall(local.az.bot_channel_ms_teams.regex, local.az.bot_channel_ms_teams.name)) > 0 && length(local.az.bot_channel_ms_teams.name) > local.az.bot_channel_ms_teams.min_length
@@ -2380,9 +2380,9 @@ locals {
       valid_name        = length(regexall(local.az.windows_virtual_machine_scale_set.regex, local.az.windows_virtual_machine_scale_set.name)) > 0 && length(local.az.windows_virtual_machine_scale_set.name) > local.az.windows_virtual_machine_scale_set.min_length
       valid_name_unique = length(regexall(local.az.windows_virtual_machine_scale_set.regex, local.az.windows_virtual_machine_scale_set.name_unique)) > 0
     }
-    containerGroups = {
-      valid_name        = length(regexall(local.az.containerGroups.regex, local.az.containerGroups.name)) > 0 && length(local.az.containerGroups.name) > local.az.containerGroups.min_length
-      valid_name_unique = length(regexall(local.az.containerGroups.regex, local.az.containerGroups.name_unique)) > 0
+    container_group = {
+      valid_name        = length(regexall(local.az.container_group.regex, local.az.container_group.name)) > 0 && length(local.az.container_group.name) > local.az.container_group.min_length
+      valid_name_unique = length(regexall(local.az.container_group.regex, local.az.container_group.name_unique)) > 0
     }
     container_registry = {
       valid_name        = length(regexall(local.az.container_registry.regex, local.az.container_registry.name)) > 0 && length(local.az.container_registry.name) > local.az.container_registry.min_length
