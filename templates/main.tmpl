@@ -1,13 +1,13 @@
 {{- define "resources" -}}
     {{- .Name }} = {
-      name              = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
-      name_unique       = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix_unique{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
-      dashes            = {{ .Dashes }}
-      slug              = "{{ .Slug }}"
-      min_length        = {{ .Length.Min }}
-      max_length        = {{ .Length.Max }}
-      scope             = "{{ .Scope }}"
-      regex             = "{{ cleanRegex .Regex }}"
+      name        = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
+      name_unique = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix_unique{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
+      dashes      = {{ .Dashes }}
+      slug        = "{{ .Slug }}"
+      min_length  = {{ .Length.Min }}
+      max_length  = {{ .Length.Max }}
+      scope       = "{{ .Scope }}"
+      regex       = "{{ cleanRegex .Regex }}"
     }
 {{- end -}}
 
@@ -21,8 +21,13 @@
 
 
 {{- define "main" -}}
-provider "random" {
-  version = "~> 2.2"
+terraform {
+  required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 2.2"
+    }
+  }
 }
 
 resource "random_string" "main" {
