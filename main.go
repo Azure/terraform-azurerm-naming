@@ -6,10 +6,11 @@ import (
 	"log"
 	"os"
 	"regexp"
+	"sort"
 	"text/template"
 )
 
-// Resource definityion for the package
+// Resource definition for the package
 type Resource struct {
 	Name   string  `json:"name"`
 	Length *Length `json:"length,omitempty"`
@@ -66,6 +67,11 @@ func main() {
 		log.Fatal(err)
 	}
 	data = append(data, dataUndocumented...)
+
+	// Sort the documented and undocumented resources alphabetically
+	sort.Slice(data, func(i, j int) bool {
+		return data[i].Name < data[j].Name
+	})
 
 	mainFile, err := os.OpenFile("main.tf", os.O_TRUNC|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {

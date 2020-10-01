@@ -130,7 +130,7 @@ postgresql_server = {
 | batch\_application | n/a |
 | batch\_certificate | n/a |
 | batch\_pool | n/a |
-| bot\_channel\_Email | n/a |
+| bot\_channel\_email | n/a |
 | bot\_channel\_directline | n/a |
 | bot\_channel\_ms\_teams | n/a |
 | bot\_channel\_slack | n/a |
@@ -140,7 +140,7 @@ postgresql_server = {
 | cdn\_endpoint | n/a |
 | cdn\_profile | n/a |
 | cognitive\_account | n/a |
-| containerGroups | n/a |
+| container\_group | n/a |
 | container\_registry | n/a |
 | container\_registry\_webhook | n/a |
 | cosmosdb\_account | n/a |
@@ -200,6 +200,7 @@ postgresql_server = {
 | firewall\_network\_rule\_collection | n/a |
 | frontdoor | n/a |
 | frontdoor\_firewall\_policy | n/a |
+| function\_app | n/a |
 | hdinsight\_hadoop\_cluster | n/a |
 | hdinsight\_hbase\_cluster | n/a |
 | hdinsight\_interactive\_query\_cluster | n/a |
