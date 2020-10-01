@@ -354,7 +354,7 @@ locals {
       min_length  = 1
       max_length  = 63
       scope       = "resourceGroup"
-      regex       = "^[a-z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$"
+      regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
     }
     custom_provider = {
       name        = substr(join("-", compact([local.prefix, "prov", local.suffix])), 0, 64)
