@@ -1463,6 +1463,17 @@
     "dashes": true
   },
   {
+    "name": "recovery_services_vault",
+    "length": {
+      "min": 2,
+      "max": 50
+    },
+    "regex": "^(?=.{2,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "rsv",
+    "dashes": true
+  },
+  {
     "name": "redis_cache",
     "length": {
       "min": 1,
