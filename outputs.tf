@@ -18,6 +18,14 @@ output "app_configuration" {
   value = local.az.app_configuration
 }
 
+output "app_service" {
+  value = local.az.app_service
+}
+
+output "app_service_plan" {
+  value = local.az.app_service_plan
+}
+
 output "application_gateway" {
   value = local.az.application_gateway
 }

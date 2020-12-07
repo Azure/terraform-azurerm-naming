@@ -33,6 +33,28 @@
     "dashes": true
   },
   {
+    "name": "app_service_plan",
+    "length": {
+      "min": 1,
+      "max": 40
+    },
+    "regex": "^(?=.{1,40}$)[a-zA-Z0-9-]+$",
+    "scope": "resourceGroup",
+    "slug": "plan",
+    "dashes": true
+  },
+  {
+    "name": "app_service",
+    "length": {
+      "min": 2,
+      "max": 60
+    },
+    "regex": "^(?=.{2,60}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]",
+    "scope": "global",
+    "slug": "app",
+    "dashes": true
+  },
+  {
     "name": "application_gateway",
     "length": {
       "min": 1,

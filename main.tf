@@ -66,6 +66,26 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9_-]+$"
     }
+    app_service = {
+      name        = substr(join("-", compact([local.prefix, "app", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "app", local.suffix_unique])), 0, 60)
+      dashes      = true
+      slug        = "app"
+      min_length  = 2
+      max_length  = 60
+      scope       = "global"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+    }
+    app_service_plan = {
+      name        = substr(join("-", compact([local.prefix, "plan", local.suffix])), 0, 40)
+      name_unique = substr(join("-", compact([local.prefix, "plan", local.suffix_unique])), 0, 40)
+      dashes      = true
+      slug        = "plan"
+      min_length  = 1
+      max_length  = 40
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+    }
     application_gateway = {
       name        = substr(join("-", compact([local.prefix, "agw", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "agw", local.suffix_unique])), 0, 80)
@@ -2239,6 +2259,14 @@ locals {
     app_configuration = {
       valid_name        = length(regexall(local.az.app_configuration.regex, local.az.app_configuration.name)) > 0 && length(local.az.app_configuration.name) > local.az.app_configuration.min_length
       valid_name_unique = length(regexall(local.az.app_configuration.regex, local.az.app_configuration.name_unique)) > 0
+    }
+    app_service = {
+      valid_name        = length(regexall(local.az.app_service.regex, local.az.app_service.name)) > 0 && length(local.az.app_service.name) > local.az.app_service.min_length
+      valid_name_unique = length(regexall(local.az.app_service.regex, local.az.app_service.name_unique)) > 0
+    }
+    app_service_plan = {
+      valid_name        = length(regexall(local.az.app_service_plan.regex, local.az.app_service_plan.name)) > 0 && length(local.az.app_service_plan.name) > local.az.app_service_plan.min_length
+      valid_name_unique = length(regexall(local.az.app_service_plan.regex, local.az.app_service_plan.name_unique)) > 0
     }
     application_gateway = {
       valid_name        = length(regexall(local.az.application_gateway.regex, local.az.application_gateway.name)) > 0 && length(local.az.application_gateway.name) > local.az.application_gateway.min_length
