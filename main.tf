@@ -74,7 +74,7 @@ locals {
       min_length  = 2
       max_length  = 60
       scope       = "global"
-      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]"
     }
     app_service_plan = {
       name        = substr(join("-", compact([local.prefix, "plan", local.suffix])), 0, 40)
@@ -84,7 +84,7 @@ locals {
       min_length  = 1
       max_length  = 40
       scope       = "resourceGroup"
-      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+      regex       = "^[a-zA-Z0-9-]+$"
     }
     application_gateway = {
       name        = substr(join("-", compact([local.prefix, "agw", local.suffix])), 0, 80)
