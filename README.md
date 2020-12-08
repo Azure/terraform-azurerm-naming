@@ -115,6 +115,8 @@ postgresql_server = {
 | analysis\_services\_server | n/a |
 | api\_management | n/a |
 | app\_configuration | n/a |
+| app\_service | n/a |
+| app\_service\_plan | n/a |
 | application\_insights | n/a |
 | application\_gateway | n/a |
 | application\_security\_group | n/a |
