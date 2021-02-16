@@ -482,6 +482,10 @@ output "log_analytics_workspace" {
   value = local.az.log_analytics_workspace
 }
 
+output "logic_app_workflow" {
+  value = local.az.logic_app_workflow
+}
+
 output "machine_learning_workspace" {
   value = local.az.machine_learning_workspace
 }
