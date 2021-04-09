@@ -2126,6 +2126,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    synapse = {
+      name        = substr(join("", compact([local.prefix_safe, "syn", local.suffix_safe])), 0, 45)
+      name_unique = substr(join("", compact([local.prefix_safe, "syn", local.suffix_unique_safe])), 0, 45)
+      dashes      = false
+      slug        = "syn"
+      min_length  = 1
+      max_length  = 45
+      scope       = "parent"
+      regex       = "^[a-z0-9]+$"
+    }
     template_deployment = {
       name        = substr(join("-", compact([local.prefix, "deploy", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "deploy", local.suffix_unique])), 0, 64)

@@ -321,6 +321,7 @@ postgresql_server = {
 | stream\_analytics\_stream\_input\_eventhub | n/a |
 | stream\_analytics\_stream\_input\_iothub | n/a |
 | subnet | n/a |
+| synapse | n/a |
 | template\_deployment | n/a |
 | traffic\_manager\_profile | n/a |
 | unique-seed | n/a |

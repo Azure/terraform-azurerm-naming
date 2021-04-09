@@ -842,6 +842,10 @@ output "subnet" {
   value = local.az.subnet
 }
 
+output "synapse" {
+  value = local.az.synapse
+}
+
 output "template_deployment" {
   value = local.az.template_deployment
 }
