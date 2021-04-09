@@ -2126,7 +2126,7 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
-    synapse = {
+    synapse_workspace = {
       name        = substr(join("", compact([local.prefix_safe, "syn", local.suffix_safe])), 0, 45)
       name_unique = substr(join("", compact([local.prefix_safe, "syn", local.suffix_unique_safe])), 0, 45)
       dashes      = false
