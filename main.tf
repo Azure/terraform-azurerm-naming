@@ -2133,7 +2133,7 @@ locals {
       slug        = "syn"
       min_length  = 1
       max_length  = 45
-      scope       = "parent"
+      scope       = "global"
       regex       = "^[a-z0-9]+$"
     }
     template_deployment = {
