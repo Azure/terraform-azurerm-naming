@@ -50,6 +50,10 @@ output "automation_credential" {
   value = local.az.automation_credential
 }
 
+output "automation_dsc_configuration" {
+  value = local.az.automation_dsc_configuration
+}
+
 output "automation_runbook" {
   value = local.az.automation_runbook
 }
