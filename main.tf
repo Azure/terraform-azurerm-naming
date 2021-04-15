@@ -146,6 +146,16 @@ locals {
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
     }
+    automation_dsc_configuration = {
+      name        = substr(join("_", compact([local.prefix, "aadscconf", local.suffix])), 0, 64)
+      name_unique = substr(join("_", compact([local.prefix, "aadscconf", local.suffix_unique])), 0, 64)
+      dashes      = false
+      slug        = "aadscconf"
+      min_length  = 1
+      max_length  = 64
+      scope       = "parent"
+      regex       = "^[a-zA-Z0-9_]+$"
+    }
     automation_runbook = {
       name        = substr(join("-", compact([local.prefix, "aacred", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "aacred", local.suffix_unique])), 0, 63)
@@ -2291,6 +2301,10 @@ locals {
     automation_credential = {
       valid_name        = length(regexall(local.az.automation_credential.regex, local.az.automation_credential.name)) > 0 && length(local.az.automation_credential.name) > local.az.automation_credential.min_length
       valid_name_unique = length(regexall(local.az.automation_credential.regex, local.az.automation_credential.name_unique)) > 0
+    }
+    automation_dsc_configuration = {
+      valid_name        = length(regexall(local.az.automation_dsc_configuration.regex, local.az.automation_dsc_configuration.name)) > 0 && length(local.az.automation_dsc_configuration.name) > local.az.automation_dsc_configuration.min_length
+      valid_name_unique = length(regexall(local.az.automation_dsc_configuration.regex, local.az.automation_dsc_configuration.name_unique)) > 0
     }
     automation_runbook = {
       valid_name        = length(regexall(local.az.automation_runbook.regex, local.az.automation_runbook.name)) > 0 && length(local.az.automation_runbook.name) > local.az.automation_runbook.min_length
