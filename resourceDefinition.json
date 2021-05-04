@@ -1298,6 +1298,17 @@
     "dashes": true
   },
   {
+    "name": "nat_gateway",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^([a-zA-Z0-9])([a-zA-Z0-9-_.]{0,78})([a-zA-Z0-9_])$",
+    "scope": "resourceGroup",
+    "slug": "natgw",
+    "dashes": true
+  },
+  {
     "name": "network_interface",
     "length": {
       "min": 1,
