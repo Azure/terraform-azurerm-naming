@@ -2,6 +2,7 @@
     {{- .Name }} = {
       name        = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
       name_unique = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix_unique{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
+      name_pet = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix_pet{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
       dashes      = {{ .Dashes }}
       slug        = "{{ .Slug }}"
       min_length  = {{ .Length.Min }}
@@ -44,7 +45,7 @@ resource "random_string" "first_letter" {
   number  = false
 }
 
-
+resource "random_pet" "main" {}
 
 locals {
   // adding a first letter to guarantee that you always start with a letter
@@ -56,6 +57,8 @@ locals {
   suffix_unique          = join("-", concat(var.suffix, [local.random]))
   suffix_safe            = lower(join("", var.suffix))
   suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
+  suffix_pet             = join("-", concat(var.suffix, [random_pet.main.id]))
+  suffix_pet_safe        = lower(join("", concat(var.suffix, [replace(random_pet.main.id, "-", "")])))
   // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
