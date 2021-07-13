@@ -2,7 +2,7 @@ terraform {
   required_providers {
     random = {
       source  = "hashicorp/random"
-      version = "~> 2.2"
+      version = "~> 3.1.0"
     }
   }
 }
@@ -20,8 +20,6 @@ resource "random_string" "first_letter" {
   upper   = false
   number  = false
 }
-
-
 
 locals {
   // adding a first letter to guarantee that you always start with a letter
