@@ -1427,30 +1427,30 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     notification_hub = {
-      name        = substr(join("-", compact([local.prefix, "nh", local.suffix])), 0, 260)
-      name_unique = substr(join("-", compact([local.prefix, "nh", local.suffix_unique])), 0, 260)
+      name        = substr(join("-", compact([local.prefix, "ntf", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "ntf", local.suffix_unique])), 0, 260)
       dashes      = true
-      slug        = "nh"
+      slug        = "ntf"
       min_length  = 1
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+$"
     }
     notification_hub_authorization_rule = {
-      name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 256)
-      name_unique = substr(join("-", compact([local.prefix, "dnsrec", local.suffix_unique])), 0, 256)
+      name        = substr(join("-", compact([local.prefix, "ntfar", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "ntfar", local.suffix_unique])), 0, 256)
       dashes      = true
-      slug        = "dnsrec"
+      slug        = "ntfar"
       min_length  = 1
       max_length  = 256
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+$"
     }
     notification_hub_namespace = {
-      name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 50)
-      name_unique = substr(join("-", compact([local.prefix, "dnsrec", local.suffix_unique])), 0, 50)
+      name        = substr(join("-", compact([local.prefix, "ntfns", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "ntfns", local.suffix_unique])), 0, 50)
       dashes      = true
-      slug        = "dnsrec"
+      slug        = "ntfns"
       min_length  = 6
       max_length  = 50
       scope       = "global"
