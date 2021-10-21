@@ -1666,6 +1666,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    recovery_services_vault = {
+      name        = substr(join("-", compact([local.prefix, "rsv", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "rsv", local.suffix_unique])), 0, 50)
+      dashes      = true
+      slug        = "rsv"
+      min_length  = 2
+      max_length  = 50
+      scope       = "global"
+      regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
     redis_cache = {
       name        = substr(join("-", compact([local.prefix, "redis", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "redis", local.suffix_unique])), 0, 63)
