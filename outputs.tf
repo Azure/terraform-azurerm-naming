@@ -850,6 +850,10 @@ output "traffic_manager_profile" {
   value = local.az.traffic_manager_profile
 }
 
+output "user_assigned_identity" {
+  value = local.az.user_assigned_identity
+}
+
 output "virtual_machine" {
   value = local.az.virtual_machine
 }

@@ -2013,6 +2013,17 @@
     "dashes": true
   },
   {
+    "name": "user_assigned_identity",
+    "length": {
+      "min": 3,
+      "max": 128
+    },
+    "regex": "^[a-zA-Z0-9-_]+$",
+    "scope": "resourceGroup",
+    "slug": "uai",
+    "dashes": true
+  },
+  {
     "name": "virtual_machine",
     "length": {
       "min": 1,

@@ -2146,6 +2146,16 @@ locals {
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
     }
+    user_assigned_identity = {
+      name        = substr(join("-", compact([local.prefix, "uai", local.suffix])), 0, 128)
+      name_unique = substr(join("-", compact([local.prefix, "uai", local.suffix_unique])), 0, 128)
+      dashes      = true
+      slug        = "uai"
+      min_length  = 3
+      max_length  = 128
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9-_]+$"
+    }
     virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)
       name_unique = substr(join("-", compact([local.prefix, "vm", local.suffix_unique])), 0, 15)
@@ -3091,6 +3101,10 @@ locals {
     traffic_manager_profile = {
       valid_name        = length(regexall(local.az.traffic_manager_profile.regex, local.az.traffic_manager_profile.name)) > 0 && length(local.az.traffic_manager_profile.name) > local.az.traffic_manager_profile.min_length
       valid_name_unique = length(regexall(local.az.traffic_manager_profile.regex, local.az.traffic_manager_profile.name_unique)) > 0
+    }
+    user_assigned_identity = {
+      valid_name        = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name)) > 0 && length(local.az.user_assigned_identity.name) > local.az.user_assigned_identity.min_length
+      valid_name_unique = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name_unique)) > 0
     }
     virtual_machine = {
       valid_name        = length(regexall(local.az.virtual_machine.regex, local.az.virtual_machine.name)) > 0 && length(local.az.virtual_machine.name) > local.az.virtual_machine.min_length

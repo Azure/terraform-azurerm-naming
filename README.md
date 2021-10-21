@@ -324,6 +324,7 @@ postgresql_server = {
 | template\_deployment | n/a |
 | traffic\_manager\_profile | n/a |
 | unique-seed | n/a |
+| user\_assigned\_identity | n/a |
 | validation | n/a |
 | virtual\_machine | n/a |
 | virtual\_machine\_extension | n/a |
