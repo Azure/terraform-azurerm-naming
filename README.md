@@ -123,6 +123,7 @@ postgresql_server = {
 | automation\_account | n/a |
 | automation\_certificate | n/a |
 | automation\_credential | n/a |
+| automation\_dsc\_configuration | n/a |
 | automation\_runbook | n/a |
 | automation\_schedule | n/a |
 | automation\_variable | n/a |

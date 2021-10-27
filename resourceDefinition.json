@@ -121,6 +121,17 @@
     "dashes": true
   },
   {
+    "name": "automation_dsc_configuration",
+    "length": {
+      "min": 1,
+      "max": 64
+    },
+    "regex": "^(?=.{1,64}$)[a-zA-Z0-9_]+$",
+    "scope": "parent",
+    "slug": "aadscconf",
+    "dashes": false
+  },
+  {
     "name": "automation_runbook",
     "length": {
       "min": 1,
