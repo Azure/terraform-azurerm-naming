@@ -47,7 +47,7 @@ locals {
   suffix_unique          = local.input.prefix == null ? join("-", concat(local.defaults.prefix, [local.random])) : join("-", concat(local.input.suffix, [local.random]))
   suffix_safe            = local.input.suffix == null ? lower(join("", local.defaults.suffix)) : lower(join("", local.input.suffix))
   suffix_unique_safe     = local.input.prefix == null ? lower(join("-", concat(local.defaults.prefix, [local.random]))) : lower(join("", concat(local.input.suffix, [local.random])))
-  tags                   = var.tags
+  tags                   = local.input.tags
   // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
