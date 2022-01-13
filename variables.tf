@@ -4,9 +4,9 @@ variable "context" {
     enabled                = true
     suffix                 = null
     prefix                 = null
-    unique-seed            = null
-    unique-length          = null
-    unique-include-numbers = null
+    unique_seed            = null
+    unique_length          = null
+    unique_include_numbers = null
     tags                   = {}
   }
 }
