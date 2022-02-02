@@ -165,6 +165,17 @@
     "dashes": true
   },
   {
+    "name": "firewall_policy_rule_collection_group",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "fwprcg",
+    "dashes": true
+  },
+  {
     "name": "network_ddos_protection_plan",
     "length": {
       "min": 1,

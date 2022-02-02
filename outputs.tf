@@ -358,6 +358,14 @@ output "firewall_network_rule_collection" {
   value = local.az.firewall_network_rule_collection
 }
 
+output "firewall_policy" {
+  value = local.az.firewall_policy
+}
+
+output "firewall_policy_rule_collection_group" {
+  value = local.az.firewall_policy_rule_collection_group
+}
+
 output "frontdoor" {
   value = local.az.frontdoor
 }
@@ -656,6 +664,10 @@ output "public_ip" {
 
 output "public_ip_prefix" {
   value = local.az.public_ip_prefix
+}
+
+output "recovery_services_vault" {
+  value = local.az.recovery_services_vault
 }
 
 output "redis_cache" {

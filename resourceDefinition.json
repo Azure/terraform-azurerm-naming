@@ -803,6 +803,17 @@
     "dashes": true
   },
   {
+    "name": "firewall_policy",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "afwp",
+    "dashes": true
+  },
+  {
     "name": "frontdoor",
     "length": {
       "min": 5,
