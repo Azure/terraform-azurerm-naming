@@ -7,6 +7,7 @@ import (
 	"os"
 	"regexp"
 	"sort"
+	"strings"
 	"text/template"
 )
 
@@ -41,6 +42,8 @@ func main() {
 			var re = regexp.MustCompile(`(?m)\(\?=.{\d+,\d+}\$\)|\(\?!\.\*--\)`)
 			return re.ReplaceAllString(dirtyString, "")
 		},
+		"replace": strings.ReplaceAll,
+		"title":   strings.Title,
 	}).ParseFiles(fileNames...)
 	if err != nil {
 		log.Fatal(err)
