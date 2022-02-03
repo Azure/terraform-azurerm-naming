@@ -176,6 +176,16 @@ output "cosmosdb_account" {
   description = "Cosmosdb Account"
 }
 
+output "cosmosdb_cassandra_cluster" {
+  value       = local.az.cosmosdb_cassandra_cluster
+  description = "Cosmosdb Cassandra Cluster"
+}
+
+output "cosmosdb_cassandra_datacenter" {
+  value       = local.az.cosmosdb_cassandra_datacenter
+  description = "Cosmosdb Cassandra Datacenter"
+}
+
 output "custom_provider" {
   value       = local.az.custom_provider
   description = "Custom Provider"

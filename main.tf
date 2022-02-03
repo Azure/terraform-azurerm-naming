@@ -376,6 +376,26 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
     }
+    cosmosdb_cassandra_cluster = {
+      name        = substr(join("-", compact([local.prefix, "mcc", local.suffix])), 0, 44)
+      name_unique = substr(join("-", compact([local.prefix, "mcc", local.suffix_unique])), 0, 44)
+      dashes      = true
+      slug        = "mcc"
+      min_length  = 1
+      max_length  = 44
+      scope       = "parent"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
+    cosmosdb_cassandra_datacenter = {
+      name        = substr(join("-", compact([local.prefix, "mcdc", local.suffix])), 0, 44)
+      name_unique = substr(join("-", compact([local.prefix, "mcdc", local.suffix_unique])), 0, 44)
+      dashes      = true
+      slug        = "mcdc"
+      min_length  = 1
+      max_length  = 44
+      scope       = "parent"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
     custom_provider = {
       name        = substr(join("-", compact([local.prefix, "prov", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "prov", local.suffix_unique])), 0, 64)
@@ -2423,6 +2443,14 @@ locals {
     cosmosdb_account = {
       valid_name        = length(regexall(local.az.cosmosdb_account.regex, local.az.cosmosdb_account.name)) > 0 && length(local.az.cosmosdb_account.name) > local.az.cosmosdb_account.min_length
       valid_name_unique = length(regexall(local.az.cosmosdb_account.regex, local.az.cosmosdb_account.name_unique)) > 0
+    }
+    cosmosdb_cassandra_cluster = {
+      valid_name        = length(regexall(local.az.cosmosdb_cassandra_cluster.regex, local.az.cosmosdb_cassandra_cluster.name)) > 0 && length(local.az.cosmosdb_cassandra_cluster.name) > local.az.cosmosdb_cassandra_cluster.min_length
+      valid_name_unique = length(regexall(local.az.cosmosdb_cassandra_cluster.regex, local.az.cosmosdb_cassandra_cluster.name_unique)) > 0
+    }
+    cosmosdb_cassandra_datacenter = {
+      valid_name        = length(regexall(local.az.cosmosdb_cassandra_datacenter.regex, local.az.cosmosdb_cassandra_datacenter.name)) > 0 && length(local.az.cosmosdb_cassandra_datacenter.name) > local.az.cosmosdb_cassandra_datacenter.min_length
+      valid_name_unique = length(regexall(local.az.cosmosdb_cassandra_datacenter.regex, local.az.cosmosdb_cassandra_datacenter.name_unique)) > 0
     }
     custom_provider = {
       valid_name        = length(regexall(local.az.custom_provider.regex, local.az.custom_provider.name)) > 0 && length(local.az.custom_provider.name) > local.az.custom_provider.min_length

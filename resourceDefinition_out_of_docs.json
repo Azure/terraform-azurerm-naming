@@ -176,6 +176,28 @@
     "dashes": true
   },
   {
+    "name": "cosmosdb_cassandra_cluster",
+    "length": {
+      "min": 1,
+      "max": 44
+    },
+    "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$",
+    "scope": "parent",
+    "slug": "mcc",
+    "dashes": true
+  },
+  {
+    "name": "cosmosdb_cassandra_datacenter",
+    "length": {
+      "min": 1,
+      "max": 44
+    },
+    "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$",
+    "scope": "parent",
+    "slug": "mcdc",
+    "dashes": true
+  },
+  {
     "name": "network_ddos_protection_plan",
     "length": {
       "min": 1,

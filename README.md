@@ -157,6 +157,8 @@ No modules.
 | <a name="output_container_registry"></a> [container\_registry](#output\_container\_registry) | Container Registry |
 | <a name="output_container_registry_webhook"></a> [container\_registry\_webhook](#output\_container\_registry\_webhook) | Container Registry Webhook |
 | <a name="output_cosmosdb_account"></a> [cosmosdb\_account](#output\_cosmosdb\_account) | Cosmosdb Account |
+| <a name="output_cosmosdb_cassandra_cluster"></a> [cosmosdb\_cassandra\_cluster](#output\_cosmosdb\_cassandra\_cluster) | Cosmosdb Cassandra Cluster |
+| <a name="output_cosmosdb_cassandra_datacenter"></a> [cosmosdb\_cassandra\_datacenter](#output\_cosmosdb\_cassandra\_datacenter) | Cosmosdb Cassandra Datacenter |
 | <a name="output_custom_provider"></a> [custom\_provider](#output\_custom\_provider) | Custom Provider |
 | <a name="output_dashboard"></a> [dashboard](#output\_dashboard) | Dashboard |
 | <a name="output_data_factory"></a> [data\_factory](#output\_data\_factory) | Data Factory |
