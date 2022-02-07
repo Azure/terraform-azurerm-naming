@@ -2090,6 +2090,17 @@
     "dashes": true
   },
   {
+    "name": "virtual_network_gateway_connection",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "vcn",
+    "dashes": true
+  },
+  {
     "name": "virtual_network_peering",
     "length": {
       "min": 1,

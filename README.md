@@ -348,6 +348,7 @@ No modules.
 | <a name="output_virtual_machine_scale_set_extension"></a> [virtual\_machine\_scale\_set\_extension](#output\_virtual\_machine\_scale\_set\_extension) | Virtual Machine Scale Set Extension |
 | <a name="output_virtual_network"></a> [virtual\_network](#output\_virtual\_network) | Virtual Network |
 | <a name="output_virtual_network_gateway"></a> [virtual\_network\_gateway](#output\_virtual\_network\_gateway) | Virtual Network Gateway |
+| <a name="output_virtual_network_gateway_connection"></a> [virtual\_network\_gateway\_connection](#output\_virtual\_network\_gateway\_connection) | Virtual Network Gateway Connection |
 | <a name="output_virtual_network_peering"></a> [virtual\_network\_peering](#output\_virtual\_network\_peering) | Virtual Network Peering |
 | <a name="output_virtual_wan"></a> [virtual\_wan](#output\_virtual\_wan) | Virtual Wan |
 | <a name="output_windows_virtual_machine"></a> [windows\_virtual\_machine](#output\_windows\_virtual\_machine) | Windows Virtual Machine |
