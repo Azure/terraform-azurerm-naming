@@ -2273,7 +2273,7 @@ locals {
       slug        = "vcn"
       min_length  = 1
       max_length  = 80
-      scope       = "parent"
+      scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     virtual_network_peering = {
