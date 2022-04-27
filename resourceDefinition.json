@@ -1100,6 +1100,17 @@
     "dashes": true
   },
   {
+    "name": "linux_function_app",
+    "length": {
+      "min": 2,
+      "max": 60
+    },
+    "regex": "^(?=.{2,60}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "linfunc",
+    "dashes": true
+  },
+  {
     "name": "linux_virtual_machine",
     "length": {
       "min": 1,
@@ -2098,6 +2109,17 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
     "slug": "vwan",
+    "dashes": true
+  },
+  {
+    "name": "windows_function_app",
+    "length": {
+      "min": 2,
+      "max": 60
+    },
+    "regex": "^(?=.{2,60}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "winfunc",
     "dashes": true
   },
   {

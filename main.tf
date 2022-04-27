@@ -1186,6 +1186,17 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+
+    linux_function_app = {
+      name        = substr(join("-", compact([local.prefix, "func", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "func", local.suffix_unique])), 0, 60)
+      dashes      = true
+      slug        = "linfunc"
+      min_length  = 2
+      max_length  = 60
+      scope       = "global"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
     linux_virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "vm", local.suffix_unique])), 0, 64)
@@ -2246,6 +2257,17 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+
+    windows_function_app = {
+      name        = substr(join("-", compact([local.prefix, "func", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "func", local.suffix_unique])), 0, 60)
+      dashes      = true
+      slug        = "winfunc"
+      min_length  = 2
+      max_length  = 60
+      scope       = "global"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
     windows_virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)
       name_unique = substr(join("-", compact([local.prefix, "vm", local.suffix_unique])), 0, 15)
@@ -2728,6 +2750,11 @@ locals {
       valid_name        = length(regexall(local.az.lb_nat_rule.regex, local.az.lb_nat_rule.name)) > 0 && length(local.az.lb_nat_rule.name) > local.az.lb_nat_rule.min_length
       valid_name_unique = length(regexall(local.az.lb_nat_rule.regex, local.az.lb_nat_rule.name_unique)) > 0
     }
+
+    linux_function_app = {
+      valid_name        = length(regexall(local.az.linux_function_app.regex, local.az.linux_function_app.name)) > 0 && length(local.az.linux_function_app.name) > local.az.linux_function_app.min_length
+      valid_name_unique = length(regexall(local.az.linux_function_app.regex, local.az.linux_function_app.name_unique)) > 0
+    }
     linux_virtual_machine = {
       valid_name        = length(regexall(local.az.linux_virtual_machine.regex, local.az.linux_virtual_machine.name)) > 0 && length(local.az.linux_virtual_machine.name) > local.az.linux_virtual_machine.min_length
       valid_name_unique = length(regexall(local.az.linux_virtual_machine.regex, local.az.linux_virtual_machine.name_unique)) > 0
@@ -3147,6 +3174,11 @@ locals {
     virtual_wan = {
       valid_name        = length(regexall(local.az.virtual_wan.regex, local.az.virtual_wan.name)) > 0 && length(local.az.virtual_wan.name) > local.az.virtual_wan.min_length
       valid_name_unique = length(regexall(local.az.virtual_wan.regex, local.az.virtual_wan.name_unique)) > 0
+    }
+
+    windows_function_app = {
+      valid_name        = length(regexall(local.az.windows_function_app.regex, local.az.windows_function_app.name)) > 0 && length(local.az.windows_function_app.name) > local.az.windows_function_app.min_length
+      valid_name_unique = length(regexall(local.az.windows_function_app.regex, local.az.windows_function_app.name_unique)) > 0
     }
     windows_virtual_machine = {
       valid_name        = length(regexall(local.az.windows_virtual_machine.regex, local.az.windows_virtual_machine.name)) > 0 && length(local.az.windows_virtual_machine.name) > local.az.windows_virtual_machine.min_length
