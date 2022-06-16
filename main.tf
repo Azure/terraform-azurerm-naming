@@ -8,17 +8,17 @@ terraform {
 }
 
 resource "random_string" "main" {
-  length  = 60
-  special = false
-  upper   = false
-  number  = var.unique-include-numbers
+  length   = 60
+  special  = false
+  upper    = false
+  numeric  = var.unique-include-numbers
 }
 
 resource "random_string" "first_letter" {
-  length  = 1
-  special = false
-  upper   = false
-  number  = false
+  length   = 1
+  special  = false
+  upper    = false
+  numeric  = false
 }
 
 
