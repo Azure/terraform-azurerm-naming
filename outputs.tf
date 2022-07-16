@@ -658,6 +658,10 @@ output "public_ip_prefix" {
   value = local.az.public_ip_prefix
 }
 
+output "recovery_services_vault" {
+  value = local.az.recovery_services_vault
+}
+
 output "redis_cache" {
   value = local.az.redis_cache
 }
