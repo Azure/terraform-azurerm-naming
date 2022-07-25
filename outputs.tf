@@ -466,6 +466,10 @@ output "lb_nat_rule" {
   value = local.az.lb_nat_rule
 }
 
+output "linux_function_app" {
+  value = local.az.linux_function_app
+}
+
 output "linux_virtual_machine" {
   value = local.az.linux_virtual_machine
 }
@@ -894,6 +898,9 @@ output "virtual_wan" {
   value = local.az.virtual_wan
 }
 
+output "windows_function_app" {
+  value = local.az.windows_function_app
+}
 output "windows_virtual_machine" {
   value = local.az.windows_virtual_machine
 }

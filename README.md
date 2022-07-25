@@ -227,6 +227,7 @@ postgresql_server = {
 | kusto\_eventhub\_data\_connection | n/a |
 | lb | n/a |
 | lb\_nat\_rule | n/a |
+| linux\_function\_app | n/a |
 | linux\_virtual\_machine | n/a |
 | linux\_virtual\_machine\_scale\_set | n/a |
 | local\_network\_gateway | n/a |
@@ -335,6 +336,7 @@ postgresql_server = {
 | virtual\_network\_gateway | n/a |
 | virtual\_network\_peering | n/a |
 | virtual\_wan | n/a |
+| windows\_function\_app | n/a |
 | windows\_virtual\_machine | n/a |
 | windows\_virtual\_machine\_scale\_set | n/a |
 
