@@ -2013,6 +2013,17 @@
     "dashes": true
   },
   {
+    "name": "synapse_workspace",
+    "length": {
+      "min": 1,
+      "max": 50
+    },
+    "regex": "^(?=.{1,50}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
+    "scope": "global",
+    "slug": "syn",
+    "dashes": true
+  },
+  {
     "name": "template_deployment",
     "length": {
       "min": 1,

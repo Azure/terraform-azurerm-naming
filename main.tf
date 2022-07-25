@@ -2145,14 +2145,14 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     synapse_workspace = {
-      name        = substr(join("", compact([local.prefix_safe, "syn", local.suffix_safe])), 0, 45)
-      name_unique = substr(join("", compact([local.prefix_safe, "syn", local.suffix_unique_safe])), 0, 45)
-      dashes      = false
+      name        = substr(join("-", compact([local.prefix, "syn", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "syn", local.suffix_unique])), 0, 50)
+      dashes      = true
       slug        = "syn"
       min_length  = 1
-      max_length  = 45
+      max_length  = 50
       scope       = "global"
-      regex       = "^[a-z0-9]+$"
+      regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
     }
     template_deployment = {
       name        = substr(join("-", compact([local.prefix, "deploy", local.suffix])), 0, 64)
@@ -2942,6 +2942,10 @@ locals {
       valid_name        = length(regexall(local.az.public_ip_prefix.regex, local.az.public_ip_prefix.name)) > 0 && length(local.az.public_ip_prefix.name) > local.az.public_ip_prefix.min_length
       valid_name_unique = length(regexall(local.az.public_ip_prefix.regex, local.az.public_ip_prefix.name_unique)) > 0
     }
+    recovery_services_vault = {
+      valid_name        = length(regexall(local.az.recovery_services_vault.regex, local.az.recovery_services_vault.name)) > 0 && length(local.az.recovery_services_vault.name) > local.az.recovery_services_vault.min_length
+      valid_name_unique = length(regexall(local.az.recovery_services_vault.regex, local.az.recovery_services_vault.name_unique)) > 0
+    }
     redis_cache = {
       valid_name        = length(regexall(local.az.redis_cache.regex, local.az.redis_cache.name)) > 0 && length(local.az.redis_cache.name) > local.az.redis_cache.min_length
       valid_name_unique = length(regexall(local.az.redis_cache.regex, local.az.redis_cache.name_unique)) > 0
@@ -3125,6 +3129,10 @@ locals {
     subnet = {
       valid_name        = length(regexall(local.az.subnet.regex, local.az.subnet.name)) > 0 && length(local.az.subnet.name) > local.az.subnet.min_length
       valid_name_unique = length(regexall(local.az.subnet.regex, local.az.subnet.name_unique)) > 0
+    }
+    synapse_workspace = {
+      valid_name        = length(regexall(local.az.synapse_workspace.regex, local.az.synapse_workspace.name)) > 0 && length(local.az.synapse_workspace.name) > local.az.synapse_workspace.min_length
+      valid_name_unique = length(regexall(local.az.synapse_workspace.regex, local.az.synapse_workspace.name_unique)) > 0
     }
     template_deployment = {
       valid_name        = length(regexall(local.az.template_deployment.regex, local.az.template_deployment.name)) > 0 && length(local.az.template_deployment.name) > local.az.template_deployment.min_length
