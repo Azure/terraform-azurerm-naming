@@ -5,10 +5,10 @@ all: build format validate
 
 .PHONY: install
 install:
-	command -v terraform >/dev/null 2>&1 || GO111MODULE="on" go get github.com/hashicorp/terraform@v0.12.26
-	command -v terraform-docs >/dev/null 2>&1 || GO111MODULE="on" go get github.com/segmentio/terraform-docs@v0.9.1
-	command -v tfsec >/dev/null 2>&1 || GO111MODULE="on" go get github.com/liamg/tfsec/cmd/tfsec@v0.21.0
-	command -v tflint >/dev/null 2>&1 || GO111MODULE="on" go get github.com/terraform-linters/tflint@v0.16.2
+	command -v terraform >/dev/null 2>&1 || go install github.com/hashicorp/terraform@v1.2.5
+	command -v terraform-docs >/dev/null 2>&1 || go install github.com/terraform-docs/terraform-docs@v0.16.0
+	command -v tfsec >/dev/null 2>&1 || go install github.com/aquasecurity/tfsec/cmd/tfsec@latest
+	command -v tflint >/dev/null 2>&1 || go install github.com/terraform-linters/tflint@v0.38.1
 
 .PHONY: build
 build: install generate

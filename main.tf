@@ -2,7 +2,7 @@ terraform {
   required_providers {
     random = {
       source  = "hashicorp/random"
-      version = "~> 3.1.0"
+      version = ">= 3.3.2"
     }
   }
 }
@@ -11,15 +11,17 @@ resource "random_string" "main" {
   length  = 60
   special = false
   upper   = false
-  number  = var.unique-include-numbers
+  numeric = var.unique-include-numbers
 }
 
 resource "random_string" "first_letter" {
   length  = 1
   special = false
   upper   = false
-  number  = false
+  numeric = false
 }
+
+
 
 locals {
   // adding a first letter to guarantee that you always start with a letter
@@ -2144,16 +2146,6 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
-    synapse_workspace = {
-      name        = substr(join("", compact([local.prefix_safe, "syn", local.suffix_safe])), 0, 45)
-      name_unique = substr(join("", compact([local.prefix_safe, "syn", local.suffix_unique_safe])), 0, 45)
-      dashes      = false
-      slug        = "syn"
-      min_length  = 1
-      max_length  = 45
-      scope       = "global"
-      regex       = "^[a-z0-9]+$"
-    }
     template_deployment = {
       name        = substr(join("-", compact([local.prefix, "deploy", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "deploy", local.suffix_unique])), 0, 64)
@@ -2941,6 +2933,10 @@ locals {
     public_ip_prefix = {
       valid_name        = length(regexall(local.az.public_ip_prefix.regex, local.az.public_ip_prefix.name)) > 0 && length(local.az.public_ip_prefix.name) > local.az.public_ip_prefix.min_length
       valid_name_unique = length(regexall(local.az.public_ip_prefix.regex, local.az.public_ip_prefix.name_unique)) > 0
+    }
+    recovery_services_vault = {
+      valid_name        = length(regexall(local.az.recovery_services_vault.regex, local.az.recovery_services_vault.name)) > 0 && length(local.az.recovery_services_vault.name) > local.az.recovery_services_vault.min_length
+      valid_name_unique = length(regexall(local.az.recovery_services_vault.regex, local.az.recovery_services_vault.name_unique)) > 0
     }
     redis_cache = {
       valid_name        = length(regexall(local.az.redis_cache.regex, local.az.redis_cache.name)) > 0 && length(local.az.redis_cache.name) > local.az.redis_cache.min_length

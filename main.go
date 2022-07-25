@@ -7,7 +7,11 @@ import (
 	"os"
 	"regexp"
 	"sort"
+	"strings"
 	"text/template"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 // Resource definition for the package
@@ -35,12 +39,15 @@ func main() {
 	for i, file := range files {
 		fileNames[i] = "templates/" + file.Name()
 	}
+	caser := cases.Title(language.AmericanEnglish)
 	parsedTemplate, err := template.New("templates").Funcs(template.FuncMap{
 		// Terraform not yet support lookahead in their regex function
 		"cleanRegex": func(dirtyString string) string {
 			var re = regexp.MustCompile(`(?m)\(\?=.{\d+,\d+}\$\)|\(\?!\.\*--\)`)
 			return re.ReplaceAllString(dirtyString, "")
 		},
+		"replace": strings.ReplaceAll,
+		"title":   caser.String,
 	}).ParseFiles(fileNames...)
 	if err != nil {
 		log.Fatal(err)
