@@ -1,3 +1,16 @@
+variable "context" {
+  type = any
+  default = {
+    enabled                = true
+    suffix                 = null
+    prefix                 = null
+    unique_seed            = null
+    unique_length          = null
+    unique_include_numbers = null
+    tags                   = {}
+  }
+}
+
 variable "prefix" {
   type        = list(string)
   default     = []
@@ -10,20 +23,26 @@ variable "suffix" {
   description = "It is recommended that you specify a suffix for consistency. please use only lowercase characters when possible"
 }
 
-variable "unique-seed" {
+variable "tags" {
+  type        = map(string)
+  default     = {}
+  description = "Additional tags (e.g. `{'BusinessUnit': 'XYZ'}`)."
+}
+
+variable "unique_seed" {
   description = "Custom value for the random characters to be used"
   type        = string
-  default     = ""
+  default     = null
 }
 
-variable "unique-length" {
+variable "unique_length" {
   description = "Max length of the uniqueness suffix to be added"
   type        = number
-  default     = 4
+  default     = null
 }
 
-variable "unique-include-numbers" {
+variable "unique_include_numbers" {
   description = "If you want to include numbers in the unique generation"
   type        = bool
-  default     = true
+  default     = null
 }

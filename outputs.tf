@@ -1,11 +1,20 @@
 
-output "unique-seed" {
-  value = coalesce(var.unique-seed, local.random_safe_generation)
+output "unique_seed" {
+  value = coalesce(var.unique_seed, local.random_safe_generation)
 }
 
 output "validation" {
   value = local.validation
 }
+
+output "context" {
+  value = local.input
+}
+
+output "tags" {
+  value = local.tags
+}
+
 output "analysis_services_server" {
   value = local.az.analysis_services_server
 }

@@ -7,11 +7,19 @@ terraform {
   }
 }
 
+locals {
+  defaults = {
+    unique_seed            = ""
+    unique_length          = 4
+    unique_include_numbers = true
+  }
+}
+
 resource "random_string" "main" {
   length  = 60
   special = false
   upper   = false
-  number  = var.unique-include-numbers
+  number  = var.unique_include_numbers
 }
 
 resource "random_string" "first_letter" {
@@ -22,15 +30,24 @@ resource "random_string" "first_letter" {
 }
 
 locals {
+  input = {
+    suffix                 = compact(distinct(concat(coalesce(var.context.suffix, []), coalesce(var.suffix, []))))
+    prefix                 = compact(distinct(concat(coalesce(var.context.prefix, []), coalesce(var.prefix, []))))
+    unique_seed            = var.unique_seed == null ? var.context.unique_seed : var.unique_seed
+    unique_length          = var.unique_length == null ? var.context.unique_length : var.unique_length
+    unique_include_numbers = var.unique_include_numbers == null ? var.context.unique_include_numbers : var.unique_include_numbers
+    tags                   = merge(var.context.tags, var.tags)
+  }
   // adding a first letter to guarantee that you always start with a letter
   random_safe_generation = join("", [random_string.first_letter.result, random_string.main.result])
-  random                 = substr(coalesce(var.unique-seed, local.random_safe_generation), 0, var.unique-length)
-  prefix                 = join("-", var.prefix)
-  prefix_safe            = lower(join("", var.prefix))
-  suffix                 = join("-", var.suffix)
-  suffix_unique          = join("-", concat(var.suffix, [local.random]))
-  suffix_safe            = lower(join("", var.suffix))
-  suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
+  random                 = substr(coalesce(var.unique_seed, local.random_safe_generation), 0, local.input.unique_length == null ? local.defaults.unique_length : local.input.unique_length)
+  prefix                 = local.input.prefix == null ? join("-", local.defaults.prefix) : join("-", local.input.prefix)
+  prefix_safe            = local.input.prefix == null ? lower(join("", local.defaults.prefix)) : lower(join("", local.input.prefix))
+  suffix                 = local.input.prefix == null ? join("-", local.defaults.prefix) : join("-", local.input.prefix)
+  suffix_unique          = local.input.prefix == null ? join("-", concat(local.defaults.prefix, [local.random])) : join("-", concat(local.input.suffix, [local.random]))
+  suffix_safe            = local.input.suffix == null ? lower(join("", local.defaults.suffix)) : lower(join("", local.input.suffix))
+  suffix_unique_safe     = local.input.prefix == null ? lower(join("-", concat(local.defaults.prefix, [local.random]))) : lower(join("", concat(local.input.suffix, [local.random])))
+  tags                   = local.input.tags
   // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
