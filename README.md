@@ -142,6 +142,7 @@ postgresql_server = {
 | cdn\_endpoint | n/a |
 | cdn\_profile | n/a |
 | cognitive\_account | n/a |
+| cognitive\_search | n/a |
 | container\_group | n/a |
 | container\_registry | n/a |
 | container\_registry\_webhook | n/a |
