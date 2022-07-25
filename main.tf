@@ -1224,6 +1224,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
+    logic_app_workflow = {
+      name        = substr(join("-", compact([local.prefix, "logic", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "logic", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "logic"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     machine_learning_workspace = {
       name        = substr(join("-", compact([local.prefix, "mlw", local.suffix])), 0, 260)
       name_unique = substr(join("-", compact([local.prefix, "mlw", local.suffix_unique])), 0, 260)
@@ -2751,6 +2761,10 @@ locals {
     log_analytics_workspace = {
       valid_name        = length(regexall(local.az.log_analytics_workspace.regex, local.az.log_analytics_workspace.name)) > 0 && length(local.az.log_analytics_workspace.name) > local.az.log_analytics_workspace.min_length
       valid_name_unique = length(regexall(local.az.log_analytics_workspace.regex, local.az.log_analytics_workspace.name_unique)) > 0
+    }
+    logic_app_workflow = {
+      valid_name        = length(regexall(local.az.logic_app_workflow.regex, local.az.logic_app_workflow.name)) > 0 && length(local.az.logic_app_workflow.name) > local.az.logic_app_workflow.min_length
+      valid_name_unique = length(regexall(local.az.logic_app_workflow.regex, local.az.logic_app_workflow.name_unique)) > 0
     }
     machine_learning_workspace = {
       valid_name        = length(regexall(local.az.machine_learning_workspace.regex, local.az.machine_learning_workspace.name)) > 0 && length(local.az.machine_learning_workspace.name) > local.az.machine_learning_workspace.min_length
