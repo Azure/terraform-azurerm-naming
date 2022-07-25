@@ -1485,6 +1485,17 @@
     "dashes": true
   },
   {
+    "name": "recovery_services_vault",
+    "length": {
+      "min": 2,
+      "max": 50
+    },
+    "regex": "^(?=.{2,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "rsv",
+    "dashes": true
+  },
+  {
     "name": "redis_cache",
     "length": {
       "min": 1,
@@ -2010,6 +2021,17 @@
     "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$",
     "scope": "global",
     "slug": "traf",
+    "dashes": true
+  },
+  {
+    "name": "user_assigned_identity",
+    "length": {
+      "min": 3,
+      "max": 128
+    },
+    "regex": "^[a-zA-Z0-9-_]+$",
+    "scope": "resourceGroup",
+    "slug": "uai",
     "dashes": true
   },
   {

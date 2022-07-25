@@ -842,12 +842,20 @@ output "subnet" {
   value = local.az.subnet
 }
 
+output "synapse_workspace" {
+  value = local.az.synapse_workspace
+}
+
 output "template_deployment" {
   value = local.az.template_deployment
 }
 
 output "traffic_manager_profile" {
   value = local.az.traffic_manager_profile
+}
+
+output "user_assigned_identity" {
+  value = local.az.user_assigned_identity
 }
 
 output "virtual_machine" {

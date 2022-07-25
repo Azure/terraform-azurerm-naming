@@ -1664,6 +1664,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    recovery_services_vault = {
+      name        = substr(join("-", compact([local.prefix, "rsv", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "rsv", local.suffix_unique])), 0, 50)
+      dashes      = true
+      slug        = "rsv"
+      min_length  = 2
+      max_length  = 50
+      scope       = "global"
+      regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
     redis_cache = {
       name        = substr(join("-", compact([local.prefix, "redis", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "redis", local.suffix_unique])), 0, 63)
@@ -2124,6 +2134,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    synapse_workspace = {
+      name        = substr(join("", compact([local.prefix_safe, "syn", local.suffix_safe])), 0, 45)
+      name_unique = substr(join("", compact([local.prefix_safe, "syn", local.suffix_unique_safe])), 0, 45)
+      dashes      = false
+      slug        = "syn"
+      min_length  = 1
+      max_length  = 45
+      scope       = "global"
+      regex       = "^[a-z0-9]+$"
+    }
     template_deployment = {
       name        = substr(join("-", compact([local.prefix, "deploy", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "deploy", local.suffix_unique])), 0, 64)
@@ -2143,6 +2163,16 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+    }
+    user_assigned_identity = {
+      name        = substr(join("-", compact([local.prefix, "uai", local.suffix])), 0, 128)
+      name_unique = substr(join("-", compact([local.prefix, "uai", local.suffix_unique])), 0, 128)
+      dashes      = true
+      slug        = "uai"
+      min_length  = 3
+      max_length  = 128
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9-_]+$"
     }
     virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)
@@ -3089,6 +3119,10 @@ locals {
     traffic_manager_profile = {
       valid_name        = length(regexall(local.az.traffic_manager_profile.regex, local.az.traffic_manager_profile.name)) > 0 && length(local.az.traffic_manager_profile.name) > local.az.traffic_manager_profile.min_length
       valid_name_unique = length(regexall(local.az.traffic_manager_profile.regex, local.az.traffic_manager_profile.name_unique)) > 0
+    }
+    user_assigned_identity = {
+      valid_name        = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name)) > 0 && length(local.az.user_assigned_identity.name) > local.az.user_assigned_identity.min_length
+      valid_name_unique = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name_unique)) > 0
     }
     virtual_machine = {
       valid_name        = length(regexall(local.az.virtual_machine.regex, local.az.virtual_machine.name)) > 0 && length(local.az.virtual_machine.name) > local.az.virtual_machine.min_length
