@@ -621,6 +621,11 @@ output "log_analytics_workspace" {
   description = "Log Analytics Workspace"
 }
 
+output "logic_app_workflow" {
+  value       = local.az.logic_app_workflow
+  description = "Logic App Workflow"
+}
+
 output "machine_learning_workspace" {
   value       = local.az.machine_learning_workspace
   description = "Machine Learning Workspace"
