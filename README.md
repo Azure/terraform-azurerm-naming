@@ -90,7 +90,7 @@ postgresql_server = {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_random"></a> [random](#requirement\_random) | >= 2.2 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.3.2 |
 
 ## Providers
 
@@ -246,6 +246,7 @@ No modules.
 | <a name="output_linux_virtual_machine_scale_set"></a> [linux\_virtual\_machine\_scale\_set](#output\_linux\_virtual\_machine\_scale\_set) | Linux Virtual Machine Scale Set |
 | <a name="output_local_network_gateway"></a> [local\_network\_gateway](#output\_local\_network\_gateway) | Local Network Gateway |
 | <a name="output_log_analytics_workspace"></a> [log\_analytics\_workspace](#output\_log\_analytics\_workspace) | Log Analytics Workspace |
+| <a name="output_logic_app_workflow"></a> [logic\_app\_workflow](#output\_logic\_app\_workflow) | Logic App Workflow |
 | <a name="output_machine_learning_workspace"></a> [machine\_learning\_workspace](#output\_machine\_learning\_workspace) | Machine Learning Workspace |
 | <a name="output_managed_disk"></a> [managed\_disk](#output\_managed\_disk) | Managed Disk |
 | <a name="output_maps_account"></a> [maps\_account](#output\_maps\_account) | Maps Account |
