@@ -1776,6 +1776,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    search_service = {
+      name        = substr(join("-", compact([local.prefix, "srch", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "srch", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "srch"
+      min_length  = 2
+      max_length  = 64
+      scope       = "global"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+    }
     service_fabric_cluster = {
       name        = substr(join("-", compact([local.prefix, "sf", local.suffix])), 0, 23)
       name_unique = substr(join("-", compact([local.prefix, "sf", local.suffix_unique])), 0, 23)
@@ -2973,6 +2983,10 @@ locals {
     route_table = {
       valid_name        = length(regexall(local.az.route_table.regex, local.az.route_table.name)) > 0 && length(local.az.route_table.name) > local.az.route_table.min_length
       valid_name_unique = length(regexall(local.az.route_table.regex, local.az.route_table.name_unique)) > 0
+    }
+    search_service = {
+      valid_name        = length(regexall(local.az.search_service.regex, local.az.search_service.name)) > 0 && length(local.az.search_service.name) > local.az.search_service.min_length
+      valid_name_unique = length(regexall(local.az.search_service.regex, local.az.search_service.name_unique)) > 0
     }
     service_fabric_cluster = {
       valid_name        = length(regexall(local.az.service_fabric_cluster.regex, local.az.service_fabric_cluster.name)) > 0 && length(local.az.service_fabric_cluster.name) > local.az.service_fabric_cluster.min_length
