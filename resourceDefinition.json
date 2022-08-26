@@ -1144,6 +1144,50 @@
     "dashes": true
   },
   {
+    "name": "monitor_action_group",
+    "length": {
+      "min": 1,
+      "max": 260
+    },
+    "regex": "^(?=.{1,260}$)[^%&?\\\\+\\\\/]+[^^%&?\\\\+\\\\/ ]$",
+    "scope": "resourceGroup",
+    "slug": "mag",
+    "dashes": true
+  },
+  {
+    "name": "monitor_scheduled_query_rules_alert",
+    "length": {
+      "min": 1,
+      "max": 260
+    },
+    "regex": "^(?=.{1,260}$)[^*<>%:{}&#.,?\\\\+\\\\/]+[^*<>%:{}&#.,?\\\\+\\\\/ ]$",
+    "scope": "resourceGroup",
+    "slug": "msqa",
+    "dashes": true
+  },
+  {
+    "name": "monitor_autoscale_setting",
+    "length": {
+      "min": 1,
+      "max": 260
+    },
+    "regex": "^(?=.{1,260}$)[^<>%&#.,?\\\\+\\\\/]+[^<>%&#.,?\\\\+\\\\/ ]$",
+    "scope": "resourceGroup",
+    "slug": "mas",
+    "dashes": true
+  },
+  {
+    "name": "monitor_diagnostic_setting",
+    "length": {
+      "min": 1,
+      "max": 260
+    },
+    "regex": "^(?=.{1,260}$)[^*<>%:&?\\\\+\\\\/]+[^*<>%:&?\\\\+\\\\/ ]$",
+    "scope": "resourceGroup",
+    "slug": "mds",
+    "dashes": true
+  },
+  {
     "name": "logic_app_workflow",
     "length": {
       "min": 1,

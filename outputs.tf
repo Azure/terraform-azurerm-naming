@@ -641,6 +641,26 @@ output "mariadb_virtual_network_rule" {
   description = "Mariadb Virtual Network Rule"
 }
 
+output "monitor_action_group" {
+  value       = local.az.monitor_action_group
+  description = "Monitor Action Group"
+}
+
+output "monitor_autoscale_setting" {
+  value       = local.az.monitor_autoscale_setting
+  description = "Monitor Autoscale Setting"
+}
+
+output "monitor_diagnostic_setting" {
+  value       = local.az.monitor_diagnostic_setting
+  description = "Monitor Diagnostic Setting"
+}
+
+output "monitor_scheduled_query_rules_alert" {
+  value       = local.az.monitor_scheduled_query_rules_alert
+  description = "Monitor Scheduled Query Rules Alert"
+}
+
 output "mssql_database" {
   value       = local.az.mssql_database
   description = "Mssql Database"
