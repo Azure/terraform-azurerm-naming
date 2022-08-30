@@ -127,6 +127,7 @@ No modules.
 | <a name="output_api_management"></a> [api\_management](#output\_api\_management) | Api Management |
 | <a name="output_app_configuration"></a> [app\_configuration](#output\_app\_configuration) | App Configuration |
 | <a name="output_app_service"></a> [app\_service](#output\_app\_service) | App Service |
+| <a name="output_app_service_environment"></a> [app\_service\_environment](#output\_app\_service\_environment) | App Service Environment |
 | <a name="output_app_service_plan"></a> [app\_service\_plan](#output\_app\_service\_plan) | App Service Plan |
 | <a name="output_application_gateway"></a> [application\_gateway](#output\_application\_gateway) | Application Gateway |
 | <a name="output_application_insights"></a> [application\_insights](#output\_application\_insights) | Application Insights |
