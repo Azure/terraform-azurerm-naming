@@ -77,8 +77,8 @@ locals {
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]"
     }
     app_service_environment = {
-      name        = substr(join("-", compact([local.prefix, local.suffix, "ase"])), 0, 60)
-      name_unique = substr(join("-", compact([local.prefix, local.suffix_unique, "ase"])), 0, 60)
+      name        = substr(join("-", compact([local.prefix, "ase", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "ase", local.suffix_unique])), 0, 60)
       dashes      = true
       slug        = "ase"
       min_length  = 2
