@@ -241,8 +241,7 @@ No modules.
 | <a name="output_linux_virtual_machine"></a> [linux\_virtual\_machine](#output\_linux\_virtual\_machine) | Linux Virtual Machine |
 | <a name="output_linux_virtual_machine_scale_set"></a> [linux\_virtual\_machine\_scale\_set](#output\_linux\_virtual\_machine\_scale\_set) | Linux Virtual Machine Scale Set |
 | <a name="output_local_network_gateway"></a> [local\_network\_gateway](#output\_local\_network\_gateway) | Local Network Gateway |
-| <a name="output_log_analytics_workspace"></a> [log\_analytics\_workspace]
-(#output\_log\_analytics\_workspace) | Log Analytics Workspace |
+| <a name="output_log_analytics_workspace"></a> [log\_analytics\_workspace](#output\_log\_analytics\_workspace) | Log Analytics Workspace |
 | <a name="output_monitor_action_group"></a> [monitor\_action\_group]
 (#output\_monitor\_action\_group) | Alerts Action group |
 | <a name="output_monitor_scheduled_query_rules_alert"></a> [monitor\_scheduled\_query\_rules\_alert]
