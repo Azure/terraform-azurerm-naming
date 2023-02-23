@@ -19,7 +19,7 @@
     "regex": "^(?=.{1,50}$)[a-z][a-zA-Z0-9]+$",
     "scope": "global",
     "slug": "apim",
-    "dashes": false
+    "dashes": true
   },
   {
     "name": "app_configuration",
