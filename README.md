@@ -96,7 +96,7 @@ postgresql_server = {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_random"></a> [random](#provider\_random) | >= 3.3.2 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.4.3 |
 
 ## Modules
 
@@ -159,6 +159,7 @@ No modules.
 | <a name="output_cosmosdb_account"></a> [cosmosdb\_account](#output\_cosmosdb\_account) | Cosmosdb Account |
 | <a name="output_cosmosdb_cassandra_cluster"></a> [cosmosdb\_cassandra\_cluster](#output\_cosmosdb\_cassandra\_cluster) | Cosmosdb Cassandra Cluster |
 | <a name="output_cosmosdb_cassandra_datacenter"></a> [cosmosdb\_cassandra\_datacenter](#output\_cosmosdb\_cassandra\_datacenter) | Cosmosdb Cassandra Datacenter |
+| <a name="output_cosmosdb_postgres"></a> [cosmosdb\_postgres](#output\_cosmosdb\_postgres) | Cosmosdb Postgres |
 | <a name="output_custom_provider"></a> [custom\_provider](#output\_custom\_provider) | Custom Provider |
 | <a name="output_dashboard"></a> [dashboard](#output\_dashboard) | Dashboard |
 | <a name="output_data_factory"></a> [data\_factory](#output\_data\_factory) | Data Factory |

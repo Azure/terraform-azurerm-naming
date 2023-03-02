@@ -186,6 +186,11 @@ output "cosmosdb_cassandra_datacenter" {
   description = "Cosmosdb Cassandra Datacenter"
 }
 
+output "cosmosdb_postgres" {
+  value       = local.az.cosmosdb_postgres
+  description = "Cosmosdb Postgres"
+}
+
 output "custom_provider" {
   value       = local.az.custom_provider
   description = "Custom Provider"

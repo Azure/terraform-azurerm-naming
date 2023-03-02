@@ -374,6 +374,17 @@
     "dashes": true
   },
   {
+    "name": "cosmosdb_postgres",
+    "length": {
+      "min": 1,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-_.]+[a-z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "cospos",
+    "dashes": true
+  },
+  {
     "name": "custom_provider",
     "length": {
       "min": 3,
