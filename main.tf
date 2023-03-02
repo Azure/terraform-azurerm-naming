@@ -396,6 +396,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
     }
+    cosmosdb_postgres = {
+      name        = substr(join("-", compact([local.prefix, "cospos", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "cospos", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "cospos"
+      min_length  = 1
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+    }
     custom_provider = {
       name        = substr(join("-", compact([local.prefix, "prov", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "prov", local.suffix_unique])), 0, 64)
@@ -2471,6 +2481,10 @@ locals {
     cosmosdb_cassandra_datacenter = {
       valid_name        = length(regexall(local.az.cosmosdb_cassandra_datacenter.regex, local.az.cosmosdb_cassandra_datacenter.name)) > 0 && length(local.az.cosmosdb_cassandra_datacenter.name) > local.az.cosmosdb_cassandra_datacenter.min_length
       valid_name_unique = length(regexall(local.az.cosmosdb_cassandra_datacenter.regex, local.az.cosmosdb_cassandra_datacenter.name_unique)) > 0
+    }
+    cosmosdb_postgres = {
+      valid_name        = length(regexall(local.az.cosmosdb_postgres.regex, local.az.cosmosdb_postgres.name)) > 0 && length(local.az.cosmosdb_postgres.name) > local.az.cosmosdb_postgres.min_length
+      valid_name_unique = length(regexall(local.az.cosmosdb_postgres.regex, local.az.cosmosdb_postgres.name_unique)) > 0
     }
     custom_provider = {
       valid_name        = length(regexall(local.az.custom_provider.regex, local.az.custom_provider.name)) > 0 && length(local.az.custom_provider.name) > local.az.custom_provider.min_length
