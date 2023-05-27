@@ -1306,6 +1306,46 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
     }
+    monitor_action_group = {
+      name        = substr(join("-", compact([local.prefix, "mag", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "mag", local.suffix_unique])), 0, 260)
+      dashes      = true
+      slug        = "mag"
+      min_length  = 1
+      max_length  = 260
+      scope       = "resourceGroup"
+      regex       = "^[^%&?\\+\\/]+[^^%&?\\+\\/ ]$"
+    }
+    monitor_autoscale_setting = {
+      name        = substr(join("-", compact([local.prefix, "mas", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "mas", local.suffix_unique])), 0, 260)
+      dashes      = true
+      slug        = "mas"
+      min_length  = 1
+      max_length  = 260
+      scope       = "resourceGroup"
+      regex       = "^[^<>%&#.,?\\+\\/]+[^<>%&#.,?\\+\\/ ]$"
+    }
+    monitor_diagnostic_setting = {
+      name        = substr(join("-", compact([local.prefix, "mds", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "mds", local.suffix_unique])), 0, 260)
+      dashes      = true
+      slug        = "mds"
+      min_length  = 1
+      max_length  = 260
+      scope       = "resourceGroup"
+      regex       = "^[^*<>%:&?\\+\\/]+[^*<>%:&?\\+\\/ ]$"
+    }
+    monitor_scheduled_query_rules_alert = {
+      name        = substr(join("-", compact([local.prefix, "msqa", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "msqa", local.suffix_unique])), 0, 260)
+      dashes      = true
+      slug        = "msqa"
+      min_length  = 1
+      max_length  = 260
+      scope       = "resourceGroup"
+      regex       = "^[^*<>%:{}&#.,?\\+\\/]+[^*<>%:{}&#.,?\\+\\/ ]$"
+    }
     mssql_database = {
       name        = substr(join("-", compact([local.prefix, "sqldb", local.suffix])), 0, 128)
       name_unique = substr(join("-", compact([local.prefix, "sqldb", local.suffix_unique])), 0, 128)
@@ -2785,6 +2825,22 @@ locals {
     mariadb_virtual_network_rule = {
       valid_name        = length(regexall(local.az.mariadb_virtual_network_rule.regex, local.az.mariadb_virtual_network_rule.name)) > 0 && length(local.az.mariadb_virtual_network_rule.name) > local.az.mariadb_virtual_network_rule.min_length
       valid_name_unique = length(regexall(local.az.mariadb_virtual_network_rule.regex, local.az.mariadb_virtual_network_rule.name_unique)) > 0
+    }
+    monitor_action_group = {
+      valid_name        = length(regexall(local.az.monitor_action_group.regex, local.az.monitor_action_group.name)) > 0 && length(local.az.monitor_action_group.name) > local.az.monitor_action_group.min_length
+      valid_name_unique = length(regexall(local.az.monitor_action_group.regex, local.az.monitor_action_group.name_unique)) > 0
+    }
+    monitor_autoscale_setting = {
+      valid_name        = length(regexall(local.az.monitor_autoscale_setting.regex, local.az.monitor_autoscale_setting.name)) > 0 && length(local.az.monitor_autoscale_setting.name) > local.az.monitor_autoscale_setting.min_length
+      valid_name_unique = length(regexall(local.az.monitor_autoscale_setting.regex, local.az.monitor_autoscale_setting.name_unique)) > 0
+    }
+    monitor_diagnostic_setting = {
+      valid_name        = length(regexall(local.az.monitor_diagnostic_setting.regex, local.az.monitor_diagnostic_setting.name)) > 0 && length(local.az.monitor_diagnostic_setting.name) > local.az.monitor_diagnostic_setting.min_length
+      valid_name_unique = length(regexall(local.az.monitor_diagnostic_setting.regex, local.az.monitor_diagnostic_setting.name_unique)) > 0
+    }
+    monitor_scheduled_query_rules_alert = {
+      valid_name        = length(regexall(local.az.monitor_scheduled_query_rules_alert.regex, local.az.monitor_scheduled_query_rules_alert.name)) > 0 && length(local.az.monitor_scheduled_query_rules_alert.name) > local.az.monitor_scheduled_query_rules_alert.min_length
+      valid_name_unique = length(regexall(local.az.monitor_scheduled_query_rules_alert.regex, local.az.monitor_scheduled_query_rules_alert.name_unique)) > 0
     }
     mssql_database = {
       valid_name        = length(regexall(local.az.mssql_database.regex, local.az.mssql_database.name)) > 0 && length(local.az.mssql_database.name) > local.az.mssql_database.min_length
