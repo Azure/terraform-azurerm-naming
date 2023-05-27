@@ -26,6 +26,10 @@ output "app_service" {
   description = "App Service"
 }
 
+output "app_service_environment" {
+  value = local.az.app_service_environment
+}
+
 output "app_service_plan" {
   value       = local.az.app_service_plan
   description = "App Service Plan"

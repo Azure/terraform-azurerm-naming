@@ -76,6 +76,16 @@ locals {
       scope       = "global"
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]"
     }
+    app_service_environment = {
+      name        = substr(join("-", compact([local.prefix, "ase", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "ase", local.suffix_unique])), 0, 60)
+      dashes      = true
+      slug        = "ase"
+      min_length  = 2
+      max_length  = 60
+      scope       = "resouceGroup"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]"
+    }
     app_service_plan = {
       name        = substr(join("-", compact([local.prefix, "plan", local.suffix])), 0, 40)
       name_unique = substr(join("-", compact([local.prefix, "plan", local.suffix_unique])), 0, 40)
