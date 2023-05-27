@@ -176,6 +176,21 @@ output "cosmosdb_account" {
   description = "Cosmosdb Account"
 }
 
+output "cosmosdb_cassandra_cluster" {
+  value       = local.az.cosmosdb_cassandra_cluster
+  description = "Cosmosdb Cassandra Cluster"
+}
+
+output "cosmosdb_cassandra_datacenter" {
+  value       = local.az.cosmosdb_cassandra_datacenter
+  description = "Cosmosdb Cassandra Datacenter"
+}
+
+output "cosmosdb_postgres" {
+  value       = local.az.cosmosdb_postgres
+  description = "Cosmosdb Postgres"
+}
+
 output "custom_provider" {
   value       = local.az.custom_provider
   description = "Custom Provider"
@@ -444,6 +459,16 @@ output "firewall_nat_rule_collection" {
 output "firewall_network_rule_collection" {
   value       = local.az.firewall_network_rule_collection
   description = "Firewall Network Rule Collection"
+}
+
+output "firewall_policy" {
+  value       = local.az.firewall_policy
+  description = "Firewall Policy"
+}
+
+output "firewall_policy_rule_collection_group" {
+  value       = local.az.firewall_policy_rule_collection_group
+  description = "Firewall Policy Rule Collection Group"
 }
 
 output "frontdoor" {
@@ -1124,6 +1149,11 @@ output "virtual_network" {
 output "virtual_network_gateway" {
   value       = local.az.virtual_network_gateway
   description = "Virtual Network Gateway"
+}
+
+output "virtual_network_gateway_connection" {
+  value       = local.az.virtual_network_gateway_connection
+  description = "Virtual Network Gateway Connection"
 }
 
 output "virtual_network_peering" {

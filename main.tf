@@ -376,6 +376,36 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
     }
+    cosmosdb_cassandra_cluster = {
+      name        = substr(join("-", compact([local.prefix, "mcc", local.suffix])), 0, 44)
+      name_unique = substr(join("-", compact([local.prefix, "mcc", local.suffix_unique])), 0, 44)
+      dashes      = true
+      slug        = "mcc"
+      min_length  = 1
+      max_length  = 44
+      scope       = "parent"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
+    cosmosdb_cassandra_datacenter = {
+      name        = substr(join("-", compact([local.prefix, "mcdc", local.suffix])), 0, 44)
+      name_unique = substr(join("-", compact([local.prefix, "mcdc", local.suffix_unique])), 0, 44)
+      dashes      = true
+      slug        = "mcdc"
+      min_length  = 1
+      max_length  = 44
+      scope       = "parent"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
+    cosmosdb_postgres = {
+      name        = substr(join("-", compact([local.prefix, "cospos", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "cospos", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "cospos"
+      min_length  = 1
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+    }
     custom_provider = {
       name        = substr(join("-", compact([local.prefix, "prov", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "prov", local.suffix_unique])), 0, 64)
@@ -911,6 +941,26 @@ locals {
       name_unique = substr(join("-", compact([local.prefix, "fwnetrc", local.suffix_unique])), 0, 80)
       dashes      = true
       slug        = "fwnetrc"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+    }
+    firewall_policy = {
+      name        = substr(join("-", compact([local.prefix, "afwp", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "afwp", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "afwp"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    firewall_policy_rule_collection_group = {
+      name        = substr(join("-", compact([local.prefix, "fwprcg", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "fwprcg", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "fwprcg"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
@@ -2276,6 +2326,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    virtual_network_gateway_connection = {
+      name        = substr(join("-", compact([local.prefix, "vcn", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "vcn", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "vcn"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     virtual_network_peering = {
       name        = substr(join("-", compact([local.prefix, "vpeer", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "vpeer", local.suffix_unique])), 0, 80)
@@ -2453,6 +2513,18 @@ locals {
     cosmosdb_account = {
       valid_name        = length(regexall(local.az.cosmosdb_account.regex, local.az.cosmosdb_account.name)) > 0 && length(local.az.cosmosdb_account.name) > local.az.cosmosdb_account.min_length
       valid_name_unique = length(regexall(local.az.cosmosdb_account.regex, local.az.cosmosdb_account.name_unique)) > 0
+    }
+    cosmosdb_cassandra_cluster = {
+      valid_name        = length(regexall(local.az.cosmosdb_cassandra_cluster.regex, local.az.cosmosdb_cassandra_cluster.name)) > 0 && length(local.az.cosmosdb_cassandra_cluster.name) > local.az.cosmosdb_cassandra_cluster.min_length
+      valid_name_unique = length(regexall(local.az.cosmosdb_cassandra_cluster.regex, local.az.cosmosdb_cassandra_cluster.name_unique)) > 0
+    }
+    cosmosdb_cassandra_datacenter = {
+      valid_name        = length(regexall(local.az.cosmosdb_cassandra_datacenter.regex, local.az.cosmosdb_cassandra_datacenter.name)) > 0 && length(local.az.cosmosdb_cassandra_datacenter.name) > local.az.cosmosdb_cassandra_datacenter.min_length
+      valid_name_unique = length(regexall(local.az.cosmosdb_cassandra_datacenter.regex, local.az.cosmosdb_cassandra_datacenter.name_unique)) > 0
+    }
+    cosmosdb_postgres = {
+      valid_name        = length(regexall(local.az.cosmosdb_postgres.regex, local.az.cosmosdb_postgres.name)) > 0 && length(local.az.cosmosdb_postgres.name) > local.az.cosmosdb_postgres.min_length
+      valid_name_unique = length(regexall(local.az.cosmosdb_postgres.regex, local.az.cosmosdb_postgres.name_unique)) > 0
     }
     custom_provider = {
       valid_name        = length(regexall(local.az.custom_provider.regex, local.az.custom_provider.name)) > 0 && length(local.az.custom_provider.name) > local.az.custom_provider.min_length
@@ -2669,6 +2741,14 @@ locals {
     firewall_network_rule_collection = {
       valid_name        = length(regexall(local.az.firewall_network_rule_collection.regex, local.az.firewall_network_rule_collection.name)) > 0 && length(local.az.firewall_network_rule_collection.name) > local.az.firewall_network_rule_collection.min_length
       valid_name_unique = length(regexall(local.az.firewall_network_rule_collection.regex, local.az.firewall_network_rule_collection.name_unique)) > 0
+    }
+    firewall_policy = {
+      valid_name        = length(regexall(local.az.firewall_policy.regex, local.az.firewall_policy.name)) > 0 && length(local.az.firewall_policy.name) > local.az.firewall_policy.min_length
+      valid_name_unique = length(regexall(local.az.firewall_policy.regex, local.az.firewall_policy.name_unique)) > 0
+    }
+    firewall_policy_rule_collection_group = {
+      valid_name        = length(regexall(local.az.firewall_policy_rule_collection_group.regex, local.az.firewall_policy_rule_collection_group.name)) > 0 && length(local.az.firewall_policy_rule_collection_group.name) > local.az.firewall_policy_rule_collection_group.min_length
+      valid_name_unique = length(regexall(local.az.firewall_policy_rule_collection_group.regex, local.az.firewall_policy_rule_collection_group.name_unique)) > 0
     }
     frontdoor = {
       valid_name        = length(regexall(local.az.frontdoor.regex, local.az.frontdoor.name)) > 0 && length(local.az.frontdoor.name) > local.az.frontdoor.min_length
@@ -3213,6 +3293,10 @@ locals {
     virtual_network_gateway = {
       valid_name        = length(regexall(local.az.virtual_network_gateway.regex, local.az.virtual_network_gateway.name)) > 0 && length(local.az.virtual_network_gateway.name) > local.az.virtual_network_gateway.min_length
       valid_name_unique = length(regexall(local.az.virtual_network_gateway.regex, local.az.virtual_network_gateway.name_unique)) > 0
+    }
+    virtual_network_gateway_connection = {
+      valid_name        = length(regexall(local.az.virtual_network_gateway_connection.regex, local.az.virtual_network_gateway_connection.name)) > 0 && length(local.az.virtual_network_gateway_connection.name) > local.az.virtual_network_gateway_connection.min_length
+      valid_name_unique = length(regexall(local.az.virtual_network_gateway_connection.regex, local.az.virtual_network_gateway_connection.name_unique)) > 0
     }
     virtual_network_peering = {
       valid_name        = length(regexall(local.az.virtual_network_peering.regex, local.az.virtual_network_peering.name)) > 0 && length(local.az.virtual_network_peering.name) > local.az.virtual_network_peering.min_length
