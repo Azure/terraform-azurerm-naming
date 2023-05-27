@@ -310,6 +310,7 @@ No modules.
 | <a name="output_role_definition"></a> [role\_definition](#output\_role\_definition) | Role Definition |
 | <a name="output_route"></a> [route](#output\_route) | Route |
 | <a name="output_route_table"></a> [route\_table](#output\_route\_table) | Route Table |
+| <a name="output_search_service"></a> [search\_service](#output\_search\_service) | Search Service |
 | <a name="output_service_fabric_cluster"></a> [service\_fabric\_cluster](#output\_service\_fabric\_cluster) | Service Fabric Cluster |
 | <a name="output_servicebus_namespace"></a> [servicebus\_namespace](#output\_servicebus\_namespace) | Servicebus Namespace |
 | <a name="output_servicebus_namespace_authorization_rule"></a> [servicebus\_namespace\_authorization\_rule](#output\_servicebus\_namespace\_authorization\_rule) | Servicebus Namespace Authorization Rule |

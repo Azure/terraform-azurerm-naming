@@ -1672,6 +1672,17 @@
     "dashes": true
   },
   {
+    "name": "search_service",
+    "length": {
+      "min": 2,
+      "max": 64
+    },
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-]+$",
+    "scope": "global",
+    "slug": "srch",
+    "dashes": true
+  },
+  {
     "name": "service_fabric_cluster",
     "length": {
       "min": 4,

@@ -921,6 +921,11 @@ output "route_table" {
   description = "Route Table"
 }
 
+output "search_service" {
+  value       = local.az.search_service
+  description = "Search Service"
+}
+
 output "service_fabric_cluster" {
   value       = local.az.service_fabric_cluster
   description = "Service Fabric Cluster"
