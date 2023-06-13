@@ -27,7 +27,8 @@ output "app_service" {
 }
 
 output "app_service_environment" {
-  value = local.az.app_service_environment
+  value       = local.az.app_service_environment
+  description = "App Service Environment"
 }
 
 output "app_service_plan" {
@@ -1013,6 +1014,11 @@ output "sql_firewall_rule" {
 output "sql_server" {
   value       = local.az.sql_server
   description = "Sql Server"
+}
+
+output "static_web_app" {
+  value       = local.az.static_web_app
+  description = "Static Web App"
 }
 
 output "storage_account" {

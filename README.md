@@ -365,6 +365,7 @@ No modules.
 | <a name="output_virtual_wan"></a> [virtual\_wan](#output\_virtual\_wan) | Virtual Wan |
 | <a name="output_windows_virtual_machine"></a> [windows\_virtual\_machine](#output\_windows\_virtual\_machine) | Windows Virtual Machine |
 | <a name="output_windows_virtual_machine_scale_set"></a> [windows\_virtual\_machine\_scale\_set](#output\_windows\_virtual\_machine\_scale\_set) | Windows Virtual Machine Scale Set |
+| <a name="static_web_app"></a> [static\_web\_app](#output\_static_\_web\_app) | Static Web App |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 # Contributing
