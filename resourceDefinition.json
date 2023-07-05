@@ -418,6 +418,17 @@
     "dashes": true
   },
   {
+    "name": "dashboard_grafana",
+    "length": {
+      "min": 2,
+      "max": 22
+    },
+    "regex": "^[a-zA-Z][a-z0-9A-Z-]{0,21}[a-z0-9A-Z]$",
+    "scope": "resourceGroup",
+    "slug": "amg",
+    "dashes": true
+  },
+  {
     "name": "data_factory",
     "length": {
       "min": 3,

@@ -205,6 +205,11 @@ output "dashboard" {
   description = "Dashboard"
 }
 
+output "dashboard_grafana" {
+  value       = local.az.dashboard_grafana
+  description = "Dashboard Grafana"
+}
+
 output "data_factory" {
   value       = local.az.data_factory
   description = "Data Factory"

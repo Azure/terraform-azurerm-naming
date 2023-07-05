@@ -163,6 +163,7 @@ No modules.
 | <a name="output_cosmosdb_postgres"></a> [cosmosdb\_postgres](#output\_cosmosdb\_postgres) | Cosmosdb Postgres |
 | <a name="output_custom_provider"></a> [custom\_provider](#output\_custom\_provider) | Custom Provider |
 | <a name="output_dashboard"></a> [dashboard](#output\_dashboard) | Dashboard |
+| <a name="output_dashboard_grafana"></a> [dashboard_grafana](#output\_dashboard\_grafana) | Dashboard Grafana |
 | <a name="output_data_factory"></a> [data\_factory](#output\_data\_factory) | Data Factory |
 | <a name="output_data_factory_dataset_mysql"></a> [data\_factory\_dataset\_mysql](#output\_data\_factory\_dataset\_mysql) | Data Factory Dataset Mysql |
 | <a name="output_data_factory_dataset_postgresql"></a> [data\_factory\_dataset\_postgresql](#output\_data\_factory\_dataset\_postgresql) | Data Factory Dataset Postgresql |

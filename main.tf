@@ -436,6 +436,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-]+$"
     }
+    dashboard_grafana = {
+      name        = substr(join("-", compact([local.prefix, "amg", local.suffix])), 0, 22)
+      name_unique = substr(join("-", compact([local.prefix, "amg", local.suffix_unique])), 0, 22)
+      dashes      = true
+      slug        = "amg"
+      min_length  = 2
+      max_length  = 22
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z][a-z0-9A-Z-]{0,21}[a-z0-9A-Z]$"
+    }
     data_factory = {
       name        = substr(join("-", compact([local.prefix, "adf", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "adf", local.suffix_unique])), 0, 63)
@@ -2553,6 +2563,10 @@ locals {
     dashboard = {
       valid_name        = length(regexall(local.az.dashboard.regex, local.az.dashboard.name)) > 0 && length(local.az.dashboard.name) > local.az.dashboard.min_length
       valid_name_unique = length(regexall(local.az.dashboard.regex, local.az.dashboard.name_unique)) > 0
+    }
+    dashboard_grafana = {
+      valid_name        = length(regexall(local.az.dashboard_grafana.regex, local.az.dashboard_grafana.name)) > 0 && length(local.az.dashboard_grafana.name) > local.az.dashboard_grafana.min_length
+      valid_name_unique = length(regexall(local.az.dashboard_grafana.regex, local.az.dashboard_grafana.name_unique)) > 0
     }
     data_factory = {
       valid_name        = length(regexall(local.az.data_factory.regex, local.az.data_factory.name)) > 0 && length(local.az.data_factory.name) > local.az.data_factory.min_length
