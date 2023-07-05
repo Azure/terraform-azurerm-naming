@@ -271,6 +271,7 @@ No modules.
 | <a name="output_mysql_firewall_rule"></a> [mysql\_firewall\_rule](#output\_mysql\_firewall\_rule) | Mysql Firewall Rule |
 | <a name="output_mysql_server"></a> [mysql\_server](#output\_mysql\_server) | Mysql Server |
 | <a name="output_mysql_virtual_network_rule"></a> [mysql\_virtual\_network\_rule](#output\_mysql\_virtual\_network\_rule) | Mysql Virtual Network Rule |
+| <a name="output_nat_gateway"></a> [nat\_gateway](#output\_nat\_gateway) | NAT Gateway |
 | <a name="output_network_ddos_protection_plan"></a> [network\_ddos\_protection\_plan](#output\_network\_ddos\_protection\_plan) | Network Ddos Protection Plan |
 | <a name="output_network_interface"></a> [network\_interface](#output\_network\_interface) | Network Interface |
 | <a name="output_network_security_group"></a> [network\_security\_group](#output\_network\_security\_group) | Network Security Group |

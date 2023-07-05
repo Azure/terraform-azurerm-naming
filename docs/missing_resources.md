@@ -24,7 +24,6 @@
 - spatial_anchors_account
 - scheduled_query_rule_log
 - express_route_circuit_authorization
-- nat_gateway
 - network_packet_capture
 - network_profile
 - packet_capture //deprecated

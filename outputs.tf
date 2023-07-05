@@ -27,7 +27,8 @@ output "app_service" {
 }
 
 output "app_service_environment" {
-  value = local.az.app_service_environment
+  value       = local.az.app_service_environment
+  description = "App Service Environment"
 }
 
 output "app_service_plan" {
@@ -723,6 +724,11 @@ output "mysql_server" {
 output "mysql_virtual_network_rule" {
   value       = local.az.mysql_virtual_network_rule
   description = "Mysql Virtual Network Rule"
+}
+
+output "nat_gateway" {
+  value       = local.az.nat_gateway
+  description = "Nat Gateway"
 }
 
 output "network_ddos_protection_plan" {
