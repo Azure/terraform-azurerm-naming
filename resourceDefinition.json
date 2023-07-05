@@ -1385,7 +1385,7 @@
     "slug": "mysqlvn",
     "dashes": true
   },
-    {
+  {
     "name": "nat_gateway",
     "length": {
       "min": 1,
