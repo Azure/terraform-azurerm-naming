@@ -8,6 +8,7 @@ terraform {
 }
 
 resource "random_string" "main" {
+  count = var.unique-length > 0 ? 1 : 0
   length  = 60
   special = false
   upper   = false
@@ -15,13 +16,12 @@ resource "random_string" "main" {
 }
 
 resource "random_string" "first_letter" {
+  count = var.unique-length > 0 ? 1 : 0
   length  = 1
   special = false
   upper   = false
   numeric = false
 }
-
-
 
 locals {
   // adding a first letter to guarantee that you always start with a letter

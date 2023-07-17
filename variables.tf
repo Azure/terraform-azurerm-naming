@@ -19,7 +19,7 @@ variable "unique-seed" {
 variable "unique-length" {
   description = "Max length of the uniqueness suffix to be added"
   type        = number
-  default     = 4
+  default     = 0
 }
 
 variable "unique-include-numbers" {
