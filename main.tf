@@ -1436,6 +1436,16 @@ locals {
       scope       = "global"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
     }
+    mssql_managed_instance = {
+      name        = lower(substr(join("-", compact([local.prefix, "sqlmi", local.suffix])), 0, 63))
+      name_unique = lower(substr(join("-", compact([local.prefix, "sqlmi", local.suffix_unique])), 0, 63))
+      dashes      = true
+      slug        = "sqlmi"
+      min_length  = 1
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+    }
     mysql_database = {
       name        = substr(join("-", compact([local.prefix, "mysqldb", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "mysqldb", local.suffix_unique])), 0, 63)
@@ -2953,6 +2963,10 @@ locals {
     mssql_server = {
       valid_name        = length(regexall(local.az.mssql_server.regex, local.az.mssql_server.name)) > 0 && length(local.az.mssql_server.name) > local.az.mssql_server.min_length
       valid_name_unique = length(regexall(local.az.mssql_server.regex, local.az.mssql_server.name_unique)) > 0
+    }
+    mssql_managed_instance = {
+      valid_name        = length(regexall(local.az.mssql_managed_instance.regex, local.az.mssql_managed_instance.name)) > 0 && length(local.az.mssql_managed_instance.name) > local.az.mssql_managed_instance.min_length
+      valid_name_unique = length(regexall(local.az.mssql_managed_instance.regex, local.az.mssql_managed_instance.name_unique)) > 0
     }
     mysql_database = {
       valid_name        = length(regexall(local.az.mysql_database.regex, local.az.mysql_database.name)) > 0 && length(local.az.mysql_database.name) > local.az.mysql_database.min_length

@@ -51,6 +51,7 @@ az = {
     azure_data_warehouse       = "sqldw"
     azure_synapse_analytics    = "syn"
     sql_server_strech_database = "sqlstrdb"
+    mssql_managed_instance     = "sqlmi"
 
     // Storage
     storage_account                = "st"

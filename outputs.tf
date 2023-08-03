@@ -705,6 +705,11 @@ output "mssql_server" {
   description = "Mssql Server"
 }
 
+output "mssql_managed_instance" {
+  value       = local.az.mssql_managed_instance
+  description = "Mssql Server Managed Instance"
+}
+
 output "mysql_database" {
   value       = local.az.mysql_database
   description = "Mysql Database"
