@@ -346,6 +346,26 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
     }
+    container_app = {
+      name        = substr(join("-", compact([local.prefix, "ca", local.suffix])), 0, 32)
+      name_unique = substr(join("-", compact([local.prefix, "ca", local.suffix_unique])), 0, 32)
+      dashes      = true
+      slug        = "ca"
+      min_length  = 1
+      max_length  = 32
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
+    container_app_environment = {
+      name        = substr(join("-", compact([local.prefix, "cae", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "cae", local.suffix_unique])), 0, 60)
+      dashes      = true
+      slug        = "cae"
+      min_length  = 1
+      max_length  = 60
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
     container_group = {
       name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "cg", local.suffix_unique])), 0, 63)
@@ -2517,6 +2537,14 @@ locals {
     cognitive_account = {
       valid_name        = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name)) > 0 && length(local.az.cognitive_account.name) > local.az.cognitive_account.min_length
       valid_name_unique = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name_unique)) > 0
+    }
+    container_app = {
+      valid_name        = length(regexall(local.az.container_app.regex, local.az.container_app.name)) > 0 && length(local.az.container_app.name) > local.az.container_app.min_length
+      valid_name_unique = length(regexall(local.az.container_app.regex, local.az.container_app.name_unique)) > 0
+    }
+    container_app_environment = {
+      valid_name        = length(regexall(local.az.container_app_environment.regex, local.az.container_app_environment.name)) > 0 && length(local.az.container_app_environment.name) > local.az.container_app_environment.min_length
+      valid_name_unique = length(regexall(local.az.container_app_environment.regex, local.az.container_app_environment.name_unique)) > 0
     }
     container_group = {
       valid_name        = length(regexall(local.az.container_group.regex, local.az.container_group.name)) > 0 && length(local.az.container_group.name) > local.az.container_group.min_length

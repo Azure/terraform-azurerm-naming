@@ -40,6 +40,8 @@ az = {
     cloud_service               = "cld"
     notification_hubs           = "ntf"
     notification_hubs_namespace = "ntfns"
+    container_app               = "ca"
+    container_app_environment   = "cae"
 
     // Databases
     azure_sql_database_server  = "sql"
