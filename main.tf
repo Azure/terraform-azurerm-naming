@@ -200,7 +200,7 @@ locals {
       name        = substr(join("-", compact([local.prefix, "snap", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "snap", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "snap"
+      slug        = "bas"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
