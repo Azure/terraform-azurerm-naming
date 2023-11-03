@@ -176,14 +176,36 @@
     "dashes": true
   },
   {
+    "name": "aks_node_pool_linux",
+    "length": {
+      "min": 1,
+      "max": 12
+    },
+    "scope": "parent",
+    "slug": "npl",
+    "dashes": false,
+    "regex": "\"[^0-9a-z]\""
+  },
+  {
+    "name": "aks_node_pool_windows",
+    "length": {
+      "min": 1,
+      "max": 6
+    },
+    "scope": "parent",
+    "slug": "npw",
+    "dashes": false,
+    "regex": "\"[^0-9a-z]\""
+  },
+  {
     "name": "bastion_host",
     "length": {
       "min": 1,
       "max": 80
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
-    "scope": "parent",
-    "slug": "snap",
+    "scope": "resourceGroup",
+    "slug": "bas",
     "dashes": true
   },
   {
@@ -338,6 +360,28 @@
     "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-]+$",
     "scope": "resourceGroup",
     "slug": "cog",
+    "dashes": true
+  },
+  {
+    "name": "container_app",
+    "length": {
+      "min": 2,
+      "max": 32
+    },
+    "regex": "^(?=.{2,32}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "ca",
+    "dashes": true
+  },
+  {
+    "name": "container_app_environment",
+    "length": {
+      "min": 1,
+      "max": 60
+    },
+    "regex": "^(?=.{2,60}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "cae",
     "dashes": true
   },
   {
@@ -1551,6 +1595,17 @@
     "dashes": true
   },
   {
+    "name": "private_endpoint",
+    "length": {
+      "min": 2,
+      "max": 64
+    },
+    "scope": "resourceGroup",
+    "slug": "pe",
+    "dashes": true,
+    "regex": "\"[^0-9A-Za-z_.-]\""
+  },
+  {
     "name": "public_ip",
     "length": {
       "min": 1,
@@ -2132,6 +2187,17 @@
     "scope": "resourceGroup",
     "slug": "uai",
     "dashes": true
+  },
+  {
+    "name": "virtual_hub_connection",
+    "lenght": {
+      "min": 1,
+      "max": 80
+    },
+    "scope": "parent",
+    "slug": "vhcon",
+    "dashes": true,
+    "regex": "\"[^0-9A-Za-z_.-]\""
   },
   {
     "name": "virtual_machine",
