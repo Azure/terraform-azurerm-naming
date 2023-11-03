@@ -197,14 +197,35 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$"
     }
     bastion_host = {
-      name        = substr(join("-", compact([local.prefix, "snap", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "snap", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "bas", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "bas", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "snap"
+      slug        = "bas"
       min_length  = 1
       max_length  = 80
-      scope       = "parent"
+      scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    aks_node_pool_linux = {
+      name        = substr(join("-", compact([local.prefix, "npl", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "npl", local.suffix_unique])), 0, 80)
+      dashes      = false
+      slug        = "npl"
+      min_length  = 1
+      max_length  = 12
+      scope       = "parent"
+      regex       = "\"[^0-9a-z]\""
+
+    }
+    aks_node_pool_windows = {
+      name        = substr(join("-", compact([local.prefix, "npw", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "npw", local.suffix_unique])), 0, 80)
+      dashes      = false
+      slug        = "npw"
+      min_length  = 1
+      max_length  = 6
+      scope       = "parent"
+      regex       = "\"[^0-9a-z]\""
     }
     batch_account = {
       name        = substr(join("", compact([local.prefix_safe, "ba", local.suffix_safe])), 0, 24)
@@ -345,6 +366,26 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+    }
+    container_app = {
+      name        = substr(join("-", compact([local.prefix, "ca", local.suffix])), 0, 32)
+      name_unique = substr(join("-", compact([local.prefix, "ca", local.suffix_unique])), 0, 32)
+      dashes      = true
+      slug        = "ca"
+      min_length  = 2
+      max_length  = 32
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
+    container_app_environment = {
+      name        = substr(join("-", compact([local.prefix, "cae", local.suffix])), 0, 60)
+      name_unique = substr(join("-", compact([local.prefix, "cae", local.suffix_unique])), 0, 60)
+      dashes      = true
+      slug        = "cae"
+      min_length  = 2
+      max_length  = 60
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     container_group = {
       name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 63)
@@ -1717,14 +1758,14 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
     }
     private_endpoint = {
-      name        = substr(join("-", compact([local.prefix, "pe", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "pe", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "pe", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "pe", local.suffix_unique])), 0, 64)
       dashes      = true
       slug        = "pe"
-      min_length  = 1
-      max_length  = 80
+      min_length  = 2
+      max_length  = 64
       scope       = "resourceGroup"
-      regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      regex       = "\"[^0-9A-Za-z_.-]\""
     }
     private_link_service = {
       name        = substr(join("-", compact([local.prefix, "pls", local.suffix])), 0, 80)
@@ -2285,6 +2326,16 @@ locals {
       max_length  = 128
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
+    }
+    virtual_hub_connection = {
+      name        = substr(join("-", compact([local.prefix, "vhcon", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "vhcon", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "vhcon"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "\"[^0-9A-Za-z_.-]\""
     }
     virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)

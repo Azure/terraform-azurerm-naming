@@ -1,0 +1,14 @@
+name: release-please
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  release_please:
+    name: release
+    uses: cloudnationhq/az-cn-shared-tf-workflows/.github/workflows/release.yml@main
+    with:
+      default_branch: master
