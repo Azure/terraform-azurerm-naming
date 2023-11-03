@@ -21,6 +21,16 @@ output "app_configuration" {
   description = "App Configuration"
 }
 
+output "aks_node_pool_linux" {
+  value       = local.az.aks_node_pool_linux
+  description = "Aks Node Pool Linux"
+}
+
+output "aks_node_pool_windows" {
+  value       = local.az.aks_node_pool_windows
+  description = "Aks Node Pool Windows"
+}
+
 output "app_service" {
   value       = local.az.app_service
   description = "App Service"
@@ -158,6 +168,16 @@ output "cdn_profile" {
 output "cognitive_account" {
   value       = local.az.cognitive_account
   description = "Cognitive Account"
+}
+
+output "container_app" {
+  value       = local.az.container_app
+  description = "Container App"
+}
+
+output "container_app_environment" {
+  value       = local.az.container_app_environment
+  description = "Container App Environment"
 }
 
 output "container_group" {
@@ -1128,6 +1148,11 @@ output "traffic_manager_profile" {
 output "user_assigned_identity" {
   value       = local.az.user_assigned_identity
   description = "User Assigned Identity"
+}
+
+output "virtual_hub_connection" {
+  value       = local.az.virtual_hub_connection
+  description = "Virtual Hub Connection"
 }
 
 output "virtual_machine" {
