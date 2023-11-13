@@ -1496,6 +1496,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
     }
+    nat_gateway = {
+      name        = substr(join("-", compact([local.prefix, "ng", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ng", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ng"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     network_ddos_protection_plan = {
       name        = substr(join("-", compact([local.prefix, "ddospp", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "ddospp", local.suffix_unique])), 0, 80)
@@ -2997,6 +3007,10 @@ locals {
     mysql_virtual_network_rule = {
       valid_name        = length(regexall(local.az.mysql_virtual_network_rule.regex, local.az.mysql_virtual_network_rule.name)) > 0 && length(local.az.mysql_virtual_network_rule.name) > local.az.mysql_virtual_network_rule.min_length
       valid_name_unique = length(regexall(local.az.mysql_virtual_network_rule.regex, local.az.mysql_virtual_network_rule.name_unique)) > 0
+    }
+    nat_gateway = {
+      valid_name        = length(regexall(local.az.nat_gateway.regex, local.az.nat_gateway.name)) > 0 && length(local.az.nat_gateway.name) > local.az.nat_gateway.min_length
+      valid_name_unique = length(regexall(local.az.nat_gateway.regex, local.az.nat_gateway.name_unique)) > 0
     }
     network_ddos_protection_plan = {
       valid_name        = length(regexall(local.az.network_ddos_protection_plan.regex, local.az.network_ddos_protection_plan.name)) > 0 && length(local.az.network_ddos_protection_plan.name) > local.az.network_ddos_protection_plan.min_length
