@@ -160,6 +160,16 @@ output "cognitive_account" {
   description = "Cognitive Account"
 }
 
+output "container_app" {
+  value       = local.az.container_app
+  description = "Container App"
+}
+
+output "container_app_environment" {
+  value       = local.az.container_app_environment
+  description = "Container App Environment"
+}
+
 output "container_group" {
   value       = local.az.container_group
   description = "Container Group"

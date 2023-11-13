@@ -154,6 +154,8 @@ No modules.
 | <a name="output_cdn_endpoint"></a> [cdn\_endpoint](#output\_cdn\_endpoint) | Cdn Endpoint |
 | <a name="output_cdn_profile"></a> [cdn\_profile](#output\_cdn\_profile) | Cdn Profile |
 | <a name="output_cognitive_account"></a> [cognitive\_account](#output\_cognitive\_account) | Cognitive Account |
+| <a name="output_container_app"></a> [container\_app](#output\_container\_app) | Container App |
+| <a name="output_container_app_environment"></a> [container\_app\_environment](#output\_container\_app\_environment) | Container App Environment |
 | <a name="output_container_group"></a> [container\_group](#output\_container\_group) | Container Group |
 | <a name="output_container_registry"></a> [container\_registry](#output\_container\_registry) | Container Registry |
 | <a name="output_container_registry_webhook"></a> [container\_registry\_webhook](#output\_container\_registry\_webhook) | Container Registry Webhook |
