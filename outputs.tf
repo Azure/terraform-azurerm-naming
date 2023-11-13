@@ -1031,6 +1031,11 @@ output "sql_server" {
   description = "Sql Server"
 }
 
+output "static_web_app" {
+  value       = local.az.static_web_app
+  description = "Static Web App"
+}
+
 output "storage_account" {
   value       = local.az.storage_account
   description = "Storage Account"

@@ -2264,5 +2264,16 @@
     "scope": "resourceGroup",
     "slug": "vmss",
     "dashes": true
+  },
+  {
+    "name": "static_web_app",
+    "length": {
+      "min": 1,
+      "max": 40
+    },
+    "regex": "^(?=.{2,60}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "stapp",
+    "dashes": true
   }
 ]
