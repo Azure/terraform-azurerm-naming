@@ -96,7 +96,7 @@ postgresql_server = {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_random"></a> [random](#provider\_random) | 3.4.3 |
+| <a name="provider_random"></a> [random](#provider\_random) | >= 3.3.2 |
 
 ## Modules
 
@@ -127,7 +127,7 @@ No modules.
 | <a name="output_api_management"></a> [api\_management](#output\_api\_management) | Api Management |
 | <a name="output_app_configuration"></a> [app\_configuration](#output\_app\_configuration) | App Configuration |
 | <a name="output_app_service"></a> [app\_service](#output\_app\_service) | App Service |
-| <a name="output_app_service_environment"></a> [app\_service\_environment](#output\_app\_service\_environment) | App Service Environment |
+| <a name="output_app_service_environment"></a> [app\_service\_environment](#output\_app\_service\_environment) | n/a |
 | <a name="output_app_service_plan"></a> [app\_service\_plan](#output\_app\_service\_plan) | App Service Plan |
 | <a name="output_application_gateway"></a> [application\_gateway](#output\_application\_gateway) | Application Gateway |
 | <a name="output_application_insights"></a> [application\_insights](#output\_application\_insights) | Application Insights |
@@ -250,14 +250,6 @@ No modules.
 | <a name="output_linux_virtual_machine_scale_set"></a> [linux\_virtual\_machine\_scale\_set](#output\_linux\_virtual\_machine\_scale\_set) | Linux Virtual Machine Scale Set |
 | <a name="output_local_network_gateway"></a> [local\_network\_gateway](#output\_local\_network\_gateway) | Local Network Gateway |
 | <a name="output_log_analytics_workspace"></a> [log\_analytics\_workspace](#output\_log\_analytics\_workspace) | Log Analytics Workspace |
-| <a name="output_monitor_action_group"></a> [monitor\_action\_group]
-(#output\_monitor\_action\_group) | Alerts Action group |
-| <a name="output_monitor_scheduled_query_rules_alert"></a> [monitor\_scheduled\_query\_rules\_alert]
-(#output\_monitor\_scheduled\_query\_rules\_alert) | Alerts scheduled query rules  |
-| <a name="output_monitor_autoscale_setting"></a> [monitor\_autoscale\_setting]
-(#output\_monitor\_autoscale\_setting) | Autoscale Setting |
-| <a name="output_monitor_diagnostic_setting"></a> [monitor\_diagnostic\_setting]
-(#output\_monitor\_diagnostic\_setting) | Siagnostic setting |
 | <a name="output_logic_app_workflow"></a> [logic\_app\_workflow](#output\_logic\_app\_workflow) | Logic App Workflow |
 | <a name="output_machine_learning_workspace"></a> [machine\_learning\_workspace](#output\_machine\_learning\_workspace) | Machine Learning Workspace |
 | <a name="output_managed_disk"></a> [managed\_disk](#output\_managed\_disk) | Managed Disk |
@@ -266,8 +258,13 @@ No modules.
 | <a name="output_mariadb_firewall_rule"></a> [mariadb\_firewall\_rule](#output\_mariadb\_firewall\_rule) | Mariadb Firewall Rule |
 | <a name="output_mariadb_server"></a> [mariadb\_server](#output\_mariadb\_server) | Mariadb Server |
 | <a name="output_mariadb_virtual_network_rule"></a> [mariadb\_virtual\_network\_rule](#output\_mariadb\_virtual\_network\_rule) | Mariadb Virtual Network Rule |
+| <a name="output_monitor_action_group"></a> [monitor\_action\_group](#output\_monitor\_action\_group) | Monitor Action Group |
+| <a name="output_monitor_autoscale_setting"></a> [monitor\_autoscale\_setting](#output\_monitor\_autoscale\_setting) | Monitor Autoscale Setting |
+| <a name="output_monitor_diagnostic_setting"></a> [monitor\_diagnostic\_setting](#output\_monitor\_diagnostic\_setting) | Monitor Diagnostic Setting |
+| <a name="output_monitor_scheduled_query_rules_alert"></a> [monitor\_scheduled\_query\_rules\_alert](#output\_monitor\_scheduled\_query\_rules\_alert) | Monitor Scheduled Query Rules Alert |
 | <a name="output_mssql_database"></a> [mssql\_database](#output\_mssql\_database) | Mssql Database |
 | <a name="output_mssql_elasticpool"></a> [mssql\_elasticpool](#output\_mssql\_elasticpool) | Mssql Elasticpool |
+| <a name="output_mssql_managed_instance"></a> [mssql\_managed\_instance](#output\_mssql\_managed\_instance) | Mssql Server Managed Instance |
 | <a name="output_mssql_server"></a> [mssql\_server](#output\_mssql\_server) | Mssql Server |
 | <a name="output_mysql_database"></a> [mysql\_database](#output\_mysql\_database) | Mysql Database |
 | <a name="output_mysql_firewall_rule"></a> [mysql\_firewall\_rule](#output\_mysql\_firewall\_rule) | Mysql Firewall Rule |

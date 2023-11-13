@@ -1364,6 +1364,17 @@
     "dashes": true
   },
   {
+    "name": "mssql_managed_instance",
+    "length": {
+      "min": 1,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
+    "scope": "global",
+    "slug": "sqlmi",
+    "dashes": true
+  },
+  {
     "name": "mysql_database",
     "length": {
       "min": 1,
