@@ -47,14 +47,14 @@ locals {
       regex       = "^[a-z][a-z0-9]+$"
     }
     api_management = {
-      name        = substr(join("", compact([local.prefix_safe, "apim", local.suffix_safe])), 0, 50)
-      name_unique = substr(join("", compact([local.prefix_safe, "apim", local.suffix_unique_safe])), 0, 50)
-      dashes      = false
+      name        = substr(join("-", compact([local.prefix, "apim", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "apim", local.suffix_unique])), 0, 50)
+      dashes      = true
       slug        = "apim"
       min_length  = 1
       max_length  = 50
       scope       = "global"
-      regex       = "^[a-z][a-zA-Z0-9]+$"
+      regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]+$"
     }
     app_configuration = {
       name        = substr(join("-", compact([local.prefix, "appcg", local.suffix])), 0, 50)
