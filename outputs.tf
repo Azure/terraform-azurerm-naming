@@ -711,14 +711,14 @@ output "mssql_elasticpool" {
   description = "Mssql Elasticpool"
 }
 
+output "mssql_managed_instance" {
+  value       = local.az.mssql_managed_instance
+  description = "Mssql Managed Instance"
+}
+
 output "mssql_server" {
   value       = local.az.mssql_server
   description = "Mssql Server"
-}
-
-output "mssql_managed_instance" {
-  value       = local.az.mssql_managed_instance
-  description = "Mssql Server Managed Instance"
 }
 
 output "mysql_database" {
