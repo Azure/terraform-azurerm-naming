@@ -5,6 +5,7 @@ terraform {
       version = ">= 3.3.2"
     }
   }
+  required_version = "~> 1.0"
 }
 
 resource "random_string" "main" {
@@ -36,6 +37,26 @@ locals {
   // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
+    aks_node_pool_linux = {
+      name        = substr(join("", compact([local.prefix_safe, "npl", local.suffix_safe])), 0, 11)
+      name_unique = substr(join("", compact([local.prefix_safe, "npl", local.suffix_unique_safe])), 0, 11)
+      dashes      = false
+      slug        = "npl"
+      min_length  = 1
+      max_length  = 11
+      scope       = "parent"
+      regex       = "^[a-z][a-z0-9]*$"
+    }
+    aks_node_pool_windows = {
+      name        = substr(join("", compact([local.prefix_safe, "npw", local.suffix_safe])), 0, 6)
+      name_unique = substr(join("", compact([local.prefix_safe, "npw", local.suffix_unique_safe])), 0, 6)
+      dashes      = false
+      slug        = "npw"
+      min_length  = 1
+      max_length  = 6
+      scope       = "parent"
+      regex       = "^[a-z][a-z0-9]*$"
+    }
     analysis_services_server = {
       name        = substr(join("", compact([local.prefix_safe, "as", local.suffix_safe])), 0, 63)
       name_unique = substr(join("", compact([local.prefix_safe, "as", local.suffix_unique_safe])), 0, 63)
@@ -77,14 +98,14 @@ locals {
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]"
     }
     app_service_environment = {
-      name        = substr(join("-", compact([local.prefix, "ase", local.suffix])), 0, 60)
-      name_unique = substr(join("-", compact([local.prefix, "ase", local.suffix_unique])), 0, 60)
+      name        = substr(join("-", compact([local.prefix, "ase", local.suffix])), 0, 36)
+      name_unique = substr(join("-", compact([local.prefix, "ase", local.suffix_unique])), 0, 36)
       dashes      = true
       slug        = "ase"
-      min_length  = 2
-      max_length  = 60
-      scope       = "resouceGroup"
-      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]"
+      min_length  = 1
+      max_length  = 36
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9-]+$"
     }
     app_service_plan = {
       name        = substr(join("-", compact([local.prefix, "plan", local.suffix])), 0, 40)
@@ -205,27 +226,6 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
-    }
-    aks_node_pool_linux = {
-      name        = substr(join("-", compact([local.prefix, "npl", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "npl", local.suffix_unique])), 0, 80)
-      dashes      = false
-      slug        = "npl"
-      min_length  = 1
-      max_length  = 12
-      scope       = "parent"
-      regex       = "\"[^0-9a-z]\""
-
-    }
-    aks_node_pool_windows = {
-      name        = substr(join("-", compact([local.prefix, "npw", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "npw", local.suffix_unique])), 0, 80)
-      dashes      = false
-      slug        = "npw"
-      min_length  = 1
-      max_length  = 6
-      scope       = "parent"
-      regex       = "\"[^0-9a-z]\""
     }
     batch_account = {
       name        = substr(join("", compact([local.prefix_safe, "ba", local.suffix_safe])), 0, 24)
@@ -382,7 +382,7 @@ locals {
       name_unique = substr(join("-", compact([local.prefix, "cae", local.suffix_unique])), 0, 60)
       dashes      = true
       slug        = "cae"
-      min_length  = 2
+      min_length  = 1
       max_length  = 60
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
@@ -1765,7 +1765,7 @@ locals {
       min_length  = 2
       max_length  = 64
       scope       = "resourceGroup"
-      regex       = "\"[^0-9A-Za-z_.-]\""
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]*[a-zA-Z0-9_]$"
     }
     private_link_service = {
       name        = substr(join("-", compact([local.prefix, "pls", local.suffix])), 0, 80)
@@ -2335,7 +2335,7 @@ locals {
       min_length  = 1
       max_length  = 80
       scope       = "parent"
-      regex       = "\"[^0-9A-Za-z_.-]\""
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]*[a-zA-Z0-9_]$"
     }
     virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)
@@ -2449,6 +2449,14 @@ locals {
     }
   }
   validation = {
+    aks_node_pool_linux = {
+      valid_name        = length(regexall(local.az.aks_node_pool_linux.regex, local.az.aks_node_pool_linux.name)) > 0 && length(local.az.aks_node_pool_linux.name) > local.az.aks_node_pool_linux.min_length
+      valid_name_unique = length(regexall(local.az.aks_node_pool_linux.regex, local.az.aks_node_pool_linux.name_unique)) > 0
+    }
+    aks_node_pool_windows = {
+      valid_name        = length(regexall(local.az.aks_node_pool_windows.regex, local.az.aks_node_pool_windows.name)) > 0 && length(local.az.aks_node_pool_windows.name) > local.az.aks_node_pool_windows.min_length
+      valid_name_unique = length(regexall(local.az.aks_node_pool_windows.regex, local.az.aks_node_pool_windows.name_unique)) > 0
+    }
     analysis_services_server = {
       valid_name        = length(regexall(local.az.analysis_services_server.regex, local.az.analysis_services_server.name)) > 0 && length(local.az.analysis_services_server.name) > local.az.analysis_services_server.min_length
       valid_name_unique = length(regexall(local.az.analysis_services_server.regex, local.az.analysis_services_server.name_unique)) > 0
@@ -2464,6 +2472,10 @@ locals {
     app_service = {
       valid_name        = length(regexall(local.az.app_service.regex, local.az.app_service.name)) > 0 && length(local.az.app_service.name) > local.az.app_service.min_length
       valid_name_unique = length(regexall(local.az.app_service.regex, local.az.app_service.name_unique)) > 0
+    }
+    app_service_environment = {
+      valid_name        = length(regexall(local.az.app_service_environment.regex, local.az.app_service_environment.name)) > 0 && length(local.az.app_service_environment.name) > local.az.app_service_environment.min_length
+      valid_name_unique = length(regexall(local.az.app_service_environment.regex, local.az.app_service_environment.name_unique)) > 0
     }
     app_service_plan = {
       valid_name        = length(regexall(local.az.app_service_plan.regex, local.az.app_service_plan.name)) > 0 && length(local.az.app_service_plan.name) > local.az.app_service_plan.min_length
@@ -2568,6 +2580,14 @@ locals {
     cognitive_account = {
       valid_name        = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name)) > 0 && length(local.az.cognitive_account.name) > local.az.cognitive_account.min_length
       valid_name_unique = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name_unique)) > 0
+    }
+    container_app = {
+      valid_name        = length(regexall(local.az.container_app.regex, local.az.container_app.name)) > 0 && length(local.az.container_app.name) > local.az.container_app.min_length
+      valid_name_unique = length(regexall(local.az.container_app.regex, local.az.container_app.name_unique)) > 0
+    }
+    container_app_environment = {
+      valid_name        = length(regexall(local.az.container_app_environment.regex, local.az.container_app_environment.name)) > 0 && length(local.az.container_app_environment.name) > local.az.container_app_environment.min_length
+      valid_name_unique = length(regexall(local.az.container_app_environment.regex, local.az.container_app_environment.name_unique)) > 0
     }
     container_group = {
       valid_name        = length(regexall(local.az.container_group.regex, local.az.container_group.name)) > 0 && length(local.az.container_group.name) > local.az.container_group.min_length
@@ -3344,6 +3364,10 @@ locals {
     user_assigned_identity = {
       valid_name        = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name)) > 0 && length(local.az.user_assigned_identity.name) > local.az.user_assigned_identity.min_length
       valid_name_unique = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name_unique)) > 0
+    }
+    virtual_hub_connection = {
+      valid_name        = length(regexall(local.az.virtual_hub_connection.regex, local.az.virtual_hub_connection.name)) > 0 && length(local.az.virtual_hub_connection.name) > local.az.virtual_hub_connection.min_length
+      valid_name_unique = length(regexall(local.az.virtual_hub_connection.regex, local.az.virtual_hub_connection.name_unique)) > 0
     }
     virtual_machine = {
       valid_name        = length(regexall(local.az.virtual_machine.regex, local.az.virtual_machine.name)) > 0 && length(local.az.virtual_machine.name) > local.az.virtual_machine.min_length

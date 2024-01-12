@@ -1,5 +1,27 @@
 [
   {
+    "name": "aks_node_pool_linux",
+    "length": {
+      "min": 1,
+      "max": 11
+    },
+    "scope": "parent",
+    "slug": "npl",
+    "dashes": false,
+    "regex": "^(?=.{1,11}$)[a-z][a-z0-9]*$"
+  },
+  {
+    "name": "aks_node_pool_windows",
+    "length": {
+      "min": 1,
+      "max": 6
+    },
+    "scope": "parent",
+    "slug": "npw",
+    "dashes": false,
+    "regex": "^(?=.{1,6}$)[a-z][a-z0-9]*$"
+  },
+  {
     "name": "analysis_services_server",
     "length": {
       "min": 3,
@@ -47,9 +69,9 @@
     "name": "app_service_environment",
     "length": {
       "min": 1,
-      "max": 40
+      "max": 36
     },
-    "regex": "^(?=.{1,40}$)[a-zA-Z0-9-]+$",
+    "regex": "^(?=.{1,36}$)[a-zA-Z0-9-]+$",
     "scope": "resourceGroup",
     "slug": "ase",
     "dashes": true
@@ -174,28 +196,6 @@
     "scope": "resourceGroup",
     "slug": "avail",
     "dashes": true
-  },
-  {
-    "name": "aks_node_pool_linux",
-    "length": {
-      "min": 1,
-      "max": 12
-    },
-    "scope": "parent",
-    "slug": "npl",
-    "dashes": false,
-    "regex": "\"[^0-9a-z]\""
-  },
-  {
-    "name": "aks_node_pool_windows",
-    "length": {
-      "min": 1,
-      "max": 6
-    },
-    "scope": "parent",
-    "slug": "npw",
-    "dashes": false,
-    "regex": "\"[^0-9a-z]\""
   },
   {
     "name": "bastion_host",
@@ -1603,7 +1603,7 @@
     "scope": "resourceGroup",
     "slug": "pe",
     "dashes": true,
-    "regex": "\"[^0-9A-Za-z_.-]\""
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-._]*[a-zA-Z0-9_]$"
   },
   {
     "name": "public_ip",
@@ -2190,14 +2190,14 @@
   },
   {
     "name": "virtual_hub_connection",
-    "lenght": {
+    "length": {
       "min": 1,
       "max": 80
     },
     "scope": "parent",
     "slug": "vhcon",
     "dashes": true,
-    "regex": "\"[^0-9A-Za-z_.-]\""
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]*[a-zA-Z0-9_]$"
   },
   {
     "name": "virtual_machine",
