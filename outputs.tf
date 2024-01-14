@@ -711,14 +711,14 @@ output "mssql_elasticpool" {
   description = "Mssql Elasticpool"
 }
 
+output "mssql_managed_instance" {
+  value       = local.az.mssql_managed_instance
+  description = "Mssql Managed Instance"
+}
+
 output "mssql_server" {
   value       = local.az.mssql_server
   description = "Mssql Server"
-}
-
-output "mssql_managed_instance" {
-  value       = local.az.mssql_managed_instance
-  description = "Mssql Server Managed Instance"
 }
 
 output "mysql_database" {
@@ -1154,6 +1154,26 @@ output "traffic_manager_profile" {
 output "user_assigned_identity" {
   value       = local.az.user_assigned_identity
   description = "User Assigned Identity"
+}
+
+output "virtual_desktop_application_group" {
+  value       = local.az.virtual_desktop_application_group
+  description = "Virtual Desktop Application Group"
+}
+
+output "virtual_desktop_host_pool" {
+  value       = local.az.virtual_desktop_host_pool
+  description = "Virtual Desktop Host Pool"
+}
+
+output "virtual_desktop_scaling_plan" {
+  value       = local.az.virtual_desktop_scaling_plan
+  description = "Virtual Desktop Scaling Plan"
+}
+
+output "virtual_desktop_workspace" {
+  value       = local.az.virtual_desktop_workspace
+  description = "Virtual Desktop Workspace"
 }
 
 output "virtual_machine" {

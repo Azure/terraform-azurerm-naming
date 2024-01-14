@@ -2336,6 +2336,46 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
     }
+    virtual_desktop_application_group = {
+      name        = substr(join("-", compact([local.prefix, "vdag", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "vdag", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "vdag"
+      min_length  = 3
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+    }
+    virtual_desktop_host_pool = {
+      name        = substr(join("-", compact([local.prefix, "vdpool", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "vdpool", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "vdpool"
+      min_length  = 3
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+    }
+    virtual_desktop_scaling_plan = {
+      name        = substr(join("-", compact([local.prefix, "vdscaling", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "vdscaling", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "vdscaling"
+      min_length  = 3
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+    }
+    virtual_desktop_workspace = {
+      name        = substr(join("-", compact([local.prefix, "vdws", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "vdws", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "vdws"
+      min_length  = 3
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+    }
     virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)
       name_unique = substr(join("-", compact([local.prefix, "vm", local.suffix_unique])), 0, 15)
@@ -3367,6 +3407,22 @@ locals {
     user_assigned_identity = {
       valid_name        = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name)) > 0 && length(local.az.user_assigned_identity.name) > local.az.user_assigned_identity.min_length
       valid_name_unique = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name_unique)) > 0
+    }
+    virtual_desktop_application_group = {
+      valid_name        = length(regexall(local.az.virtual_desktop_application_group.regex, local.az.virtual_desktop_application_group.name)) > 0 && length(local.az.virtual_desktop_application_group.name) > local.az.virtual_desktop_application_group.min_length
+      valid_name_unique = length(regexall(local.az.virtual_desktop_application_group.regex, local.az.virtual_desktop_application_group.name_unique)) > 0
+    }
+    virtual_desktop_host_pool = {
+      valid_name        = length(regexall(local.az.virtual_desktop_host_pool.regex, local.az.virtual_desktop_host_pool.name)) > 0 && length(local.az.virtual_desktop_host_pool.name) > local.az.virtual_desktop_host_pool.min_length
+      valid_name_unique = length(regexall(local.az.virtual_desktop_host_pool.regex, local.az.virtual_desktop_host_pool.name_unique)) > 0
+    }
+    virtual_desktop_scaling_plan = {
+      valid_name        = length(regexall(local.az.virtual_desktop_scaling_plan.regex, local.az.virtual_desktop_scaling_plan.name)) > 0 && length(local.az.virtual_desktop_scaling_plan.name) > local.az.virtual_desktop_scaling_plan.min_length
+      valid_name_unique = length(regexall(local.az.virtual_desktop_scaling_plan.regex, local.az.virtual_desktop_scaling_plan.name_unique)) > 0
+    }
+    virtual_desktop_workspace = {
+      valid_name        = length(regexall(local.az.virtual_desktop_workspace.regex, local.az.virtual_desktop_workspace.name)) > 0 && length(local.az.virtual_desktop_workspace.name) > local.az.virtual_desktop_workspace.min_length
+      valid_name_unique = length(regexall(local.az.virtual_desktop_workspace.regex, local.az.virtual_desktop_workspace.name_unique)) > 0
     }
     virtual_machine = {
       valid_name        = length(regexall(local.az.virtual_machine.regex, local.az.virtual_machine.name)) > 0 && length(local.az.virtual_machine.name) > local.az.virtual_machine.min_length

@@ -2178,6 +2178,50 @@
     "dashes": true
   },
   {
+    "name": "virtual_desktop_application_group",
+    "length": {
+      "min": 3,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "vdag",
+    "dashes": true
+  },
+  {
+    "name": "virtual_desktop_host_pool",
+    "length": {
+      "min": 3,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "vdpool",
+    "dashes": true
+  },
+  {
+    "name": "virtual_desktop_scaling_plan",
+    "length": {
+      "min": 3,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "vdscaling",
+    "dashes": true
+  },
+  {
+    "name": "virtual_desktop_workspace",
+    "length": {
+      "min": 3,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "vdws",
+    "dashes": true
+  },
+  {
     "name": "virtual_machine",
     "length": {
       "min": 1,
