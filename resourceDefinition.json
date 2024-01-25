@@ -2189,6 +2189,17 @@
     "dashes": true
   },
   {
+    "name": "virtual_hub",
+    "length": {
+      "min": 1,
+      "max": 50
+    },
+    "scope": "parent",
+    "slug": "vhub",
+    "dashes": true,
+    "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]*[a-zA-Z0-9_]$"
+  },
+  {
     "name": "virtual_hub_connection",
     "length": {
       "min": 1,

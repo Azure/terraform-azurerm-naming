@@ -2327,6 +2327,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
     }
+    virtual_hub = {
+      name        = substr(join("-", compact([local.prefix, "vhub", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "vhub", local.suffix_unique])), 0, 50)
+      dashes      = true
+      slug        = "vhub"
+      min_length  = 1
+      max_length  = 50
+      scope       = "parent"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]*[a-zA-Z0-9_]$"
+    }
     virtual_hub_connection = {
       name        = substr(join("-", compact([local.prefix, "vhcon", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "vhcon", local.suffix_unique])), 0, 80)
@@ -3364,6 +3374,10 @@ locals {
     user_assigned_identity = {
       valid_name        = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name)) > 0 && length(local.az.user_assigned_identity.name) > local.az.user_assigned_identity.min_length
       valid_name_unique = length(regexall(local.az.user_assigned_identity.regex, local.az.user_assigned_identity.name_unique)) > 0
+    }
+    virtual_hub = {
+      valid_name        = length(regexall(local.az.virtual_hub.regex, local.az.virtual_hub.name)) > 0 && length(local.az.virtual_hub.name) > local.az.virtual_hub.min_length
+      valid_name_unique = length(regexall(local.az.virtual_hub.regex, local.az.virtual_hub.name_unique)) > 0
     }
     virtual_hub_connection = {
       valid_name        = length(regexall(local.az.virtual_hub_connection.regex, local.az.virtual_hub_connection.name)) > 0 && length(local.az.virtual_hub_connection.name) > local.az.virtual_hub_connection.min_length

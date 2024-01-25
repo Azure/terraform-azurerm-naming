@@ -1151,6 +1151,11 @@ output "user_assigned_identity" {
   description = "User Assigned Identity"
 }
 
+output "virtual_hub" {
+  value       = local.az.virtual_hub
+  description = "Virtual Hub"
+}
+
 output "virtual_hub_connection" {
   value       = local.az.virtual_hub_connection
   description = "Virtual Hub Connection"
