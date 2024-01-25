@@ -1067,6 +1067,17 @@
     "dashes": true
   },
   {
+    "name": "ip_group",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^[a-zA-Z0-9][a-zA-Z0-9-._]{1,80}[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ipgr",
+    "dashes": true
+  },
+  {
     "name": "key_vault",
     "length": {
       "min": 3,

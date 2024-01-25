@@ -581,6 +581,11 @@ output "iothub_dps_certificate" {
   description = "Iothub Dps Certificate"
 }
 
+output "ip_group" {
+  value       = local.az.ip_group
+  description = "Ip Group"
+}
+
 output "key_vault" {
   value       = local.az.key_vault
   description = "Key Vault"

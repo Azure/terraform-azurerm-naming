@@ -1187,6 +1187,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-._]+$"
     }
+    ip_group = {
+      name        = substr(join("-", compact([local.prefix, "ipgr", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ipgr", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ipgr"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]{1,80}[a-zA-Z0-9_]$"
+    }
     key_vault = {
       name        = substr(join("-", compact([local.prefix, "kv", local.suffix])), 0, 24)
       name_unique = substr(join("-", compact([local.prefix, "kv", local.suffix_unique])), 0, 24)
@@ -2918,6 +2928,10 @@ locals {
     iothub_dps_certificate = {
       valid_name        = length(regexall(local.az.iothub_dps_certificate.regex, local.az.iothub_dps_certificate.name)) > 0 && length(local.az.iothub_dps_certificate.name) > local.az.iothub_dps_certificate.min_length
       valid_name_unique = length(regexall(local.az.iothub_dps_certificate.regex, local.az.iothub_dps_certificate.name_unique)) > 0
+    }
+    ip_group = {
+      valid_name        = length(regexall(local.az.ip_group.regex, local.az.ip_group.name)) > 0 && length(local.az.ip_group.name) > local.az.ip_group.min_length
+      valid_name_unique = length(regexall(local.az.ip_group.regex, local.az.ip_group.name_unique)) > 0
     }
     key_vault = {
       valid_name        = length(regexall(local.az.key_vault.regex, local.az.key_vault.name)) > 0 && length(local.az.key_vault.name) > local.az.key_vault.min_length
