@@ -1,5 +1,16 @@
 [
   {
+    "name": "aadb2c_directory",
+    "length": {
+      "min": 1,
+      "max": 75
+    },
+    "scope": "global",
+    "slug": "aadb2c",
+    "dashes": true,
+    "regex": "[^0-9A-Za-z-]"
+  },
+  {
     "name": "aks_node_pool_linux",
     "length": {
       "min": 1,

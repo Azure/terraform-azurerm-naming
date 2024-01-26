@@ -37,6 +37,16 @@ locals {
   // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
+    aadb2c_directory = {
+      name        = substr(join("-", compact([local.prefix, "aadb2c", local.suffix])), 0, 75)
+      name_unique = substr(join("-", compact([local.prefix, "aadb2c", local.suffix_unique])), 0, 75)
+      dashes      = true
+      slug        = "aadb2c"
+      min_length  = 1
+      max_length  = 75
+      scope       = "global"
+      regex       = "[^0-9A-Za-z-]"
+    }
     aks_node_pool_linux = {
       name        = substr(join("", compact([local.prefix_safe, "npl", local.suffix_safe])), 0, 11)
       name_unique = substr(join("", compact([local.prefix_safe, "npl", local.suffix_unique_safe])), 0, 11)
@@ -2469,6 +2479,10 @@ locals {
     }
   }
   validation = {
+    aadb2c_directory = {
+      valid_name        = length(regexall(local.az.aadb2c_directory.regex, local.az.aadb2c_directory.name)) > 0 && length(local.az.aadb2c_directory.name) > local.az.aadb2c_directory.min_length
+      valid_name_unique = length(regexall(local.az.aadb2c_directory.regex, local.az.aadb2c_directory.name_unique)) > 0
+    }
     aks_node_pool_linux = {
       valid_name        = length(regexall(local.az.aks_node_pool_linux.regex, local.az.aks_node_pool_linux.name)) > 0 && length(local.az.aks_node_pool_linux.name) > local.az.aks_node_pool_linux.min_length
       valid_name_unique = length(regexall(local.az.aks_node_pool_linux.regex, local.az.aks_node_pool_linux.name_unique)) > 0
