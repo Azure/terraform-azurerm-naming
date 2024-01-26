@@ -6,6 +6,11 @@ output "unique-seed" {
 output "validation" {
   value = local.validation
 }
+output "aadb2c_directory" {
+  value       = local.az.aadb2c_directory
+  description = "Aadb2c Directory"
+}
+
 output "aks_node_pool_linux" {
   value       = local.az.aks_node_pool_linux
   description = "Aks Node Pool Linux"
