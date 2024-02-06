@@ -2357,12 +2357,12 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     virtual_machine_scale_set = {
-      name        = substr(join("-", compact([local.prefix, "vmss", local.suffix])), 0, 15)
-      name_unique = substr(join("-", compact([local.prefix, "vmss", local.suffix_unique])), 0, 15)
+      name        = substr(join("-", compact([local.prefix, "vmss", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "vmss", local.suffix_unique])), 0, 63)
       dashes      = true
       slug        = "vmss"
       min_length  = 1
-      max_length  = 15
+      max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
     }
