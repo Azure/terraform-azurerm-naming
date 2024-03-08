@@ -1177,6 +1177,17 @@
     "dashes": true
   },
   {
+    "name": "load_test",
+    "length": {
+      "min": 1,
+      "max": 64
+    },
+    "regex": "^[a-zA-Z][a-zA-Z0-9-_]{0,62}[a-zA-Z0-9|]$",
+    "scope": "resourceGroup",
+    "slug": "lt",
+    "dashes": true
+  },
+  {
     "name": "local_network_gateway",
     "length": {
       "min": 1,
