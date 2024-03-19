@@ -1286,6 +1286,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
     }
+    load_test = {
+      name        = substr(join("-", compact([local.prefix, "lt", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "lt", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "lt"
+      min_length  = 1
+      max_length  = 64
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z][a-zA-Z0-9-_]{0,62}[a-zA-Z0-9|]$"
+    }
     local_network_gateway = {
       name        = substr(join("-", compact([local.prefix, "lgw", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "lgw", local.suffix_unique])), 0, 80)
@@ -1446,21 +1456,21 @@ locals {
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
     }
-    mssql_server = {
-      name        = substr(join("-", compact([local.prefix, "sql", local.suffix])), 0, 63)
-      name_unique = substr(join("-", compact([local.prefix, "sql", local.suffix_unique])), 0, 63)
+    mssql_managed_instance = {
+      name        = substr(join("-", compact([local.prefix, "sqlmi", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "sqlmi", local.suffix_unique])), 0, 63)
       dashes      = true
-      slug        = "sql"
+      slug        = "sqlmi"
       min_length  = 1
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
     }
-    mssql_managed_instance = {
-      name        = lower(substr(join("-", compact([local.prefix, "sqlmi", local.suffix])), 0, 63))
-      name_unique = lower(substr(join("-", compact([local.prefix, "sqlmi", local.suffix_unique])), 0, 63))
+    mssql_server = {
+      name        = substr(join("-", compact([local.prefix, "sql", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "sql", local.suffix_unique])), 0, 63)
       dashes      = true
-      slug        = "sqlmi"
+      slug        = "sql"
       min_length  = 1
       max_length  = 63
       scope       = "global"
@@ -2948,6 +2958,10 @@ locals {
       valid_name        = length(regexall(local.az.linux_virtual_machine_scale_set.regex, local.az.linux_virtual_machine_scale_set.name)) > 0 && length(local.az.linux_virtual_machine_scale_set.name) > local.az.linux_virtual_machine_scale_set.min_length
       valid_name_unique = length(regexall(local.az.linux_virtual_machine_scale_set.regex, local.az.linux_virtual_machine_scale_set.name_unique)) > 0
     }
+    load_test = {
+      valid_name        = length(regexall(local.az.load_test.regex, local.az.load_test.name)) > 0 && length(local.az.load_test.name) > local.az.load_test.min_length
+      valid_name_unique = length(regexall(local.az.load_test.regex, local.az.load_test.name_unique)) > 0
+    }
     local_network_gateway = {
       valid_name        = length(regexall(local.az.local_network_gateway.regex, local.az.local_network_gateway.name)) > 0 && length(local.az.local_network_gateway.name) > local.az.local_network_gateway.min_length
       valid_name_unique = length(regexall(local.az.local_network_gateway.regex, local.az.local_network_gateway.name_unique)) > 0
@@ -3012,13 +3026,13 @@ locals {
       valid_name        = length(regexall(local.az.mssql_elasticpool.regex, local.az.mssql_elasticpool.name)) > 0 && length(local.az.mssql_elasticpool.name) > local.az.mssql_elasticpool.min_length
       valid_name_unique = length(regexall(local.az.mssql_elasticpool.regex, local.az.mssql_elasticpool.name_unique)) > 0
     }
-    mssql_server = {
-      valid_name        = length(regexall(local.az.mssql_server.regex, local.az.mssql_server.name)) > 0 && length(local.az.mssql_server.name) > local.az.mssql_server.min_length
-      valid_name_unique = length(regexall(local.az.mssql_server.regex, local.az.mssql_server.name_unique)) > 0
-    }
     mssql_managed_instance = {
       valid_name        = length(regexall(local.az.mssql_managed_instance.regex, local.az.mssql_managed_instance.name)) > 0 && length(local.az.mssql_managed_instance.name) > local.az.mssql_managed_instance.min_length
       valid_name_unique = length(regexall(local.az.mssql_managed_instance.regex, local.az.mssql_managed_instance.name_unique)) > 0
+    }
+    mssql_server = {
+      valid_name        = length(regexall(local.az.mssql_server.regex, local.az.mssql_server.name)) > 0 && length(local.az.mssql_server.name) > local.az.mssql_server.min_length
+      valid_name_unique = length(regexall(local.az.mssql_server.regex, local.az.mssql_server.name_unique)) > 0
     }
     mysql_database = {
       valid_name        = length(regexall(local.az.mysql_database.regex, local.az.mysql_database.name)) > 0 && length(local.az.mysql_database.name) > local.az.mysql_database.min_length

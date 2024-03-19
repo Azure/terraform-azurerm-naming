@@ -631,6 +631,11 @@ output "linux_virtual_machine_scale_set" {
   description = "Linux Virtual Machine Scale Set"
 }
 
+output "load_test" {
+  value       = local.az.load_test
+  description = "Load Test"
+}
+
 output "local_network_gateway" {
   value       = local.az.local_network_gateway
   description = "Local Network Gateway"
@@ -711,14 +716,14 @@ output "mssql_elasticpool" {
   description = "Mssql Elasticpool"
 }
 
+output "mssql_managed_instance" {
+  value       = local.az.mssql_managed_instance
+  description = "Mssql Managed Instance"
+}
+
 output "mssql_server" {
   value       = local.az.mssql_server
   description = "Mssql Server"
-}
-
-output "mssql_managed_instance" {
-  value       = local.az.mssql_managed_instance
-  description = "Mssql Server Managed Instance"
 }
 
 output "mysql_database" {
