@@ -1161,6 +1161,26 @@ output "user_assigned_identity" {
   description = "User Assigned Identity"
 }
 
+output "virtual_desktop_application_group" {
+  value       = local.az.virtual_desktop_application_group
+  description = "Virtual Desktop Application Group"
+}
+
+output "virtual_desktop_host_pool" {
+  value       = local.az.virtual_desktop_host_pool
+  description = "Virtual Desktop Host Pool"
+}
+
+output "virtual_desktop_scaling_plan" {
+  value       = local.az.virtual_desktop_scaling_plan
+  description = "Virtual Desktop Scaling Plan"
+}
+
+output "virtual_desktop_workspace" {
+  value       = local.az.virtual_desktop_workspace
+  description = "Virtual Desktop Workspace"
+}
+
 output "virtual_machine" {
   value       = local.az.virtual_machine
   description = "Virtual Machine"

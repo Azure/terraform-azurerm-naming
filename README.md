@@ -354,6 +354,10 @@ No modules.
 | <a name="output_unique-seed"></a> [unique-seed](#output\_unique-seed) | n/a |
 | <a name="output_user_assigned_identity"></a> [user\_assigned\_identity](#output\_user\_assigned\_identity) | User Assigned Identity |
 | <a name="output_validation"></a> [validation](#output\_validation) | n/a |
+| <a name="output_virtual_desktop_application_group"></a> [virtual\_desktop\_application\_group](#output\_virtual\_desktop\_application\_group) | Virtual Desktop Application Group |
+| <a name="output_virtual_desktop_host_pool"></a> [virtual\_desktop\_host\_pool](#output\_virtual\_desktop\_host\_pool) | Virtual Desktop Host Pool |
+| <a name="output_virtual_desktop_scaling_plan"></a> [virtual\_desktop\_scaling\_plan](#output\_virtual\_desktop\_scaling\_plan) | Virtual Desktop Scaling Plan |
+| <a name="output_virtual_desktop_workspace"></a> [virtual\_desktop\_workspace](#output\_virtual\_desktop\_workspace) | Virtual Desktop Workspace |
 | <a name="output_virtual_machine"></a> [virtual\_machine](#output\_virtual\_machine) | Virtual Machine |
 | <a name="output_virtual_machine_extension"></a> [virtual\_machine\_extension](#output\_virtual\_machine\_extension) | Virtual Machine Extension |
 | <a name="output_virtual_machine_scale_set"></a> [virtual\_machine\_scale\_set](#output\_virtual\_machine\_scale\_set) | Virtual Machine Scale Set |
