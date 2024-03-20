@@ -16,10 +16,10 @@
       "min": 1,
       "max": 50
     },
-    "regex": "^(?=.{1,50}$)[a-z][a-zA-Z0-9]+$",
+    "regex": "^(?=.{1,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]+$",
     "scope": "global",
     "slug": "apim",
-    "dashes": false
+    "dashes": true
   },
   {
     "name": "app_configuration",
