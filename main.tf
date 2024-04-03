@@ -1007,9 +1007,9 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     frontdoor_firewall_policy = {
-      name        = substr(join("-", compact([local.prefix, "fdfw", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "fdfw", local.suffix_unique])), 0, 80)
-      dashes      = true
+      name        = substr(join("", compact([local.prefix_safe, "fdfw", local.suffix_safe])), 0, 80)
+      name_unique = substr(join("", compact([local.prefix_safe, "fdfw", local.suffix_unique_safe])), 0, 80)
+      dashes      = false
       slug        = "fdfw"
       min_length  = 1
       max_length  = 80
