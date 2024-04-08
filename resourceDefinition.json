@@ -1661,6 +1661,17 @@
     "dashes": true
   },
   {
+    "name": "recovery_services_vault_backup_policy",
+    "length": {
+      "min": 3,
+      "max": 150
+    },
+    "regex": "^[a-zA-Z][a-zA-Z0-9-]{1,148}[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "rsvbp",
+    "dashes": true
+  },
+  {
     "name": "redis_cache",
     "length": {
       "min": 1,

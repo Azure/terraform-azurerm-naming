@@ -911,6 +911,11 @@ output "recovery_services_vault" {
   description = "Recovery Services Vault"
 }
 
+output "recovery_services_vault_backup_policy" {
+  value       = local.az.recovery_services_vault_backup_policy
+  description = "Recovery Services Vault Backup Policy"
+}
+
 output "redis_cache" {
   value       = local.az.redis_cache
   description = "Redis Cache"

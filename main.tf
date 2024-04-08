@@ -1847,6 +1847,16 @@ locals {
       scope       = "global"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
+    recovery_services_vault_backup_policy = {
+      name        = substr(join("-", compact([local.prefix, "rsvbp", local.suffix])), 0, 150)
+      name_unique = substr(join("-", compact([local.prefix, "rsvbp", local.suffix_unique])), 0, 150)
+      dashes      = true
+      slug        = "rsvbp"
+      min_length  = 3
+      max_length  = 150
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z][a-zA-Z0-9-]{1,148}[a-zA-Z0-9]$"
+    }
     redis_cache = {
       name        = substr(join("-", compact([local.prefix, "redis", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "redis", local.suffix_unique])), 0, 63)
@@ -3202,6 +3212,10 @@ locals {
     recovery_services_vault = {
       valid_name        = length(regexall(local.az.recovery_services_vault.regex, local.az.recovery_services_vault.name)) > 0 && length(local.az.recovery_services_vault.name) > local.az.recovery_services_vault.min_length
       valid_name_unique = length(regexall(local.az.recovery_services_vault.regex, local.az.recovery_services_vault.name_unique)) > 0
+    }
+    recovery_services_vault_backup_policy = {
+      valid_name        = length(regexall(local.az.recovery_services_vault_backup_policy.regex, local.az.recovery_services_vault_backup_policy.name)) > 0 && length(local.az.recovery_services_vault_backup_policy.name) > local.az.recovery_services_vault_backup_policy.min_length
+      valid_name_unique = length(regexall(local.az.recovery_services_vault_backup_policy.regex, local.az.recovery_services_vault_backup_policy.name_unique)) > 0
     }
     redis_cache = {
       valid_name        = length(regexall(local.az.redis_cache.regex, local.az.redis_cache.name)) > 0 && length(local.az.redis_cache.name) > local.az.redis_cache.min_length
