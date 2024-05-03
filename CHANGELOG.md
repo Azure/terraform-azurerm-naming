@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/CloudNationHQ/terraform-azure-naming/compare/v0.3.0...v0.4.0) (2024-05-03)
+
+
+### Features
+
+* add container app job naming ([#9](https://github.com/CloudNationHQ/terraform-azure-naming/issues/9)) ([bbe754b](https://github.com/CloudNationHQ/terraform-azure-naming/commit/bbe754b9c30e34c8bf5c89d84f54db96b30f2fb3))
+
 ## [0.3.0](https://github.com/CloudNationHQ/terraform-azure-naming/compare/v0.2.0...v0.3.0) (2024-04-08)
 
 
