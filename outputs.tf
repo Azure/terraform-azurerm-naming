@@ -181,6 +181,11 @@ output "container_app" {
   description = "Container App"
 }
 
+output "container_app_job" {
+  value       = local.az.container_app_job
+  description = "Container App Job"
+}
+
 output "container_app_environment" {
   value       = local.az.container_app_environment
   description = "Container App Environment"

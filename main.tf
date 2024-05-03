@@ -397,6 +397,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
+    container_app_job = {
+      name        = substr(join("-", compact([local.prefix, "caj", local.suffix])), 0, 32)
+      name_unique = substr(join("-", compact([local.prefix, "caj", local.suffix_unique])), 0, 32)
+      dashes      = true
+      slug        = "caj"
+      min_length  = 2
+      max_length  = 32
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
     container_group = {
       name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "cg", local.suffix_unique])), 0, 63)
@@ -2632,6 +2642,10 @@ locals {
     container_app_environment = {
       valid_name        = length(regexall(local.az.container_app_environment.regex, local.az.container_app_environment.name)) > 0 && length(local.az.container_app_environment.name) > local.az.container_app_environment.min_length
       valid_name_unique = length(regexall(local.az.container_app_environment.regex, local.az.container_app_environment.name_unique)) > 0
+    }
+    container_app_job = {
+      valid_name        = length(regexall(local.az.container_app_job.regex, local.az.container_app_job.name)) > 0 && length(local.az.container_app_job.name) > local.az.container_app_job.min_length
+      valid_name_unique = length(regexall(local.az.container_app_job.regex, local.az.container_app_job.name_unique)) > 0
     }
     container_group = {
       valid_name        = length(regexall(local.az.container_group.regex, local.az.container_group.name)) > 0 && length(local.az.container_group.name) > local.az.container_group.min_length

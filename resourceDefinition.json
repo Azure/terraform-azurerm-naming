@@ -385,6 +385,17 @@
     "dashes": true
   },
   {
+    "name": "container_app_job",
+    "length": {
+      "min": 2,
+      "max": 32
+    },
+    "regex": "^(?=.{2,32}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "caj",
+    "dashes": true
+  },
+  {
     "name": "container_app_environment",
     "length": {
       "min": 1,
