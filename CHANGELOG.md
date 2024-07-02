@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0](https://github.com/CloudNationHQ/terraform-azure-naming/compare/v0.4.0...v0.5.0) (2024-07-02)
+
+
+### Features
+
+* add issue template ([#12](https://github.com/CloudNationHQ/terraform-azure-naming/issues/12)) ([005d1d5](https://github.com/CloudNationHQ/terraform-azure-naming/commit/005d1d5dddc653f57e678c0db94b92dc25aa20de))
+* update documentation ([#11](https://github.com/CloudNationHQ/terraform-azure-naming/issues/11)) ([41befcd](https://github.com/CloudNationHQ/terraform-azure-naming/commit/41befcdd7f2a6eb30b1d2232e1af40638ad6123b))
+
 ## [0.4.0](https://github.com/CloudNationHQ/terraform-azure-naming/compare/v0.3.0...v0.4.0) (2024-05-03)
 
 
