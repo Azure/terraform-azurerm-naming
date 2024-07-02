@@ -1,0 +1,92 @@
+name: "Bug Report"
+description: Create a new ticket for a bug.
+title: "[BUG] - <title>"
+labels: [
+  "bug"
+]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to fill out a bug report.
+
+        Please check whether you are using the latest module version as the issue might have already been fixed.
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+        - label: I have searched the existing issues
+          required: true
+  - type: input
+    id: module
+    attributes:
+      label: Module Version
+      description: Which module version are you using?
+      placeholder: 0.0.0
+    validations:
+      required: true
+  - type: input
+    id: terraform
+    attributes:
+      label: Terraform Version
+      description: Which Terraform version are you using?
+      placeholder: 0.0.0
+    validations:
+      required: true
+  - type: input
+    id: azurerm
+    attributes:
+      label: AzureRM Provider Version
+      description: Which AzureRM Provider version are you using?
+      placeholder: 0.0.0
+    validations:
+      required: true
+  - type: input
+    id: resource
+    attributes:
+      label: Short Description
+      description: Please provide a concise description of the bug.
+      placeholder: Short description
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Terraform Configuration Files
+      description: |
+        Please provide a minimal Terraform configuration that can reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behaviour
+      description: What should have happened?
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behaviour
+      description: What actually happened?
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: |
+        Please list the steps required to reproduce the issue, e.g.
+
+        1. `terraform apply`
+  - type: input
+    id: facts
+    attributes:
+      label: Additional Context
+      description: |
+        Are there any additional details that you think would be helpful?
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: |
+        Information about referencing Github Issues: https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests
+
+        Please provide any other GitHub issues or pull requests that are relevant to this report.
