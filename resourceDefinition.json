@@ -172,7 +172,7 @@
     },
     "regex": "^(?=.{1,63}$)[a-zA-Z][a-zA-Z0-9-]+$",
     "scope": "parent",
-    "slug": "aacred",
+    "slug": "aarun",
     "dashes": true
   },
   {

@@ -196,10 +196,10 @@ locals {
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
     }
     automation_runbook = {
-      name        = substr(join("-", compact([local.prefix, "aacred", local.suffix])), 0, 63)
-      name_unique = substr(join("-", compact([local.prefix, "aacred", local.suffix_unique])), 0, 63)
+      name        = substr(join("-", compact([local.prefix, "aarun", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "aarun", local.suffix_unique])), 0, 63)
       dashes      = true
-      slug        = "aacred"
+      slug        = "aarun"
       min_length  = 1
       max_length  = 63
       scope       = "parent"
