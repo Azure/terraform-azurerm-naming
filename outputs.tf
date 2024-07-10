@@ -81,6 +81,11 @@ output "automation_credential" {
   description = "Automation Credential"
 }
 
+output "automation_job_schedule" {
+  value       = local.az.automation_job_schedule
+  description = "Automation Job Schedule"
+}
+
 output "automation_runbook" {
   value       = local.az.automation_runbook
   description = "Automation Runbook"
@@ -181,14 +186,14 @@ output "container_app" {
   description = "Container App"
 }
 
-output "container_app_job" {
-  value       = local.az.container_app_job
-  description = "Container App Job"
-}
-
 output "container_app_environment" {
   value       = local.az.container_app_environment
   description = "Container App Environment"
+}
+
+output "container_app_job" {
+  value       = local.az.container_app_job
+  description = "Container App Job"
 }
 
 output "container_group" {

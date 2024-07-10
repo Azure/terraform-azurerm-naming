@@ -22,8 +22,6 @@ resource "random_string" "first_letter" {
   numeric = false
 }
 
-
-
 locals {
   // adding a first letter to guarantee that you always start with a letter
   random_safe_generation = join("", [random_string.first_letter.result, random_string.main.result])
@@ -182,6 +180,16 @@ locals {
       name_unique = substr(join("-", compact([local.prefix, "aacred", local.suffix_unique])), 0, 128)
       dashes      = true
       slug        = "aacred"
+      min_length  = 1
+      max_length  = 128
+      scope       = "parent"
+      regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+    }
+    automation_job_schedule = {
+      name        = substr(join("-", compact([local.prefix, "aajs", local.suffix])), 0, 128)
+      name_unique = substr(join("-", compact([local.prefix, "aajs", local.suffix_unique])), 0, 128)
+      dashes      = true
+      slug        = "aajs"
       min_length  = 1
       max_length  = 128
       scope       = "parent"
@@ -2558,6 +2566,10 @@ locals {
     automation_credential = {
       valid_name        = length(regexall(local.az.automation_credential.regex, local.az.automation_credential.name)) > 0 && length(local.az.automation_credential.name) > local.az.automation_credential.min_length
       valid_name_unique = length(regexall(local.az.automation_credential.regex, local.az.automation_credential.name_unique)) > 0
+    }
+    automation_job_schedule = {
+      valid_name        = length(regexall(local.az.automation_job_schedule.regex, local.az.automation_job_schedule.name)) > 0 && length(local.az.automation_job_schedule.name) > local.az.automation_job_schedule.min_length
+      valid_name_unique = length(regexall(local.az.automation_job_schedule.regex, local.az.automation_job_schedule.name_unique)) > 0
     }
     automation_runbook = {
       valid_name        = length(regexall(local.az.automation_runbook.regex, local.az.automation_runbook.name)) > 0 && length(local.az.automation_runbook.name) > local.az.automation_runbook.min_length

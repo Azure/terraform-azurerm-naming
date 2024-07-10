@@ -187,6 +187,17 @@
     "dashes": true
   },
   {
+    "name": "automation_job_schedule",
+    "length": {
+      "min": 1,
+      "max": 128
+    },
+    "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
+    "scope": "parent",
+    "slug": "aajs",
+    "dashes": true
+  },
+  {
     "name": "automation_variable",
     "length": {
       "min": 1,
