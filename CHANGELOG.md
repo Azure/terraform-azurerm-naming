@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/CloudNationHQ/terraform-azure-naming/compare/v0.7.0...v0.7.1) (2024-07-10)
+
+
+### Bug Fixes
+
+* fix typo in automation runbook abbreviation ([#18](https://github.com/CloudNationHQ/terraform-azure-naming/issues/18)) ([caf1542](https://github.com/CloudNationHQ/terraform-azure-naming/commit/caf1542d7ef9df0b13b93bc3a24b5fb4fcb6e774))
+
 ## [0.7.0](https://github.com/CloudNationHQ/terraform-azure-naming/compare/v0.6.0...v0.7.0) (2024-07-10)
 
 
