@@ -1650,6 +1650,17 @@
     "regex": "^(?=.{2,64}$)[a-zA-Z0-9][a-zA-Z0-9-._]*[a-zA-Z0-9_]$"
   },
   {
+    "name": "private_dns_resolver",
+    "length": {
+      "min": 3,
+      "max": 80
+    },
+    "scope": "resourceGroup",
+    "slug": "dnspr",
+    "dashes": true,
+    "regex": "^(?=.{3,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]*[a-zA-Z0-9_]$"
+  },
+  {
     "name": "public_ip",
     "length": {
       "min": 1,

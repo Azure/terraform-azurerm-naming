@@ -1755,6 +1755,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    private_dns_resolver = {
+      name        = substr(join("-", compact([local.prefix, "dnspr", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "dnspr", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "dnspr"
+      min_length  = 3
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]*[a-zA-Z0-9_]$"
+    }
     private_dns_srv_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix_unique])), 0, 80)
@@ -3194,6 +3204,10 @@ locals {
     private_dns_ptr_record = {
       valid_name        = length(regexall(local.az.private_dns_ptr_record.regex, local.az.private_dns_ptr_record.name)) > 0 && length(local.az.private_dns_ptr_record.name) > local.az.private_dns_ptr_record.min_length
       valid_name_unique = length(regexall(local.az.private_dns_ptr_record.regex, local.az.private_dns_ptr_record.name_unique)) > 0
+    }
+    private_dns_resolver = {
+      valid_name        = length(regexall(local.az.private_dns_resolver.regex, local.az.private_dns_resolver.name)) > 0 && length(local.az.private_dns_resolver.name) > local.az.private_dns_resolver.min_length
+      valid_name_unique = length(regexall(local.az.private_dns_resolver.regex, local.az.private_dns_resolver.name_unique)) > 0
     }
     private_dns_srv_record = {
       valid_name        = length(regexall(local.az.private_dns_srv_record.regex, local.az.private_dns_srv_record.name)) > 0 && length(local.az.private_dns_srv_record.name) > local.az.private_dns_srv_record.min_length

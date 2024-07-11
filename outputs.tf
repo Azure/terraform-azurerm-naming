@@ -866,6 +866,11 @@ output "private_dns_ptr_record" {
   description = "Private Dns Ptr Record"
 }
 
+output "private_dns_resolver" {
+  value       = local.az.private_dns_resolver
+  description = "Private Dns Resolver"
+}
+
 output "private_dns_srv_record" {
   value       = local.az.private_dns_srv_record
   description = "Private Dns Srv Record"
