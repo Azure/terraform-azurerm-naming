@@ -1029,7 +1029,7 @@
       "max": 64
     },
     "regex": "^(?=.{3,64}$)[a-zA-Z0-9-]+[a-zA-Z0-9]$",
-    "scope": "resoureceGroup",
+    "scope": "resourceGroup",
     "slug": "dps",
     "dashes": true
   },
