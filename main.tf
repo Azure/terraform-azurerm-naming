@@ -11,14 +11,14 @@ resource "random_string" "main" {
   length  = 60
   special = false
   upper   = false
-  numeric = var.unique-include-numbers
+  numeric  = var.unique-include-numbers
 }
 
 resource "random_string" "first_letter" {
   length  = 1
   special = false
   upper   = false
-  numeric = false
+  numeric  = false
 }
 
 
@@ -383,7 +383,7 @@ locals {
       slug        = "acr"
       min_length  = 1
       max_length  = 63
-      scope       = "resourceGroup"
+      scope       = "global"
       regex       = "^[a-zA-Z0-9]+$"
     }
     container_registry_webhook = {
@@ -1153,7 +1153,7 @@ locals {
       slug        = "dps"
       min_length  = 3
       max_length  = 64
-      scope       = "resoureceGroup"
+      scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     iothub_dps_certificate = {

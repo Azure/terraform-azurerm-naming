@@ -380,7 +380,7 @@
       "max": 63
     },
     "regex": "^(?=.{1,63}$)[a-zA-Z0-9]+$",
-    "scope": "resourceGroup",
+    "scope": "global",
     "slug": "acr",
     "dashes": false
   },
@@ -1029,7 +1029,7 @@
       "max": 64
     },
     "regex": "^(?=.{3,64}$)[a-zA-Z0-9-]+[a-zA-Z0-9]$",
-    "scope": "resoureceGroup",
+    "scope": "resourceGroup",
     "slug": "dps",
     "dashes": true
   },
