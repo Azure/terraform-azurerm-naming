@@ -161,6 +161,11 @@ output "cognitive_account" {
   description = "Cognitive Account"
 }
 
+output "communication_service" {
+  value = local.az.communication_service
+  description = "Communication Service"
+}
+
 output "container_app" {
   value       = local.az.container_app
   description = "Container App"

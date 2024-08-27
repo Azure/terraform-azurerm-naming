@@ -346,6 +346,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
     }
+    communication_service = {
+      name        = substr(join("-", compact([local.prefix, "acs", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "acs", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "acs"
+      min_length  = 1
+      max_length  = 64
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9-]+$"
+    }
     container_app = {
       name        = substr(join("-", compact([local.prefix, "ca", local.suffix])), 0, 32)
       name_unique = substr(join("-", compact([local.prefix, "ca", local.suffix_unique])), 0, 32)
@@ -2621,6 +2631,10 @@ locals {
     cognitive_account = {
       valid_name        = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name)) > 0 && length(local.az.cognitive_account.name) > local.az.cognitive_account.min_length
       valid_name_unique = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name_unique)) > 0
+    }
+    communication_service = {
+      valid_name        = length(regexall(local.az.communication_service.regex, local.az.communication_service.name)) > 0 && length(local.az.communication_service.name) > local.az.communication_service.min_length
+      valid_name_unique = length(regexall(local.az.communication_service.regex, local.az.communication_service.name_unique)) > 0
     }
     container_app = {
       valid_name        = length(regexall(local.az.container_app.regex, local.az.container_app.name)) > 0 && length(local.az.container_app.name) > local.az.container_app.min_length
