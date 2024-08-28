@@ -352,7 +352,7 @@ locals {
       dashes      = true
       slug        = "acs"
       min_length  = 1
-      max_length  = 64
+      max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
     }
