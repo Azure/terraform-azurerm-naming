@@ -348,7 +348,7 @@
     },
     "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-]+$",
     "scope": "resourceGroup",
-    "slug": "cog",
+    "slug": "acs",
     "dashes": true
   },
   {
