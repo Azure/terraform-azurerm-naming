@@ -154,6 +154,7 @@ No modules.
 | <a name="output_cdn_endpoint"></a> [cdn\_endpoint](#output\_cdn\_endpoint) | Cdn Endpoint |
 | <a name="output_cdn_profile"></a> [cdn\_profile](#output\_cdn\_profile) | Cdn Profile |
 | <a name="output_cognitive_account"></a> [cognitive\_account](#output\_cognitive\_account) | Cognitive Account |
+| <a name="output_communication_service"></a> [communication\_service](#output\_communication\_service) | Communication Service |
 | <a name="output_container_app"></a> [container\_app](#output\_container\_app) | Container App |
 | <a name="output_container_app_environment"></a> [container\_app\_environment](#output\_container\_app\_environment) | Container App Environment |
 | <a name="output_container_group"></a> [container\_group](#output\_container\_group) | Container Group |
