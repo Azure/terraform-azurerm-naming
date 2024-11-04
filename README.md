@@ -2,7 +2,7 @@
 
 This module helps you to keep consistency on your resources names for Terraform The goal of this module it is that for each resource that requires a name in Terraform you would be easily able to compose this name using this module and this will keep the consistency in your repositories.
 
-# Usage
+## Usage
 
 For every resource in `terraform_azurerm` just remove the `azurerm` part of the module and use the `name` property of this output.
 
@@ -31,9 +31,10 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 ```
+
 Other advanced usages will be explained in the [Advanced usage](#advanced-usage) part of this docs.
 
-# Internals
+## Internals
 
 ## Prerequisites and setup
 
@@ -45,15 +46,13 @@ Other advanced usages will be explained in the [Advanced usage](#advanced-usage)
 
 The resources are automatically generated using `go` to change the generation please change the file on the `templates` folder. To add a new resource, including its definition in the file `resourceDefinition.json`, and it will be automatically generated when `main.go` is run.
 
-# Current implementation
+## Current implementation
 
 You can find a list bellow of all the resources that are currently implemented. To get a list of the ones that are missing implementation you can check at [Missing resources](docs/missing_resources.md) the resources that have no documentation about their limitation on naming currently on Microsoft docs are on the [Not defined](docs/not_defined.md) list.
 
+## Advanced usage
 
-# Advanced usage
-
-
-## Output
+### Output
 
 Each one of the resources emits the name of the resource and other properties:
 
