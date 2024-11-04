@@ -183,7 +183,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "snap",
+    "slug": "bas",
     "dashes": true
   },
   {
@@ -1723,7 +1723,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "rt",
+    "slug": "udr",
     "dashes": true
   },
   {
@@ -1734,7 +1734,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
-    "slug": "route",
+    "slug": "rt",
     "dashes": true
   },
   {
