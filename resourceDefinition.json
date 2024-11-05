@@ -1767,7 +1767,7 @@
     },
     "regex": "^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
     "scope": "global",
-    "slug": "sb",
+    "slug": "sbus",
     "dashes": true
   },
   {
