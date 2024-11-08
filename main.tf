@@ -1907,20 +1907,20 @@ locals {
       regex       = "^[^%]+[^ %.]$"
     }
     route = {
-      name        = substr(join("-", compact([local.prefix, "rt", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "rt", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "udr", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "udr", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "rt"
+      slug        = "udr"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     route_table = {
-      name        = substr(join("-", compact([local.prefix, "route", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "route", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "rt", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "rt", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "route"
+      slug        = "rt"
       min_length  = 1
       max_length  = 80
       scope       = "resourceGroup"
