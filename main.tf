@@ -1666,6 +1666,26 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
     }
+    postgresql_flexible_server = {
+      name        = substr(join("-", compact([local.prefix, "psqlf", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "psqlf", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "psqlf"
+      min_length  = 3
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
+     postgresql_flexible_server_database = {
+      name        = substr(join("-", compact([local.prefix, "psqlfdb", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "psqlfdb", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "psqlfdb"
+      min_length  = 1
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
     powerbi_embedded = {
       name        = substr(join("-", compact([local.prefix, "pbi", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "pbi", local.suffix_unique])), 0, 63)
@@ -1764,6 +1784,16 @@ locals {
       min_length  = 1
       max_length  = 80
       scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+    }
+    private_dns_zone_virtual_network_link = {
+      name        = substr(join("-", compact([local.prefix, "pnetlk", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pnetlk", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "pnetlk"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
     }
     private_endpoint = {

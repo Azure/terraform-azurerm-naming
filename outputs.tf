@@ -816,6 +816,16 @@ output "postgresql_server" {
   description = "Postgresql Server"
 }
 
+output "postgresql_flexible_server" {
+  value       = local.az.postgresql_flexible_server
+  description = "Postgresql Flexible Server"
+}
+
+output "postgresql_flexible_server_database" {
+  value       = local.az.postgresql_flexible_server_database
+  description = "Postgresql Flexible Server Database"
+}
+
 output "postgresql_virtual_network_rule" {
   value       = local.az.postgresql_virtual_network_rule
   description = "Postgresql Virtual Network Rule"
@@ -869,6 +879,11 @@ output "private_dns_zone" {
 output "private_dns_zone_group" {
   value       = local.az.private_dns_zone_group
   description = "Private Dns Zone Group"
+}
+
+output "private_dns_zone_virtual_network_link" {
+  value       = local.az.private_dns_zone_virtual_network_link
+  description = "Private Dns Zone Virtual Network Link"
 }
 
 output "private_endpoint" {
