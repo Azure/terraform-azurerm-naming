@@ -446,6 +446,11 @@ output "express_route_circuit" {
   description = "Express Route Circuit"
 }
 
+output "express_route_direct" {
+  value       = local.az.express_route_direct
+  description = "Express Route Direct"
+}
+
 output "express_route_gateway" {
   value       = local.az.express_route_gateway
   description = "Express Route Gateway"
