@@ -209,6 +209,28 @@
     "dashes": true
   },
   {
+    "name": "postgresql_flexible_server",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "global",
+    "slug": "psqlf",
+    "dashes": true
+  },
+  {
+    "name": "postgresql_flexible_server_database",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "psqlfdb",
+    "dashes": true
+  },
+  {
     "name": "private_dns_a_record",
     "length": {
       "min": 1,
@@ -294,6 +316,17 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
     "slug": "pdnszg",
+    "dashes": true
+  },
+  {
+    "name": "private_dns_zone_virtual_network_link",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9\\\\-\\\\._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "pnetlk",
     "dashes": true
   },
   {
