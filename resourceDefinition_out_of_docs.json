@@ -211,8 +211,8 @@
   {
     "name": "postgresql_flexible_server",
     "length": {
-      "min": 1,
-      "max": 80
+      "min": 3,
+      "max": 63
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "global",
@@ -223,7 +223,7 @@
     "name": "postgresql_flexible_server_database",
     "length": {
       "min": 1,
-      "max": 80
+      "max": 63
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
