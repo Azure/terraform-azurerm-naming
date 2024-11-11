@@ -23,6 +23,7 @@ az = {
     private_service_connection = "psc"   // Not in the specs
     firewall                   = "fw"    // Not in the specs
     firewall_ip_configuration  = "fwipc" // Not in the specs
+    private_dns_zone_virtual_network_link = "pnetlk" // Not in the specs
 
     // Compute and Web
     virtual_machine             = "vm"
@@ -54,6 +55,9 @@ az = {
     azure_synapse_analytics    = "syn"
     sql_server_strech_database = "sqlstrdb"
     mssql_managed_instance     = "sqlmi"
+    postgresql_flexible_server = "psqlf" // Not in the specs
+    postgresql_flexible_server_database = "psqlfdb" // Not in the specs
+
 
     // Storage
     storage_account                = "st"
