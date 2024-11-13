@@ -182,6 +182,7 @@ No modules.
 | <a name="output_data_lake_analytics_firewall_rule"></a> [data\_lake\_analytics\_firewall\_rule](#output\_data\_lake\_analytics\_firewall\_rule) | Data Lake Analytics Firewall Rule |
 | <a name="output_data_lake_store"></a> [data\_lake\_store](#output\_data\_lake\_store) | Data Lake Store |
 | <a name="output_data_lake_store_firewall_rule"></a> [data\_lake\_store\_firewall\_rule](#output\_data\_lake\_store\_firewall\_rule) | Data Lake Store Firewall Rule |
+| <a name="output_data_protection_backup_vault"></a> [data\_protection\_backup\_vault](#output\_data\_protection\_backup\_vault) | Backup Vault |
 | <a name="output_database_migration_project"></a> [database\_migration\_project](#output\_database\_migration\_project) | Database Migration Project |
 | <a name="output_database_migration_service"></a> [database\_migration\_service](#output\_database\_migration\_service) | Database Migration Service |
 | <a name="output_databricks_cluster"></a> [databricks\_cluster](#output\_databricks\_cluster) | Databricks Cluster |

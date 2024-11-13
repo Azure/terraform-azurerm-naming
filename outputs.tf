@@ -1071,6 +1071,11 @@ output "static_web_app" {
   description = "Static Web App"
 }
 
+output "data_protection_backup_vault" {
+  value       = local.az.data_protection_backup_vault
+  description = "Backup Vault"
+}
+
 output "storage_account" {
   value       = local.az.storage_account
   description = "Storage Account"
