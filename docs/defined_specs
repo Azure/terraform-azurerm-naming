@@ -5,24 +5,25 @@ az = {
     api_management = "apim"
 
     // Networking
-    virtual_network            = "vnet"
-    subnet                     = "snet"
-    network_interface          = "nic"
-    public_ip                  = "pip"
-    load_balancer_internal     = "lbi"
-    load_balancer_external     = "lbe"
-    network_security_group     = "nsg"
-    application_security_group = "asg"
-    local_network_gateway      = "lgw"
-    virtual_network_gateway    = "vgw"
-    vpn_connection             = "cn"
-    application_gateway        = "agw"
-    route_table                = "route"
-    traffic_manager_profile    = "traf"
-    private_endpoint           = "pe"    // Not in the specs
-    private_service_connection = "psc"   // Not in the specs
-    firewall                   = "fw"    // Not in the specs
-    firewall_ip_configuration  = "fwipc" // Not in the specs
+    virtual_network                       = "vnet"
+    subnet                                = "snet"
+    network_interface                     = "nic"
+    public_ip                             = "pip"
+    load_balancer_internal                = "lbi"
+    load_balancer_external                = "lbe"
+    network_security_group                = "nsg"
+    application_security_group            = "asg"
+    local_network_gateway                 = "lgw"
+    virtual_network_gateway               = "vgw"
+    vpn_connection                        = "cn"
+    application_gateway                   = "agw"
+    route_table                           = "rt"
+    traffic_manager_profile               = "traf"
+    private_endpoint                      = "pe"    // Not in the specs
+    private_service_connection            = "psc"   // Not in the specs
+    firewall                              = "fw"    // Not in the specs
+    firewall_ip_configuration             = "fwipc" // Not in the specs
+    private_dns_zone_virtual_network_link = "pnetlk" // Not in the specs
 
     // Compute and Web
     virtual_machine             = "vm"
@@ -44,16 +45,18 @@ az = {
     container_app_environment   = "cae"
 
     // Databases
-    azure_sql_database_server  = "sql"
-    azure_sql_database         = "sqldb"
-    cosmos_db                  = "cosmos"
-    azure_cache_redis          = "redis"
-    mysql_database             = "mysql"
-    postgre_database           = "psql"
-    azure_data_warehouse       = "sqldw"
-    azure_synapse_analytics    = "syn"
-    sql_server_strech_database = "sqlstrdb"
-    mssql_managed_instance     = "sqlmi"
+    azure_sql_database_server           = "sql"
+    azure_sql_database                  = "sqldb"
+    cosmos_db                           = "cosmos"
+    azure_cache_redis                   = "redis"
+    mysql_database                      = "mysql"
+    postgre_database                    = "psql"
+    azure_data_warehouse                = "sqldw"
+    azure_synapse_analytics             = "syn"
+    sql_server_strech_database          = "sqlstrdb"
+    mssql_managed_instance              = "sqlmi"
+    postgresql_flexible_server          = "psqlf" // Not in the specs
+    postgresql_flexible_server_database = "psqlfdb" // Not in the specs
 
     // Storage
     storage_account                = "st"

@@ -89,6 +89,7 @@ postgresql_server = {
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.3.2 |
 
 ## Providers
@@ -126,7 +127,7 @@ No modules.
 | <a name="output_api_management"></a> [api\_management](#output\_api\_management) | Api Management |
 | <a name="output_app_configuration"></a> [app\_configuration](#output\_app\_configuration) | App Configuration |
 | <a name="output_app_service"></a> [app\_service](#output\_app\_service) | App Service |
-| <a name="output_app_service_environment"></a> [app\_service\_environment](#output\_app\_service\_environment) | n/a |
+| <a name="output_app_service_environment"></a> [app\_service\_environment](#output\_app\_service\_environment) | App Service Environment |
 | <a name="output_app_service_plan"></a> [app\_service\_plan](#output\_app\_service\_plan) | App Service Plan |
 | <a name="output_application_gateway"></a> [application\_gateway](#output\_application\_gateway) | Application Gateway |
 | <a name="output_application_insights"></a> [application\_insights](#output\_application\_insights) | Application Insights |
@@ -153,6 +154,7 @@ No modules.
 | <a name="output_cdn_endpoint"></a> [cdn\_endpoint](#output\_cdn\_endpoint) | Cdn Endpoint |
 | <a name="output_cdn_profile"></a> [cdn\_profile](#output\_cdn\_profile) | Cdn Profile |
 | <a name="output_cognitive_account"></a> [cognitive\_account](#output\_cognitive\_account) | Cognitive Account |
+| <a name="output_communication_service"></a> [communication\_service](#output\_communication\_service) | Communication Service |
 | <a name="output_container_app"></a> [container\_app](#output\_container\_app) | Container App |
 | <a name="output_container_app_environment"></a> [container\_app\_environment](#output\_container\_app\_environment) | Container App Environment |
 | <a name="output_container_group"></a> [container\_group](#output\_container\_group) | Container Group |
@@ -210,6 +212,7 @@ No modules.
 | <a name="output_eventhub_namespace_authorization_rule"></a> [eventhub\_namespace\_authorization\_rule](#output\_eventhub\_namespace\_authorization\_rule) | Eventhub Namespace Authorization Rule |
 | <a name="output_eventhub_namespace_disaster_recovery_config"></a> [eventhub\_namespace\_disaster\_recovery\_config](#output\_eventhub\_namespace\_disaster\_recovery\_config) | Eventhub Namespace Disaster Recovery Config |
 | <a name="output_express_route_circuit"></a> [express\_route\_circuit](#output\_express\_route\_circuit) | Express Route Circuit |
+| <a name="output_express_route_direct"></a> [express\_route\_direct](#output\_express\_route\_direct) | Express Route Direct |
 | <a name="output_express_route_gateway"></a> [express\_route\_gateway](#output\_express\_route\_gateway) | Express Route Gateway |
 | <a name="output_firewall"></a> [firewall](#output\_firewall) | Firewall |
 | <a name="output_firewall_application_rule_collection"></a> [firewall\_application\_rule\_collection](#output\_firewall\_application\_rule\_collection) | Firewall Application Rule Collection |
@@ -247,6 +250,7 @@ No modules.
 | <a name="output_lb_nat_rule"></a> [lb\_nat\_rule](#output\_lb\_nat\_rule) | Lb Nat Rule |
 | <a name="output_linux_virtual_machine"></a> [linux\_virtual\_machine](#output\_linux\_virtual\_machine) | Linux Virtual Machine |
 | <a name="output_linux_virtual_machine_scale_set"></a> [linux\_virtual\_machine\_scale\_set](#output\_linux\_virtual\_machine\_scale\_set) | Linux Virtual Machine Scale Set |
+| <a name="output_load_test"></a> [load\_test](#output\_load\_test) | Load Test |
 | <a name="output_local_network_gateway"></a> [local\_network\_gateway](#output\_local\_network\_gateway) | Local Network Gateway |
 | <a name="output_log_analytics_workspace"></a> [log\_analytics\_workspace](#output\_log\_analytics\_workspace) | Log Analytics Workspace |
 | <a name="output_logic_app_workflow"></a> [logic\_app\_workflow](#output\_logic\_app\_workflow) | Logic App Workflow |
@@ -263,13 +267,13 @@ No modules.
 | <a name="output_monitor_scheduled_query_rules_alert"></a> [monitor\_scheduled\_query\_rules\_alert](#output\_monitor\_scheduled\_query\_rules\_alert) | Monitor Scheduled Query Rules Alert |
 | <a name="output_mssql_database"></a> [mssql\_database](#output\_mssql\_database) | Mssql Database |
 | <a name="output_mssql_elasticpool"></a> [mssql\_elasticpool](#output\_mssql\_elasticpool) | Mssql Elasticpool |
-| <a name="output_mssql_managed_instance"></a> [mssql\_managed\_instance](#output\_mssql\_managed\_instance) | Mssql Server Managed Instance |
+| <a name="output_mssql_managed_instance"></a> [mssql\_managed\_instance](#output\_mssql\_managed\_instance) | Mssql Managed Instance |
 | <a name="output_mssql_server"></a> [mssql\_server](#output\_mssql\_server) | Mssql Server |
 | <a name="output_mysql_database"></a> [mysql\_database](#output\_mysql\_database) | Mysql Database |
 | <a name="output_mysql_firewall_rule"></a> [mysql\_firewall\_rule](#output\_mysql\_firewall\_rule) | Mysql Firewall Rule |
 | <a name="output_mysql_server"></a> [mysql\_server](#output\_mysql\_server) | Mysql Server |
 | <a name="output_mysql_virtual_network_rule"></a> [mysql\_virtual\_network\_rule](#output\_mysql\_virtual\_network\_rule) | Mysql Virtual Network Rule |
-| <a name="output_nat_gateway"></a> [nat\_gateway](#output\_nat\_gateway) | NAT Gateway |
+| <a name="output_nat_gateway"></a> [nat\_gateway](#output\_nat\_gateway) | Nat Gateway |
 | <a name="output_network_ddos_protection_plan"></a> [network\_ddos\_protection\_plan](#output\_network\_ddos\_protection\_plan) | Network Ddos Protection Plan |
 | <a name="output_network_interface"></a> [network\_interface](#output\_network\_interface) | Network Interface |
 | <a name="output_network_security_group"></a> [network\_security\_group](#output\_network\_security\_group) | Network Security Group |
@@ -282,6 +286,8 @@ No modules.
 | <a name="output_point_to_site_vpn_gateway"></a> [point\_to\_site\_vpn\_gateway](#output\_point\_to\_site\_vpn\_gateway) | Point To Site Vpn Gateway |
 | <a name="output_postgresql_database"></a> [postgresql\_database](#output\_postgresql\_database) | Postgresql Database |
 | <a name="output_postgresql_firewall_rule"></a> [postgresql\_firewall\_rule](#output\_postgresql\_firewall\_rule) | Postgresql Firewall Rule |
+| <a name="output_postgresql_flexible_server"></a> [postgresql\_flexible\_server](#output\_postgresql\_flexible\_server) | Postgresql Flexible Server |
+| <a name="output_postgresql_flexible_server_database"></a> [postgresql\_flexible\_server\_database](#output\_postgresql\_flexible\_server\_database) | Postgresql Flexible Server Database |
 | <a name="output_postgresql_server"></a> [postgresql\_server](#output\_postgresql\_server) | Postgresql Server |
 | <a name="output_postgresql_virtual_network_rule"></a> [postgresql\_virtual\_network\_rule](#output\_postgresql\_virtual\_network\_rule) | Postgresql Virtual Network Rule |
 | <a name="output_powerbi_embedded"></a> [powerbi\_embedded](#output\_powerbi\_embedded) | Powerbi Embedded |
@@ -294,6 +300,7 @@ No modules.
 | <a name="output_private_dns_txt_record"></a> [private\_dns\_txt\_record](#output\_private\_dns\_txt\_record) | Private Dns Txt Record |
 | <a name="output_private_dns_zone"></a> [private\_dns\_zone](#output\_private\_dns\_zone) | Private Dns Zone |
 | <a name="output_private_dns_zone_group"></a> [private\_dns\_zone\_group](#output\_private\_dns\_zone\_group) | Private Dns Zone Group |
+| <a name="output_private_dns_zone_virtual_network_link"></a> [private\_dns\_zone\_virtual\_network\_link](#output\_private\_dns\_zone\_virtual\_network\_link) | Private Dns Zone Virtual Network Link |
 | <a name="output_private_endpoint"></a> [private\_endpoint](#output\_private\_endpoint) | Private Endpoint |
 | <a name="output_private_link_service"></a> [private\_link\_service](#output\_private\_link\_service) | Private Link Service |
 | <a name="output_private_service_connection"></a> [private\_service\_connection](#output\_private\_service\_connection) | Private Service Connection |
@@ -328,6 +335,7 @@ No modules.
 | <a name="output_sql_failover_group"></a> [sql\_failover\_group](#output\_sql\_failover\_group) | Sql Failover Group |
 | <a name="output_sql_firewall_rule"></a> [sql\_firewall\_rule](#output\_sql\_firewall\_rule) | Sql Firewall Rule |
 | <a name="output_sql_server"></a> [sql\_server](#output\_sql\_server) | Sql Server |
+| <a name="output_static_web_app"></a> [static\_web\_app](#output\_static\_web\_app) | Static Web App |
 | <a name="output_storage_account"></a> [storage\_account](#output\_storage\_account) | Storage Account |
 | <a name="output_storage_blob"></a> [storage\_blob](#output\_storage\_blob) | Storage Blob |
 | <a name="output_storage_container"></a> [storage\_container](#output\_storage\_container) | Storage Container |
@@ -368,7 +376,6 @@ No modules.
 | <a name="output_virtual_wan"></a> [virtual\_wan](#output\_virtual\_wan) | Virtual Wan |
 | <a name="output_windows_virtual_machine"></a> [windows\_virtual\_machine](#output\_windows\_virtual\_machine) | Windows Virtual Machine |
 | <a name="output_windows_virtual_machine_scale_set"></a> [windows\_virtual\_machine\_scale\_set](#output\_windows\_virtual\_machine\_scale\_set) | Windows Virtual Machine Scale Set |
-| <a name="static_web_app"></a> [static\_web\_app](#output\_static_\_web\_app) | Static Web App |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 # Contributing Guidelines

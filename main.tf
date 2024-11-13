@@ -1,4 +1,5 @@
 terraform {
+  required_version = ">= 1.0"
   required_providers {
     random = {
       source  = "hashicorp/random"
@@ -197,10 +198,10 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$"
     }
     bastion_host = {
-      name        = substr(join("-", compact([local.prefix, "snap", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "snap", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "bas", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "bas", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "snap"
+      slug        = "bas"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
@@ -346,6 +347,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
     }
+    communication_service = {
+      name        = substr(join("-", compact([local.prefix, "acs", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "acs", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "acs"
+      min_length  = 1
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9-]+$"
+    }
     container_app = {
       name        = substr(join("-", compact([local.prefix, "ca", local.suffix])), 0, 32)
       name_unique = substr(join("-", compact([local.prefix, "ca", local.suffix_unique])), 0, 32)
@@ -383,7 +394,7 @@ locals {
       slug        = "acr"
       min_length  = 1
       max_length  = 63
-      scope       = "resourceGroup"
+      scope       = "global"
       regex       = "^[a-zA-Z0-9]+$"
     }
     container_registry_webhook = {
@@ -916,6 +927,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    express_route_direct = {
+      name        = substr(join("-", compact([local.prefix, "erd", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "erd", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "erd"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     express_route_gateway = {
       name        = substr(join("-", compact([local.prefix, "ergw", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "ergw", local.suffix_unique])), 0, 80)
@@ -997,20 +1018,20 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
     }
     frontdoor = {
-      name        = substr(join("-", compact([local.prefix, "fd", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "fd", local.suffix_unique])), 0, 64)
+      name        = substr(join("-", compact([local.prefix, "afd", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "afd", local.suffix_unique])), 0, 64)
       dashes      = true
-      slug        = "fd"
+      slug        = "afd"
       min_length  = 5
       max_length  = 64
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     frontdoor_firewall_policy = {
-      name        = substr(join("-", compact([local.prefix, "fdfw", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "fdfw", local.suffix_unique])), 0, 80)
-      dashes      = true
-      slug        = "fdfw"
+      name        = substr(join("-", compact([local.prefix, "fdfp", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "fdfp", local.suffix_unique])), 0, 80)
+      dashes      = false
+      slug        = "fdfp"
       min_length  = 1
       max_length  = 80
       scope       = "global"
@@ -1153,7 +1174,7 @@ locals {
       slug        = "dps"
       min_length  = 3
       max_length  = 64
-      scope       = "resoureceGroup"
+      scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     iothub_dps_certificate = {
@@ -1666,6 +1687,26 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
     }
+    postgresql_flexible_server = {
+      name        = substr(join("-", compact([local.prefix, "psqlf", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "psqlf", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "psqlf"
+      min_length  = 3
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
+    postgresql_flexible_server_database = {
+      name        = substr(join("-", compact([local.prefix, "psqlfdb", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "psqlfdb", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "psqlfdb"
+      min_length  = 1
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
     powerbi_embedded = {
       name        = substr(join("-", compact([local.prefix, "pbi", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "pbi", local.suffix_unique])), 0, 63)
@@ -1764,6 +1805,16 @@ locals {
       min_length  = 1
       max_length  = 80
       scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+    }
+    private_dns_zone_virtual_network_link = {
+      name        = substr(join("-", compact([local.prefix, "pnetlk", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "pnetlk", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "pnetlk"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
     }
     private_endpoint = {
@@ -1907,20 +1958,20 @@ locals {
       regex       = "^[^%]+[^ %.]$"
     }
     route = {
-      name        = substr(join("-", compact([local.prefix, "rt", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "rt", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "udr", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "udr", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "rt"
+      slug        = "udr"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     route_table = {
-      name        = substr(join("-", compact([local.prefix, "route", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "route", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "rt", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "rt", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "route"
+      slug        = "rt"
       min_length  = 1
       max_length  = 80
       scope       = "resourceGroup"
@@ -1947,10 +1998,10 @@ locals {
       regex       = "^[a-z][a-z0-9-]+[a-z0-9]$"
     }
     servicebus_namespace = {
-      name        = substr(join("-", compact([local.prefix, "sb", local.suffix])), 0, 50)
-      name_unique = substr(join("-", compact([local.prefix, "sb", local.suffix_unique])), 0, 50)
+      name        = substr(join("-", compact([local.prefix, "sbus", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "sbus", local.suffix_unique])), 0, 50)
       dashes      = true
-      slug        = "sb"
+      slug        = "sbus"
       min_length  = 6
       max_length  = 50
       scope       = "global"
@@ -2116,6 +2167,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
+    data_protection_backup_vault = {
+      name        = substr(join("-", compact([local.prefix, "bvault", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "bvault", local.suffix_unique])), 0, 50)
+      dashes      = true
+      slug        = "bvault"
+      min_length  = 2
+      max_length  = 50
+      scope       = "global"
+      regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
     storage_account = {
       name        = substr(join("", compact([local.prefix_safe, "st", local.suffix_safe])), 0, 24)
       name_unique = substr(join("", compact([local.prefix_safe, "st", local.suffix_unique_safe])), 0, 24)
@@ -2187,14 +2248,14 @@ locals {
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
     }
     storage_table = {
-      name        = substr(join("-", compact([local.prefix, "stt", local.suffix])), 0, 63)
-      name_unique = substr(join("-", compact([local.prefix, "stt", local.suffix_unique])), 0, 63)
-      dashes      = true
+      name        = substr(join("-", compact([local.prefix_safe, "stt", local.suffix_safe])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix_safe, "stt", local.suffix_unique_safe])), 0, 63)
+      dashes      = false
       slug        = "stt"
       min_length  = 3
       max_length  = 63
       scope       = "parent"
-      regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      regex       = "^[a-zA-Z][a-z0-9]+$"
     }
     stream_analytics_function_javascript_udf = {
       name        = substr(join("-", compact([local.prefix, "asafunc", local.suffix])), 0, 63)
@@ -2622,6 +2683,10 @@ locals {
       valid_name        = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name)) > 0 && length(local.az.cognitive_account.name) > local.az.cognitive_account.min_length
       valid_name_unique = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name_unique)) > 0
     }
+    communication_service = {
+      valid_name        = length(regexall(local.az.communication_service.regex, local.az.communication_service.name)) > 0 && length(local.az.communication_service.name) > local.az.communication_service.min_length
+      valid_name_unique = length(regexall(local.az.communication_service.regex, local.az.communication_service.name_unique)) > 0
+    }
     container_app = {
       valid_name        = length(regexall(local.az.container_app.regex, local.az.container_app.name)) > 0 && length(local.az.container_app.name) > local.az.container_app.min_length
       valid_name_unique = length(regexall(local.az.container_app.regex, local.az.container_app.name_unique)) > 0
@@ -2849,6 +2914,10 @@ locals {
     express_route_circuit = {
       valid_name        = length(regexall(local.az.express_route_circuit.regex, local.az.express_route_circuit.name)) > 0 && length(local.az.express_route_circuit.name) > local.az.express_route_circuit.min_length
       valid_name_unique = length(regexall(local.az.express_route_circuit.regex, local.az.express_route_circuit.name_unique)) > 0
+    }
+    express_route_direct = {
+      valid_name        = length(regexall(local.az.express_route_direct.regex, local.az.express_route_direct.name)) > 0 && length(local.az.express_route_direct.name) > local.az.express_route_direct.min_length
+      valid_name_unique = length(regexall(local.az.express_route_direct.regex, local.az.express_route_direct.name_unique)) > 0
     }
     express_route_gateway = {
       valid_name        = length(regexall(local.az.express_route_gateway.regex, local.az.express_route_gateway.name)) > 0 && length(local.az.express_route_gateway.name) > local.az.express_route_gateway.min_length

@@ -183,7 +183,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "snap",
+    "slug": "bas",
     "dashes": true
   },
   {
@@ -341,6 +341,17 @@
     "dashes": true
   },
   {
+    "name": "communication_service",
+    "length": {
+      "min": 1,
+      "max": 63
+    },
+    "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-]+$",
+    "scope": "resourceGroup",
+    "slug": "acs",
+    "dashes": true
+  },
+  {
     "name": "container_app",
     "length": {
       "min": 1,
@@ -380,7 +391,7 @@
       "max": 63
     },
     "regex": "^(?=.{1,63}$)[a-zA-Z0-9]+$",
-    "scope": "resourceGroup",
+    "scope": "global",
     "slug": "acr",
     "dashes": false
   },
@@ -825,6 +836,17 @@
     "dashes": true
   },
   {
+    "name": "express_route_direct",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "erd",
+    "dashes": true
+  },
+  {
     "name": "express_route_gateway",
     "length": {
       "min": 1,
@@ -865,7 +887,7 @@
     },
     "regex": "^(?=.{5,64}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
     "scope": "global",
-    "slug": "fd",
+    "slug": "afd",
     "dashes": true
   },
   {
@@ -876,8 +898,8 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "global",
-    "slug": "fdfw",
-    "dashes": true
+    "slug": "fdfp",
+    "dashes": false
   },
   {
     "name": "function_app",
@@ -1029,7 +1051,7 @@
       "max": 64
     },
     "regex": "^(?=.{3,64}$)[a-zA-Z0-9-]+[a-zA-Z0-9]$",
-    "scope": "resoureceGroup",
+    "scope": "resourceGroup",
     "slug": "dps",
     "dashes": true
   },
@@ -1723,7 +1745,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "rt",
+    "slug": "udr",
     "dashes": true
   },
   {
@@ -1734,7 +1756,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
-    "slug": "route",
+    "slug": "rt",
     "dashes": true
   },
   {
@@ -1767,7 +1789,7 @@
     },
     "regex": "^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
     "scope": "global",
-    "slug": "sb",
+    "slug": "sbus",
     "dashes": true
   },
   {
@@ -1933,6 +1955,17 @@
     "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
     "scope": "global",
     "slug": "sql",
+    "dashes": true
+  },
+  {
+    "name": "data_protection_backup_vault",
+    "length": {
+      "min": 3,
+      "max": 50
+    },
+    "regex": "^(?=.{3,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "bvault",
     "dashes": true
   },
   {
