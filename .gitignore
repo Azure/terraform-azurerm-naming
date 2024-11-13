@@ -2,3 +2,7 @@
 *.tfstate*
 terraform-azurerm-naming
 .terraform.lock.hcl
+
+.idea/**
+.vscode/**
+
