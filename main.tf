@@ -2456,6 +2456,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    virtual_network_manager = {
+      name        = substr(join("-", compact([local.prefix, "vnm", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "vnm", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "vnm"
+      min_length  = 1
+      max_length  = 64
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     virtual_network_peering = {
       name        = substr(join("-", compact([local.prefix, "vpeer", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "vpeer", local.suffix_unique])), 0, 80)
@@ -3465,6 +3475,10 @@ locals {
     virtual_network_gateway_connection = {
       valid_name        = length(regexall(local.az.virtual_network_gateway_connection.regex, local.az.virtual_network_gateway_connection.name)) > 0 && length(local.az.virtual_network_gateway_connection.name) > local.az.virtual_network_gateway_connection.min_length
       valid_name_unique = length(regexall(local.az.virtual_network_gateway_connection.regex, local.az.virtual_network_gateway_connection.name_unique)) > 0
+    }
+    virtual_network_manager = {
+      valid_name        = length(regexall(local.az.virtual_network_manager.regex, local.az.virtual_network_manager.name)) > 0 && length(local.az.virtual_network_manager.name) > local.az.virtual_network_manager.min_length
+      valid_name_unique = length(regexall(local.az.virtual_network_manager.regex, local.az.virtual_network_manager.name_unique)) > 0
     }
     virtual_network_peering = {
       valid_name        = length(regexall(local.az.virtual_network_peering.regex, local.az.virtual_network_peering.name)) > 0 && length(local.az.virtual_network_peering.name) > local.az.virtual_network_peering.min_length

@@ -1216,6 +1216,11 @@ output "virtual_network_gateway_connection" {
   description = "Virtual Network Gateway Connection"
 }
 
+output "virtual_network_manager" {
+  value       = local.az.virtual_network_manager
+  description = "Virtual Network Manager"
+}
+
 output "virtual_network_peering" {
   value       = local.az.virtual_network_peering
   description = "Virtual Network Peering"
