@@ -15,6 +15,7 @@ az = {
     application_security_group = "asg"
     local_network_gateway      = "lgw"
     virtual_network_gateway    = "vgw"
+    virtual_network_manager    = "vnm"
     vpn_connection             = "cn"
     application_gateway        = "agw"
     route_table                = "route"

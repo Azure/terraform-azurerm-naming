@@ -2288,6 +2288,17 @@
     "dashes": true
   },
   {
+    "name": "virtual_network_manager",
+    "length": {
+      "min": 1,
+      "max": 64
+    },
+    "regex": "^(?=.{1,64}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "vnm",
+    "dashes": true
+  },
+  {
     "name": "virtual_network_peering",
     "length": {
       "min": 1,
