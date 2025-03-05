@@ -998,10 +998,10 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
     }
     firewall_policy = {
-      name        = substr(join("-", compact([local.prefix, "afwp", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "afwp", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "fwp", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "fwp", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "afwp"
+      slug        = "fwp"
       min_length  = 1
       max_length  = 80
       scope       = "resourceGroup"
