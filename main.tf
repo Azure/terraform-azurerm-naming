@@ -958,10 +958,10 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     firewall_application_rule_collection = {
-      name        = substr(join("-", compact([local.prefix, "fwapp", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "fwapp", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "fwapprc", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "fwapprc", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "fwapp"
+      slug        = "fwapprc"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
