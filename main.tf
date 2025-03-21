@@ -687,6 +687,26 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
     }
+    dev_center = {
+      name        = substr(join("-", compact([local.prefix, "dc", local.suffix])), 0, 26)
+      name_unique = substr(join("-", compact([local.prefix, "dc", local.suffix_unique])), 0, 26)
+      dashes      = true
+      slug        = "dc"
+      min_length  = 3
+      max_length  = 26
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9-_]+$"
+    }
+    dev_center_project = {
+      name        = substr(join("-", compact([local.prefix, "dcp", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "dcp", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "dcp"
+      min_length  = 3
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9-_]+$"
+    }
     dev_test_lab = {
       name        = substr(join("-", compact([local.prefix, "lab", local.suffix])), 0, 50)
       name_unique = substr(join("-", compact([local.prefix, "lab", local.suffix_unique])), 0, 50)
@@ -1356,6 +1376,16 @@ locals {
       max_length  = 260
       scope       = "resourceGroup"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+    }
+    managed_devops_pool = {
+      name        = substr(join("-", compact([local.prefix, "mdp", local.suffix])), 0, 44)
+      name_unique = substr(join("-", compact([local.prefix, "mdp", local.suffix_unique])), 0, 44)
+      dashes      = true
+      slug        = "mdp"
+      min_length  = 1
+      max_length  = 44
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9_]+$"
     }
     managed_disk = {
       name        = substr(join("-", compact([local.prefix, "dsk", local.suffix])), 0, 80)
