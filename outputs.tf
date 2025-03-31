@@ -391,6 +391,21 @@ output "dns_zone" {
   description = "Dns Zone"
 }
 
+output "dns_resolver" {
+  value       = local.az.dns_resolver
+  description = "Dns Resolver"
+}
+
+output "dns_resolver_inbound_endpoints" {
+  value       = local.az.dns_resolver_inbound_endpoints
+  description = "Dns Resolver Inbound Endpoints"
+}
+
+output "dns_resolver_outbound_endpoints" {
+  value       = local.az.dns_resolver_outbound_endpoints
+  description = "Dns Resolver Outbound Endpoints"
+}
+
 output "eventgrid_domain" {
   value       = local.az.eventgrid_domain
   description = "Eventgrid Domain"

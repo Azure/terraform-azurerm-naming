@@ -5,24 +5,27 @@ az = {
     api_management = "apim"
 
     // Networking
-    virtual_network            = "vnet"
-    subnet                     = "snet"
-    network_interface          = "nic"
-    public_ip                  = "pip"
-    load_balancer_internal     = "lbi"
-    load_balancer_external     = "lbe"
-    network_security_group     = "nsg"
-    application_security_group = "asg"
-    local_network_gateway      = "lgw"
-    virtual_network_gateway    = "vgw"
-    vpn_connection             = "cn"
-    application_gateway        = "agw"
-    route_table                = "route"
-    traffic_manager_profile    = "traf"
-    private_endpoint           = "pe"    // Not in the specs
-    private_service_connection = "psc"   // Not in the specs
-    firewall                   = "fw"    // Not in the specs
-    firewall_ip_configuration  = "fwipc" // Not in the specs
+    virtual_network                 = "vnet"
+    subnet                          = "snet"
+    network_interface               = "nic"
+    public_ip                       = "pip"
+    load_balancer_internal          = "lbi"
+    load_balancer_external          = "lbe"
+    network_security_group          = "nsg"
+    application_security_group      = "asg"
+    local_network_gateway           = "lgw"
+    virtual_network_gateway         = "vgw"
+    vpn_connection                  = "cn"
+    application_gateway             = "agw"
+    route_table                     = "route"
+    traffic_manager_profile         = "traf"
+    private_endpoint                = "pe"    // Not in the specs
+    private_service_connection      = "psc"   // Not in the specs
+    firewall                        = "fw"    // Not in the specs
+    firewall_ip_configuration       = "fwipc" // Not in the specs
+    dns_resolver                    = "dnspr"  // Not in the specs
+    dns_resolver_inbound_endpoints  = "in"  // Not in the specs
+    dns_resolver_outbound_endpoints = "out"  // Not in the specs
 
     // Compute and Web
     virtual_machine             = "vm"

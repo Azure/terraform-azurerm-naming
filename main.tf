@@ -806,6 +806,36 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    dns_resolver = {
+      name        = substr(join("-", compact([local.prefix, "dnspr", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "dnspr", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "dnspr"
+      min_length  = 1
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    dns_resolver_inbound_endpoints = {
+      name        = substr(join("-", compact([local.prefix, "in", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "in", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "in"
+      min_length  = 1
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    dns_resolver_outbound_endpoints = {
+      name        = substr(join("-", compact([local.prefix, "out", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "out", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "out"
+      min_length  = 1
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     eventgrid_domain = {
       name        = substr(join("-", compact([local.prefix, "egd", local.suffix])), 0, 50)
       name_unique = substr(join("-", compact([local.prefix, "egd", local.suffix_unique])), 0, 50)
@@ -2805,6 +2835,18 @@ locals {
     dns_zone = {
       valid_name        = length(regexall(local.az.dns_zone.regex, local.az.dns_zone.name)) > 0 && length(local.az.dns_zone.name) > local.az.dns_zone.min_length
       valid_name_unique = length(regexall(local.az.dns_zone.regex, local.az.dns_zone.name_unique)) > 0
+    }
+    dns_resolver = {
+      valid_name        = length(regexall(local.az.dns_resolver.regex, local.az.dns_resolver.name)) > 0 && length(local.az.dns_resolver.name) > local.az.dns_resolver.min_length
+      valid_name_unique = length(regexall(local.az.dns_resolver.regex, local.az.dns_resolver.name_unique)) > 0
+    }
+    dns_resolver_inbound_endpoints = {
+      valid_name        = length(regexall(local.az.dns_resolver_inbound_endpoints.regex, local.az.dns_resolver_inbound_endpoints.name)) > 0 && length(local.az.dns_resolver_inbound_endpoints.name) > local.az.dns_resolver_inbound_endpoints.min_length
+      valid_name_unique = length(regexall(local.az.dns_resolver_inbound_endpoints.regex, local.az.dns_resolver_inbound_endpoints.name_unique)) > 0
+    }
+    dns_resolver_outbound_endpoints = {
+      valid_name        = length(regexall(local.az.dns_resolver_outbound_endpoints.regex, local.az.dns_resolver_outbound_endpoints.name)) > 0 && length(local.az.dns_resolver_outbound_endpoints.name) > local.az.dns_resolver_outbound_endpoints.min_length
+      valid_name_unique = length(regexall(local.az.dns_resolver_outbound_endpoints.regex, local.az.dns_resolver_outbound_endpoints.name_unique)) > 0
     }
     eventgrid_domain = {
       valid_name        = length(regexall(local.az.eventgrid_domain.regex, local.az.eventgrid_domain.name)) > 0 && length(local.az.eventgrid_domain.name) > local.az.eventgrid_domain.min_length
