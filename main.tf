@@ -816,6 +816,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    dns_forwarding_rulesets = {
+      name        = substr(join("-", compact([local.prefix, "dnsfrs", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "dnsfrs", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "dnsfrs"
+      min_length  = 1
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     dns_resolver_inbound_endpoints = {
       name        = substr(join("-", compact([local.prefix, "in", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "in", local.suffix_unique])), 0, 63)
@@ -2839,6 +2849,10 @@ locals {
     dns_resolver = {
       valid_name        = length(regexall(local.az.dns_resolver.regex, local.az.dns_resolver.name)) > 0 && length(local.az.dns_resolver.name) > local.az.dns_resolver.min_length
       valid_name_unique = length(regexall(local.az.dns_resolver.regex, local.az.dns_resolver.name_unique)) > 0
+    }
+    dns_forwarding_rulesets = {
+      valid_name        = length(regexall(local.az.dns_forwarding_rulesets.regex, local.az.dns_forwarding_rulesets.name)) > 0 && length(local.az.dns_forwarding_rulesets.name) > local.az.dns_forwarding_rulesets.min_length
+      valid_name_unique = length(regexall(local.az.dns_forwarding_rulesets.regex, local.az.dns_forwarding_rulesets.name_unique)) > 0
     }
     dns_resolver_inbound_endpoints = {
       valid_name        = length(regexall(local.az.dns_resolver_inbound_endpoints.regex, local.az.dns_resolver_inbound_endpoints.name)) > 0 && length(local.az.dns_resolver_inbound_endpoints.name) > local.az.dns_resolver_inbound_endpoints.min_length

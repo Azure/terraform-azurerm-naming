@@ -396,6 +396,11 @@ output "dns_resolver" {
   description = "Dns Resolver"
 }
 
+output "dns_forwarding_rulesets" {
+  value       = local.az.dns_forwarding_rulesets
+  description = "Dns Forwarding Rulesets"
+}
+
 output "dns_resolver_inbound_endpoints" {
   value       = local.az.dns_resolver_inbound_endpoints
   description = "Dns Resolver Inbound Endpoints"

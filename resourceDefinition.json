@@ -715,6 +715,17 @@
     "dashes": true
   },
   {
+    "name": "dns_forwarding_rulesets",
+    "length": {
+      "min": 1,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "dnsfrs",
+    "dashes": true
+  },
+  {
     "name": "dns_resolver_inbound_endpoints",
     "length": {
       "min": 1,

@@ -23,7 +23,8 @@ az = {
     private_service_connection      = "psc"   // Not in the specs
     firewall                        = "fw"    // Not in the specs
     firewall_ip_configuration       = "fwipc" // Not in the specs
-    dns_resolver                    = "dnspr"  // Not in the specs
+    dns_resolver                    = "dnspr" // Not in the specs
+    dns_forwarding_rulesets         = "dnsfrs" // Not in the specs
     dns_resolver_inbound_endpoints  = "in"  // Not in the specs
     dns_resolver_outbound_endpoints = "out"  // Not in the specs
 
