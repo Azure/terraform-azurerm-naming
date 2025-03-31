@@ -704,6 +704,39 @@
     "dashes": true
   },
   {
+    "name": "dns_resolver",
+    "length": {
+      "min": 1,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "dnspr",
+    "dashes": true
+  },
+  {
+    "name": "dns_resolver_inbound_endpoints",
+    "length": {
+      "min": 1,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "in",
+    "dashes": true
+  },
+  {
+    "name": "dns_resolver_outbound_endpoints",
+    "length": {
+      "min": 1,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "out",
+    "dashes": true
+  },
+  {
     "name": "eventgrid_domain",
     "length": {
       "min": 3,
