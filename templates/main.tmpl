@@ -1,13 +1,19 @@
 {{- define "resources" -}}
     {{- .Name }} = {
       name        = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
-      name_unique = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix_unique{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
+      name_unique = substr(join("{{if .Dashes}}-{{ end }}", [substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, ({{ .Length.Max }} - var.unique-length{{if .Dashes}} - 1{{ end }})), local.random]), 0, {{ .Length.Max }})
       dashes      = {{ .Dashes }}
       slug        = "{{ .Slug }}"
       min_length  = {{ .Length.Min }}
       max_length  = {{ .Length.Max }}
       scope       = "{{ .Scope }}"
       regex       = "{{ cleanRegex .Regex }}"
+
+      suffix_padding       = local.suffix_padding
+      name_with_pad        = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }} - local.suffix_padding)
+      name_unique_with_pad = substr(join("{{if .Dashes}}-{{ end }}", [substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, ({{ .Length.Max }} - local.suffix_padding - var.unique-length{{if .Dashes}} - 1{{ end }})), local.random]), 0, {{ .Length.Max }})
+      short_name           = join("{{if .Dashes}}-{{ end }}", ["{{ .Slug }}", substr(local.suffix_hash, 0, {{ .Length.Max }} - length("{{ .Slug }}"){{if .Dashes}} - 1{{ end }})])
+      short_name_unique    = join("{{if .Dashes}}-{{ end }}", ["{{ .Slug }}", substr(local.suffix_hash, 0, {{ .Length.Max }} - length("{{ .Slug }}") - var.unique-length{{if .Dashes}} - 2{{ end }}), local.random])
     }
 {{- end -}}
 
@@ -56,6 +62,12 @@ locals {
   suffix_unique          = join("-", concat(var.suffix, [local.random]))
   suffix_safe            = lower(join("", var.suffix))
   suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
+  suffix_padding         = (var.suffix-padding > local.max_suffix_padding) ? local.max_suffix_padding : var.suffix-padding
+  max_suffix_padding     = 12
+
+  suffix_abbrev          = join("", [for s in var.suffix : substr(s, 0, 1)])
+  suffix_hash            = join("", [local.suffix_abbrev, substr(sha256(join("", compact([local.suffix_safe]))), 0, var.suffix-hash-length)])
+
   // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
