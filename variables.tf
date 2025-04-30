@@ -28,7 +28,7 @@ variable "unique-include-numbers" {
   default     = true
 }
 
-variable "custom-separator " {
+variable "custom-separator" {
   description = "Custom separator for resource types that don't allow hyphens"
   type        = string
   default     = ""
