@@ -37,8 +37,8 @@ locals {
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
     analysis_services_server = {
-      name        = substr(join("", compact([local.prefix_safe, "as", local.suffix_safe])), 0, 63)
-      name_unique = substr(join("", compact([local.prefix_safe, "as", local.suffix_unique_safe])), 0, 63)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "as", local.suffix_safe])), 0, 63)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "as", local.suffix_unique_safe])), 0, 63)
       dashes      = false
       slug        = "as"
       min_length  = 3
@@ -47,8 +47,8 @@ locals {
       regex       = "^[a-z][a-z0-9]+$"
     }
     api_management = {
-      name        = substr(join("", compact([local.prefix_safe, "apim", local.suffix_safe])), 0, 50)
-      name_unique = substr(join("", compact([local.prefix_safe, "apim", local.suffix_unique_safe])), 0, 50)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "apim", local.suffix_safe])), 0, 50)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "apim", local.suffix_unique_safe])), 0, 50)
       dashes      = false
       slug        = "apim"
       min_length  = 1
@@ -207,8 +207,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     batch_account = {
-      name        = substr(join("", compact([local.prefix_safe, "ba", local.suffix_safe])), 0, 24)
-      name_unique = substr(join("", compact([local.prefix_safe, "ba", local.suffix_unique_safe])), 0, 24)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "ba", local.suffix_safe])), 0, 24)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "ba", local.suffix_unique_safe])), 0, 24)
       dashes      = false
       slug        = "ba"
       min_length  = 3
@@ -377,8 +377,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     container_registry = {
-      name        = substr(join("", compact([local.prefix_safe, "acr", local.suffix_safe])), 0, 63)
-      name_unique = substr(join("", compact([local.prefix_safe, "acr", local.suffix_unique_safe])), 0, 63)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "acr", local.suffix_safe])), 0, 63)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "acr", local.suffix_unique_safe])), 0, 63)
       dashes      = false
       slug        = "acr"
       min_length  = 1
@@ -387,8 +387,8 @@ locals {
       regex       = "^[a-zA-Z0-9]+$"
     }
     container_registry_webhook = {
-      name        = substr(join("", compact([local.prefix_safe, "crwh", local.suffix_safe])), 0, 50)
-      name_unique = substr(join("", compact([local.prefix_safe, "crwh", local.suffix_unique_safe])), 0, 50)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "crwh", local.suffix_safe])), 0, 50)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "crwh", local.suffix_unique_safe])), 0, 50)
       dashes      = false
       slug        = "crwh"
       min_length  = 1
@@ -577,8 +577,8 @@ locals {
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+$"
     }
     data_lake_analytics_account = {
-      name        = substr(join("", compact([local.prefix_safe, "dla", local.suffix_safe])), 0, 24)
-      name_unique = substr(join("", compact([local.prefix_safe, "dla", local.suffix_unique_safe])), 0, 24)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "dla", local.suffix_safe])), 0, 24)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "dla", local.suffix_unique_safe])), 0, 24)
       dashes      = false
       slug        = "dla"
       min_length  = 3
@@ -597,8 +597,8 @@ locals {
       regex       = "^[a-z0-9-_]+$"
     }
     data_lake_store = {
-      name        = substr(join("", compact([local.prefix_safe, "dls", local.suffix_safe])), 0, 24)
-      name_unique = substr(join("", compact([local.prefix_safe, "dls", local.suffix_unique_safe])), 0, 24)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "dls", local.suffix_safe])), 0, 24)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "dls", local.suffix_unique_safe])), 0, 24)
       dashes      = false
       slug        = "dls"
       min_length  = 3
@@ -1217,8 +1217,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$"
     }
     kusto_cluster = {
-      name        = substr(join("", compact([local.prefix_safe, "kc", local.suffix_safe])), 0, 22)
-      name_unique = substr(join("", compact([local.prefix_safe, "kc", local.suffix_unique_safe])), 0, 22)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "kc", local.suffix_safe])), 0, 22)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "kc", local.suffix_unique_safe])), 0, 22)
       dashes      = false
       slug        = "kc"
       min_length  = 4
@@ -1847,8 +1847,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     redis_firewall_rule = {
-      name        = substr(join("", compact([local.prefix_safe, "redisfw", local.suffix_safe])), 0, 256)
-      name_unique = substr(join("", compact([local.prefix_safe, "redisfw", local.suffix_unique_safe])), 0, 256)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "redisfw", local.suffix_safe])), 0, 256)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "redisfw", local.suffix_unique_safe])), 0, 256)
       dashes      = false
       slug        = "redisfw"
       min_length  = 1
@@ -2037,8 +2037,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
     }
     shared_image_gallery = {
-      name        = substr(join("", compact([local.prefix_safe, "sig", local.suffix_safe])), 0, 80)
-      name_unique = substr(join("", compact([local.prefix_safe, "sig", local.suffix_unique_safe])), 0, 80)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "sig", local.suffix_safe])), 0, 80)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "sig", local.suffix_unique_safe])), 0, 80)
       dashes      = false
       slug        = "sig"
       min_length  = 1
@@ -2117,8 +2117,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     storage_account = {
-      name        = substr(join("", compact([local.prefix_safe, "st", local.suffix_safe])), 0, 24)
-      name_unique = substr(join("", compact([local.prefix_safe, "st", local.suffix_unique_safe])), 0, 24)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "st", local.suffix_safe])), 0, 24)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "st", local.suffix_unique_safe])), 0, 24)
       dashes      = false
       slug        = "st"
       min_length  = 3
