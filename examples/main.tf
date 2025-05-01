@@ -59,6 +59,13 @@ module "custom-separator" {
   custom-separator = "0"
 }
 
-output "custom-separator" {
-  value = module.custom-separator.storage_account.name // It will return 'st0su0fix'.
+// It will return 'st0su0fix'.
+output "storage_account_name" {
+  value = module.custom-separator.storage_account.name
+}
+
+// It will return 'rg-su-fix'.
+// There is no change for the resources which supports hyphen (-) in their name.
+output "resource_group_name" {
+  value = module.custom-separator.resource_group.name
 }
