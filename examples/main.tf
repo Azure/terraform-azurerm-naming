@@ -50,3 +50,15 @@ output "everything" {
 output "validation_everything" {
   value = module.everything.validation
 }
+
+// Example 5
+
+module "custom-separator" {
+  source           = "../"
+  suffix           = ["su", "fix"]
+  custom-separator = "0"
+}
+
+output "custom-separator" {
+  value = module.custom-separator.storage_account.name // It will return 'st0su0fix'.
+}
