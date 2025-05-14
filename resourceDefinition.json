@@ -66,6 +66,17 @@
     "dashes": true
   },
   {
+    "name": "application",
+    "length": {
+      "min": 1,
+      "max": 93
+    },
+    "regex": "^(?=.{1,93}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "sp",
+    "dashes": true
+  },
+  {
     "name": "application_gateway",
     "length": {
       "min": 1,
@@ -338,6 +349,17 @@
     "regex": "^(?=.{1,260}$)[a-zA-Z0-9][a-zA-Z0-9-]+$",
     "scope": "resourceGroup",
     "slug": "cog",
+    "dashes": true
+  },
+  {
+    "name": "consumption_budget_subscription",
+    "length": {
+      "min": 1,
+      "max":63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "budget",
     "dashes": true
   },
   {
@@ -2153,6 +2175,17 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
     "slug": "snet",
+    "dashes": true
+  },
+  {
+    "name": "subscription",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "global",
+    "slug": "sub",
     "dashes": true
   },
   {

@@ -96,6 +96,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
     }
+    application = {
+      name        = substr(join("-", compact([local.prefix, "sp", local.suffix])), 0, 93)
+      name_unique = substr(join("-", compact([local.prefix, "sp", local.suffix_unique])), 0, 93)
+      dashes      = true
+      slug        = "sp"
+      min_length  = 1
+      max_length  = 93
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     application_gateway = {
       name        = substr(join("-", compact([local.prefix, "agw", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "agw", local.suffix_unique])), 0, 80)
@@ -345,6 +355,16 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+    }
+    consumption_budget_subscription = {
+      name        = substr(join("-", compact([local.prefix, "budget", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "budget", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "budget"
+      min_length  = 1
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     container_app = {
       name        = substr(join("-", compact([local.prefix, "ca", local.suffix])), 0, 32)
@@ -2316,6 +2336,16 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    subscription = {
+      name        = substr(join("-", compact([local.prefix, "sub", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "sub", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "sub"
+      min_length  = 1
+      max_length  = 80
+      scope       = "global"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     template_deployment = {
       name        = substr(join("-", compact([local.prefix, "deploy", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "deploy", local.suffix_unique])), 0, 64)
@@ -2522,6 +2552,10 @@ locals {
       valid_name        = length(regexall(local.az.app_service_plan.regex, local.az.app_service_plan.name)) > 0 && length(local.az.app_service_plan.name) > local.az.app_service_plan.min_length
       valid_name_unique = length(regexall(local.az.app_service_plan.regex, local.az.app_service_plan.name_unique)) > 0
     }
+    application = {
+      valid_name        = length(regexall(local.az.application.regex, local.az.application.name)) > 0 && length(local.az.application.name) > local.az.application.min_length
+      valid_name_unique = length(regexall(local.az.application.regex, local.az.application.name_unique)) > 0
+    }
     application_gateway = {
       valid_name        = length(regexall(local.az.application_gateway.regex, local.az.application_gateway.name)) > 0 && length(local.az.application_gateway.name) > local.az.application_gateway.min_length
       valid_name_unique = length(regexall(local.az.application_gateway.regex, local.az.application_gateway.name_unique)) > 0
@@ -2621,6 +2655,10 @@ locals {
     cognitive_account = {
       valid_name        = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name)) > 0 && length(local.az.cognitive_account.name) > local.az.cognitive_account.min_length
       valid_name_unique = length(regexall(local.az.cognitive_account.regex, local.az.cognitive_account.name_unique)) > 0
+    }
+    consumption_budget_subscription = {
+      valid_name        = length(regexall(local.az.consumption_budget_subscription.regex, local.az.consumption_budget_subscription.name)) > 0 && length(local.az.consumption_budget_subscription.name) > local.az.consumption_budget_subscription.min_length
+      valid_name_unique = length(regexall(local.az.consumption_budget_subscription.regex, local.az.consumption_budget_subscription.name_unique)) > 0
     }
     container_app = {
       valid_name        = length(regexall(local.az.container_app.regex, local.az.container_app.name)) > 0 && length(local.az.container_app.name) > local.az.container_app.min_length
@@ -3409,6 +3447,10 @@ locals {
     subnet = {
       valid_name        = length(regexall(local.az.subnet.regex, local.az.subnet.name)) > 0 && length(local.az.subnet.name) > local.az.subnet.min_length
       valid_name_unique = length(regexall(local.az.subnet.regex, local.az.subnet.name_unique)) > 0
+    }
+    subscription = {
+      valid_name        = length(regexall(local.az.subscription.regex, local.az.subscription.name)) > 0 && length(local.az.subscription.name) > local.az.subscription.min_length
+      valid_name_unique = length(regexall(local.az.subscription.regex, local.az.subscription.name_unique)) > 0
     }
     template_deployment = {
       valid_name        = length(regexall(local.az.template_deployment.regex, local.az.template_deployment.name)) > 0 && length(local.az.template_deployment.name) > local.az.template_deployment.min_length

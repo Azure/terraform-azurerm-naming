@@ -36,6 +36,11 @@ output "app_service_plan" {
   description = "App Service Plan"
 }
 
+output "application" {
+  value       = local.az.application
+  description = "Application"
+}
+
 output "application_gateway" {
   value       = local.az.application_gateway
   description = "Application Gateway"
@@ -159,6 +164,11 @@ output "cdn_profile" {
 output "cognitive_account" {
   value       = local.az.cognitive_account
   description = "Cognitive Account"
+}
+
+output "consumption_budget_subscription" {
+  value       = local.az.consumption_budget_subscription
+  description = "Consumption Budget Subscription"
 }
 
 output "container_app" {
@@ -1144,6 +1154,11 @@ output "stream_analytics_stream_input_iothub" {
 output "subnet" {
   value       = local.az.subnet
   description = "Subnet"
+}
+
+output "subscription" {
+  value       = local.az.subscription
+  description = "Subscription"
 }
 
 output "template_deployment" {
