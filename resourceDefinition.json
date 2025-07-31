@@ -176,6 +176,17 @@
     "dashes": true
   },
   {
+    "name": "ai_foundry",
+    "length": {
+      "min": 2,
+      "max": 64
+    },
+    "regex": "^(?=.{2,64}$)[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])$",
+    "scope": "resourceGroup",
+    "slug": "aif",
+    "dashes": true
+  },
+  {
     "name": "bastion_host",
     "length": {
       "min": 1,

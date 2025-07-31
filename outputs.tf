@@ -6,6 +6,11 @@ output "unique-seed" {
 output "validation" {
   value = local.validation
 }
+output "ai_foundry" {
+  value       = local.az.ai_foundry
+  description = "Ai Foundry"
+}
+
 output "analysis_services_server" {
   value       = local.az.analysis_services_server
   description = "Analysis Services Server"
