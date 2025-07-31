@@ -36,6 +36,16 @@ locals {
   // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
+    ai_foundry = {
+      name        = substr(join("-", compact([local.prefix, "aif", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "aif", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "aif"
+      min_length  = 2
+      max_length  = 64
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])$"
+    }
     analysis_services_server = {
       name        = substr(join("", compact([local.prefix_safe, "as", local.suffix_safe])), 0, 63)
       name_unique = substr(join("", compact([local.prefix_safe, "as", local.suffix_unique_safe])), 0, 63)
@@ -2498,6 +2508,10 @@ locals {
     }
   }
   validation = {
+    ai_foundry = {
+      valid_name        = length(regexall(local.az.ai_foundry.regex, local.az.ai_foundry.name)) > 0 && length(local.az.ai_foundry.name) > local.az.ai_foundry.min_length
+      valid_name_unique = length(regexall(local.az.ai_foundry.regex, local.az.ai_foundry.name_unique)) > 0
+    }
     analysis_services_server = {
       valid_name        = length(regexall(local.az.analysis_services_server.regex, local.az.analysis_services_server.name)) > 0 && length(local.az.analysis_services_server.name) > local.az.analysis_services_server.min_length
       valid_name_unique = length(regexall(local.az.analysis_services_server.regex, local.az.analysis_services_server.name_unique)) > 0
