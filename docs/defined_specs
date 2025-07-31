@@ -4,6 +4,8 @@ az = {
     policy         = "policy"
     api_management = "apim"
 
+    
+
     // Networking
     virtual_network            = "vnet"
     subnet                     = "snet"
@@ -64,6 +66,7 @@ az = {
     azure_cognitive_search           = "srch"
     azure_cognitive_services         = "cog"
     azure_machine_learning_workspace = "mlw"
+    azurerm_ai_services              = "aif"
 
     // Analytics and IoT
     azure_analysis_services_server         = "as"
