@@ -402,7 +402,7 @@
       "max": 63
     },
     "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-_.]+[a-z0-9]$",
-    "scope": "resourceGroup",
+    "scope": "global",
     "slug": "cosmos",
     "dashes": true
   },
