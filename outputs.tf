@@ -656,6 +656,11 @@ output "machine_learning_workspace" {
   description = "Machine Learning Workspace"
 }
 
+output "machine_learning_registry" {
+  value       = local.az.machine_learning_registry
+  description = "Machine Learning Registry"
+}
+
 output "managed_disk" {
   value       = local.az.managed_disk
   description = "Managed Disk"

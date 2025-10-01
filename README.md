@@ -251,6 +251,7 @@ No modules.
 | <a name="output_log_analytics_workspace"></a> [log\_analytics\_workspace](#output\_log\_analytics\_workspace) | Log Analytics Workspace |
 | <a name="output_logic_app_workflow"></a> [logic\_app\_workflow](#output\_logic\_app\_workflow) | Logic App Workflow |
 | <a name="output_machine_learning_workspace"></a> [machine\_learning\_workspace](#output\_machine\_learning\_workspace) | Machine Learning Workspace |
+| <a name="output_machine_learning_registry"></a> [machine\_learning\_registry](#output\_machine\_learning\_registry) | Machine Learning Registry |
 | <a name="output_managed_disk"></a> [managed\_disk](#output\_managed\_disk) | Managed Disk |
 | <a name="output_maps_account"></a> [maps\_account](#output\_maps\_account) | Maps Account |
 | <a name="output_mariadb_database"></a> [mariadb\_database](#output\_mariadb\_database) | Mariadb Database |

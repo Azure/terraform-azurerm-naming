@@ -1276,6 +1276,17 @@
     "dashes": true
   },
   {
+    "name": "machine_learning_registry",
+    "length": {
+      "min": 3,
+      "max": 33
+    },
+    "regex": "^[a-zA-Z0-9][a-zA-Z0-9_-]{2,32}$",
+    "scope": "resourceGroup",
+    "slug": "mlr",
+    "dashes": true
+  },
+  {
     "name": "managed_disk",
     "length": {
       "min": 1,
