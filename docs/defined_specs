@@ -64,6 +64,7 @@ az = {
     azure_cognitive_search           = "srch"
     azure_cognitive_services         = "cog"
     azure_machine_learning_workspace = "mlw"
+    azure_machine_learning_registry  = "mlr"
 
     // Analytics and IoT
     azure_analysis_services_server         = "as"

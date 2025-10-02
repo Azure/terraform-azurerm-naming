@@ -651,6 +651,11 @@ output "logic_app_workflow" {
   description = "Logic App Workflow"
 }
 
+output "machine_learning_registry" {
+  value       = local.az.machine_learning_registry
+  description = "Machine Learning Registry"
+}
+
 output "machine_learning_workspace" {
   value       = local.az.machine_learning_workspace
   description = "Machine Learning Workspace"
