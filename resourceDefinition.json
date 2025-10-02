@@ -1265,17 +1265,6 @@
     "dashes": true
   },
   {
-    "name": "machine_learning_workspace",
-    "length": {
-      "min": 1,
-      "max": 260
-    },
-    "regex": "^(?=.{1,260}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
-    "scope": "resourceGroup",
-    "slug": "mlw",
-    "dashes": true
-  },
-  {
     "name": "machine_learning_registry",
     "length": {
       "min": 3,
@@ -1284,6 +1273,17 @@
     "regex": "^[a-zA-Z0-9][a-zA-Z0-9_-]{2,32}$",
     "scope": "resourceGroup",
     "slug": "mlr",
+    "dashes": true
+  },
+  {
+    "name": "machine_learning_workspace",
+    "length": {
+      "min": 1,
+      "max": 260
+    },
+    "regex": "^(?=.{1,260}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
+    "scope": "resourceGroup",
+    "slug": "mlw",
     "dashes": true
   },
   {
