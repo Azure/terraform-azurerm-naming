@@ -2716,6 +2716,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    synapse_private_link_hub = {
+      name        = substr(join("-", compact([local.prefix, "synplh", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "synplh", local.suffix_unique])), 0, 50)
+      dashes      = true
+      slug        = "synplh"
+      min_length  = 1
+      max_length  = 50
+      scope       = "resourceGroup"
+      regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+    }
     synapse_spark_pool = {
       name        = substr(join("", compact([local.prefix_safe, "synsp", local.suffix_safe])), 0, 32)
       name_unique = substr(join("", compact([local.prefix_safe, "synsp", local.suffix_unique_safe])), 0, 32)
@@ -4069,6 +4079,10 @@ locals {
     subnet_service_endpoint_storage_policy = {
       valid_name        = length(regexall(local.az.subnet_service_endpoint_storage_policy.regex, local.az.subnet_service_endpoint_storage_policy.name)) > 0 && length(local.az.subnet_service_endpoint_storage_policy.name) > local.az.subnet_service_endpoint_storage_policy.min_length
       valid_name_unique = length(regexall(local.az.subnet_service_endpoint_storage_policy.regex, local.az.subnet_service_endpoint_storage_policy.name_unique)) > 0
+    }
+    synapse_private_link_hub = {
+      valid_name        = length(regexall(local.az.synapse_private_link_hub.regex, local.az.synapse_private_link_hub.name)) > 0 && length(local.az.synapse_private_link_hub.name) > local.az.synapse_private_link_hub.min_length
+      valid_name_unique = length(regexall(local.az.synapse_private_link_hub.regex, local.az.synapse_private_link_hub.name_unique)) > 0
     }
     synapse_spark_pool = {
       valid_name        = length(regexall(local.az.synapse_spark_pool.regex, local.az.synapse_spark_pool.name)) > 0 && length(local.az.synapse_spark_pool.name) > local.az.synapse_spark_pool.min_length

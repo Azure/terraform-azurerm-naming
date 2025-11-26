@@ -2619,6 +2619,17 @@
     "dashes": false
   },
   {
+    "name": "synapse_private_link_hub",
+    "length": {
+      "min": 1,
+      "max": 50
+    },
+    "regex": "^(?=.{1,50}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "synplh",
+    "dashes": true
+  },
+  {
     "name": "synapse_sql_pool",
     "length": {
       "min": 1,

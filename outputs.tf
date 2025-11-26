@@ -1346,6 +1346,11 @@ output "subnet_service_endpoint_storage_policy" {
   description = "Subnet Service Endpoint Storage Policy"
 }
 
+output "synapse_private_link_hub" {
+  value       = local.az.synapse_private_link_hub
+  description = "Synapse Private Link Hub"
+}
+
 output "synapse_spark_pool" {
   value       = local.az.synapse_spark_pool
   description = "Synapse Spark Pool"
