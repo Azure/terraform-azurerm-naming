@@ -308,6 +308,61 @@
     "dashes": true
   },
   {
+    "name": "cdn_frontdoor_endpoint",
+    "length": {
+      "min": 1,
+      "max": 50
+    },
+    "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "fde",
+    "dashes": true
+  },
+  {
+    "name": "cdn_frontdoor_origin",
+    "length": {
+      "min": 1,
+      "max": 50
+    },
+    "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "parent",
+    "slug": "cdno",
+    "dashes": true
+  },
+  {
+    "name": "cdn_frontdoor_origin_group",
+    "length": {
+      "min": 1,
+      "max": 50
+    },
+    "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "parent",
+    "slug": "cdnog",
+    "dashes": true
+  },
+  {
+    "name": "cdn_frontdoor_profile",
+    "length": {
+      "min": 5,
+      "max": 64
+    },
+    "regex": "^(?=.{5,64}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "afd",
+    "dashes": true
+  },
+  {
+    "name": "cdn_frontdoor_route",
+    "length": {
+      "min": 1,
+      "max": 50
+    },
+    "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "parent",
+    "slug": "cdnr",
+    "dashes": true
+  },
+  {
     "name": "cdn_endpoint",
     "length": {
       "min": 1,
@@ -704,6 +759,18 @@
     "dashes": true
   },
   {
+    "name": "eventgrid_namespace",
+    "resource": "eventgrid_namespace",
+    "length": {
+      "min": 3,
+      "max": 50
+    },
+    "regex": "^(?=.{3,50}$)[a-zA-Z0-9-]+$",
+    "scope": "resourceGroup",
+    "slug": "evgns",
+    "dashes": true
+  },
+  {
     "name": "eventgrid_domain",
     "length": {
       "min": 3,
@@ -748,6 +815,17 @@
     "dashes": true
   },
   {
+    "name": "eventgrid_system_topic",
+    "length": {
+      "min": 3,
+      "max": 50
+    },
+    "regex": "^(?=.{3,50}$)[a-zA-Z0-9-]+$",
+    "scope": "resourceGroup",
+    "slug": "egst",
+    "dashes": true
+  },
+  {
     "name": "eventhub",
     "length": {
       "min": 1,
@@ -756,6 +834,18 @@
     "regex": "^(?=.{1,50}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$",
     "scope": "parent",
     "slug": "evh",
+    "dashes": true
+  },
+  {
+    "name": "eventhub_cluster",
+    "resource": "eventhub_cluster",
+    "length": {
+      "min": 6,
+      "max": 50
+    },
+    "regex": "^(?=.{6,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "evhcl",
     "dashes": true
   },
   {
@@ -834,6 +924,18 @@
     "scope": "resourceGroup",
     "slug": "ergw",
     "dashes": true
+  },
+  {
+    "name": "fabric_capacity",
+    "resource": "fabric_capacity",
+    "length": {
+      "min": 3,
+      "max": 63
+    },
+    "regex": "^(?=.{3,63}$)[a-z][a-z0-9]+$",
+    "scope": "region",
+    "slug": "fc",
+    "dashes": false
   },
   {
     "name": "firewall",
@@ -1463,6 +1565,17 @@
     "dashes": true
   },
   {
+    "name": "network_manager",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "vnm",
+    "dashes": true
+  },
+  {
     "name": "network_security_group",
     "length": {
       "min": 1,
@@ -1636,6 +1749,17 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
     "slug": "pippf",
+    "dashes": true
+  },
+  {
+    "name": "purview_account",
+    "length": {
+      "min": 3,
+      "max": 63
+    },
+    "regex": "^(?=.{3,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "pview",
     "dashes": true
   },
   {
@@ -2318,6 +2442,17 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
     "slug": "vwan",
+    "dashes": true
+  },
+  {
+    "name": "vpn_site",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "vst",
     "dashes": true
   },
   {
