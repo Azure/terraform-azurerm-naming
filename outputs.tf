@@ -1461,6 +1461,11 @@ output "web_application_firewall_policy" {
   description = "Web Application Firewall Policy"
 }
 
+output "web_application_firewall_policy_rule_group" {
+  value       = local.az.web_application_firewall_policy_rule_group
+  description = "Web Application Firewall Policy Rule Group"
+}
+
 output "windows_virtual_machine" {
   value       = local.az.windows_virtual_machine
   description = "Windows Virtual Machine"

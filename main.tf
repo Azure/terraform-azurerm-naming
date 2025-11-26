@@ -2937,6 +2937,16 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     web_application_firewall_policy = {
+      name        = substr(join("-", compact([local.prefix, "waf", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "waf", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "waf"
+      min_length  = 1
+      max_length  = 80
+      scope       = "parent"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    web_application_firewall_policy_rule_group = {
       name        = substr(join("-", compact([local.prefix, "wafrg", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "wafrg", local.suffix_unique])), 0, 80)
       dashes      = true
@@ -4131,6 +4141,10 @@ locals {
     web_application_firewall_policy = {
       valid_name        = length(regexall(local.az.web_application_firewall_policy.regex, local.az.web_application_firewall_policy.name)) > 0 && length(local.az.web_application_firewall_policy.name) > local.az.web_application_firewall_policy.min_length
       valid_name_unique = length(regexall(local.az.web_application_firewall_policy.regex, local.az.web_application_firewall_policy.name_unique)) > 0
+    }
+    web_application_firewall_policy_rule_group = {
+      valid_name        = length(regexall(local.az.web_application_firewall_policy_rule_group.regex, local.az.web_application_firewall_policy_rule_group.name)) > 0 && length(local.az.web_application_firewall_policy_rule_group.name) > local.az.web_application_firewall_policy_rule_group.min_length
+      valid_name_unique = length(regexall(local.az.web_application_firewall_policy_rule_group.regex, local.az.web_application_firewall_policy_rule_group.name_unique)) > 0
     }
     windows_virtual_machine = {
       valid_name        = length(regexall(local.az.windows_virtual_machine.regex, local.az.windows_virtual_machine.name)) > 0 && length(local.az.windows_virtual_machine.name) > local.az.windows_virtual_machine.min_length
