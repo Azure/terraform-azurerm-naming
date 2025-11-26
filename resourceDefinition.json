@@ -870,6 +870,17 @@
     "dashes": true
   },
   {
+    "name": "dns_private_resolver",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-_]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "dnspr",
+    "dashes": true
+  },
+  {
     "name": "dns_zone",
     "length": {
       "min": 1,

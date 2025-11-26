@@ -456,6 +456,11 @@ output "dns_ns_record" {
   description = "Dns Ns Record"
 }
 
+output "dns_private_resolver" {
+  value       = local.az.dns_private_resolver
+  description = "Dns Private Resolver"
+}
+
 output "dns_ptr_record" {
   value       = local.az.dns_ptr_record
   description = "Dns Ptr Record"
