@@ -330,6 +330,17 @@
     "dashes": true
   },
   {
+    "name": "azurerm_policy_definition",
+    "length": {
+      "min": 1,
+      "max": 128
+    },
+    "regex": "^(?=.{1,128}$)[^<>*%&:?./+]+[^<>*%&:?./+ ]$",
+    "scope": "tenant",
+    "slug": "pdef",
+    "dashes": true
+  },
+  {
     "name": "proximity_placement_group",
     "length": {
       "min": 1,

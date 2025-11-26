@@ -86,6 +86,11 @@ output "availability_set" {
   description = "Availability Set"
 }
 
+output "azurerm_policy_definition" {
+  value       = local.az.azurerm_policy_definition
+  description = "Azurerm Policy Definition"
+}
+
 output "backup_policy_vm" {
   value       = local.az.backup_policy_vm
   description = "Backup Policy Vm"
