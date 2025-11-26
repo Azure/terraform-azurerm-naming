@@ -2176,6 +2176,16 @@ locals {
       scope       = "global"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
+    redhat_openshift_cluster = {
+      name        = substr(join("-", compact([local.prefix, "aro", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "aro", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "aro"
+      min_length  = 1
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$"
+    }
     redis_cache = {
       name        = substr(join("-", compact([local.prefix, "redis", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "redis", local.suffix_unique])), 0, 63)
@@ -3843,6 +3853,10 @@ locals {
     recovery_services_vault = {
       valid_name        = length(regexall(local.az.recovery_services_vault.regex, local.az.recovery_services_vault.name)) > 0 && length(local.az.recovery_services_vault.name) > local.az.recovery_services_vault.min_length
       valid_name_unique = length(regexall(local.az.recovery_services_vault.regex, local.az.recovery_services_vault.name_unique)) > 0
+    }
+    redhat_openshift_cluster = {
+      valid_name        = length(regexall(local.az.redhat_openshift_cluster.regex, local.az.redhat_openshift_cluster.name)) > 0 && length(local.az.redhat_openshift_cluster.name) > local.az.redhat_openshift_cluster.min_length
+      valid_name_unique = length(regexall(local.az.redhat_openshift_cluster.regex, local.az.redhat_openshift_cluster.name_unique)) > 0
     }
     redis_cache = {
       valid_name        = length(regexall(local.az.redis_cache.regex, local.az.redis_cache.name)) > 0 && length(local.az.redis_cache.name) > local.az.redis_cache.min_length

@@ -1343,6 +1343,17 @@
     "dashes": true
   },
   {
+    "name": "redhat_openshift_cluster",
+    "length": {
+      "min": 1,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "aro",
+    "dashes": true
+  },
+  {
     "name": "kusto_cluster",
     "length": {
       "min": 4,

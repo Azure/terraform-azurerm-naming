@@ -1076,6 +1076,11 @@ output "recovery_services_vault" {
   description = "Recovery Services Vault"
 }
 
+output "redhat_openshift_cluster" {
+  value       = local.az.redhat_openshift_cluster
+  description = "Redhat Openshift Cluster"
+}
+
 output "redis_cache" {
   value       = local.az.redis_cache
   description = "Redis Cache"
