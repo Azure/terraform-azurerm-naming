@@ -494,6 +494,18 @@
     "slug": "dsb",
     "dashes": true
   },
+
+  {
+    "name": "dashboard_grafana",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "amg",
+    "dashes": true
+  },
   {
     "name": "data_factory",
     "length": {
@@ -668,6 +680,18 @@
     "regex": "^(?=.{3,50}$)[a-zA-Z0-9-_]+$",
     "scope": "parent",
     "slug": "dlsfw",
+    "dashes": true
+  },
+  {
+    "name": "data_protection_backup_vault",
+      "resource": "",
+    "length": {
+      "min": 2,
+      "max": 50
+    },
+    "regex": "^(?=.{2,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "bvault",
     "dashes": true
   },
   {
@@ -1323,6 +1347,17 @@
     "dashes": true
   },
   {
+    "name": "monitor_alert_processing_rule_action_group",
+    "length": {
+      "min": 1,
+      "max": 260
+    },
+    "regex": "^(?=.{1,260}$)[^<>*%{}&:\\\\?+/#|]+[^<>*%{}&:\\\\?+/#| ]$",
+    "scope": "resourceGroup",
+    "slug": "apr",
+    "dashes": true
+  },
+  {
     "name": "monitor_scheduled_query_rules_alert",
     "length": {
       "min": 1,
@@ -1342,6 +1377,28 @@
     "regex": "^(?=.{1,260}$)[^<>%&#.,?\\\\+\\\\/]+[^<>%&#.,?\\\\+\\\\/ ]$",
     "scope": "resourceGroup",
     "slug": "mas",
+    "dashes": true
+  },
+  {
+    "name": "monitor_data_collection_rule",
+    "length": {
+      "min": 1,
+      "max": 64
+    },
+    "regex": "^(?=.{1,64}$)[a-zA-Z0-9-_]+$",
+    "scope": "resourceGroup",
+    "slug": "dcr",
+    "dashes": true
+  },
+  {
+    "name": "monitor_data_collection_endpoint",
+    "length": {
+      "min": 1,
+      "max": 64
+    },
+    "regex": "^(?=.{1,64}$)[a-zA-Z0-9-_]+$",
+    "scope": "resourceGroup",
+    "slug": "dce",
     "dashes": true
   },
   {
@@ -1386,6 +1443,17 @@
     "regex": "^(?=.{1,260}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
     "scope": "resourceGroup",
     "slug": "mlw",
+    "dashes": true
+  },
+  {
+    "name": "management_group",
+    "length": {
+      "min": 1,
+      "max": 90
+    },
+    "regex": "^(?=.{1,90}$)[a-zA-Z0-9-_().]+$",
+    "scope": "tenant",
+    "slug": "mg",
     "dashes": true
   },
   {
@@ -1826,6 +1894,17 @@
     "regex": "^(?=.{1,90}$)[a-zA-Z0-9-._\\\\(\\\\)]+[a-zA-Z0-9-_\\\\(\\\\)]$",
     "scope": "subscription",
     "slug": "rg",
+    "dashes": true
+  },
+  {
+    "name": "virtual_machine_restore_point_collection",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "rpc",
     "dashes": true
   },
   {
