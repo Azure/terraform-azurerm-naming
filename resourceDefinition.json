@@ -176,6 +176,17 @@
     "dashes": true
   },
   {
+    "name": "backup_policy_vm",
+    "length": {
+      "min": 3,
+      "max": 150
+    },
+    "regex": "^(?=.{3,150}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "parent",
+    "slug": "bkpol",
+    "dashes": true
+  },
+  {
     "name": "bastion_host",
     "length": {
       "min": 1,
@@ -396,6 +407,17 @@
     "dashes": true
   },
   {
+    "name": "communication_service",
+    "length": {
+      "min": 1,
+      "max": 63
+    },
+    "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "global",
+    "slug": "acs",
+    "dashes": true
+  },
+  {
     "name": "container_app",
     "length": {
       "min": 1,
@@ -415,6 +437,17 @@
     "regex": "^(?=.{1,32}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
     "scope": "resourceGroup",
     "slug": "cae",
+    "dashes": true
+  },
+  {
+    "name": "container_app_job",
+    "length": {
+      "min": 2,
+      "max": 32
+    },
+    "regex": "^(?=.{2,32}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "caj",
     "dashes": true
   },
   {
@@ -470,6 +503,61 @@
     "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-_.]+[a-z0-9]$",
     "scope": "resourceGroup",
     "slug": "cospos",
+    "dashes": true
+  },
+  {
+    "name": "cosmosdb_cassandra",
+    "length": {
+      "min": 3,
+      "max": 44
+    },
+    "regex": "^(?=.{3,44}$)[a-z0-9][a-z0-9-_.]+[a-z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "coscas",
+    "dashes": true
+  },
+  {
+    "name": "cosmosdb_gremlin",
+    "length": {
+      "min": 3,
+      "max": 44
+    },
+    "regex": "^(?=.{3,44}$)[a-z0-9][a-z0-9-_.]+[a-z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "cosgrm",
+    "dashes": true
+  },
+  {
+    "name": "cosmosdb_mongodb",
+    "length": {
+      "min": 3,
+      "max": 44
+    },
+    "regex": "^(?=.{3,44}$)[a-z0-9][a-z0-9-_.]+[a-z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "cosmon",
+    "dashes": true
+  },
+  {
+    "name": "cosmosdb_nosql",
+    "length": {
+      "min": 3,
+      "max": 44
+    },
+    "regex": "^(?=.{3,44}$)[a-z0-9][a-z0-9-_.]+[a-z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "cosno",
+    "dashes": true
+  },
+  {
+    "name": "cosmosdb_tables",
+    "length": {
+      "min": 3,
+      "max": 44
+    },
+    "regex": "^(?=.{3,44}$)[a-z0-9][a-z0-9-_.]+[a-z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "costab",
     "dashes": true
   },
   {
@@ -684,7 +772,6 @@
   },
   {
     "name": "data_protection_backup_vault",
-      "resource": "",
     "length": {
       "min": 2,
       "max": 50
@@ -692,6 +779,17 @@
     "regex": "^(?=.{2,50}$)[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$",
     "scope": "resourceGroup",
     "slug": "bvault",
+    "dashes": true
+  },
+  {
+    "name": "databricks_access_connector",
+    "length": {
+      "min": 3,
+      "max": 30
+    },
+    "regex": "^(?=.{3,30}$)[a-zA-Z0-9-_]+$",
+    "scope": "resourceGroup",
+    "slug": "dbac",
     "dashes": true
   },
   {
@@ -784,7 +882,6 @@
   },
   {
     "name": "eventgrid_namespace",
-    "resource": "eventgrid_namespace",
     "length": {
       "min": 3,
       "max": 50
@@ -862,7 +959,6 @@
   },
   {
     "name": "eventhub_cluster",
-    "resource": "eventhub_cluster",
     "length": {
       "min": 6,
       "max": 50
@@ -951,7 +1047,6 @@
   },
   {
     "name": "fabric_capacity",
-    "resource": "fabric_capacity",
     "length": {
       "min": 3,
       "max": 63
@@ -1116,6 +1211,17 @@
     "dashes": true
   },
   {
+    "name": "ip_group",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ipg",
+    "dashes": true
+  },
+  {
     "name": "iotcentral_application",
     "length": {
       "min": 2,
@@ -1270,6 +1376,17 @@
     "dashes": true
   },
   {
+    "name": "lb_rule",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "rule",
+    "dashes": true
+  },
+  {
     "name": "lb_nat_rule",
     "length": {
       "min": 1,
@@ -1333,6 +1450,17 @@
     "regex": "^(?=.{4,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
     "scope": "parent",
     "slug": "log",
+    "dashes": true
+  },
+  {
+    "name": "log_analytics_query_pack",
+    "length": {
+      "min": 4,
+      "max": 63
+    },
+    "regex": "^(?=.{4,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "pack",
     "dashes": true
   },
   {
@@ -1413,6 +1541,17 @@
     "dashes": true
   },
   {
+    "name": "logic_app_integration_account",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._()]+[a-zA-Z0-9]$",
+    "scope": "resourceGroup",
+    "slug": "ia",
+    "dashes": true
+  },
+  {
     "name": "logic_app_workflow",
     "length": {
       "min": 1,
@@ -1445,6 +1584,17 @@
     "slug": "mlw",
     "dashes": true
   },
+    {
+      "name": "maintenance_configuration",
+      "length": {
+        "min": 1,
+        "max": 80
+      },
+      "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+      "scope": "resourceGroup",
+      "slug": "mc",
+      "dashes": true
+    },
   {
     "name": "management_group",
     "length": {
@@ -1542,6 +1692,17 @@
     "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
     "scope": "parent",
     "slug": "sqlep",
+    "dashes": true
+  },
+  {
+    "name": "mssql_job_agent",
+    "length": {
+      "min": 1,
+      "max": 128
+    },
+    "regex": "^(?=.{1,128}$)[^<>*%:.?\\\\+\\\\/]+[^<>*%:.?\\\\+\\\\/ ]$",
+    "scope": "parent",
+    "slug": "sqlja",
     "dashes": true
   },
   {
@@ -1897,6 +2058,17 @@
     "dashes": true
   },
   {
+    "name": "resource_group_template_deployment",
+    "length": {
+      "min": 1,
+      "max": 90
+    },
+    "regex": "^(?=.{1,90}$)[a-zA-Z0-9-._()]+$",
+    "scope": "resourceGroup",
+    "slug": "ts",
+    "dashes": true
+  },
+  {
     "name": "virtual_machine_restore_point_collection",
     "length": {
       "min": 1,
@@ -1941,6 +2113,17 @@
     "dashes": true
   },
   {
+    "name": "route_filter",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "rf",
+    "dashes": true
+  },
+  {
     "name": "route_table",
     "length": {
       "min": 1,
@@ -1949,6 +2132,17 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
     "slug": "route",
+    "dashes": true
+  },
+  {
+    "name": "route_server",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "rtserv",
     "dashes": true
   },
   {
@@ -2147,6 +2341,17 @@
     "regex": "^(?=.{1,63}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
     "scope": "global",
     "slug": "sql",
+    "dashes": true
+  },
+  {
+    "name": "ssh_public_key",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "sshkey",
     "dashes": true
   },
   {
@@ -2370,6 +2575,50 @@
     "dashes": true
   },
   {
+    "name": "subnet_service_endpoint_storage_policy",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "se",
+    "dashes": true
+  },
+  {
+    "name": "synapse_spark_pool",
+    "length": {
+      "min": 3,
+      "max": 32
+    },
+    "regex": "^(?=.{3,32}$)[a-zA-Z0-9]+$",
+    "scope": "parent",
+    "slug": "synsp",
+    "dashes": false
+  },
+  {
+    "name": "synapse_sql_pool",
+    "length": {
+      "min": 1,
+      "max": 60
+    },
+    "regex": "^(?=.{1,60}$)[a-zA-Z0-9]+$",
+    "scope": "parent",
+    "slug": "syndp",
+    "dashes": false
+  },
+  {
+    "name": "synapse_workspace",
+    "length": {
+      "min": 1,
+      "max": 50
+    },
+    "regex": "^(?=.{1,50}$)[a-z0-9][a-z0-9-]+[a-z0-9]$",
+    "scope": "global",
+    "slug": "synw",
+    "dashes": true
+  },
+  {
     "name": "template_deployment",
     "length": {
       "min": 1,
@@ -2444,6 +2693,17 @@
     "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
     "slug": "vdws",
+    "dashes": true
+  },
+  {
+    "name": "virtual_hub",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "vhub",
     "dashes": true
   },
   {
@@ -2524,6 +2784,28 @@
     "dashes": true
   },
   {
+    "name": "vpn_gateway",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "vpng",
+    "dashes": true
+  },
+  {
+    "name": "vpn_gateway_connection",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "vcn",
+    "dashes": true
+  },
+  {
     "name": "vpn_site",
     "length": {
       "min": 1,
@@ -2532,6 +2814,17 @@
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
     "slug": "vst",
+    "dashes": true
+  },
+  {
+    "name": "web_application_firewall_policy",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "parent",
+    "slug": "wafrg",
     "dashes": true
   },
   {
