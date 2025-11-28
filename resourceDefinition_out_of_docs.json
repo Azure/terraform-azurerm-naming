@@ -330,7 +330,7 @@
     "dashes": true
   },
   {
-    "name": "azurerm_policy_definition",
+    "name": "policy_definition",
     "length": {
       "min": 1,
       "max": 128
