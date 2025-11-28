@@ -86,11 +86,6 @@ output "availability_set" {
   description = "Availability Set"
 }
 
-output "azurerm_policy_definition" {
-  value       = local.az.azurerm_policy_definition
-  description = "Azurerm Policy Definition"
-}
-
 output "backup_policy_vm" {
   value       = local.az.backup_policy_vm
   description = "Backup Policy Vm"
@@ -969,6 +964,11 @@ output "notification_hub_namespace" {
 output "point_to_site_vpn_gateway" {
   value       = local.az.point_to_site_vpn_gateway
   description = "Point To Site Vpn Gateway"
+}
+
+output "policy_definition" {
+  value       = local.az.policy_definition
+  description = "Policy Definition"
 }
 
 output "postgresql_database" {

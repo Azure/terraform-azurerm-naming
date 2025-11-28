@@ -196,16 +196,6 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$"
     }
-    azurerm_policy_definition = {
-      name        = substr(join("-", compact([local.prefix, "pdef", local.suffix])), 0, 128)
-      name_unique = substr(join("-", compact([local.prefix, "pdef", local.suffix_unique])), 0, 128)
-      dashes      = true
-      slug        = "pdef"
-      min_length  = 1
-      max_length  = 128
-      scope       = "tenant"
-      regex       = "^[^<>*%&:?./+]+[^<>*%&:?./+ ]$"
-    }
     backup_policy_vm = {
       name        = substr(join("-", compact([local.prefix, "bkpol", local.suffix])), 0, 150)
       name_unique = substr(join("-", compact([local.prefix, "bkpol", local.suffix_unique])), 0, 150)
@@ -1966,6 +1956,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    policy_definition = {
+      name        = substr(join("-", compact([local.prefix, "pdef", local.suffix])), 0, 128)
+      name_unique = substr(join("-", compact([local.prefix, "pdef", local.suffix_unique])), 0, 128)
+      dashes      = true
+      slug        = "pdef"
+      min_length  = 1
+      max_length  = 128
+      scope       = "tenant"
+      regex       = "^[^<>*%&:?./+]+[^<>*%&:?./+ ]$"
+    }
     postgresql_database = {
       name        = substr(join("-", compact([local.prefix, "psqldb", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "psqldb", local.suffix_unique])), 0, 63)
@@ -3082,10 +3082,6 @@ locals {
       valid_name        = length(regexall(local.az.availability_set.regex, local.az.availability_set.name)) > 0 && length(local.az.availability_set.name) > local.az.availability_set.min_length
       valid_name_unique = length(regexall(local.az.availability_set.regex, local.az.availability_set.name_unique)) > 0
     }
-    azurerm_policy_definition = {
-      valid_name        = length(regexall(local.az.azurerm_policy_definition.regex, local.az.azurerm_policy_definition.name)) > 0 && length(local.az.azurerm_policy_definition.name) > local.az.azurerm_policy_definition.min_length
-      valid_name_unique = length(regexall(local.az.azurerm_policy_definition.regex, local.az.azurerm_policy_definition.name_unique)) > 0
-    }
     backup_policy_vm = {
       valid_name        = length(regexall(local.az.backup_policy_vm.regex, local.az.backup_policy_vm.name)) > 0 && length(local.az.backup_policy_vm.name) > local.az.backup_policy_vm.min_length
       valid_name_unique = length(regexall(local.az.backup_policy_vm.regex, local.az.backup_policy_vm.name_unique)) > 0
@@ -3789,6 +3785,10 @@ locals {
     point_to_site_vpn_gateway = {
       valid_name        = length(regexall(local.az.point_to_site_vpn_gateway.regex, local.az.point_to_site_vpn_gateway.name)) > 0 && length(local.az.point_to_site_vpn_gateway.name) > local.az.point_to_site_vpn_gateway.min_length
       valid_name_unique = length(regexall(local.az.point_to_site_vpn_gateway.regex, local.az.point_to_site_vpn_gateway.name_unique)) > 0
+    }
+    policy_definition = {
+      valid_name        = length(regexall(local.az.policy_definition.regex, local.az.policy_definition.name)) > 0 && length(local.az.policy_definition.name) > local.az.policy_definition.min_length
+      valid_name_unique = length(regexall(local.az.policy_definition.regex, local.az.policy_definition.name_unique)) > 0
     }
     postgresql_database = {
       valid_name        = length(regexall(local.az.postgresql_database.regex, local.az.postgresql_database.name)) > 0 && length(local.az.postgresql_database.name) > local.az.postgresql_database.min_length
