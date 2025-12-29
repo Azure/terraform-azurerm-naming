@@ -34,17 +34,50 @@ resource "azurerm_resource_group" "example" {
 
 Other advanced usages will be explained in the [Advanced usage](#advanced-usage) part of this docs.
 
-## Internals
+## Development
 
-## Prerequisites and setup
+This module uses **code generation** to create Terraform files from JSON resource definitions. This approach ensures consistency and makes it easy to add new Azure resources.
+
+### How It Works
+
+```
+resourceDefinition.json ─────┐
+                             ├──▶ main.go ──▶ main.tf + outputs.tf
+resourceDefinition_out_of_docs.json ──┘         (generated)
+```
+
+1. **Resource definitions** are stored in JSON files (`resourceDefinition.json` for documented resources, `resourceDefinition_out_of_docs.json` for undocumented ones)
+2. **Go templates** in `templates/` define the structure of the generated Terraform code
+3. **`main.go`** reads the JSON files, applies the templates, and outputs `main.tf` and `outputs.tf`
+
+### File Overview
+
+| File | Editable? | Description |
+|------|-----------|-------------|
+| `resourceDefinition.json` | Yes | Primary resource definitions |
+| `resourceDefinition_out_of_docs.json` | Yes | Resources not in Azure docs |
+| `templates/*.tmpl` | Yes | Go templates for Terraform generation |
+| `main.go` | Yes | The code generator |
+| `variables.tf` | Yes | Module input variables |
+| `main.tf` | **No** | Auto-generated - do not edit |
+| `outputs.tf` | **No** | Auto-generated - do not edit |
+
+### Quick Start
+
+```bash
+# Generate Terraform files after modifying JSON
+make generate
+
+# Format and validate
+make all
+```
+
+For detailed instructions on adding resources and contributing, see **[CONTRIBUTING.md](CONTRIBUTING.md)**.
+
+## Prerequisites and Setup
 
 - Install [tflint](https://github.com/terraform-linters/tflint) as suitable for your OS.
-
 - Run `make install` in the root directory of the repo.
-
-## Modifying resources
-
-The resources are automatically generated using `go` to change the generation please change the file on the `templates` folder. To add a new resource, including its definition in the file `resourceDefinition.json`, and it will be automatically generated when `main.go` is run.
 
 ## Current implementation
 
