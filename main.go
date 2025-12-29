@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -28,6 +29,29 @@ type Resource struct {
 type Length struct {
 	Min int `json:"min"`
 	Max int `json:"max"`
+}
+
+// validateResource checks that a resource has all required fields
+func validateResource(r Resource, source string) error {
+	if r.Name == "" {
+		return fmt.Errorf("resource missing required field 'name' in %s", source)
+	}
+	if r.Slug == nil || *r.Slug == "" {
+		return fmt.Errorf("resource '%s' missing required field 'slug' in %s", r.Name, source)
+	}
+	if r.Length == nil {
+		return fmt.Errorf("resource '%s' missing required field 'length' in %s", r.Name, source)
+	}
+	if r.Length.Min < 0 {
+		return fmt.Errorf("resource '%s' has invalid min_length (%d) in %s", r.Name, r.Length.Min, source)
+	}
+	if r.Length.Max <= 0 {
+		return fmt.Errorf("resource '%s' has invalid max_length (%d) in %s", r.Name, r.Length.Max, source)
+	}
+	if r.Length.Min > r.Length.Max {
+		return fmt.Errorf("resource '%s' has min_length (%d) greater than max_length (%d) in %s", r.Name, r.Length.Min, r.Length.Max, source)
+	}
+	return nil
 }
 
 func main() {
@@ -63,6 +87,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// Validate resources from resourceDefinition.json
+	for _, r := range data {
+		if err := validateResource(r, "resourceDefinition.json"); err != nil {
+			log.Fatal(err)
+		}
+	}
+
 	// Undocumented resource definitions
 	sourceDefinitionsUndocumented, err := ioutil.ReadFile("resourceDefinition_out_of_docs.json")
 	if err != nil {
@@ -73,6 +104,26 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// Validate resources from resourceDefinition_out_of_docs.json
+	for _, r := range dataUndocumented {
+		if err := validateResource(r, "resourceDefinition_out_of_docs.json"); err != nil {
+			log.Fatal(err)
+		}
+	}
+
+	// Check for duplicate resource names before merging
+	seenNames := make(map[string]string)
+	for _, r := range data {
+		seenNames[r.Name] = "resourceDefinition.json"
+	}
+	for _, r := range dataUndocumented {
+		if source, exists := seenNames[r.Name]; exists {
+			log.Fatalf("duplicate resource name '%s' found in both %s and resourceDefinition_out_of_docs.json", r.Name, source)
+		}
+		seenNames[r.Name] = "resourceDefinition_out_of_docs.json"
+	}
+
 	data = append(data, dataUndocumented...)
 
 	// Sort the documented and undocumented resources alphabetically
@@ -84,10 +135,19 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	parsedTemplate.ExecuteTemplate(mainFile, "main", data)
+	defer mainFile.Close()
+
+	if err := parsedTemplate.ExecuteTemplate(mainFile, "main", data); err != nil {
+		log.Fatal(err)
+	}
+
 	outputsFile, err := os.OpenFile("outputs.tf", os.O_TRUNC|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
-	parsedTemplate.ExecuteTemplate(outputsFile, "outputs", data)
+	defer outputsFile.Close()
+
+	if err := parsedTemplate.ExecuteTemplate(outputsFile, "outputs", data); err != nil {
+		log.Fatal(err)
+	}
 }
