@@ -13,7 +13,7 @@
 
 {{- define "validation" -}}
     {{- .Name }} = {
-      valid_name        = length(regexall(local.az.{{- .Name }}.regex, local.az.{{- .Name }}.name)) > 0 && length(local.az.{{- .Name }}.name) > local.az.{{- .Name }}.min_length
+      valid_name        = length(regexall(local.az.{{- .Name }}.regex, local.az.{{- .Name }}.name)) > 0 && length(local.az.{{- .Name }}.name) >= local.az.{{- .Name }}.min_length
       valid_name_unique = length(regexall(local.az.{{- .Name }}.regex, local.az.{{- .Name }}.name_unique)) > 0
     }
 {{- end -}}
