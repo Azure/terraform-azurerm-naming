@@ -230,7 +230,7 @@ terraform validate
 - [ ] I've run `make all` (or equivalent) successfully
 - [ ] Generated files (`main.tf`, `outputs.tf`) are included in my commit
 - [ ] For new resources: I've added to the correct JSON file (`resourceDefinition.json` or `resourceDefinition_out_of_docs.json`)
-- [ ] For new resources: I've verified the naming rules from [Azure documentation](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules)
+- [ ] For new resources: I've verified the naming rules from [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules)
 - [ ] My changes don't break existing functionality
 
 ### Commit Message Format
