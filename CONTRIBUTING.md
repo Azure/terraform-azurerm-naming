@@ -117,14 +117,14 @@ Add a new entry to the appropriate JSON file:
 
 ```json
 {
-  "name": "my_new_resource",
+  "name": "storage_account",
   "length": {
     "min": 1,
     "max": 80
   },
   "regex": "^[a-zA-Z0-9-]+$",
   "scope": "resourceGroup",
-  "slug": "mnr",
+  "slug": "st",
   "dashes": true
 }
 ```
