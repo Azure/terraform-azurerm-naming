@@ -86,6 +86,11 @@ output "availability_set" {
   description = "Availability Set"
 }
 
+output "backup_policy_vm" {
+  value       = local.az.backup_policy_vm
+  description = "Backup Policy Vm"
+}
+
 output "bastion_host" {
   value       = local.az.bastion_host
   description = "Bastion Host"
@@ -151,6 +156,31 @@ output "cdn_endpoint" {
   description = "Cdn Endpoint"
 }
 
+output "cdn_frontdoor_endpoint" {
+  value       = local.az.cdn_frontdoor_endpoint
+  description = "Cdn Frontdoor Endpoint"
+}
+
+output "cdn_frontdoor_origin" {
+  value       = local.az.cdn_frontdoor_origin
+  description = "Cdn Frontdoor Origin"
+}
+
+output "cdn_frontdoor_origin_group" {
+  value       = local.az.cdn_frontdoor_origin_group
+  description = "Cdn Frontdoor Origin Group"
+}
+
+output "cdn_frontdoor_profile" {
+  value       = local.az.cdn_frontdoor_profile
+  description = "Cdn Frontdoor Profile"
+}
+
+output "cdn_frontdoor_route" {
+  value       = local.az.cdn_frontdoor_route
+  description = "Cdn Frontdoor Route"
+}
+
 output "cdn_profile" {
   value       = local.az.cdn_profile
   description = "Cdn Profile"
@@ -161,6 +191,11 @@ output "cognitive_account" {
   description = "Cognitive Account"
 }
 
+output "communication_service" {
+  value       = local.az.communication_service
+  description = "Communication Service"
+}
+
 output "container_app" {
   value       = local.az.container_app
   description = "Container App"
@@ -169,6 +204,11 @@ output "container_app" {
 output "container_app_environment" {
   value       = local.az.container_app_environment
   description = "Container App Environment"
+}
+
+output "container_app_job" {
+  value       = local.az.container_app_job
+  description = "Container App Job"
 }
 
 output "container_group" {
@@ -191,6 +231,11 @@ output "cosmosdb_account" {
   description = "Cosmosdb Account"
 }
 
+output "cosmosdb_cassandra" {
+  value       = local.az.cosmosdb_cassandra
+  description = "Cosmosdb Cassandra"
+}
+
 output "cosmosdb_cassandra_cluster" {
   value       = local.az.cosmosdb_cassandra_cluster
   description = "Cosmosdb Cassandra Cluster"
@@ -201,9 +246,29 @@ output "cosmosdb_cassandra_datacenter" {
   description = "Cosmosdb Cassandra Datacenter"
 }
 
+output "cosmosdb_gremlin" {
+  value       = local.az.cosmosdb_gremlin
+  description = "Cosmosdb Gremlin"
+}
+
+output "cosmosdb_mongodb" {
+  value       = local.az.cosmosdb_mongodb
+  description = "Cosmosdb Mongodb"
+}
+
+output "cosmosdb_nosql" {
+  value       = local.az.cosmosdb_nosql
+  description = "Cosmosdb Nosql"
+}
+
 output "cosmosdb_postgres" {
   value       = local.az.cosmosdb_postgres
   description = "Cosmosdb Postgres"
+}
+
+output "cosmosdb_tables" {
+  value       = local.az.cosmosdb_tables
+  description = "Cosmosdb Tables"
 }
 
 output "custom_provider" {
@@ -214,6 +279,11 @@ output "custom_provider" {
 output "dashboard" {
   value       = local.az.dashboard
   description = "Dashboard"
+}
+
+output "dashboard_grafana" {
+  value       = local.az.dashboard_grafana
+  description = "Dashboard Grafana"
 }
 
 output "data_factory" {
@@ -296,6 +366,11 @@ output "data_lake_store_firewall_rule" {
   description = "Data Lake Store Firewall Rule"
 }
 
+output "data_protection_backup_vault" {
+  value       = local.az.data_protection_backup_vault
+  description = "Data Protection Backup Vault"
+}
+
 output "database_migration_project" {
   value       = local.az.database_migration_project
   description = "Database Migration Project"
@@ -304,6 +379,11 @@ output "database_migration_project" {
 output "database_migration_service" {
   value       = local.az.database_migration_service
   description = "Database Migration Service"
+}
+
+output "databricks_access_connector" {
+  value       = local.az.databricks_access_connector
+  description = "Databricks Access Connector"
 }
 
 output "databricks_cluster" {
@@ -376,6 +456,11 @@ output "dns_ns_record" {
   description = "Dns Ns Record"
 }
 
+output "dns_private_resolver" {
+  value       = local.az.dns_private_resolver
+  description = "Dns Private Resolver"
+}
+
 output "dns_ptr_record" {
   value       = local.az.dns_ptr_record
   description = "Dns Ptr Record"
@@ -406,6 +491,16 @@ output "eventgrid_event_subscription" {
   description = "Eventgrid Event Subscription"
 }
 
+output "eventgrid_namespace" {
+  value       = local.az.eventgrid_namespace
+  description = "Eventgrid Namespace"
+}
+
+output "eventgrid_system_topic" {
+  value       = local.az.eventgrid_system_topic
+  description = "Eventgrid System Topic"
+}
+
 output "eventgrid_topic" {
   value       = local.az.eventgrid_topic
   description = "Eventgrid Topic"
@@ -419,6 +514,11 @@ output "eventhub" {
 output "eventhub_authorization_rule" {
   value       = local.az.eventhub_authorization_rule
   description = "Eventhub Authorization Rule"
+}
+
+output "eventhub_cluster" {
+  value       = local.az.eventhub_cluster
+  description = "Eventhub Cluster"
 }
 
 output "eventhub_consumer_group" {
@@ -449,6 +549,11 @@ output "express_route_circuit" {
 output "express_route_gateway" {
   value       = local.az.express_route_gateway
   description = "Express Route Gateway"
+}
+
+output "fabric_capacity" {
+  value       = local.az.fabric_capacity
+  description = "Fabric Capacity"
 }
 
 output "firewall" {
@@ -571,6 +676,11 @@ output "iothub_dps_certificate" {
   description = "Iothub Dps Certificate"
 }
 
+output "ip_group" {
+  value       = local.az.ip_group
+  description = "Ip Group"
+}
+
 output "key_vault" {
   value       = local.az.key_vault
   description = "Key Vault"
@@ -621,6 +731,11 @@ output "lb_nat_rule" {
   description = "Lb Nat Rule"
 }
 
+output "lb_rule" {
+  value       = local.az.lb_rule
+  description = "Lb Rule"
+}
+
 output "linux_virtual_machine" {
   value       = local.az.linux_virtual_machine
   description = "Linux Virtual Machine"
@@ -641,9 +756,19 @@ output "local_network_gateway" {
   description = "Local Network Gateway"
 }
 
+output "log_analytics_query_pack" {
+  value       = local.az.log_analytics_query_pack
+  description = "Log Analytics Query Pack"
+}
+
 output "log_analytics_workspace" {
   value       = local.az.log_analytics_workspace
   description = "Log Analytics Workspace"
+}
+
+output "logic_app_integration_account" {
+  value       = local.az.logic_app_integration_account
+  description = "Logic App Integration Account"
 }
 
 output "logic_app_workflow" {
@@ -661,9 +786,19 @@ output "machine_learning_workspace" {
   description = "Machine Learning Workspace"
 }
 
+output "maintenance_configuration" {
+  value       = local.az.maintenance_configuration
+  description = "Maintenance Configuration"
+}
+
 output "managed_disk" {
   value       = local.az.managed_disk
   description = "Managed Disk"
+}
+
+output "management_group" {
+  value       = local.az.management_group
+  description = "Management Group"
 }
 
 output "maps_account" {
@@ -696,9 +831,24 @@ output "monitor_action_group" {
   description = "Monitor Action Group"
 }
 
+output "monitor_alert_processing_rule_action_group" {
+  value       = local.az.monitor_alert_processing_rule_action_group
+  description = "Monitor Alert Processing Rule Action Group"
+}
+
 output "monitor_autoscale_setting" {
   value       = local.az.monitor_autoscale_setting
   description = "Monitor Autoscale Setting"
+}
+
+output "monitor_data_collection_endpoint" {
+  value       = local.az.monitor_data_collection_endpoint
+  description = "Monitor Data Collection Endpoint"
+}
+
+output "monitor_data_collection_rule" {
+  value       = local.az.monitor_data_collection_rule
+  description = "Monitor Data Collection Rule"
 }
 
 output "monitor_diagnostic_setting" {
@@ -719,6 +869,11 @@ output "mssql_database" {
 output "mssql_elasticpool" {
   value       = local.az.mssql_elasticpool
   description = "Mssql Elasticpool"
+}
+
+output "mssql_job_agent" {
+  value       = local.az.mssql_job_agent
+  description = "Mssql Job Agent"
 }
 
 output "mssql_managed_instance" {
@@ -766,6 +921,11 @@ output "network_interface" {
   description = "Network Interface"
 }
 
+output "network_manager" {
+  value       = local.az.network_manager
+  description = "Network Manager"
+}
+
 output "network_security_group" {
   value       = local.az.network_security_group
   description = "Network Security Group"
@@ -804,6 +964,11 @@ output "notification_hub_namespace" {
 output "point_to_site_vpn_gateway" {
   value       = local.az.point_to_site_vpn_gateway
   description = "Point To Site Vpn Gateway"
+}
+
+output "policy_definition" {
+  value       = local.az.policy_definition
+  description = "Policy Definition"
 }
 
 output "postgresql_database" {
@@ -906,9 +1071,19 @@ output "public_ip_prefix" {
   description = "Public Ip Prefix"
 }
 
+output "purview_account" {
+  value       = local.az.purview_account
+  description = "Purview Account"
+}
+
 output "recovery_services_vault" {
   value       = local.az.recovery_services_vault
   description = "Recovery Services Vault"
+}
+
+output "redhat_openshift_cluster" {
+  value       = local.az.redhat_openshift_cluster
+  description = "Redhat Openshift Cluster"
 }
 
 output "redis_cache" {
@@ -936,6 +1111,11 @@ output "resource_group" {
   description = "Resource Group"
 }
 
+output "resource_group_template_deployment" {
+  value       = local.az.resource_group_template_deployment
+  description = "Resource Group Template Deployment"
+}
+
 output "role_assignment" {
   value       = local.az.role_assignment
   description = "Role Assignment"
@@ -949,6 +1129,16 @@ output "role_definition" {
 output "route" {
   value       = local.az.route
   description = "Route"
+}
+
+output "route_filter" {
+  value       = local.az.route_filter
+  description = "Route Filter"
+}
+
+output "route_server" {
+  value       = local.az.route_server
+  description = "Route Server"
 }
 
 output "route_table" {
@@ -1044,6 +1234,11 @@ output "sql_firewall_rule" {
 output "sql_server" {
   value       = local.az.sql_server
   description = "Sql Server"
+}
+
+output "ssh_public_key" {
+  value       = local.az.ssh_public_key
+  description = "Ssh Public Key"
 }
 
 output "static_web_app" {
@@ -1151,6 +1346,31 @@ output "subnet" {
   description = "Subnet"
 }
 
+output "subnet_service_endpoint_storage_policy" {
+  value       = local.az.subnet_service_endpoint_storage_policy
+  description = "Subnet Service Endpoint Storage Policy"
+}
+
+output "synapse_private_link_hub" {
+  value       = local.az.synapse_private_link_hub
+  description = "Synapse Private Link Hub"
+}
+
+output "synapse_spark_pool" {
+  value       = local.az.synapse_spark_pool
+  description = "Synapse Spark Pool"
+}
+
+output "synapse_sql_pool" {
+  value       = local.az.synapse_sql_pool
+  description = "Synapse Sql Pool"
+}
+
+output "synapse_workspace" {
+  value       = local.az.synapse_workspace
+  description = "Synapse Workspace"
+}
+
 output "template_deployment" {
   value       = local.az.template_deployment
   description = "Template Deployment"
@@ -1186,6 +1406,11 @@ output "virtual_desktop_workspace" {
   description = "Virtual Desktop Workspace"
 }
 
+output "virtual_hub" {
+  value       = local.az.virtual_hub
+  description = "Virtual Hub"
+}
+
 output "virtual_machine" {
   value       = local.az.virtual_machine
   description = "Virtual Machine"
@@ -1194,6 +1419,11 @@ output "virtual_machine" {
 output "virtual_machine_extension" {
   value       = local.az.virtual_machine_extension
   description = "Virtual Machine Extension"
+}
+
+output "virtual_machine_restore_point_collection" {
+  value       = local.az.virtual_machine_restore_point_collection
+  description = "Virtual Machine Restore Point Collection"
 }
 
 output "virtual_machine_scale_set" {
@@ -1229,6 +1459,31 @@ output "virtual_network_peering" {
 output "virtual_wan" {
   value       = local.az.virtual_wan
   description = "Virtual Wan"
+}
+
+output "vpn_gateway" {
+  value       = local.az.vpn_gateway
+  description = "Vpn Gateway"
+}
+
+output "vpn_gateway_connection" {
+  value       = local.az.vpn_gateway_connection
+  description = "Vpn Gateway Connection"
+}
+
+output "vpn_site" {
+  value       = local.az.vpn_site
+  description = "Vpn Site"
+}
+
+output "web_application_firewall_policy" {
+  value       = local.az.web_application_firewall_policy
+  description = "Web Application Firewall Policy"
+}
+
+output "web_application_firewall_policy_rule_group" {
+  value       = local.az.web_application_firewall_policy_rule_group
+  description = "Web Application Firewall Policy Rule Group"
 }
 
 output "windows_virtual_machine" {
