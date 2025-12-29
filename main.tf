@@ -477,14 +477,14 @@ locals {
       regex       = "^[a-zA-Z0-9]+$"
     }
     cosmosdb_account = {
-      name        = substr(join("-", compact([local.prefix, "cosmos", local.suffix])), 0, 63)
-      name_unique = substr(join("-", compact([local.prefix, "cosmos", local.suffix_unique])), 0, 63)
+      name        = substr(join("-", compact([local.prefix, "cosmos", local.suffix])), 0, 44)
+      name_unique = substr(join("-", compact([local.prefix, "cosmos", local.suffix_unique])), 0, 44)
       dashes      = true
       slug        = "cosmos"
-      min_length  = 1
-      max_length  = 63
-      scope       = "resourceGroup"
-      regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+      min_length  = 3
+      max_length  = 44
+      scope       = "global"
+      regex       = "^[a-z0-9][a-z0-9-]{2,}$"
     }
     cosmosdb_cassandra = {
       name        = substr(join("-", compact([local.prefix, "coscas", local.suffix])), 0, 44)
