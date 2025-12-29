@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/Azure/terraform-azurerm-naming/resourceDefinition.schema.json",
+  "title": "Azure Resource Definition",
+  "description": "Schema for validating Azure resource naming definitions used by terraform-azurerm-naming module",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/resourceDefinition"
+  },
+  "definitions": {
+    "resourceDefinition": {
+      "type": "object",
+      "description": "Definition of an Azure resource's naming constraints and conventions",
+      "required": ["name", "length", "scope", "slug", "dashes"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The resource identifier using snake_case format (e.g., 'storage_account', 'virtual_network')",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "length": {
+          "type": "object",
+          "description": "The minimum and maximum allowed length for the resource name",
+          "required": ["min", "max"],
+          "properties": {
+            "min": {
+              "type": "integer",
+              "description": "Minimum allowed length for the resource name",
+              "minimum": 1
+            },
+            "max": {
+              "type": "integer",
+              "description": "Maximum allowed length for the resource name",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "regex": {
+          "type": "string",
+          "description": "Regular expression pattern for validating the resource name format"
+        },
+        "scope": {
+          "type": "string",
+          "description": "The uniqueness scope for the resource name. Determines where the name must be unique.",
+          "enum": [
+            "global",
+            "resourceGroup",
+            "parent",
+            "region",
+            "tenant",
+            "subscription",
+            "assignment",
+            "definition"
+          ]
+        },
+        "slug": {
+          "type": "string",
+          "description": "Short abbreviation used as a prefix/suffix in the generated resource name (e.g., 'st' for storage_account, 'vnet' for virtual_network)",
+          "pattern": "^[a-z][a-z0-9]*$"
+        },
+        "dashes": {
+          "type": "boolean",
+          "description": "Whether dashes (hyphens) are allowed in the resource name"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
