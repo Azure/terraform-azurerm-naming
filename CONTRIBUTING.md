@@ -104,7 +104,7 @@ The project uses a Go-based code generator that transforms JSON resource definit
 
 ### Step 1: Find the Naming Rules
 
-Look up the resource's naming rules in the [Azure naming rules documentation](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules).
+Look up the resource's naming rules in the [Azure naming rules documentation](https://learn.microsoft.com/azure/azure-resource-manager/management/resource-name-rules).
 
 ### Step 2: Choose the Right JSON File
 
