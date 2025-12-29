@@ -33,7 +33,7 @@ locals {
   suffix_unique          = join("-", concat(var.suffix, [local.random]))
   suffix_safe            = lower(join("", var.suffix))
   suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
-  // Names based in the recomendations of
+  // Names based on the recommendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
     analysis_services_server = {
