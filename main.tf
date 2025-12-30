@@ -1127,8 +1127,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     fabric_capacity = {
-      name        = substr(join("", compact([local.prefix_safe, "fc", local.suffix_safe])), 0, 63)
-      name_unique = substr(join("", compact([local.prefix_safe, "fc", local.suffix_unique_safe])), 0, 63)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "fc", local.suffix_safe])), 0, 63)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "fc", local.suffix_unique_safe])), 0, 63)
       dashes      = false
       slug        = "fc"
       min_length  = 3
@@ -2737,8 +2737,8 @@ locals {
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
     }
     synapse_spark_pool = {
-      name        = substr(join("", compact([local.prefix_safe, "synsp", local.suffix_safe])), 0, 32)
-      name_unique = substr(join("", compact([local.prefix_safe, "synsp", local.suffix_unique_safe])), 0, 32)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "synsp", local.suffix_safe])), 0, 32)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "synsp", local.suffix_unique_safe])), 0, 32)
       dashes      = false
       slug        = "synsp"
       min_length  = 3
@@ -2747,8 +2747,8 @@ locals {
       regex       = "^[a-zA-Z0-9]+$"
     }
     synapse_sql_pool = {
-      name        = substr(join("", compact([local.prefix_safe, "syndp", local.suffix_safe])), 0, 60)
-      name_unique = substr(join("", compact([local.prefix_safe, "syndp", local.suffix_unique_safe])), 0, 60)
+      name        = substr(join(var.custom-separator, compact([local.prefix_safe, "syndp", local.suffix_safe])), 0, 60)
+      name_unique = substr(join(var.custom-separator, compact([local.prefix_safe, "syndp", local.suffix_unique_safe])), 0, 60)
       dashes      = false
       slug        = "syndp"
       min_length  = 1
