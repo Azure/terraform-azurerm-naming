@@ -43,7 +43,7 @@ Other advanced usages will be explained in the [Advanced usage](#advanced-usage)
 - Run `make install` in the root directory of the repo.
 
 > [!NOTE]
-> The powershell users can use the make.ps1 if they don't have make installed in their windows machine.
+> If you are using a Windows machine and don't have `make` installed, you can use the `make.ps1` with PowerShell.
 
 ## Modifying resources
 
