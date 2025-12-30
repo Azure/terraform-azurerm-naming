@@ -66,6 +66,7 @@ Each one of the resources emits the name of the resource and other properties:
 | max_length | integer | Maximum length allowed for this resource name |
 | scope | string | scope which this name needs to be unique, such as `resourcegroup` or `global`  |
 | regex | string | Terraform compatible version of the regex |
+| separator | string | The separator character for the resource |
 
 ### Example Output
 
@@ -81,6 +82,7 @@ postgresql_server = {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
 ```
 
