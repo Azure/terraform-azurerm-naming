@@ -42,6 +42,9 @@ Other advanced usages will be explained in the [Advanced usage](#advanced-usage)
 
 - Run `make install` in the root directory of the repo.
 
+> [!NOTE]
+> The powershell users can use the make.ps1 if they don't have make installed in their windows machine.
+
 ## Modifying resources
 
 The resources are automatically generated using `go` to change the generation please change the file on the `templates` folder. To add a new resource, including its definition in the file `resourceDefinition.json`, and it will be automatically generated when `main.go` is run.
