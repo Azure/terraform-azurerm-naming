@@ -24,7 +24,7 @@ type Resource struct {
 	Dashes bool    `json:"dashes"`
 }
 
-// Length allowed for that resorce
+// Length allowed for that resource
 type Length struct {
 	Min int `json:"min"`
 	Max int `json:"max"`
