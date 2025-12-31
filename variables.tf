@@ -27,3 +27,14 @@ variable "unique-include-numbers" {
   type        = bool
   default     = true
 }
+
+variable "custom-separator" {
+  description = "Custom separator for resource types that don't allow hyphens"
+  type        = string
+  default     = ""
+
+  validation {
+    condition     = var.custom-separator != "-"
+    error_message = "The custom-separator value must not be a hyphen (-)"
+  }
+}
