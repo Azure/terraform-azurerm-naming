@@ -12,8 +12,8 @@ test {
 
 {{- range .}}
 
-run "{{- .Name }}_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "{{- .Name }}_test" {
+    # This test checks to make sure the resource "{{ .Name }}" values are as expected.
     command = plan
 
     variables {

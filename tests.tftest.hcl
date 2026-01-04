@@ -8,8 +8,8 @@ test {
   parallel = true
 }
 
-run "analysis_services_server_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "analysis_services_server_test" {
+    # This test checks to make sure the resource "analysis_services_server" values are as expected.
     command = plan
 
     variables {
@@ -52,8 +52,8 @@ run "analysis_services_server_slug_test" {
     }
 }
 
-run "api_management_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "api_management_test" {
+    # This test checks to make sure the resource "api_management" values are as expected.
     command = plan
 
     variables {
@@ -96,8 +96,8 @@ run "api_management_slug_test" {
     }
 }
 
-run "app_configuration_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "app_configuration_test" {
+    # This test checks to make sure the resource "app_configuration" values are as expected.
     command = plan
 
     variables {
@@ -140,8 +140,8 @@ run "app_configuration_slug_test" {
     }
 }
 
-run "app_service_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "app_service_test" {
+    # This test checks to make sure the resource "app_service" values are as expected.
     command = plan
 
     variables {
@@ -184,8 +184,8 @@ run "app_service_slug_test" {
     }
 }
 
-run "app_service_environment_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "app_service_environment_test" {
+    # This test checks to make sure the resource "app_service_environment" values are as expected.
     command = plan
 
     variables {
@@ -228,8 +228,8 @@ run "app_service_environment_slug_test" {
     }
 }
 
-run "app_service_plan_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "app_service_plan_test" {
+    # This test checks to make sure the resource "app_service_plan" values are as expected.
     command = plan
 
     variables {
@@ -272,8 +272,8 @@ run "app_service_plan_slug_test" {
     }
 }
 
-run "application_gateway_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "application_gateway_test" {
+    # This test checks to make sure the resource "application_gateway" values are as expected.
     command = plan
 
     variables {
@@ -316,8 +316,8 @@ run "application_gateway_slug_test" {
     }
 }
 
-run "application_insights_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "application_insights_test" {
+    # This test checks to make sure the resource "application_insights" values are as expected.
     command = plan
 
     variables {
@@ -360,8 +360,8 @@ run "application_insights_slug_test" {
     }
 }
 
-run "application_security_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "application_security_group_test" {
+    # This test checks to make sure the resource "application_security_group" values are as expected.
     command = plan
 
     variables {
@@ -404,8 +404,8 @@ run "application_security_group_slug_test" {
     }
 }
 
-run "automation_account_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "automation_account_test" {
+    # This test checks to make sure the resource "automation_account" values are as expected.
     command = plan
 
     variables {
@@ -448,8 +448,8 @@ run "automation_account_slug_test" {
     }
 }
 
-run "automation_certificate_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "automation_certificate_test" {
+    # This test checks to make sure the resource "automation_certificate" values are as expected.
     command = plan
 
     variables {
@@ -492,8 +492,8 @@ run "automation_certificate_slug_test" {
     }
 }
 
-run "automation_credential_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "automation_credential_test" {
+    # This test checks to make sure the resource "automation_credential" values are as expected.
     command = plan
 
     variables {
@@ -536,8 +536,8 @@ run "automation_credential_slug_test" {
     }
 }
 
-run "automation_runbook_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "automation_runbook_test" {
+    # This test checks to make sure the resource "automation_runbook" values are as expected.
     command = plan
 
     variables {
@@ -580,8 +580,8 @@ run "automation_runbook_slug_test" {
     }
 }
 
-run "automation_schedule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "automation_schedule_test" {
+    # This test checks to make sure the resource "automation_schedule" values are as expected.
     command = plan
 
     variables {
@@ -624,8 +624,8 @@ run "automation_schedule_slug_test" {
     }
 }
 
-run "automation_variable_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "automation_variable_test" {
+    # This test checks to make sure the resource "automation_variable" values are as expected.
     command = plan
 
     variables {
@@ -668,8 +668,8 @@ run "automation_variable_slug_test" {
     }
 }
 
-run "availability_set_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "availability_set_test" {
+    # This test checks to make sure the resource "availability_set" values are as expected.
     command = plan
 
     variables {
@@ -712,8 +712,8 @@ run "availability_set_slug_test" {
     }
 }
 
-run "backup_policy_vm_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "backup_policy_vm_test" {
+    # This test checks to make sure the resource "backup_policy_vm" values are as expected.
     command = plan
 
     variables {
@@ -756,8 +756,8 @@ run "backup_policy_vm_slug_test" {
     }
 }
 
-run "bastion_host_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "bastion_host_test" {
+    # This test checks to make sure the resource "bastion_host" values are as expected.
     command = plan
 
     variables {
@@ -800,8 +800,8 @@ run "bastion_host_slug_test" {
     }
 }
 
-run "batch_account_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "batch_account_test" {
+    # This test checks to make sure the resource "batch_account" values are as expected.
     command = plan
 
     variables {
@@ -844,8 +844,8 @@ run "batch_account_slug_test" {
     }
 }
 
-run "batch_application_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "batch_application_test" {
+    # This test checks to make sure the resource "batch_application" values are as expected.
     command = plan
 
     variables {
@@ -888,8 +888,8 @@ run "batch_application_slug_test" {
     }
 }
 
-run "batch_certificate_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "batch_certificate_test" {
+    # This test checks to make sure the resource "batch_certificate" values are as expected.
     command = plan
 
     variables {
@@ -932,8 +932,8 @@ run "batch_certificate_slug_test" {
     }
 }
 
-run "batch_pool_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "batch_pool_test" {
+    # This test checks to make sure the resource "batch_pool" values are as expected.
     command = plan
 
     variables {
@@ -976,8 +976,8 @@ run "batch_pool_slug_test" {
     }
 }
 
-run "bot_channel_directline_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "bot_channel_directline_test" {
+    # This test checks to make sure the resource "bot_channel_directline" values are as expected.
     command = plan
 
     variables {
@@ -1020,8 +1020,8 @@ run "bot_channel_directline_slug_test" {
     }
 }
 
-run "bot_channel_email_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "bot_channel_email_test" {
+    # This test checks to make sure the resource "bot_channel_email" values are as expected.
     command = plan
 
     variables {
@@ -1064,8 +1064,8 @@ run "bot_channel_email_slug_test" {
     }
 }
 
-run "bot_channel_ms_teams_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "bot_channel_ms_teams_test" {
+    # This test checks to make sure the resource "bot_channel_ms_teams" values are as expected.
     command = plan
 
     variables {
@@ -1108,8 +1108,8 @@ run "bot_channel_ms_teams_slug_test" {
     }
 }
 
-run "bot_channel_slack_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "bot_channel_slack_test" {
+    # This test checks to make sure the resource "bot_channel_slack" values are as expected.
     command = plan
 
     variables {
@@ -1152,8 +1152,8 @@ run "bot_channel_slack_slug_test" {
     }
 }
 
-run "bot_channels_registration_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "bot_channels_registration_test" {
+    # This test checks to make sure the resource "bot_channels_registration" values are as expected.
     command = plan
 
     variables {
@@ -1196,8 +1196,8 @@ run "bot_channels_registration_slug_test" {
     }
 }
 
-run "bot_connection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "bot_connection_test" {
+    # This test checks to make sure the resource "bot_connection" values are as expected.
     command = plan
 
     variables {
@@ -1240,8 +1240,8 @@ run "bot_connection_slug_test" {
     }
 }
 
-run "bot_web_app_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "bot_web_app_test" {
+    # This test checks to make sure the resource "bot_web_app" values are as expected.
     command = plan
 
     variables {
@@ -1284,8 +1284,8 @@ run "bot_web_app_slug_test" {
     }
 }
 
-run "cdn_endpoint_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cdn_endpoint_test" {
+    # This test checks to make sure the resource "cdn_endpoint" values are as expected.
     command = plan
 
     variables {
@@ -1328,8 +1328,8 @@ run "cdn_endpoint_slug_test" {
     }
 }
 
-run "cdn_frontdoor_endpoint_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cdn_frontdoor_endpoint_test" {
+    # This test checks to make sure the resource "cdn_frontdoor_endpoint" values are as expected.
     command = plan
 
     variables {
@@ -1372,8 +1372,8 @@ run "cdn_frontdoor_endpoint_slug_test" {
     }
 }
 
-run "cdn_frontdoor_origin_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cdn_frontdoor_origin_test" {
+    # This test checks to make sure the resource "cdn_frontdoor_origin" values are as expected.
     command = plan
 
     variables {
@@ -1416,8 +1416,8 @@ run "cdn_frontdoor_origin_slug_test" {
     }
 }
 
-run "cdn_frontdoor_origin_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cdn_frontdoor_origin_group_test" {
+    # This test checks to make sure the resource "cdn_frontdoor_origin_group" values are as expected.
     command = plan
 
     variables {
@@ -1460,8 +1460,8 @@ run "cdn_frontdoor_origin_group_slug_test" {
     }
 }
 
-run "cdn_frontdoor_profile_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cdn_frontdoor_profile_test" {
+    # This test checks to make sure the resource "cdn_frontdoor_profile" values are as expected.
     command = plan
 
     variables {
@@ -1504,8 +1504,8 @@ run "cdn_frontdoor_profile_slug_test" {
     }
 }
 
-run "cdn_frontdoor_route_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cdn_frontdoor_route_test" {
+    # This test checks to make sure the resource "cdn_frontdoor_route" values are as expected.
     command = plan
 
     variables {
@@ -1548,8 +1548,8 @@ run "cdn_frontdoor_route_slug_test" {
     }
 }
 
-run "cdn_profile_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cdn_profile_test" {
+    # This test checks to make sure the resource "cdn_profile" values are as expected.
     command = plan
 
     variables {
@@ -1592,8 +1592,8 @@ run "cdn_profile_slug_test" {
     }
 }
 
-run "cognitive_account_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cognitive_account_test" {
+    # This test checks to make sure the resource "cognitive_account" values are as expected.
     command = plan
 
     variables {
@@ -1636,8 +1636,8 @@ run "cognitive_account_slug_test" {
     }
 }
 
-run "communication_service_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "communication_service_test" {
+    # This test checks to make sure the resource "communication_service" values are as expected.
     command = plan
 
     variables {
@@ -1680,8 +1680,8 @@ run "communication_service_slug_test" {
     }
 }
 
-run "container_app_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "container_app_test" {
+    # This test checks to make sure the resource "container_app" values are as expected.
     command = plan
 
     variables {
@@ -1724,8 +1724,8 @@ run "container_app_slug_test" {
     }
 }
 
-run "container_app_environment_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "container_app_environment_test" {
+    # This test checks to make sure the resource "container_app_environment" values are as expected.
     command = plan
 
     variables {
@@ -1768,8 +1768,8 @@ run "container_app_environment_slug_test" {
     }
 }
 
-run "container_app_job_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "container_app_job_test" {
+    # This test checks to make sure the resource "container_app_job" values are as expected.
     command = plan
 
     variables {
@@ -1812,8 +1812,8 @@ run "container_app_job_slug_test" {
     }
 }
 
-run "container_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "container_group_test" {
+    # This test checks to make sure the resource "container_group" values are as expected.
     command = plan
 
     variables {
@@ -1856,8 +1856,8 @@ run "container_group_slug_test" {
     }
 }
 
-run "container_registry_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "container_registry_test" {
+    # This test checks to make sure the resource "container_registry" values are as expected.
     command = plan
 
     variables {
@@ -1900,8 +1900,8 @@ run "container_registry_slug_test" {
     }
 }
 
-run "container_registry_webhook_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "container_registry_webhook_test" {
+    # This test checks to make sure the resource "container_registry_webhook" values are as expected.
     command = plan
 
     variables {
@@ -1944,8 +1944,8 @@ run "container_registry_webhook_slug_test" {
     }
 }
 
-run "cosmosdb_account_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cosmosdb_account_test" {
+    # This test checks to make sure the resource "cosmosdb_account" values are as expected.
     command = plan
 
     variables {
@@ -1988,8 +1988,8 @@ run "cosmosdb_account_slug_test" {
     }
 }
 
-run "cosmosdb_cassandra_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cosmosdb_cassandra_test" {
+    # This test checks to make sure the resource "cosmosdb_cassandra" values are as expected.
     command = plan
 
     variables {
@@ -2032,8 +2032,8 @@ run "cosmosdb_cassandra_slug_test" {
     }
 }
 
-run "cosmosdb_cassandra_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cosmosdb_cassandra_cluster_test" {
+    # This test checks to make sure the resource "cosmosdb_cassandra_cluster" values are as expected.
     command = plan
 
     variables {
@@ -2076,8 +2076,8 @@ run "cosmosdb_cassandra_cluster_slug_test" {
     }
 }
 
-run "cosmosdb_cassandra_datacenter_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cosmosdb_cassandra_datacenter_test" {
+    # This test checks to make sure the resource "cosmosdb_cassandra_datacenter" values are as expected.
     command = plan
 
     variables {
@@ -2120,8 +2120,8 @@ run "cosmosdb_cassandra_datacenter_slug_test" {
     }
 }
 
-run "cosmosdb_gremlin_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cosmosdb_gremlin_test" {
+    # This test checks to make sure the resource "cosmosdb_gremlin" values are as expected.
     command = plan
 
     variables {
@@ -2164,8 +2164,8 @@ run "cosmosdb_gremlin_slug_test" {
     }
 }
 
-run "cosmosdb_mongodb_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cosmosdb_mongodb_test" {
+    # This test checks to make sure the resource "cosmosdb_mongodb" values are as expected.
     command = plan
 
     variables {
@@ -2208,8 +2208,8 @@ run "cosmosdb_mongodb_slug_test" {
     }
 }
 
-run "cosmosdb_nosql_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cosmosdb_nosql_test" {
+    # This test checks to make sure the resource "cosmosdb_nosql" values are as expected.
     command = plan
 
     variables {
@@ -2252,8 +2252,8 @@ run "cosmosdb_nosql_slug_test" {
     }
 }
 
-run "cosmosdb_postgres_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cosmosdb_postgres_test" {
+    # This test checks to make sure the resource "cosmosdb_postgres" values are as expected.
     command = plan
 
     variables {
@@ -2296,8 +2296,8 @@ run "cosmosdb_postgres_slug_test" {
     }
 }
 
-run "cosmosdb_tables_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "cosmosdb_tables_test" {
+    # This test checks to make sure the resource "cosmosdb_tables" values are as expected.
     command = plan
 
     variables {
@@ -2340,8 +2340,8 @@ run "cosmosdb_tables_slug_test" {
     }
 }
 
-run "custom_provider_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "custom_provider_test" {
+    # This test checks to make sure the resource "custom_provider" values are as expected.
     command = plan
 
     variables {
@@ -2384,8 +2384,8 @@ run "custom_provider_slug_test" {
     }
 }
 
-run "dashboard_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dashboard_test" {
+    # This test checks to make sure the resource "dashboard" values are as expected.
     command = plan
 
     variables {
@@ -2428,8 +2428,8 @@ run "dashboard_slug_test" {
     }
 }
 
-run "dashboard_grafana_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dashboard_grafana_test" {
+    # This test checks to make sure the resource "dashboard_grafana" values are as expected.
     command = plan
 
     variables {
@@ -2472,8 +2472,8 @@ run "dashboard_grafana_slug_test" {
     }
 }
 
-run "data_factory_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_test" {
+    # This test checks to make sure the resource "data_factory" values are as expected.
     command = plan
 
     variables {
@@ -2516,8 +2516,8 @@ run "data_factory_slug_test" {
     }
 }
 
-run "data_factory_dataset_mysql_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_dataset_mysql_test" {
+    # This test checks to make sure the resource "data_factory_dataset_mysql" values are as expected.
     command = plan
 
     variables {
@@ -2560,8 +2560,8 @@ run "data_factory_dataset_mysql_slug_test" {
     }
 }
 
-run "data_factory_dataset_postgresql_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_dataset_postgresql_test" {
+    # This test checks to make sure the resource "data_factory_dataset_postgresql" values are as expected.
     command = plan
 
     variables {
@@ -2604,8 +2604,8 @@ run "data_factory_dataset_postgresql_slug_test" {
     }
 }
 
-run "data_factory_dataset_sql_server_table_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_dataset_sql_server_table_test" {
+    # This test checks to make sure the resource "data_factory_dataset_sql_server_table" values are as expected.
     command = plan
 
     variables {
@@ -2648,8 +2648,8 @@ run "data_factory_dataset_sql_server_table_slug_test" {
     }
 }
 
-run "data_factory_integration_runtime_managed_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_integration_runtime_managed_test" {
+    # This test checks to make sure the resource "data_factory_integration_runtime_managed" values are as expected.
     command = plan
 
     variables {
@@ -2692,8 +2692,8 @@ run "data_factory_integration_runtime_managed_slug_test" {
     }
 }
 
-run "data_factory_linked_service_data_lake_storage_gen2_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_linked_service_data_lake_storage_gen2_test" {
+    # This test checks to make sure the resource "data_factory_linked_service_data_lake_storage_gen2" values are as expected.
     command = plan
 
     variables {
@@ -2736,8 +2736,8 @@ run "data_factory_linked_service_data_lake_storage_gen2_slug_test" {
     }
 }
 
-run "data_factory_linked_service_key_vault_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_linked_service_key_vault_test" {
+    # This test checks to make sure the resource "data_factory_linked_service_key_vault" values are as expected.
     command = plan
 
     variables {
@@ -2780,8 +2780,8 @@ run "data_factory_linked_service_key_vault_slug_test" {
     }
 }
 
-run "data_factory_linked_service_mysql_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_linked_service_mysql_test" {
+    # This test checks to make sure the resource "data_factory_linked_service_mysql" values are as expected.
     command = plan
 
     variables {
@@ -2824,8 +2824,8 @@ run "data_factory_linked_service_mysql_slug_test" {
     }
 }
 
-run "data_factory_linked_service_postgresql_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_linked_service_postgresql_test" {
+    # This test checks to make sure the resource "data_factory_linked_service_postgresql" values are as expected.
     command = plan
 
     variables {
@@ -2868,8 +2868,8 @@ run "data_factory_linked_service_postgresql_slug_test" {
     }
 }
 
-run "data_factory_linked_service_sql_server_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_linked_service_sql_server_test" {
+    # This test checks to make sure the resource "data_factory_linked_service_sql_server" values are as expected.
     command = plan
 
     variables {
@@ -2912,8 +2912,8 @@ run "data_factory_linked_service_sql_server_slug_test" {
     }
 }
 
-run "data_factory_pipeline_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_pipeline_test" {
+    # This test checks to make sure the resource "data_factory_pipeline" values are as expected.
     command = plan
 
     variables {
@@ -2956,8 +2956,8 @@ run "data_factory_pipeline_slug_test" {
     }
 }
 
-run "data_factory_trigger_schedule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_factory_trigger_schedule_test" {
+    # This test checks to make sure the resource "data_factory_trigger_schedule" values are as expected.
     command = plan
 
     variables {
@@ -3000,8 +3000,8 @@ run "data_factory_trigger_schedule_slug_test" {
     }
 }
 
-run "data_lake_analytics_account_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_lake_analytics_account_test" {
+    # This test checks to make sure the resource "data_lake_analytics_account" values are as expected.
     command = plan
 
     variables {
@@ -3044,8 +3044,8 @@ run "data_lake_analytics_account_slug_test" {
     }
 }
 
-run "data_lake_analytics_firewall_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_lake_analytics_firewall_rule_test" {
+    # This test checks to make sure the resource "data_lake_analytics_firewall_rule" values are as expected.
     command = plan
 
     variables {
@@ -3088,8 +3088,8 @@ run "data_lake_analytics_firewall_rule_slug_test" {
     }
 }
 
-run "data_lake_store_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_lake_store_test" {
+    # This test checks to make sure the resource "data_lake_store" values are as expected.
     command = plan
 
     variables {
@@ -3132,8 +3132,8 @@ run "data_lake_store_slug_test" {
     }
 }
 
-run "data_lake_store_firewall_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_lake_store_firewall_rule_test" {
+    # This test checks to make sure the resource "data_lake_store_firewall_rule" values are as expected.
     command = plan
 
     variables {
@@ -3176,8 +3176,8 @@ run "data_lake_store_firewall_rule_slug_test" {
     }
 }
 
-run "data_protection_backup_vault_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "data_protection_backup_vault_test" {
+    # This test checks to make sure the resource "data_protection_backup_vault" values are as expected.
     command = plan
 
     variables {
@@ -3220,8 +3220,8 @@ run "data_protection_backup_vault_slug_test" {
     }
 }
 
-run "database_migration_project_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "database_migration_project_test" {
+    # This test checks to make sure the resource "database_migration_project" values are as expected.
     command = plan
 
     variables {
@@ -3264,8 +3264,8 @@ run "database_migration_project_slug_test" {
     }
 }
 
-run "database_migration_service_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "database_migration_service_test" {
+    # This test checks to make sure the resource "database_migration_service" values are as expected.
     command = plan
 
     variables {
@@ -3308,8 +3308,8 @@ run "database_migration_service_slug_test" {
     }
 }
 
-run "databricks_access_connector_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "databricks_access_connector_test" {
+    # This test checks to make sure the resource "databricks_access_connector" values are as expected.
     command = plan
 
     variables {
@@ -3352,8 +3352,8 @@ run "databricks_access_connector_slug_test" {
     }
 }
 
-run "databricks_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "databricks_cluster_test" {
+    # This test checks to make sure the resource "databricks_cluster" values are as expected.
     command = plan
 
     variables {
@@ -3396,8 +3396,8 @@ run "databricks_cluster_slug_test" {
     }
 }
 
-run "databricks_high_concurrency_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "databricks_high_concurrency_cluster_test" {
+    # This test checks to make sure the resource "databricks_high_concurrency_cluster" values are as expected.
     command = plan
 
     variables {
@@ -3440,8 +3440,8 @@ run "databricks_high_concurrency_cluster_slug_test" {
     }
 }
 
-run "databricks_standard_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "databricks_standard_cluster_test" {
+    # This test checks to make sure the resource "databricks_standard_cluster" values are as expected.
     command = plan
 
     variables {
@@ -3484,8 +3484,8 @@ run "databricks_standard_cluster_slug_test" {
     }
 }
 
-run "databricks_workspace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "databricks_workspace_test" {
+    # This test checks to make sure the resource "databricks_workspace" values are as expected.
     command = plan
 
     variables {
@@ -3528,8 +3528,8 @@ run "databricks_workspace_slug_test" {
     }
 }
 
-run "dev_test_lab_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dev_test_lab_test" {
+    # This test checks to make sure the resource "dev_test_lab" values are as expected.
     command = plan
 
     variables {
@@ -3572,8 +3572,8 @@ run "dev_test_lab_slug_test" {
     }
 }
 
-run "dev_test_linux_virtual_machine_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dev_test_linux_virtual_machine_test" {
+    # This test checks to make sure the resource "dev_test_linux_virtual_machine" values are as expected.
     command = plan
 
     variables {
@@ -3616,8 +3616,8 @@ run "dev_test_linux_virtual_machine_slug_test" {
     }
 }
 
-run "dev_test_windows_virtual_machine_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dev_test_windows_virtual_machine_test" {
+    # This test checks to make sure the resource "dev_test_windows_virtual_machine" values are as expected.
     command = plan
 
     variables {
@@ -3660,8 +3660,8 @@ run "dev_test_windows_virtual_machine_slug_test" {
     }
 }
 
-run "disk_encryption_set_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "disk_encryption_set_test" {
+    # This test checks to make sure the resource "disk_encryption_set" values are as expected.
     command = plan
 
     variables {
@@ -3704,8 +3704,8 @@ run "disk_encryption_set_slug_test" {
     }
 }
 
-run "dns_a_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_a_record_test" {
+    # This test checks to make sure the resource "dns_a_record" values are as expected.
     command = plan
 
     variables {
@@ -3748,8 +3748,8 @@ run "dns_a_record_slug_test" {
     }
 }
 
-run "dns_aaaa_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_aaaa_record_test" {
+    # This test checks to make sure the resource "dns_aaaa_record" values are as expected.
     command = plan
 
     variables {
@@ -3792,8 +3792,8 @@ run "dns_aaaa_record_slug_test" {
     }
 }
 
-run "dns_caa_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_caa_record_test" {
+    # This test checks to make sure the resource "dns_caa_record" values are as expected.
     command = plan
 
     variables {
@@ -3836,8 +3836,8 @@ run "dns_caa_record_slug_test" {
     }
 }
 
-run "dns_cname_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_cname_record_test" {
+    # This test checks to make sure the resource "dns_cname_record" values are as expected.
     command = plan
 
     variables {
@@ -3880,8 +3880,8 @@ run "dns_cname_record_slug_test" {
     }
 }
 
-run "dns_mx_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_mx_record_test" {
+    # This test checks to make sure the resource "dns_mx_record" values are as expected.
     command = plan
 
     variables {
@@ -3924,8 +3924,8 @@ run "dns_mx_record_slug_test" {
     }
 }
 
-run "dns_ns_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_ns_record_test" {
+    # This test checks to make sure the resource "dns_ns_record" values are as expected.
     command = plan
 
     variables {
@@ -3968,8 +3968,8 @@ run "dns_ns_record_slug_test" {
     }
 }
 
-run "dns_private_resolver_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_private_resolver_test" {
+    # This test checks to make sure the resource "dns_private_resolver" values are as expected.
     command = plan
 
     variables {
@@ -4012,8 +4012,8 @@ run "dns_private_resolver_slug_test" {
     }
 }
 
-run "dns_ptr_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_ptr_record_test" {
+    # This test checks to make sure the resource "dns_ptr_record" values are as expected.
     command = plan
 
     variables {
@@ -4056,8 +4056,8 @@ run "dns_ptr_record_slug_test" {
     }
 }
 
-run "dns_txt_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_txt_record_test" {
+    # This test checks to make sure the resource "dns_txt_record" values are as expected.
     command = plan
 
     variables {
@@ -4100,8 +4100,8 @@ run "dns_txt_record_slug_test" {
     }
 }
 
-run "dns_zone_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "dns_zone_test" {
+    # This test checks to make sure the resource "dns_zone" values are as expected.
     command = plan
 
     variables {
@@ -4144,8 +4144,8 @@ run "dns_zone_slug_test" {
     }
 }
 
-run "eventgrid_domain_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventgrid_domain_test" {
+    # This test checks to make sure the resource "eventgrid_domain" values are as expected.
     command = plan
 
     variables {
@@ -4188,8 +4188,8 @@ run "eventgrid_domain_slug_test" {
     }
 }
 
-run "eventgrid_domain_topic_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventgrid_domain_topic_test" {
+    # This test checks to make sure the resource "eventgrid_domain_topic" values are as expected.
     command = plan
 
     variables {
@@ -4232,8 +4232,8 @@ run "eventgrid_domain_topic_slug_test" {
     }
 }
 
-run "eventgrid_event_subscription_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventgrid_event_subscription_test" {
+    # This test checks to make sure the resource "eventgrid_event_subscription" values are as expected.
     command = plan
 
     variables {
@@ -4276,8 +4276,8 @@ run "eventgrid_event_subscription_slug_test" {
     }
 }
 
-run "eventgrid_namespace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventgrid_namespace_test" {
+    # This test checks to make sure the resource "eventgrid_namespace" values are as expected.
     command = plan
 
     variables {
@@ -4320,8 +4320,8 @@ run "eventgrid_namespace_slug_test" {
     }
 }
 
-run "eventgrid_system_topic_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventgrid_system_topic_test" {
+    # This test checks to make sure the resource "eventgrid_system_topic" values are as expected.
     command = plan
 
     variables {
@@ -4364,8 +4364,8 @@ run "eventgrid_system_topic_slug_test" {
     }
 }
 
-run "eventgrid_topic_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventgrid_topic_test" {
+    # This test checks to make sure the resource "eventgrid_topic" values are as expected.
     command = plan
 
     variables {
@@ -4408,8 +4408,8 @@ run "eventgrid_topic_slug_test" {
     }
 }
 
-run "eventhub_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventhub_test" {
+    # This test checks to make sure the resource "eventhub" values are as expected.
     command = plan
 
     variables {
@@ -4452,8 +4452,8 @@ run "eventhub_slug_test" {
     }
 }
 
-run "eventhub_authorization_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventhub_authorization_rule_test" {
+    # This test checks to make sure the resource "eventhub_authorization_rule" values are as expected.
     command = plan
 
     variables {
@@ -4496,8 +4496,8 @@ run "eventhub_authorization_rule_slug_test" {
     }
 }
 
-run "eventhub_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventhub_cluster_test" {
+    # This test checks to make sure the resource "eventhub_cluster" values are as expected.
     command = plan
 
     variables {
@@ -4540,8 +4540,8 @@ run "eventhub_cluster_slug_test" {
     }
 }
 
-run "eventhub_consumer_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventhub_consumer_group_test" {
+    # This test checks to make sure the resource "eventhub_consumer_group" values are as expected.
     command = plan
 
     variables {
@@ -4584,8 +4584,8 @@ run "eventhub_consumer_group_slug_test" {
     }
 }
 
-run "eventhub_namespace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventhub_namespace_test" {
+    # This test checks to make sure the resource "eventhub_namespace" values are as expected.
     command = plan
 
     variables {
@@ -4628,8 +4628,8 @@ run "eventhub_namespace_slug_test" {
     }
 }
 
-run "eventhub_namespace_authorization_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventhub_namespace_authorization_rule_test" {
+    # This test checks to make sure the resource "eventhub_namespace_authorization_rule" values are as expected.
     command = plan
 
     variables {
@@ -4672,8 +4672,8 @@ run "eventhub_namespace_authorization_rule_slug_test" {
     }
 }
 
-run "eventhub_namespace_disaster_recovery_config_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "eventhub_namespace_disaster_recovery_config_test" {
+    # This test checks to make sure the resource "eventhub_namespace_disaster_recovery_config" values are as expected.
     command = plan
 
     variables {
@@ -4716,8 +4716,8 @@ run "eventhub_namespace_disaster_recovery_config_slug_test" {
     }
 }
 
-run "express_route_circuit_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "express_route_circuit_test" {
+    # This test checks to make sure the resource "express_route_circuit" values are as expected.
     command = plan
 
     variables {
@@ -4760,8 +4760,8 @@ run "express_route_circuit_slug_test" {
     }
 }
 
-run "express_route_gateway_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "express_route_gateway_test" {
+    # This test checks to make sure the resource "express_route_gateway" values are as expected.
     command = plan
 
     variables {
@@ -4804,8 +4804,8 @@ run "express_route_gateway_slug_test" {
     }
 }
 
-run "fabric_capacity_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "fabric_capacity_test" {
+    # This test checks to make sure the resource "fabric_capacity" values are as expected.
     command = plan
 
     variables {
@@ -4848,8 +4848,8 @@ run "fabric_capacity_slug_test" {
     }
 }
 
-run "firewall_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "firewall_test" {
+    # This test checks to make sure the resource "firewall" values are as expected.
     command = plan
 
     variables {
@@ -4892,8 +4892,8 @@ run "firewall_slug_test" {
     }
 }
 
-run "firewall_application_rule_collection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "firewall_application_rule_collection_test" {
+    # This test checks to make sure the resource "firewall_application_rule_collection" values are as expected.
     command = plan
 
     variables {
@@ -4936,8 +4936,8 @@ run "firewall_application_rule_collection_slug_test" {
     }
 }
 
-run "firewall_ip_configuration_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "firewall_ip_configuration_test" {
+    # This test checks to make sure the resource "firewall_ip_configuration" values are as expected.
     command = plan
 
     variables {
@@ -4980,8 +4980,8 @@ run "firewall_ip_configuration_slug_test" {
     }
 }
 
-run "firewall_nat_rule_collection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "firewall_nat_rule_collection_test" {
+    # This test checks to make sure the resource "firewall_nat_rule_collection" values are as expected.
     command = plan
 
     variables {
@@ -5024,8 +5024,8 @@ run "firewall_nat_rule_collection_slug_test" {
     }
 }
 
-run "firewall_network_rule_collection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "firewall_network_rule_collection_test" {
+    # This test checks to make sure the resource "firewall_network_rule_collection" values are as expected.
     command = plan
 
     variables {
@@ -5068,8 +5068,8 @@ run "firewall_network_rule_collection_slug_test" {
     }
 }
 
-run "firewall_policy_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "firewall_policy_test" {
+    # This test checks to make sure the resource "firewall_policy" values are as expected.
     command = plan
 
     variables {
@@ -5112,8 +5112,8 @@ run "firewall_policy_slug_test" {
     }
 }
 
-run "firewall_policy_rule_collection_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "firewall_policy_rule_collection_group_test" {
+    # This test checks to make sure the resource "firewall_policy_rule_collection_group" values are as expected.
     command = plan
 
     variables {
@@ -5156,8 +5156,8 @@ run "firewall_policy_rule_collection_group_slug_test" {
     }
 }
 
-run "frontdoor_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "frontdoor_test" {
+    # This test checks to make sure the resource "frontdoor" values are as expected.
     command = plan
 
     variables {
@@ -5200,8 +5200,8 @@ run "frontdoor_slug_test" {
     }
 }
 
-run "frontdoor_firewall_policy_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "frontdoor_firewall_policy_test" {
+    # This test checks to make sure the resource "frontdoor_firewall_policy" values are as expected.
     command = plan
 
     variables {
@@ -5244,8 +5244,8 @@ run "frontdoor_firewall_policy_slug_test" {
     }
 }
 
-run "function_app_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "function_app_test" {
+    # This test checks to make sure the resource "function_app" values are as expected.
     command = plan
 
     variables {
@@ -5288,8 +5288,8 @@ run "function_app_slug_test" {
     }
 }
 
-run "hdinsight_hadoop_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "hdinsight_hadoop_cluster_test" {
+    # This test checks to make sure the resource "hdinsight_hadoop_cluster" values are as expected.
     command = plan
 
     variables {
@@ -5332,8 +5332,8 @@ run "hdinsight_hadoop_cluster_slug_test" {
     }
 }
 
-run "hdinsight_hbase_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "hdinsight_hbase_cluster_test" {
+    # This test checks to make sure the resource "hdinsight_hbase_cluster" values are as expected.
     command = plan
 
     variables {
@@ -5376,8 +5376,8 @@ run "hdinsight_hbase_cluster_slug_test" {
     }
 }
 
-run "hdinsight_interactive_query_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "hdinsight_interactive_query_cluster_test" {
+    # This test checks to make sure the resource "hdinsight_interactive_query_cluster" values are as expected.
     command = plan
 
     variables {
@@ -5420,8 +5420,8 @@ run "hdinsight_interactive_query_cluster_slug_test" {
     }
 }
 
-run "hdinsight_kafka_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "hdinsight_kafka_cluster_test" {
+    # This test checks to make sure the resource "hdinsight_kafka_cluster" values are as expected.
     command = plan
 
     variables {
@@ -5464,8 +5464,8 @@ run "hdinsight_kafka_cluster_slug_test" {
     }
 }
 
-run "hdinsight_ml_services_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "hdinsight_ml_services_cluster_test" {
+    # This test checks to make sure the resource "hdinsight_ml_services_cluster" values are as expected.
     command = plan
 
     variables {
@@ -5508,8 +5508,8 @@ run "hdinsight_ml_services_cluster_slug_test" {
     }
 }
 
-run "hdinsight_rserver_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "hdinsight_rserver_cluster_test" {
+    # This test checks to make sure the resource "hdinsight_rserver_cluster" values are as expected.
     command = plan
 
     variables {
@@ -5552,8 +5552,8 @@ run "hdinsight_rserver_cluster_slug_test" {
     }
 }
 
-run "hdinsight_spark_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "hdinsight_spark_cluster_test" {
+    # This test checks to make sure the resource "hdinsight_spark_cluster" values are as expected.
     command = plan
 
     variables {
@@ -5596,8 +5596,8 @@ run "hdinsight_spark_cluster_slug_test" {
     }
 }
 
-run "hdinsight_storm_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "hdinsight_storm_cluster_test" {
+    # This test checks to make sure the resource "hdinsight_storm_cluster" values are as expected.
     command = plan
 
     variables {
@@ -5640,8 +5640,8 @@ run "hdinsight_storm_cluster_slug_test" {
     }
 }
 
-run "image_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "image_test" {
+    # This test checks to make sure the resource "image" values are as expected.
     command = plan
 
     variables {
@@ -5684,8 +5684,8 @@ run "image_slug_test" {
     }
 }
 
-run "iotcentral_application_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "iotcentral_application_test" {
+    # This test checks to make sure the resource "iotcentral_application" values are as expected.
     command = plan
 
     variables {
@@ -5728,8 +5728,8 @@ run "iotcentral_application_slug_test" {
     }
 }
 
-run "iothub_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "iothub_test" {
+    # This test checks to make sure the resource "iothub" values are as expected.
     command = plan
 
     variables {
@@ -5772,8 +5772,8 @@ run "iothub_slug_test" {
     }
 }
 
-run "iothub_consumer_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "iothub_consumer_group_test" {
+    # This test checks to make sure the resource "iothub_consumer_group" values are as expected.
     command = plan
 
     variables {
@@ -5816,8 +5816,8 @@ run "iothub_consumer_group_slug_test" {
     }
 }
 
-run "iothub_dps_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "iothub_dps_test" {
+    # This test checks to make sure the resource "iothub_dps" values are as expected.
     command = plan
 
     variables {
@@ -5860,8 +5860,8 @@ run "iothub_dps_slug_test" {
     }
 }
 
-run "iothub_dps_certificate_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "iothub_dps_certificate_test" {
+    # This test checks to make sure the resource "iothub_dps_certificate" values are as expected.
     command = plan
 
     variables {
@@ -5904,8 +5904,8 @@ run "iothub_dps_certificate_slug_test" {
     }
 }
 
-run "ip_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "ip_group_test" {
+    # This test checks to make sure the resource "ip_group" values are as expected.
     command = plan
 
     variables {
@@ -5948,8 +5948,8 @@ run "ip_group_slug_test" {
     }
 }
 
-run "key_vault_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "key_vault_test" {
+    # This test checks to make sure the resource "key_vault" values are as expected.
     command = plan
 
     variables {
@@ -5992,8 +5992,8 @@ run "key_vault_slug_test" {
     }
 }
 
-run "key_vault_certificate_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "key_vault_certificate_test" {
+    # This test checks to make sure the resource "key_vault_certificate" values are as expected.
     command = plan
 
     variables {
@@ -6036,8 +6036,8 @@ run "key_vault_certificate_slug_test" {
     }
 }
 
-run "key_vault_key_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "key_vault_key_test" {
+    # This test checks to make sure the resource "key_vault_key" values are as expected.
     command = plan
 
     variables {
@@ -6080,8 +6080,8 @@ run "key_vault_key_slug_test" {
     }
 }
 
-run "key_vault_secret_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "key_vault_secret_test" {
+    # This test checks to make sure the resource "key_vault_secret" values are as expected.
     command = plan
 
     variables {
@@ -6124,8 +6124,8 @@ run "key_vault_secret_slug_test" {
     }
 }
 
-run "kubernetes_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "kubernetes_cluster_test" {
+    # This test checks to make sure the resource "kubernetes_cluster" values are as expected.
     command = plan
 
     variables {
@@ -6168,8 +6168,8 @@ run "kubernetes_cluster_slug_test" {
     }
 }
 
-run "kusto_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "kusto_cluster_test" {
+    # This test checks to make sure the resource "kusto_cluster" values are as expected.
     command = plan
 
     variables {
@@ -6212,8 +6212,8 @@ run "kusto_cluster_slug_test" {
     }
 }
 
-run "kusto_database_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "kusto_database_test" {
+    # This test checks to make sure the resource "kusto_database" values are as expected.
     command = plan
 
     variables {
@@ -6256,8 +6256,8 @@ run "kusto_database_slug_test" {
     }
 }
 
-run "kusto_eventhub_data_connection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "kusto_eventhub_data_connection_test" {
+    # This test checks to make sure the resource "kusto_eventhub_data_connection" values are as expected.
     command = plan
 
     variables {
@@ -6300,8 +6300,8 @@ run "kusto_eventhub_data_connection_slug_test" {
     }
 }
 
-run "lb_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "lb_test" {
+    # This test checks to make sure the resource "lb" values are as expected.
     command = plan
 
     variables {
@@ -6344,8 +6344,8 @@ run "lb_slug_test" {
     }
 }
 
-run "lb_nat_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "lb_nat_rule_test" {
+    # This test checks to make sure the resource "lb_nat_rule" values are as expected.
     command = plan
 
     variables {
@@ -6388,8 +6388,8 @@ run "lb_nat_rule_slug_test" {
     }
 }
 
-run "lb_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "lb_rule_test" {
+    # This test checks to make sure the resource "lb_rule" values are as expected.
     command = plan
 
     variables {
@@ -6432,8 +6432,8 @@ run "lb_rule_slug_test" {
     }
 }
 
-run "linux_virtual_machine_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "linux_virtual_machine_test" {
+    # This test checks to make sure the resource "linux_virtual_machine" values are as expected.
     command = plan
 
     variables {
@@ -6476,8 +6476,8 @@ run "linux_virtual_machine_slug_test" {
     }
 }
 
-run "linux_virtual_machine_scale_set_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "linux_virtual_machine_scale_set_test" {
+    # This test checks to make sure the resource "linux_virtual_machine_scale_set" values are as expected.
     command = plan
 
     variables {
@@ -6520,8 +6520,8 @@ run "linux_virtual_machine_scale_set_slug_test" {
     }
 }
 
-run "load_test_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "load_test_test" {
+    # This test checks to make sure the resource "load_test" values are as expected.
     command = plan
 
     variables {
@@ -6564,8 +6564,8 @@ run "load_test_slug_test" {
     }
 }
 
-run "local_network_gateway_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "local_network_gateway_test" {
+    # This test checks to make sure the resource "local_network_gateway" values are as expected.
     command = plan
 
     variables {
@@ -6608,8 +6608,8 @@ run "local_network_gateway_slug_test" {
     }
 }
 
-run "log_analytics_query_pack_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "log_analytics_query_pack_test" {
+    # This test checks to make sure the resource "log_analytics_query_pack" values are as expected.
     command = plan
 
     variables {
@@ -6652,8 +6652,8 @@ run "log_analytics_query_pack_slug_test" {
     }
 }
 
-run "log_analytics_workspace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "log_analytics_workspace_test" {
+    # This test checks to make sure the resource "log_analytics_workspace" values are as expected.
     command = plan
 
     variables {
@@ -6696,8 +6696,8 @@ run "log_analytics_workspace_slug_test" {
     }
 }
 
-run "logic_app_integration_account_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "logic_app_integration_account_test" {
+    # This test checks to make sure the resource "logic_app_integration_account" values are as expected.
     command = plan
 
     variables {
@@ -6740,8 +6740,8 @@ run "logic_app_integration_account_slug_test" {
     }
 }
 
-run "logic_app_workflow_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "logic_app_workflow_test" {
+    # This test checks to make sure the resource "logic_app_workflow" values are as expected.
     command = plan
 
     variables {
@@ -6784,8 +6784,8 @@ run "logic_app_workflow_slug_test" {
     }
 }
 
-run "machine_learning_registry_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "machine_learning_registry_test" {
+    # This test checks to make sure the resource "machine_learning_registry" values are as expected.
     command = plan
 
     variables {
@@ -6828,8 +6828,8 @@ run "machine_learning_registry_slug_test" {
     }
 }
 
-run "machine_learning_workspace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "machine_learning_workspace_test" {
+    # This test checks to make sure the resource "machine_learning_workspace" values are as expected.
     command = plan
 
     variables {
@@ -6872,8 +6872,8 @@ run "machine_learning_workspace_slug_test" {
     }
 }
 
-run "maintenance_configuration_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "maintenance_configuration_test" {
+    # This test checks to make sure the resource "maintenance_configuration" values are as expected.
     command = plan
 
     variables {
@@ -6916,8 +6916,8 @@ run "maintenance_configuration_slug_test" {
     }
 }
 
-run "managed_disk_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "managed_disk_test" {
+    # This test checks to make sure the resource "managed_disk" values are as expected.
     command = plan
 
     variables {
@@ -6960,8 +6960,8 @@ run "managed_disk_slug_test" {
     }
 }
 
-run "management_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "management_group_test" {
+    # This test checks to make sure the resource "management_group" values are as expected.
     command = plan
 
     variables {
@@ -7004,8 +7004,8 @@ run "management_group_slug_test" {
     }
 }
 
-run "maps_account_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "maps_account_test" {
+    # This test checks to make sure the resource "maps_account" values are as expected.
     command = plan
 
     variables {
@@ -7048,8 +7048,8 @@ run "maps_account_slug_test" {
     }
 }
 
-run "mariadb_database_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mariadb_database_test" {
+    # This test checks to make sure the resource "mariadb_database" values are as expected.
     command = plan
 
     variables {
@@ -7092,8 +7092,8 @@ run "mariadb_database_slug_test" {
     }
 }
 
-run "mariadb_firewall_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mariadb_firewall_rule_test" {
+    # This test checks to make sure the resource "mariadb_firewall_rule" values are as expected.
     command = plan
 
     variables {
@@ -7136,8 +7136,8 @@ run "mariadb_firewall_rule_slug_test" {
     }
 }
 
-run "mariadb_server_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mariadb_server_test" {
+    # This test checks to make sure the resource "mariadb_server" values are as expected.
     command = plan
 
     variables {
@@ -7180,8 +7180,8 @@ run "mariadb_server_slug_test" {
     }
 }
 
-run "mariadb_virtual_network_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mariadb_virtual_network_rule_test" {
+    # This test checks to make sure the resource "mariadb_virtual_network_rule" values are as expected.
     command = plan
 
     variables {
@@ -7224,8 +7224,8 @@ run "mariadb_virtual_network_rule_slug_test" {
     }
 }
 
-run "monitor_action_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "monitor_action_group_test" {
+    # This test checks to make sure the resource "monitor_action_group" values are as expected.
     command = plan
 
     variables {
@@ -7268,8 +7268,8 @@ run "monitor_action_group_slug_test" {
     }
 }
 
-run "monitor_alert_processing_rule_action_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "monitor_alert_processing_rule_action_group_test" {
+    # This test checks to make sure the resource "monitor_alert_processing_rule_action_group" values are as expected.
     command = plan
 
     variables {
@@ -7312,8 +7312,8 @@ run "monitor_alert_processing_rule_action_group_slug_test" {
     }
 }
 
-run "monitor_autoscale_setting_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "monitor_autoscale_setting_test" {
+    # This test checks to make sure the resource "monitor_autoscale_setting" values are as expected.
     command = plan
 
     variables {
@@ -7356,8 +7356,8 @@ run "monitor_autoscale_setting_slug_test" {
     }
 }
 
-run "monitor_data_collection_endpoint_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "monitor_data_collection_endpoint_test" {
+    # This test checks to make sure the resource "monitor_data_collection_endpoint" values are as expected.
     command = plan
 
     variables {
@@ -7400,8 +7400,8 @@ run "monitor_data_collection_endpoint_slug_test" {
     }
 }
 
-run "monitor_data_collection_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "monitor_data_collection_rule_test" {
+    # This test checks to make sure the resource "monitor_data_collection_rule" values are as expected.
     command = plan
 
     variables {
@@ -7444,8 +7444,8 @@ run "monitor_data_collection_rule_slug_test" {
     }
 }
 
-run "monitor_diagnostic_setting_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "monitor_diagnostic_setting_test" {
+    # This test checks to make sure the resource "monitor_diagnostic_setting" values are as expected.
     command = plan
 
     variables {
@@ -7488,8 +7488,8 @@ run "monitor_diagnostic_setting_slug_test" {
     }
 }
 
-run "monitor_scheduled_query_rules_alert_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "monitor_scheduled_query_rules_alert_test" {
+    # This test checks to make sure the resource "monitor_scheduled_query_rules_alert" values are as expected.
     command = plan
 
     variables {
@@ -7532,8 +7532,8 @@ run "monitor_scheduled_query_rules_alert_slug_test" {
     }
 }
 
-run "mssql_database_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mssql_database_test" {
+    # This test checks to make sure the resource "mssql_database" values are as expected.
     command = plan
 
     variables {
@@ -7576,8 +7576,8 @@ run "mssql_database_slug_test" {
     }
 }
 
-run "mssql_elasticpool_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mssql_elasticpool_test" {
+    # This test checks to make sure the resource "mssql_elasticpool" values are as expected.
     command = plan
 
     variables {
@@ -7620,8 +7620,8 @@ run "mssql_elasticpool_slug_test" {
     }
 }
 
-run "mssql_job_agent_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mssql_job_agent_test" {
+    # This test checks to make sure the resource "mssql_job_agent" values are as expected.
     command = plan
 
     variables {
@@ -7664,8 +7664,8 @@ run "mssql_job_agent_slug_test" {
     }
 }
 
-run "mssql_managed_instance_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mssql_managed_instance_test" {
+    # This test checks to make sure the resource "mssql_managed_instance" values are as expected.
     command = plan
 
     variables {
@@ -7708,8 +7708,8 @@ run "mssql_managed_instance_slug_test" {
     }
 }
 
-run "mssql_server_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mssql_server_test" {
+    # This test checks to make sure the resource "mssql_server" values are as expected.
     command = plan
 
     variables {
@@ -7752,8 +7752,8 @@ run "mssql_server_slug_test" {
     }
 }
 
-run "mysql_database_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mysql_database_test" {
+    # This test checks to make sure the resource "mysql_database" values are as expected.
     command = plan
 
     variables {
@@ -7796,8 +7796,8 @@ run "mysql_database_slug_test" {
     }
 }
 
-run "mysql_firewall_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mysql_firewall_rule_test" {
+    # This test checks to make sure the resource "mysql_firewall_rule" values are as expected.
     command = plan
 
     variables {
@@ -7840,8 +7840,8 @@ run "mysql_firewall_rule_slug_test" {
     }
 }
 
-run "mysql_server_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mysql_server_test" {
+    # This test checks to make sure the resource "mysql_server" values are as expected.
     command = plan
 
     variables {
@@ -7884,8 +7884,8 @@ run "mysql_server_slug_test" {
     }
 }
 
-run "mysql_virtual_network_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "mysql_virtual_network_rule_test" {
+    # This test checks to make sure the resource "mysql_virtual_network_rule" values are as expected.
     command = plan
 
     variables {
@@ -7928,8 +7928,8 @@ run "mysql_virtual_network_rule_slug_test" {
     }
 }
 
-run "nat_gateway_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "nat_gateway_test" {
+    # This test checks to make sure the resource "nat_gateway" values are as expected.
     command = plan
 
     variables {
@@ -7972,8 +7972,8 @@ run "nat_gateway_slug_test" {
     }
 }
 
-run "network_ddos_protection_plan_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "network_ddos_protection_plan_test" {
+    # This test checks to make sure the resource "network_ddos_protection_plan" values are as expected.
     command = plan
 
     variables {
@@ -8016,8 +8016,8 @@ run "network_ddos_protection_plan_slug_test" {
     }
 }
 
-run "network_interface_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "network_interface_test" {
+    # This test checks to make sure the resource "network_interface" values are as expected.
     command = plan
 
     variables {
@@ -8060,8 +8060,8 @@ run "network_interface_slug_test" {
     }
 }
 
-run "network_manager_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "network_manager_test" {
+    # This test checks to make sure the resource "network_manager" values are as expected.
     command = plan
 
     variables {
@@ -8104,8 +8104,8 @@ run "network_manager_slug_test" {
     }
 }
 
-run "network_security_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "network_security_group_test" {
+    # This test checks to make sure the resource "network_security_group" values are as expected.
     command = plan
 
     variables {
@@ -8148,8 +8148,8 @@ run "network_security_group_slug_test" {
     }
 }
 
-run "network_security_group_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "network_security_group_rule_test" {
+    # This test checks to make sure the resource "network_security_group_rule" values are as expected.
     command = plan
 
     variables {
@@ -8192,8 +8192,8 @@ run "network_security_group_rule_slug_test" {
     }
 }
 
-run "network_security_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "network_security_rule_test" {
+    # This test checks to make sure the resource "network_security_rule" values are as expected.
     command = plan
 
     variables {
@@ -8236,8 +8236,8 @@ run "network_security_rule_slug_test" {
     }
 }
 
-run "network_watcher_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "network_watcher_test" {
+    # This test checks to make sure the resource "network_watcher" values are as expected.
     command = plan
 
     variables {
@@ -8280,8 +8280,8 @@ run "network_watcher_slug_test" {
     }
 }
 
-run "notification_hub_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "notification_hub_test" {
+    # This test checks to make sure the resource "notification_hub" values are as expected.
     command = plan
 
     variables {
@@ -8324,8 +8324,8 @@ run "notification_hub_slug_test" {
     }
 }
 
-run "notification_hub_authorization_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "notification_hub_authorization_rule_test" {
+    # This test checks to make sure the resource "notification_hub_authorization_rule" values are as expected.
     command = plan
 
     variables {
@@ -8368,8 +8368,8 @@ run "notification_hub_authorization_rule_slug_test" {
     }
 }
 
-run "notification_hub_namespace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "notification_hub_namespace_test" {
+    # This test checks to make sure the resource "notification_hub_namespace" values are as expected.
     command = plan
 
     variables {
@@ -8412,8 +8412,8 @@ run "notification_hub_namespace_slug_test" {
     }
 }
 
-run "point_to_site_vpn_gateway_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "point_to_site_vpn_gateway_test" {
+    # This test checks to make sure the resource "point_to_site_vpn_gateway" values are as expected.
     command = plan
 
     variables {
@@ -8456,8 +8456,8 @@ run "point_to_site_vpn_gateway_slug_test" {
     }
 }
 
-run "policy_definition_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "policy_definition_test" {
+    # This test checks to make sure the resource "policy_definition" values are as expected.
     command = plan
 
     variables {
@@ -8500,8 +8500,8 @@ run "policy_definition_slug_test" {
     }
 }
 
-run "postgresql_database_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "postgresql_database_test" {
+    # This test checks to make sure the resource "postgresql_database" values are as expected.
     command = plan
 
     variables {
@@ -8544,8 +8544,8 @@ run "postgresql_database_slug_test" {
     }
 }
 
-run "postgresql_firewall_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "postgresql_firewall_rule_test" {
+    # This test checks to make sure the resource "postgresql_firewall_rule" values are as expected.
     command = plan
 
     variables {
@@ -8588,8 +8588,8 @@ run "postgresql_firewall_rule_slug_test" {
     }
 }
 
-run "postgresql_server_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "postgresql_server_test" {
+    # This test checks to make sure the resource "postgresql_server" values are as expected.
     command = plan
 
     variables {
@@ -8632,8 +8632,8 @@ run "postgresql_server_slug_test" {
     }
 }
 
-run "postgresql_virtual_network_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "postgresql_virtual_network_rule_test" {
+    # This test checks to make sure the resource "postgresql_virtual_network_rule" values are as expected.
     command = plan
 
     variables {
@@ -8676,8 +8676,8 @@ run "postgresql_virtual_network_rule_slug_test" {
     }
 }
 
-run "powerbi_embedded_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "powerbi_embedded_test" {
+    # This test checks to make sure the resource "powerbi_embedded" values are as expected.
     command = plan
 
     variables {
@@ -8720,8 +8720,8 @@ run "powerbi_embedded_slug_test" {
     }
 }
 
-run "private_dns_a_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_dns_a_record_test" {
+    # This test checks to make sure the resource "private_dns_a_record" values are as expected.
     command = plan
 
     variables {
@@ -8764,8 +8764,8 @@ run "private_dns_a_record_slug_test" {
     }
 }
 
-run "private_dns_aaaa_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_dns_aaaa_record_test" {
+    # This test checks to make sure the resource "private_dns_aaaa_record" values are as expected.
     command = plan
 
     variables {
@@ -8808,8 +8808,8 @@ run "private_dns_aaaa_record_slug_test" {
     }
 }
 
-run "private_dns_cname_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_dns_cname_record_test" {
+    # This test checks to make sure the resource "private_dns_cname_record" values are as expected.
     command = plan
 
     variables {
@@ -8852,8 +8852,8 @@ run "private_dns_cname_record_slug_test" {
     }
 }
 
-run "private_dns_mx_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_dns_mx_record_test" {
+    # This test checks to make sure the resource "private_dns_mx_record" values are as expected.
     command = plan
 
     variables {
@@ -8896,8 +8896,8 @@ run "private_dns_mx_record_slug_test" {
     }
 }
 
-run "private_dns_ptr_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_dns_ptr_record_test" {
+    # This test checks to make sure the resource "private_dns_ptr_record" values are as expected.
     command = plan
 
     variables {
@@ -8940,8 +8940,8 @@ run "private_dns_ptr_record_slug_test" {
     }
 }
 
-run "private_dns_srv_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_dns_srv_record_test" {
+    # This test checks to make sure the resource "private_dns_srv_record" values are as expected.
     command = plan
 
     variables {
@@ -8984,8 +8984,8 @@ run "private_dns_srv_record_slug_test" {
     }
 }
 
-run "private_dns_txt_record_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_dns_txt_record_test" {
+    # This test checks to make sure the resource "private_dns_txt_record" values are as expected.
     command = plan
 
     variables {
@@ -9028,8 +9028,8 @@ run "private_dns_txt_record_slug_test" {
     }
 }
 
-run "private_dns_zone_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_dns_zone_test" {
+    # This test checks to make sure the resource "private_dns_zone" values are as expected.
     command = plan
 
     variables {
@@ -9072,8 +9072,8 @@ run "private_dns_zone_slug_test" {
     }
 }
 
-run "private_dns_zone_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_dns_zone_group_test" {
+    # This test checks to make sure the resource "private_dns_zone_group" values are as expected.
     command = plan
 
     variables {
@@ -9116,8 +9116,8 @@ run "private_dns_zone_group_slug_test" {
     }
 }
 
-run "private_endpoint_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_endpoint_test" {
+    # This test checks to make sure the resource "private_endpoint" values are as expected.
     command = plan
 
     variables {
@@ -9160,8 +9160,8 @@ run "private_endpoint_slug_test" {
     }
 }
 
-run "private_link_service_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_link_service_test" {
+    # This test checks to make sure the resource "private_link_service" values are as expected.
     command = plan
 
     variables {
@@ -9204,8 +9204,8 @@ run "private_link_service_slug_test" {
     }
 }
 
-run "private_service_connection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "private_service_connection_test" {
+    # This test checks to make sure the resource "private_service_connection" values are as expected.
     command = plan
 
     variables {
@@ -9248,8 +9248,8 @@ run "private_service_connection_slug_test" {
     }
 }
 
-run "proximity_placement_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "proximity_placement_group_test" {
+    # This test checks to make sure the resource "proximity_placement_group" values are as expected.
     command = plan
 
     variables {
@@ -9292,8 +9292,8 @@ run "proximity_placement_group_slug_test" {
     }
 }
 
-run "public_ip_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "public_ip_test" {
+    # This test checks to make sure the resource "public_ip" values are as expected.
     command = plan
 
     variables {
@@ -9336,8 +9336,8 @@ run "public_ip_slug_test" {
     }
 }
 
-run "public_ip_prefix_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "public_ip_prefix_test" {
+    # This test checks to make sure the resource "public_ip_prefix" values are as expected.
     command = plan
 
     variables {
@@ -9380,8 +9380,8 @@ run "public_ip_prefix_slug_test" {
     }
 }
 
-run "purview_account_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "purview_account_test" {
+    # This test checks to make sure the resource "purview_account" values are as expected.
     command = plan
 
     variables {
@@ -9424,8 +9424,8 @@ run "purview_account_slug_test" {
     }
 }
 
-run "recovery_services_vault_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "recovery_services_vault_test" {
+    # This test checks to make sure the resource "recovery_services_vault" values are as expected.
     command = plan
 
     variables {
@@ -9468,8 +9468,8 @@ run "recovery_services_vault_slug_test" {
     }
 }
 
-run "redhat_openshift_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "redhat_openshift_cluster_test" {
+    # This test checks to make sure the resource "redhat_openshift_cluster" values are as expected.
     command = plan
 
     variables {
@@ -9512,8 +9512,8 @@ run "redhat_openshift_cluster_slug_test" {
     }
 }
 
-run "redis_cache_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "redis_cache_test" {
+    # This test checks to make sure the resource "redis_cache" values are as expected.
     command = plan
 
     variables {
@@ -9556,8 +9556,8 @@ run "redis_cache_slug_test" {
     }
 }
 
-run "redis_firewall_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "redis_firewall_rule_test" {
+    # This test checks to make sure the resource "redis_firewall_rule" values are as expected.
     command = plan
 
     variables {
@@ -9600,8 +9600,8 @@ run "redis_firewall_rule_slug_test" {
     }
 }
 
-run "relay_hybrid_connection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "relay_hybrid_connection_test" {
+    # This test checks to make sure the resource "relay_hybrid_connection" values are as expected.
     command = plan
 
     variables {
@@ -9644,8 +9644,8 @@ run "relay_hybrid_connection_slug_test" {
     }
 }
 
-run "relay_namespace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "relay_namespace_test" {
+    # This test checks to make sure the resource "relay_namespace" values are as expected.
     command = plan
 
     variables {
@@ -9688,8 +9688,8 @@ run "relay_namespace_slug_test" {
     }
 }
 
-run "resource_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "resource_group_test" {
+    # This test checks to make sure the resource "resource_group" values are as expected.
     command = plan
 
     variables {
@@ -9732,8 +9732,8 @@ run "resource_group_slug_test" {
     }
 }
 
-run "resource_group_template_deployment_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "resource_group_template_deployment_test" {
+    # This test checks to make sure the resource "resource_group_template_deployment" values are as expected.
     command = plan
 
     variables {
@@ -9776,8 +9776,8 @@ run "resource_group_template_deployment_slug_test" {
     }
 }
 
-run "role_assignment_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "role_assignment_test" {
+    # This test checks to make sure the resource "role_assignment" values are as expected.
     command = plan
 
     variables {
@@ -9820,8 +9820,8 @@ run "role_assignment_slug_test" {
     }
 }
 
-run "role_definition_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "role_definition_test" {
+    # This test checks to make sure the resource "role_definition" values are as expected.
     command = plan
 
     variables {
@@ -9864,8 +9864,8 @@ run "role_definition_slug_test" {
     }
 }
 
-run "route_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "route_test" {
+    # This test checks to make sure the resource "route" values are as expected.
     command = plan
 
     variables {
@@ -9908,8 +9908,8 @@ run "route_slug_test" {
     }
 }
 
-run "route_filter_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "route_filter_test" {
+    # This test checks to make sure the resource "route_filter" values are as expected.
     command = plan
 
     variables {
@@ -9952,8 +9952,8 @@ run "route_filter_slug_test" {
     }
 }
 
-run "route_server_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "route_server_test" {
+    # This test checks to make sure the resource "route_server" values are as expected.
     command = plan
 
     variables {
@@ -9996,8 +9996,8 @@ run "route_server_slug_test" {
     }
 }
 
-run "route_table_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "route_table_test" {
+    # This test checks to make sure the resource "route_table" values are as expected.
     command = plan
 
     variables {
@@ -10040,8 +10040,8 @@ run "route_table_slug_test" {
     }
 }
 
-run "search_service_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "search_service_test" {
+    # This test checks to make sure the resource "search_service" values are as expected.
     command = plan
 
     variables {
@@ -10084,8 +10084,8 @@ run "search_service_slug_test" {
     }
 }
 
-run "service_fabric_cluster_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "service_fabric_cluster_test" {
+    # This test checks to make sure the resource "service_fabric_cluster" values are as expected.
     command = plan
 
     variables {
@@ -10128,8 +10128,8 @@ run "service_fabric_cluster_slug_test" {
     }
 }
 
-run "servicebus_namespace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "servicebus_namespace_test" {
+    # This test checks to make sure the resource "servicebus_namespace" values are as expected.
     command = plan
 
     variables {
@@ -10172,8 +10172,8 @@ run "servicebus_namespace_slug_test" {
     }
 }
 
-run "servicebus_namespace_authorization_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "servicebus_namespace_authorization_rule_test" {
+    # This test checks to make sure the resource "servicebus_namespace_authorization_rule" values are as expected.
     command = plan
 
     variables {
@@ -10216,8 +10216,8 @@ run "servicebus_namespace_authorization_rule_slug_test" {
     }
 }
 
-run "servicebus_queue_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "servicebus_queue_test" {
+    # This test checks to make sure the resource "servicebus_queue" values are as expected.
     command = plan
 
     variables {
@@ -10260,8 +10260,8 @@ run "servicebus_queue_slug_test" {
     }
 }
 
-run "servicebus_queue_authorization_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "servicebus_queue_authorization_rule_test" {
+    # This test checks to make sure the resource "servicebus_queue_authorization_rule" values are as expected.
     command = plan
 
     variables {
@@ -10304,8 +10304,8 @@ run "servicebus_queue_authorization_rule_slug_test" {
     }
 }
 
-run "servicebus_subscription_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "servicebus_subscription_test" {
+    # This test checks to make sure the resource "servicebus_subscription" values are as expected.
     command = plan
 
     variables {
@@ -10348,8 +10348,8 @@ run "servicebus_subscription_slug_test" {
     }
 }
 
-run "servicebus_subscription_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "servicebus_subscription_rule_test" {
+    # This test checks to make sure the resource "servicebus_subscription_rule" values are as expected.
     command = plan
 
     variables {
@@ -10392,8 +10392,8 @@ run "servicebus_subscription_rule_slug_test" {
     }
 }
 
-run "servicebus_topic_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "servicebus_topic_test" {
+    # This test checks to make sure the resource "servicebus_topic" values are as expected.
     command = plan
 
     variables {
@@ -10436,8 +10436,8 @@ run "servicebus_topic_slug_test" {
     }
 }
 
-run "servicebus_topic_authorization_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "servicebus_topic_authorization_rule_test" {
+    # This test checks to make sure the resource "servicebus_topic_authorization_rule" values are as expected.
     command = plan
 
     variables {
@@ -10480,8 +10480,8 @@ run "servicebus_topic_authorization_rule_slug_test" {
     }
 }
 
-run "shared_image_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "shared_image_test" {
+    # This test checks to make sure the resource "shared_image" values are as expected.
     command = plan
 
     variables {
@@ -10524,8 +10524,8 @@ run "shared_image_slug_test" {
     }
 }
 
-run "shared_image_gallery_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "shared_image_gallery_test" {
+    # This test checks to make sure the resource "shared_image_gallery" values are as expected.
     command = plan
 
     variables {
@@ -10568,8 +10568,8 @@ run "shared_image_gallery_slug_test" {
     }
 }
 
-run "signalr_service_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "signalr_service_test" {
+    # This test checks to make sure the resource "signalr_service" values are as expected.
     command = plan
 
     variables {
@@ -10612,8 +10612,8 @@ run "signalr_service_slug_test" {
     }
 }
 
-run "snapshots_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "snapshots_test" {
+    # This test checks to make sure the resource "snapshots" values are as expected.
     command = plan
 
     variables {
@@ -10656,8 +10656,8 @@ run "snapshots_slug_test" {
     }
 }
 
-run "sql_elasticpool_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "sql_elasticpool_test" {
+    # This test checks to make sure the resource "sql_elasticpool" values are as expected.
     command = plan
 
     variables {
@@ -10700,8 +10700,8 @@ run "sql_elasticpool_slug_test" {
     }
 }
 
-run "sql_failover_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "sql_failover_group_test" {
+    # This test checks to make sure the resource "sql_failover_group" values are as expected.
     command = plan
 
     variables {
@@ -10744,8 +10744,8 @@ run "sql_failover_group_slug_test" {
     }
 }
 
-run "sql_firewall_rule_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "sql_firewall_rule_test" {
+    # This test checks to make sure the resource "sql_firewall_rule" values are as expected.
     command = plan
 
     variables {
@@ -10788,8 +10788,8 @@ run "sql_firewall_rule_slug_test" {
     }
 }
 
-run "sql_server_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "sql_server_test" {
+    # This test checks to make sure the resource "sql_server" values are as expected.
     command = plan
 
     variables {
@@ -10832,8 +10832,8 @@ run "sql_server_slug_test" {
     }
 }
 
-run "ssh_public_key_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "ssh_public_key_test" {
+    # This test checks to make sure the resource "ssh_public_key" values are as expected.
     command = plan
 
     variables {
@@ -10876,8 +10876,8 @@ run "ssh_public_key_slug_test" {
     }
 }
 
-run "static_web_app_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "static_web_app_test" {
+    # This test checks to make sure the resource "static_web_app" values are as expected.
     command = plan
 
     variables {
@@ -10920,8 +10920,8 @@ run "static_web_app_slug_test" {
     }
 }
 
-run "storage_account_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "storage_account_test" {
+    # This test checks to make sure the resource "storage_account" values are as expected.
     command = plan
 
     variables {
@@ -10964,8 +10964,8 @@ run "storage_account_slug_test" {
     }
 }
 
-run "storage_blob_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "storage_blob_test" {
+    # This test checks to make sure the resource "storage_blob" values are as expected.
     command = plan
 
     variables {
@@ -11008,8 +11008,8 @@ run "storage_blob_slug_test" {
     }
 }
 
-run "storage_container_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "storage_container_test" {
+    # This test checks to make sure the resource "storage_container" values are as expected.
     command = plan
 
     variables {
@@ -11052,8 +11052,8 @@ run "storage_container_slug_test" {
     }
 }
 
-run "storage_data_lake_gen2_filesystem_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "storage_data_lake_gen2_filesystem_test" {
+    # This test checks to make sure the resource "storage_data_lake_gen2_filesystem" values are as expected.
     command = plan
 
     variables {
@@ -11096,8 +11096,8 @@ run "storage_data_lake_gen2_filesystem_slug_test" {
     }
 }
 
-run "storage_queue_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "storage_queue_test" {
+    # This test checks to make sure the resource "storage_queue" values are as expected.
     command = plan
 
     variables {
@@ -11140,8 +11140,8 @@ run "storage_queue_slug_test" {
     }
 }
 
-run "storage_share_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "storage_share_test" {
+    # This test checks to make sure the resource "storage_share" values are as expected.
     command = plan
 
     variables {
@@ -11184,8 +11184,8 @@ run "storage_share_slug_test" {
     }
 }
 
-run "storage_share_directory_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "storage_share_directory_test" {
+    # This test checks to make sure the resource "storage_share_directory" values are as expected.
     command = plan
 
     variables {
@@ -11228,8 +11228,8 @@ run "storage_share_directory_slug_test" {
     }
 }
 
-run "storage_table_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "storage_table_test" {
+    # This test checks to make sure the resource "storage_table" values are as expected.
     command = plan
 
     variables {
@@ -11272,8 +11272,8 @@ run "storage_table_slug_test" {
     }
 }
 
-run "stream_analytics_function_javascript_udf_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_function_javascript_udf_test" {
+    # This test checks to make sure the resource "stream_analytics_function_javascript_udf" values are as expected.
     command = plan
 
     variables {
@@ -11316,8 +11316,8 @@ run "stream_analytics_function_javascript_udf_slug_test" {
     }
 }
 
-run "stream_analytics_job_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_job_test" {
+    # This test checks to make sure the resource "stream_analytics_job" values are as expected.
     command = plan
 
     variables {
@@ -11360,8 +11360,8 @@ run "stream_analytics_job_slug_test" {
     }
 }
 
-run "stream_analytics_output_blob_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_output_blob_test" {
+    # This test checks to make sure the resource "stream_analytics_output_blob" values are as expected.
     command = plan
 
     variables {
@@ -11404,8 +11404,8 @@ run "stream_analytics_output_blob_slug_test" {
     }
 }
 
-run "stream_analytics_output_eventhub_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_output_eventhub_test" {
+    # This test checks to make sure the resource "stream_analytics_output_eventhub" values are as expected.
     command = plan
 
     variables {
@@ -11448,8 +11448,8 @@ run "stream_analytics_output_eventhub_slug_test" {
     }
 }
 
-run "stream_analytics_output_mssql_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_output_mssql_test" {
+    # This test checks to make sure the resource "stream_analytics_output_mssql" values are as expected.
     command = plan
 
     variables {
@@ -11492,8 +11492,8 @@ run "stream_analytics_output_mssql_slug_test" {
     }
 }
 
-run "stream_analytics_output_servicebus_queue_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_output_servicebus_queue_test" {
+    # This test checks to make sure the resource "stream_analytics_output_servicebus_queue" values are as expected.
     command = plan
 
     variables {
@@ -11536,8 +11536,8 @@ run "stream_analytics_output_servicebus_queue_slug_test" {
     }
 }
 
-run "stream_analytics_output_servicebus_topic_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_output_servicebus_topic_test" {
+    # This test checks to make sure the resource "stream_analytics_output_servicebus_topic" values are as expected.
     command = plan
 
     variables {
@@ -11580,8 +11580,8 @@ run "stream_analytics_output_servicebus_topic_slug_test" {
     }
 }
 
-run "stream_analytics_reference_input_blob_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_reference_input_blob_test" {
+    # This test checks to make sure the resource "stream_analytics_reference_input_blob" values are as expected.
     command = plan
 
     variables {
@@ -11624,8 +11624,8 @@ run "stream_analytics_reference_input_blob_slug_test" {
     }
 }
 
-run "stream_analytics_stream_input_blob_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_stream_input_blob_test" {
+    # This test checks to make sure the resource "stream_analytics_stream_input_blob" values are as expected.
     command = plan
 
     variables {
@@ -11668,8 +11668,8 @@ run "stream_analytics_stream_input_blob_slug_test" {
     }
 }
 
-run "stream_analytics_stream_input_eventhub_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_stream_input_eventhub_test" {
+    # This test checks to make sure the resource "stream_analytics_stream_input_eventhub" values are as expected.
     command = plan
 
     variables {
@@ -11712,8 +11712,8 @@ run "stream_analytics_stream_input_eventhub_slug_test" {
     }
 }
 
-run "stream_analytics_stream_input_iothub_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "stream_analytics_stream_input_iothub_test" {
+    # This test checks to make sure the resource "stream_analytics_stream_input_iothub" values are as expected.
     command = plan
 
     variables {
@@ -11756,8 +11756,8 @@ run "stream_analytics_stream_input_iothub_slug_test" {
     }
 }
 
-run "subnet_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "subnet_test" {
+    # This test checks to make sure the resource "subnet" values are as expected.
     command = plan
 
     variables {
@@ -11800,8 +11800,8 @@ run "subnet_slug_test" {
     }
 }
 
-run "subnet_service_endpoint_storage_policy_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "subnet_service_endpoint_storage_policy_test" {
+    # This test checks to make sure the resource "subnet_service_endpoint_storage_policy" values are as expected.
     command = plan
 
     variables {
@@ -11844,8 +11844,8 @@ run "subnet_service_endpoint_storage_policy_slug_test" {
     }
 }
 
-run "synapse_private_link_hub_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "synapse_private_link_hub_test" {
+    # This test checks to make sure the resource "synapse_private_link_hub" values are as expected.
     command = plan
 
     variables {
@@ -11888,8 +11888,8 @@ run "synapse_private_link_hub_slug_test" {
     }
 }
 
-run "synapse_spark_pool_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "synapse_spark_pool_test" {
+    # This test checks to make sure the resource "synapse_spark_pool" values are as expected.
     command = plan
 
     variables {
@@ -11932,8 +11932,8 @@ run "synapse_spark_pool_slug_test" {
     }
 }
 
-run "synapse_sql_pool_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "synapse_sql_pool_test" {
+    # This test checks to make sure the resource "synapse_sql_pool" values are as expected.
     command = plan
 
     variables {
@@ -11976,8 +11976,8 @@ run "synapse_sql_pool_slug_test" {
     }
 }
 
-run "synapse_workspace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "synapse_workspace_test" {
+    # This test checks to make sure the resource "synapse_workspace" values are as expected.
     command = plan
 
     variables {
@@ -12020,8 +12020,8 @@ run "synapse_workspace_slug_test" {
     }
 }
 
-run "template_deployment_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "template_deployment_test" {
+    # This test checks to make sure the resource "template_deployment" values are as expected.
     command = plan
 
     variables {
@@ -12064,8 +12064,8 @@ run "template_deployment_slug_test" {
     }
 }
 
-run "traffic_manager_profile_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "traffic_manager_profile_test" {
+    # This test checks to make sure the resource "traffic_manager_profile" values are as expected.
     command = plan
 
     variables {
@@ -12108,8 +12108,8 @@ run "traffic_manager_profile_slug_test" {
     }
 }
 
-run "user_assigned_identity_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "user_assigned_identity_test" {
+    # This test checks to make sure the resource "user_assigned_identity" values are as expected.
     command = plan
 
     variables {
@@ -12152,8 +12152,8 @@ run "user_assigned_identity_slug_test" {
     }
 }
 
-run "virtual_desktop_application_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_desktop_application_group_test" {
+    # This test checks to make sure the resource "virtual_desktop_application_group" values are as expected.
     command = plan
 
     variables {
@@ -12196,8 +12196,8 @@ run "virtual_desktop_application_group_slug_test" {
     }
 }
 
-run "virtual_desktop_host_pool_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_desktop_host_pool_test" {
+    # This test checks to make sure the resource "virtual_desktop_host_pool" values are as expected.
     command = plan
 
     variables {
@@ -12240,8 +12240,8 @@ run "virtual_desktop_host_pool_slug_test" {
     }
 }
 
-run "virtual_desktop_scaling_plan_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_desktop_scaling_plan_test" {
+    # This test checks to make sure the resource "virtual_desktop_scaling_plan" values are as expected.
     command = plan
 
     variables {
@@ -12284,8 +12284,8 @@ run "virtual_desktop_scaling_plan_slug_test" {
     }
 }
 
-run "virtual_desktop_workspace_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_desktop_workspace_test" {
+    # This test checks to make sure the resource "virtual_desktop_workspace" values are as expected.
     command = plan
 
     variables {
@@ -12328,8 +12328,8 @@ run "virtual_desktop_workspace_slug_test" {
     }
 }
 
-run "virtual_hub_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_hub_test" {
+    # This test checks to make sure the resource "virtual_hub" values are as expected.
     command = plan
 
     variables {
@@ -12372,8 +12372,8 @@ run "virtual_hub_slug_test" {
     }
 }
 
-run "virtual_machine_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_machine_test" {
+    # This test checks to make sure the resource "virtual_machine" values are as expected.
     command = plan
 
     variables {
@@ -12416,8 +12416,8 @@ run "virtual_machine_slug_test" {
     }
 }
 
-run "virtual_machine_extension_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_machine_extension_test" {
+    # This test checks to make sure the resource "virtual_machine_extension" values are as expected.
     command = plan
 
     variables {
@@ -12460,8 +12460,8 @@ run "virtual_machine_extension_slug_test" {
     }
 }
 
-run "virtual_machine_restore_point_collection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_machine_restore_point_collection_test" {
+    # This test checks to make sure the resource "virtual_machine_restore_point_collection" values are as expected.
     command = plan
 
     variables {
@@ -12504,8 +12504,8 @@ run "virtual_machine_restore_point_collection_slug_test" {
     }
 }
 
-run "virtual_machine_scale_set_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_machine_scale_set_test" {
+    # This test checks to make sure the resource "virtual_machine_scale_set" values are as expected.
     command = plan
 
     variables {
@@ -12548,8 +12548,8 @@ run "virtual_machine_scale_set_slug_test" {
     }
 }
 
-run "virtual_machine_scale_set_extension_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_machine_scale_set_extension_test" {
+    # This test checks to make sure the resource "virtual_machine_scale_set_extension" values are as expected.
     command = plan
 
     variables {
@@ -12592,8 +12592,8 @@ run "virtual_machine_scale_set_extension_slug_test" {
     }
 }
 
-run "virtual_network_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_network_test" {
+    # This test checks to make sure the resource "virtual_network" values are as expected.
     command = plan
 
     variables {
@@ -12636,8 +12636,8 @@ run "virtual_network_slug_test" {
     }
 }
 
-run "virtual_network_gateway_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_network_gateway_test" {
+    # This test checks to make sure the resource "virtual_network_gateway" values are as expected.
     command = plan
 
     variables {
@@ -12680,8 +12680,8 @@ run "virtual_network_gateway_slug_test" {
     }
 }
 
-run "virtual_network_gateway_connection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_network_gateway_connection_test" {
+    # This test checks to make sure the resource "virtual_network_gateway_connection" values are as expected.
     command = plan
 
     variables {
@@ -12724,8 +12724,8 @@ run "virtual_network_gateway_connection_slug_test" {
     }
 }
 
-run "virtual_network_peering_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_network_peering_test" {
+    # This test checks to make sure the resource "virtual_network_peering" values are as expected.
     command = plan
 
     variables {
@@ -12768,8 +12768,8 @@ run "virtual_network_peering_slug_test" {
     }
 }
 
-run "virtual_wan_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "virtual_wan_test" {
+    # This test checks to make sure the resource "virtual_wan" values are as expected.
     command = plan
 
     variables {
@@ -12812,8 +12812,8 @@ run "virtual_wan_slug_test" {
     }
 }
 
-run "vpn_gateway_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "vpn_gateway_test" {
+    # This test checks to make sure the resource "vpn_gateway" values are as expected.
     command = plan
 
     variables {
@@ -12856,8 +12856,8 @@ run "vpn_gateway_slug_test" {
     }
 }
 
-run "vpn_gateway_connection_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "vpn_gateway_connection_test" {
+    # This test checks to make sure the resource "vpn_gateway_connection" values are as expected.
     command = plan
 
     variables {
@@ -12900,8 +12900,8 @@ run "vpn_gateway_connection_slug_test" {
     }
 }
 
-run "vpn_site_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "vpn_site_test" {
+    # This test checks to make sure the resource "vpn_site" values are as expected.
     command = plan
 
     variables {
@@ -12944,8 +12944,8 @@ run "vpn_site_slug_test" {
     }
 }
 
-run "web_application_firewall_policy_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "web_application_firewall_policy_test" {
+    # This test checks to make sure the resource "web_application_firewall_policy" values are as expected.
     command = plan
 
     variables {
@@ -12988,8 +12988,8 @@ run "web_application_firewall_policy_slug_test" {
     }
 }
 
-run "web_application_firewall_policy_rule_group_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "web_application_firewall_policy_rule_group_test" {
+    # This test checks to make sure the resource "web_application_firewall_policy_rule_group" values are as expected.
     command = plan
 
     variables {
@@ -13032,8 +13032,8 @@ run "web_application_firewall_policy_rule_group_slug_test" {
     }
 }
 
-run "windows_virtual_machine_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "windows_virtual_machine_test" {
+    # This test checks to make sure the resource "windows_virtual_machine" values are as expected.
     command = plan
 
     variables {
@@ -13076,8 +13076,8 @@ run "windows_virtual_machine_slug_test" {
     }
 }
 
-run "windows_virtual_machine_scale_set_slug_test" {
-    # This test checks to make sure the resource ".Slug" is what's expected.
+run "windows_virtual_machine_scale_set_test" {
+    # This test checks to make sure the resource "windows_virtual_machine_scale_set" values are as expected.
     command = plan
 
     variables {
