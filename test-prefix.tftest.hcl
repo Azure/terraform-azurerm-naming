@@ -8,32 +8,6 @@ test {
   parallel = true
 }
 
-run "suffix_resource_group_name_001" {
-  command = plan
-
-  variables {
-    suffix = [ "test" ]
-  }
-
-  assert {
-    condition     = output.resource_group.name == "rg-test"
-    error_message = "resource_group.name did not match expected"
-  }
-}
-
-run "suffix_resource_group_name_002" {
-  command = plan
-
-  variables {
-    suffix = [ "azure", "test" ]
-  }
-
-  assert {
-    condition     = output.resource_group.name == "rg-azure-test"
-    error_message = "resource_group.name did not match expected"
-  }
-}
-
 run "prefix_resource_group_name_001" {
   command = plan
 
