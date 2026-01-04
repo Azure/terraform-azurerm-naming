@@ -21,3 +21,7 @@ jobs:
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
+
+      - name: Terraform Test
+        id: test
+        run: terraform test -no-color
