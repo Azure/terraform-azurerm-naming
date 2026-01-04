@@ -13,47 +13,47 @@ test {
 {{- range .}}
 
 run "{{- .Name }}_test" {
-    # This test checks to make sure the resource "{{ .Name }}" values are as expected.
-    command = plan
+  # This test checks to make sure the resource "{{ .Name }}" values are as expected.
+  command = plan
 
-    variables {
-        suffix = [ "test" ]
-    }
+  variables {
+    suffix = ["test"]
+  }
 
-    assert {
-        condition     = output.{{- .Name }}.name == "{{ .Slug }}{{if .Dashes}}-{{ end }}test"
-        error_message = "'name' did not match what was expected"
-    }
+  assert {
+    condition     = output.{{- .Name }}.name == "{{ .Slug }}{{if .Dashes}}-{{ end }}test"
+    error_message = "'name' did not match what was expected"
+  }
 
-    assert {
-        condition     = output.{{- .Name}}.dashes == {{ .Dashes }}
-        error_message = "'dashes' did not match what was expected"
-    }
+  assert {
+    condition     = output.{{- .Name}}.dashes == {{ .Dashes }}
+    error_message = "'dashes' did not match what was expected"
+  }
 
-    assert {
-        condition     = output.{{- .Name}}.slug == "{{ .Slug }}"
-        error_message = "'slug' did not match what was expected"
-    }
+  assert {
+    condition     = output.{{- .Name}}.slug == "{{ .Slug }}"
+    error_message = "'slug' did not match what was expected"
+  }
 
-    assert {
-        condition     = output.{{- .Name}}.min_length == {{ .Length.Min }}
-        error_message = "'min_length' did not match what was expected"
-    }
+  assert {
+    condition     = output.{{- .Name}}.min_length == {{ .Length.Min }}
+    error_message = "'min_length' did not match what was expected"
+  }
 
-    assert {
-        condition     = output.{{- .Name}}.max_length == {{ .Length.Max }}
-        error_message = "'max_length' did not match what was expected"
-    }
+  assert {
+    condition     = output.{{- .Name}}.max_length == {{ .Length.Max }}
+    error_message = "'max_length' did not match what was expected"
+  }
 
-    assert {
-        condition     = output.{{- .Name}}.scope == "{{ .Scope }}"
-        error_message = "'scope' did not match what was expected"
-    }
+  assert {
+    condition     = output.{{- .Name}}.scope == "{{ .Scope }}"
+    error_message = "'scope' did not match what was expected"
+  }
 
-    assert {
-        condition     = output.{{- .Name}}.regex == "{{ cleanRegex .Regex }}"
-        error_message = "'regex' did not match what was expected"
-    }
+  assert {
+    condition     = output.{{- .Name}}.regex == "{{ cleanRegex .Regex }}"
+    error_message = "'regex' did not match what was expected"
+  }
 }
 {{- end }}
 {{- end -}}

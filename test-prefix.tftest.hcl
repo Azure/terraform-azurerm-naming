@@ -12,7 +12,7 @@ run "prefix_resource_group_name_001" {
   command = plan
 
   variables {
-    prefix = [ "test" ]
+    prefix = ["test"]
   }
 
   assert {
@@ -25,7 +25,7 @@ run "prefix_resource_group_name_002" {
   command = plan
 
   variables {
-    prefix = [ "azure", "test" ]
+    prefix = ["azure", "test"]
   }
 
   assert {

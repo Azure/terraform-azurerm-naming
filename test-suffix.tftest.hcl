@@ -12,7 +12,7 @@ run "suffix_resource_group_name_001" {
   command = plan
 
   variables {
-    suffix = [ "test" ]
+    suffix = ["test"]
   }
 
   assert {
@@ -25,7 +25,7 @@ run "suffix_resource_group_name_002" {
   command = plan
 
   variables {
-    suffix = [ "azure", "test" ]
+    suffix = ["azure", "test"]
   }
 
   assert {
