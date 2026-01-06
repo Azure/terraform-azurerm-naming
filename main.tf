@@ -1116,6 +1116,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
+    express_route_direct = {
+      name        = substr(join("-", compact([local.prefix, "erd", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "erd", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "erd"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
     express_route_gateway = {
       name        = substr(join("-", compact([local.prefix, "ergw", local.suffix])), 0, 80)
       name_unique = substr(join("-", compact([local.prefix, "ergw", local.suffix_unique])), 0, 80)
@@ -3449,6 +3459,10 @@ locals {
     express_route_circuit = {
       valid_name        = length(regexall(local.az.express_route_circuit.regex, local.az.express_route_circuit.name)) > 0 && length(local.az.express_route_circuit.name) > local.az.express_route_circuit.min_length
       valid_name_unique = length(regexall(local.az.express_route_circuit.regex, local.az.express_route_circuit.name_unique)) > 0
+    }
+    express_route_direct = {
+      valid_name        = length(regexall(local.az.express_route_direct.regex, local.az.express_route_direct.name)) > 0 && length(local.az.express_route_direct.name) > local.az.express_route_direct.min_length
+      valid_name_unique = length(regexall(local.az.express_route_direct.regex, local.az.express_route_direct.name_unique)) > 0
     }
     express_route_gateway = {
       valid_name        = length(regexall(local.az.express_route_gateway.regex, local.az.express_route_gateway.name)) > 0 && length(local.az.express_route_gateway.name) > local.az.express_route_gateway.min_length
