@@ -2337,10 +2337,10 @@ locals {
       regex       = "^[a-z][a-z0-9-]+[a-z0-9]$"
     }
     servicebus_namespace = {
-      name        = substr(join("-", compact([local.prefix, "sb", local.suffix])), 0, 50)
-      name_unique = substr(join("-", compact([local.prefix, "sb", local.suffix_unique])), 0, 50)
+      name        = substr(join("-", compact([local.prefix, "sbus", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "sbus", local.suffix_unique])), 0, 50)
       dashes      = true
-      slug        = "sb"
+      slug        = "sbus"
       min_length  = 6
       max_length  = 50
       scope       = "global"
