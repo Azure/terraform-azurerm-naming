@@ -1207,20 +1207,20 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
     }
     frontdoor = {
-      name        = substr(join("-", compact([local.prefix, "fd", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "fd", local.suffix_unique])), 0, 64)
+      name        = substr(join("-", compact([local.prefix, "afd", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "afd", local.suffix_unique])), 0, 64)
       dashes      = true
-      slug        = "fd"
+      slug        = "afd"
       min_length  = 5
       max_length  = 64
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     frontdoor_firewall_policy = {
-      name        = substr(join("-", compact([local.prefix, "fdfw", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "fdfw", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "fdfp", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "fdfp", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "fdfw"
+      slug        = "fdfp"
       min_length  = 1
       max_length  = 80
       scope       = "global"
