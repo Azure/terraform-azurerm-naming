@@ -8,7 +8,7 @@ test {
   parallel = true
 }
 
-run "suffix_resource_group_name_001" {
+run "ResourceNameCreatedProperly_GivenOneSufix" {
   command = plan
 
   variables {
