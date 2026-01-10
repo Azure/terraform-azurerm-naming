@@ -26,7 +26,7 @@ run "ResourceNameCreatedProperly_GivenOnePrefix" {
   }
 }
 
-run "prefix_resource_group_name_002" {
+run "ResourceNameCreatedProperly_GivenTwoPrefixes" {
   command = plan
 
   variables {
