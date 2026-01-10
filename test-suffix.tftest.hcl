@@ -8,7 +8,7 @@ test {
   parallel = true
 }
 
-run "ResourceNameCreatedProperly_GivenOneSufix" {
+run "ResourceNameCreatedProperly_GivenOneSuffix" {
   command = plan
 
   variables {
@@ -17,16 +17,16 @@ run "ResourceNameCreatedProperly_GivenOneSufix" {
 
   assert {
     condition     = output.resource_group.name == "rg-test"
-    error_message = "resource_group.name did not match expected in suffix_resource_group_name_001"
+    error_message = "resource_group.name did not match expected in ResourceNameCreatedProperly_GivenOneSuffix"
   }
 
   assert {
     condition     = output.storage_account.name == "sttest"
-    error_message = "storage_account.name did not match expected in suffix_resource_group_name_001"
+    error_message = "storage_account.name did not match expected in ResourceNameCreatedProperly_GivenOneSuffix"
   }
 }
 
-run "ResourceNameCreatedProperly_GivenTwoSufixes" {
+run "ResourceNameCreatedProperly_GivenTwoSuffixes" {
   command = plan
 
   variables {
@@ -35,11 +35,11 @@ run "ResourceNameCreatedProperly_GivenTwoSufixes" {
 
   assert {
     condition     = output.resource_group.name == "rg-azure-test"
-    error_message = "resource_group.name did not match expected in suffix_resource_group_name_002"
+    error_message = "resource_group.name did not match expected in ResourceNameCreatedProperly_GivenTwoSuffixes"
   }
 
   assert {
     condition     = output.storage_account.name == "stazuretest"
-    error_message = "storage_account.name did not match expected in suffix_resource_group_name_002"
+    error_message = "storage_account.name did not match expected in ResourceNameCreatedProperly_GivenTwoSuffixes"
   }
 }
