@@ -17,7 +17,12 @@ run "prefix_resource_group_name_001" {
 
   assert {
     condition     = output.resource_group.name == "test-rg"
-    error_message = "resource_group.name did not match expected"
+    error_message = "resource_group.name did not match expected in prefix_resource_group_name_001"
+  }
+
+  assert {
+    condition     = output.storage_account.name == "testst"
+    error_message = "storage_account.name did not match expected in prefix_resource_group_name_001"
   }
 }
 
@@ -30,6 +35,11 @@ run "prefix_resource_group_name_002" {
 
   assert {
     condition     = output.resource_group.name == "azure-test-rg"
-    error_message = "resource_group.name did not match expected"
+    error_message = "resource_group.name did not match expected in prefix_resource_group_name_002"
+  }
+
+  assert {
+    condition     = output.storage_account.name == "azuretestst"
+    error_message = "storage_account.name did not match expected in prefix_resource_group_name_002"
   }
 }
