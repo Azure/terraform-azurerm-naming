@@ -22,7 +22,7 @@ run "{{- .Name }}_test" {
 
   assert {
     condition     = output.{{- .Name }}.name == "{{ .Slug }}{{if .Dashes}}-{{ end }}test"
-    error_message = "'name' did not match what was expected"
+    error_message = "'name' did not match what was expected in '{{- .Name }}_test'"
   }
 
   assert {
