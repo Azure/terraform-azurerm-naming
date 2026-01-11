@@ -90,4 +90,10 @@ func main() {
 		log.Fatal(err)
 	}
 	parsedTemplate.ExecuteTemplate(outputsFile, "outputs", data)
+
+	testsFile, err := os.OpenFile("tests.tftest.hcl", os.O_TRUNC|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+	parsedTemplate.ExecuteTemplate(testsFile, "tests", data)
 }
