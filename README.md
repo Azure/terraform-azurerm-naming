@@ -32,6 +32,16 @@ resource "azurerm_resource_group" "example" {
 }
 ```
 
+The `random_string` resources used to generate the unique suffix are only created when `unique-seed` is not set and `unique-disabled` is `false` (default). If you provide a custom `unique-seed`, that value is used instead of the random generation. If you set `unique-disabled` to `true`, the `name_unique` property of all resources will be `null` and no `random_string` resources will be stored in the state.
+
+```tf
+module "naming" {
+  source          = "Azure/naming/azurerm"
+  suffix          = [ "test" ]
+  unique-disabled = true
+}
+```
+
 Other advanced usages will be explained in the [Advanced usage](#advanced-usage) part of this docs.
 
 ## Internals
@@ -98,7 +108,7 @@ postgresql_server = {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_random"></a> [random](#provider\_random) | >= 3.3.2 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.8.1 |
 
 ## Modules
 
@@ -117,6 +127,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | It is not recommended that you use prefix by azure you should be using a suffix for your resources. | `list(string)` | `[]` | no |
 | <a name="input_suffix"></a> [suffix](#input\_suffix) | It is recommended that you specify a suffix for consistency. please use only lowercase characters when possible | `list(string)` | `[]` | no |
+| <a name="input_unique-disabled"></a> [unique-disabled](#input\_unique-disabled) | If you want to disable the generation of unique random names | `bool` | `false` | no |
 | <a name="input_unique-include-numbers"></a> [unique-include-numbers](#input\_unique-include-numbers) | If you want to include numbers in the unique generation | `bool` | `true` | no |
 | <a name="input_unique-length"></a> [unique-length](#input\_unique-length) | Max length of the uniqueness suffix to be added | `number` | `4` | no |
 | <a name="input_unique-seed"></a> [unique-seed](#input\_unique-seed) | Custom value for the random characters to be used | `string` | `""` | no |
@@ -129,7 +140,7 @@ No modules.
 | <a name="output_api_management"></a> [api\_management](#output\_api\_management) | Api Management |
 | <a name="output_app_configuration"></a> [app\_configuration](#output\_app\_configuration) | App Configuration |
 | <a name="output_app_service"></a> [app\_service](#output\_app\_service) | App Service |
-| <a name="output_app_service_environment"></a> [app\_service\_environment](#output\_app\_service\_environment) | n/a |
+| <a name="output_app_service_environment"></a> [app\_service\_environment](#output\_app\_service\_environment) | App Service Environment |
 | <a name="output_app_service_plan"></a> [app\_service\_plan](#output\_app\_service\_plan) | App Service Plan |
 | <a name="output_application_gateway"></a> [application\_gateway](#output\_application\_gateway) | Application Gateway |
 | <a name="output_application_insights"></a> [application\_insights](#output\_application\_insights) | Application Insights |
@@ -141,6 +152,7 @@ No modules.
 | <a name="output_automation_schedule"></a> [automation\_schedule](#output\_automation\_schedule) | Automation Schedule |
 | <a name="output_automation_variable"></a> [automation\_variable](#output\_automation\_variable) | Automation Variable |
 | <a name="output_availability_set"></a> [availability\_set](#output\_availability\_set) | Availability Set |
+| <a name="output_backup_policy_vm"></a> [backup\_policy\_vm](#output\_backup\_policy\_vm) | Backup Policy Vm |
 | <a name="output_bastion_host"></a> [bastion\_host](#output\_bastion\_host) | Bastion Host |
 | <a name="output_batch_account"></a> [batch\_account](#output\_batch\_account) | Batch Account |
 | <a name="output_batch_application"></a> [batch\_application](#output\_batch\_application) | Batch Application |
@@ -153,12 +165,12 @@ No modules.
 | <a name="output_bot_channels_registration"></a> [bot\_channels\_registration](#output\_bot\_channels\_registration) | Bot Channels Registration |
 | <a name="output_bot_connection"></a> [bot\_connection](#output\_bot\_connection) | Bot Connection |
 | <a name="output_bot_web_app"></a> [bot\_web\_app](#output\_bot\_web\_app) | Bot Web App |
-| <a name="output_cdn_frontdoor_endpoint"></a> [cnd\_frontdoor\_endpoint](#output\_cdn\_frontdoor\_endpoint) | Cdn Frontdoor Endpoint |
+| <a name="output_cdn_endpoint"></a> [cdn\_endpoint](#output\_cdn\_endpoint) | Cdn Endpoint |
+| <a name="output_cdn_frontdoor_endpoint"></a> [cdn\_frontdoor\_endpoint](#output\_cdn\_frontdoor\_endpoint) | Cdn Frontdoor Endpoint |
 | <a name="output_cdn_frontdoor_origin"></a> [cdn\_frontdoor\_origin](#output\_cdn\_frontdoor\_origin) | Cdn Frontdoor Origin |
 | <a name="output_cdn_frontdoor_origin_group"></a> [cdn\_frontdoor\_origin\_group](#output\_cdn\_frontdoor\_origin\_group) | Cdn Frontdoor Origin Group |
 | <a name="output_cdn_frontdoor_profile"></a> [cdn\_frontdoor\_profile](#output\_cdn\_frontdoor\_profile) | Cdn Frontdoor Profile |
 | <a name="output_cdn_frontdoor_route"></a> [cdn\_frontdoor\_route](#output\_cdn\_frontdoor\_route) | Cdn Frontdoor Route |
-| <a name="output_cdn_endpoint"></a> [cdn\_endpoint](#output\_cdn\_endpoint) | Cdn Endpoint |
 | <a name="output_cdn_profile"></a> [cdn\_profile](#output\_cdn\_profile) | Cdn Profile |
 | <a name="output_cognitive_account"></a> [cognitive\_account](#output\_cognitive\_account) | Cognitive Account |
 | <a name="output_communication_service"></a> [communication\_service](#output\_communication\_service) | Communication Service |
@@ -172,9 +184,11 @@ No modules.
 | <a name="output_cosmosdb_cassandra"></a> [cosmosdb\_cassandra](#output\_cosmosdb\_cassandra) | Cosmosdb Cassandra |
 | <a name="output_cosmosdb_cassandra_cluster"></a> [cosmosdb\_cassandra\_cluster](#output\_cosmosdb\_cassandra\_cluster) | Cosmosdb Cassandra Cluster |
 | <a name="output_cosmosdb_cassandra_datacenter"></a> [cosmosdb\_cassandra\_datacenter](#output\_cosmosdb\_cassandra\_datacenter) | Cosmosdb Cassandra Datacenter |
-| <a name="output_comsosdb_gremlin"></a> [cosmosdb\_gremlin](#output\_cosmosdb\_grelmin) | Cosmosdb Gremlin |
+| <a name="output_cosmosdb_gremlin"></a> [cosmosdb\_gremlin](#output\_cosmosdb\_gremlin) | Cosmosdb Gremlin |
+| <a name="output_cosmosdb_mongodb"></a> [cosmosdb\_mongodb](#output\_cosmosdb\_mongodb) | Cosmosdb Mongodb |
+| <a name="output_cosmosdb_nosql"></a> [cosmosdb\_nosql](#output\_cosmosdb\_nosql) | Cosmosdb Nosql |
 | <a name="output_cosmosdb_postgres"></a> [cosmosdb\_postgres](#output\_cosmosdb\_postgres) | Cosmosdb Postgres |
-| <a name="output_cosmosdb_tables"></a> [cosmosdb\_tables](#output\_comsosdb\_tables) | Comsosdb Tables |
+| <a name="output_cosmosdb_tables"></a> [cosmosdb\_tables](#output\_cosmosdb\_tables) | Cosmosdb Tables |
 | <a name="output_custom_provider"></a> [custom\_provider](#output\_custom\_provider) | Custom Provider |
 | <a name="output_dashboard"></a> [dashboard](#output\_dashboard) | Dashboard |
 | <a name="output_dashboard_grafana"></a> [dashboard\_grafana](#output\_dashboard\_grafana) | Dashboard Grafana |
@@ -212,14 +226,14 @@ No modules.
 | <a name="output_dns_cname_record"></a> [dns\_cname\_record](#output\_dns\_cname\_record) | Dns Cname Record |
 | <a name="output_dns_mx_record"></a> [dns\_mx\_record](#output\_dns\_mx\_record) | Dns Mx Record |
 | <a name="output_dns_ns_record"></a> [dns\_ns\_record](#output\_dns\_ns\_record) | Dns Ns Record |
+| <a name="output_dns_private_resolver"></a> [dns\_private\_resolver](#output\_dns\_private\_resolver) | Dns Private Resolver |
 | <a name="output_dns_ptr_record"></a> [dns\_ptr\_record](#output\_dns\_ptr\_record) | Dns Ptr Record |
 | <a name="output_dns_txt_record"></a> [dns\_txt\_record](#output\_dns\_txt\_record) | Dns Txt Record |
-| <a name="output_dns_private_resolver"></a> [dns\_private\_resolver](#output\_dns\_private\_resolver) | Dns Private Resolver |
 | <a name="output_dns_zone"></a> [dns\_zone](#output\_dns\_zone) | Dns Zone |
 | <a name="output_eventgrid_domain"></a> [eventgrid\_domain](#output\_eventgrid\_domain) | Eventgrid Domain |
 | <a name="output_eventgrid_domain_topic"></a> [eventgrid\_domain\_topic](#output\_eventgrid\_domain\_topic) | Eventgrid Domain Topic |
-| <a name="output_eventgrid_namespace"></a> [eventgrid\_namespace](#output\_eventgrid\_namespace) | Eventgrid Namespace |
 | <a name="output_eventgrid_event_subscription"></a> [eventgrid\_event\_subscription](#output\_eventgrid\_event\_subscription) | Eventgrid Event Subscription |
+| <a name="output_eventgrid_namespace"></a> [eventgrid\_namespace](#output\_eventgrid\_namespace) | Eventgrid Namespace |
 | <a name="output_eventgrid_system_topic"></a> [eventgrid\_system\_topic](#output\_eventgrid\_system\_topic) | Eventgrid System Topic |
 | <a name="output_eventgrid_topic"></a> [eventgrid\_topic](#output\_eventgrid\_topic) | Eventgrid Topic |
 | <a name="output_eventhub"></a> [eventhub](#output\_eventhub) | Eventhub |
@@ -270,17 +284,18 @@ No modules.
 | <a name="output_lb_rule"></a> [lb\_rule](#output\_lb\_rule) | Lb Rule |
 | <a name="output_linux_virtual_machine"></a> [linux\_virtual\_machine](#output\_linux\_virtual\_machine) | Linux Virtual Machine |
 | <a name="output_linux_virtual_machine_scale_set"></a> [linux\_virtual\_machine\_scale\_set](#output\_linux\_virtual\_machine\_scale\_set) | Linux Virtual Machine Scale Set |
+| <a name="output_load_test"></a> [load\_test](#output\_load\_test) | Load Test |
 | <a name="output_local_network_gateway"></a> [local\_network\_gateway](#output\_local\_network\_gateway) | Local Network Gateway |
-| <a name="output_log_anlaytics_query_pack"></a> [log\_analytics\_query\_pack](#output\_log\_analytics\_query\_pack) | Log Analytics Query Pack |
+| <a name="output_log_analytics_query_pack"></a> [log\_analytics\_query\_pack](#output\_log\_analytics\_query\_pack) | Log Analytics Query Pack |
 | <a name="output_log_analytics_workspace"></a> [log\_analytics\_workspace](#output\_log\_analytics\_workspace) | Log Analytics Workspace |
 | <a name="output_logic_app_integration_account"></a> [logic\_app\_integration\_account](#output\_logic\_app\_integration\_account) | Logic App Integration Account |
 | <a name="output_logic_app_workflow"></a> [logic\_app\_workflow](#output\_logic\_app\_workflow) | Logic App Workflow |
-| <a name="output_machine_learning_workspace"></a> [machine\_learning\_workspace](#output\_machine\_learning\_workspace) | Machine Learning Workspace |
 | <a name="output_machine_learning_registry"></a> [machine\_learning\_registry](#output\_machine\_learning\_registry) | Machine Learning Registry |
+| <a name="output_machine_learning_workspace"></a> [machine\_learning\_workspace](#output\_machine\_learning\_workspace) | Machine Learning Workspace |
+| <a name="output_maintenance_configuration"></a> [maintenance\_configuration](#output\_maintenance\_configuration) | Maintenance Configuration |
 | <a name="output_managed_disk"></a> [managed\_disk](#output\_managed\_disk) | Managed Disk |
 | <a name="output_management_group"></a> [management\_group](#output\_management\_group) | Management Group |
 | <a name="output_maps_account"></a> [maps\_account](#output\_maps\_account) | Maps Account |
-| <a name="output_maintentance_configuration"></a> [maintenance\_configuration](#output\_maintenance\_configuration) | Maintenance Configuration |
 | <a name="output_mariadb_database"></a> [mariadb\_database](#output\_mariadb\_database) | Mariadb Database |
 | <a name="output_mariadb_firewall_rule"></a> [mariadb\_firewall\_rule](#output\_mariadb\_firewall\_rule) | Mariadb Firewall Rule |
 | <a name="output_mariadb_server"></a> [mariadb\_server](#output\_mariadb\_server) | Mariadb Server |
@@ -295,13 +310,13 @@ No modules.
 | <a name="output_mssql_database"></a> [mssql\_database](#output\_mssql\_database) | Mssql Database |
 | <a name="output_mssql_elasticpool"></a> [mssql\_elasticpool](#output\_mssql\_elasticpool) | Mssql Elasticpool |
 | <a name="output_mssql_job_agent"></a> [mssql\_job\_agent](#output\_mssql\_job\_agent) | Mssql Job Agent |
-| <a name="output_mssql_managed_instance"></a> [mssql\_managed\_instance](#output\_mssql\_managed\_instance) | Mssql Server Managed Instance |
+| <a name="output_mssql_managed_instance"></a> [mssql\_managed\_instance](#output\_mssql\_managed\_instance) | Mssql Managed Instance |
 | <a name="output_mssql_server"></a> [mssql\_server](#output\_mssql\_server) | Mssql Server |
 | <a name="output_mysql_database"></a> [mysql\_database](#output\_mysql\_database) | Mysql Database |
 | <a name="output_mysql_firewall_rule"></a> [mysql\_firewall\_rule](#output\_mysql\_firewall\_rule) | Mysql Firewall Rule |
 | <a name="output_mysql_server"></a> [mysql\_server](#output\_mysql\_server) | Mysql Server |
 | <a name="output_mysql_virtual_network_rule"></a> [mysql\_virtual\_network\_rule](#output\_mysql\_virtual\_network\_rule) | Mysql Virtual Network Rule |
-| <a name="output_nat_gateway"></a> [nat\_gateway](#output\_nat\_gateway) | NAT Gateway |
+| <a name="output_nat_gateway"></a> [nat\_gateway](#output\_nat\_gateway) | Nat Gateway |
 | <a name="output_network_ddos_protection_plan"></a> [network\_ddos\_protection\_plan](#output\_network\_ddos\_protection\_plan) | Network Ddos Protection Plan |
 | <a name="output_network_interface"></a> [network\_interface](#output\_network\_interface) | Network Interface |
 | <a name="output_network_manager"></a> [network\_manager](#output\_network\_manager) | Network Manager |
@@ -313,7 +328,7 @@ No modules.
 | <a name="output_notification_hub_authorization_rule"></a> [notification\_hub\_authorization\_rule](#output\_notification\_hub\_authorization\_rule) | Notification Hub Authorization Rule |
 | <a name="output_notification_hub_namespace"></a> [notification\_hub\_namespace](#output\_notification\_hub\_namespace) | Notification Hub Namespace |
 | <a name="output_point_to_site_vpn_gateway"></a> [point\_to\_site\_vpn\_gateway](#output\_point\_to\_site\_vpn\_gateway) | Point To Site Vpn Gateway |
-| <a name="output_policy_definition"></a> [policy\_definition](#output\_policy_definition) | Policy Definition |
+| <a name="output_policy_definition"></a> [policy\_definition](#output\_policy\_definition) | Policy Definition |
 | <a name="output_postgresql_database"></a> [postgresql\_database](#output\_postgresql\_database) | Postgresql Database |
 | <a name="output_postgresql_firewall_rule"></a> [postgresql\_firewall\_rule](#output\_postgresql\_firewall\_rule) | Postgresql Firewall Rule |
 | <a name="output_postgresql_server"></a> [postgresql\_server](#output\_postgresql\_server) | Postgresql Server |
@@ -368,6 +383,7 @@ No modules.
 | <a name="output_sql_firewall_rule"></a> [sql\_firewall\_rule](#output\_sql\_firewall\_rule) | Sql Firewall Rule |
 | <a name="output_sql_server"></a> [sql\_server](#output\_sql\_server) | Sql Server |
 | <a name="output_ssh_public_key"></a> [ssh\_public\_key](#output\_ssh\_public\_key) | Ssh Public Key |
+| <a name="output_static_web_app"></a> [static\_web\_app](#output\_static\_web\_app) | Static Web App |
 | <a name="output_storage_account"></a> [storage\_account](#output\_storage\_account) | Storage Account |
 | <a name="output_storage_blob"></a> [storage\_blob](#output\_storage\_blob) | Storage Blob |
 | <a name="output_storage_container"></a> [storage\_container](#output\_storage\_container) | Storage Container |
@@ -414,13 +430,12 @@ No modules.
 | <a name="output_virtual_network_peering"></a> [virtual\_network\_peering](#output\_virtual\_network\_peering) | Virtual Network Peering |
 | <a name="output_virtual_wan"></a> [virtual\_wan](#output\_virtual\_wan) | Virtual Wan |
 | <a name="output_vpn_gateway"></a> [vpn\_gateway](#output\_vpn\_gateway) | Vpn Gateway |
-| <a name="output_vpn_gateway_connection"></a> [vpn\_gateway\_connection](#output\_vpn\_gateway\_connection) | Vpn Gateway Connection  |
+| <a name="output_vpn_gateway_connection"></a> [vpn\_gateway\_connection](#output\_vpn\_gateway\_connection) | Vpn Gateway Connection |
 | <a name="output_vpn_site"></a> [vpn\_site](#output\_vpn\_site) | Vpn Site |
 | <a name="output_web_application_firewall_policy"></a> [web\_application\_firewall\_policy](#output\_web\_application\_firewall\_policy) | Web Application Firewall Policy |
 | <a name="output_web_application_firewall_policy_rule_group"></a> [web\_application\_firewall\_policy\_rule\_group](#output\_web\_application\_firewall\_policy\_rule\_group) | Web Application Firewall Policy Rule Group |
 | <a name="output_windows_virtual_machine"></a> [windows\_virtual\_machine](#output\_windows\_virtual\_machine) | Windows Virtual Machine |
 | <a name="output_windows_virtual_machine_scale_set"></a> [windows\_virtual\_machine\_scale\_set](#output\_windows\_virtual\_machine\_scale\_set) | Windows Virtual Machine Scale Set |
-| <a name="static_web_app"></a> [static\_web\_app](#output\_static_\_web\_app) | Static Web App |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 # Contributing Guidelines

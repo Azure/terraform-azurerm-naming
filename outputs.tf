@@ -1,6 +1,6 @@
 
 output "unique-seed" {
-  value = coalesce(var.unique-seed, local.random_safe_generation)
+  value = var.unique-disabled ? null : coalesce(var.unique-seed, local.random_safe_generation)
 }
 
 output "validation" {
