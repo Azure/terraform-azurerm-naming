@@ -27,3 +27,9 @@ variable "unique-include-numbers" {
   type        = bool
   default     = true
 }
+
+variable "unique-disabled" {
+  description = "If you want to disable the generation of unique random names. When set to true, all name_unique outputs and the unique-seed output will be null."
+  type        = bool
+  default     = false
+}

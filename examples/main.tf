@@ -50,3 +50,15 @@ output "everything" {
 output "validation_everything" {
   value = module.everything.validation
 }
+
+// Example 5
+
+module "disabled" {
+  source          = "../"
+  suffix          = ["su", "fix"]
+  unique-disabled = true
+}
+
+output "disabled" {
+  value = module.disabled.storage_account.name_unique
+}

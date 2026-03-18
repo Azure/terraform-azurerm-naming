@@ -1,7 +1,7 @@
 {{- define "resources" -}}
     {{- .Name }} = {
       name        = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
-      name_unique = substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix_unique{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
+      name_unique = var.unique-disabled ? null : substr(join("{{if .Dashes}}-{{ end }}", compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix_unique{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
       dashes      = {{ .Dashes }}
       slug        = "{{ .Slug }}"
       min_length  = {{ .Length.Min }}
@@ -14,7 +14,7 @@
 {{- define "validation" -}}
     {{- .Name }} = {
       valid_name        = length(regexall(local.az.{{- .Name }}.regex, local.az.{{- .Name }}.name)) > 0 && length(local.az.{{- .Name }}.name) > local.az.{{- .Name }}.min_length
-      valid_name_unique = length(regexall(local.az.{{- .Name }}.regex, local.az.{{- .Name }}.name_unique)) > 0
+      valid_name_unique = local.az.{{- .Name }}.name_unique != null ? length(regexall(local.az.{{- .Name }}.regex, local.az.{{- .Name }}.name_unique)) > 0 : null
     }
 {{- end -}}
 
@@ -22,6 +22,8 @@
 
 {{- define "main" -}}
 terraform {
+  required_version = ">= 1.1"
+
   required_providers {
     random = {
       source  = "hashicorp/random"
@@ -30,14 +32,28 @@ terraform {
   }
 }
 
+moved {
+  from = random_string.main
+  to   = random_string.main[0]
+}
+
 resource "random_string" "main" {
+  count = coalesce(var.unique-seed, "") == "" && !var.unique-disabled ? 1 : 0
+
   length  = 60
   special = false
   upper   = false
   numeric = var.unique-include-numbers
 }
 
+moved {
+  from = random_string.first_letter
+  to   = random_string.first_letter[0]
+}
+
 resource "random_string" "first_letter" {
+  count = coalesce(var.unique-seed, "") == "" && !var.unique-disabled ? 1 : 0
+
   length  = 1
   special = false
   upper   = false
@@ -48,14 +64,14 @@ resource "random_string" "first_letter" {
 
 locals {
   // adding a first letter to guarantee that you always start with a letter
-  random_safe_generation = join("", [random_string.first_letter.result, random_string.main.result])
-  random                 = substr(coalesce(var.unique-seed, local.random_safe_generation), 0, var.unique-length)
+  random_safe_generation = coalesce(var.unique-seed, "") == "" && !var.unique-disabled ? join("", [random_string.first_letter[0].result, random_string.main[0].result]) : ""
+  random                 = var.unique-disabled ? "" : substr(coalesce(var.unique-seed, local.random_safe_generation), 0, var.unique-length)
   prefix                 = join("-", var.prefix)
   prefix_safe            = lower(join("", var.prefix))
   suffix                 = join("-", var.suffix)
-  suffix_unique          = join("-", concat(var.suffix, [local.random]))
+  suffix_unique          = var.unique-disabled ? null : join("-", concat(var.suffix, [local.random]))
   suffix_safe            = lower(join("", var.suffix))
-  suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
+  suffix_unique_safe     = var.unique-disabled ? null : lower(join("", concat(var.suffix, [local.random])))
   // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
