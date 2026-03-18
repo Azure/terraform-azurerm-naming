@@ -72,7 +72,7 @@ Each one of the resources emits the name of the resource and other properties:
 | Property | Type | Description |
 | ----- |----- | ---- |
 | name | string | name of the resource including respective suffixes and prefixes applied |
-| name_unique | string | same as the name but with random chars added for uniqueness |
+| name_unique | string or null | same as the name but with random chars added for uniqueness (`null` when `unique-disabled` is `true`) |
 | dashes | bool | if these resources support dashes |
 | slug | string | letters to identify this resource among others |
 | min_length | integer | Minimum length required for this resource name |
@@ -102,6 +102,7 @@ postgresql_server = {
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.3.2 |
 
 ## Providers
@@ -127,7 +128,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | It is not recommended that you use prefix by azure you should be using a suffix for your resources. | `list(string)` | `[]` | no |
 | <a name="input_suffix"></a> [suffix](#input\_suffix) | It is recommended that you specify a suffix for consistency. please use only lowercase characters when possible | `list(string)` | `[]` | no |
-| <a name="input_unique-disabled"></a> [unique-disabled](#input\_unique-disabled) | If you want to disable the generation of unique random names | `bool` | `false` | no |
+| <a name="input_unique-disabled"></a> [unique-disabled](#input\_unique-disabled) | If you want to disable the generation of unique random names. When set to true, all name\_unique outputs and the unique-seed output will be null. | `bool` | `false` | no |
 | <a name="input_unique-include-numbers"></a> [unique-include-numbers](#input\_unique-include-numbers) | If you want to include numbers in the unique generation | `bool` | `true` | no |
 | <a name="input_unique-length"></a> [unique-length](#input\_unique-length) | Max length of the uniqueness suffix to be added | `number` | `4` | no |
 | <a name="input_unique-seed"></a> [unique-seed](#input\_unique-seed) | Custom value for the random characters to be used | `string` | `""` | no |
