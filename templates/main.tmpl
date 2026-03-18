@@ -36,7 +36,7 @@ moved {
 }
 
 resource "random_string" "main" {
-  count = var.unique-seed == "" && !var.unique-disabled ? 1 : 0
+  count = coalesce(var.unique-seed, "") == "" && !var.unique-disabled ? 1 : 0
 
   length  = 60
   special = false
@@ -50,7 +50,7 @@ moved {
 }
 
 resource "random_string" "first_letter" {
-  count = var.unique-seed == "" && !var.unique-disabled ? 1 : 0
+  count = coalesce(var.unique-seed, "") == "" && !var.unique-disabled ? 1 : 0
 
   length  = 1
   special = false
@@ -62,7 +62,7 @@ resource "random_string" "first_letter" {
 
 locals {
   // adding a first letter to guarantee that you always start with a letter
-  random_safe_generation = var.unique-seed == "" && !var.unique-disabled ? join("", [random_string.first_letter[0].result, random_string.main[0].result]) : ""
+  random_safe_generation = coalesce(var.unique-seed, "") == "" && !var.unique-disabled ? join("", [random_string.first_letter[0].result, random_string.main[0].result]) : ""
   random                 = var.unique-disabled ? "" : substr(coalesce(var.unique-seed, local.random_safe_generation), 0, var.unique-length)
   prefix                 = join("-", var.prefix)
   prefix_safe            = lower(join("", var.prefix))
