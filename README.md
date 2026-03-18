@@ -32,7 +32,7 @@ resource "azurerm_resource_group" "example" {
 }
 ```
 
-The `random_string` resources used to generate the unique suffix are only created when `unique-seed` is not set and `unique-disabled` is `false` (default). If you provide a custom `unique-seed`, that value is used instead of the random generation. If you set `unique-disabled` to `true`, the `name_unique` property of all resources will be `null` and no `random_string` resources will be stored in the state.
+The `random_string` resources used to generate the unique suffix are only created when `unique-seed` is not set and `unique-disabled` is `false` (default). If you provide a custom `unique-seed`, that value is used instead of the random generation. If you set `unique-disabled` to `true`, the `name_unique` property of all resources and the `unique-seed` output will be `null` and no `random_string` resources will be stored in the state.
 
 ```tf
 module "naming" {
