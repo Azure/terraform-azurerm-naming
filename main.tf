@@ -404,7 +404,7 @@ locals {
       min_length  = 3
       max_length  = 44
       scope       = "global"
-      regex       = "^[a-z0-9][a-z0-9-]{2,}$"
+      regex       = "^[a-z0-9][a-z0-9-]{1,}[a-z0-9]$"
     }
     cosmosdb_cassandra_cluster = {
       name        = substr(join("-", compact([local.prefix, "mcc", local.suffix])), 0, 44)
