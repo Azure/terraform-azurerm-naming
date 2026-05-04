@@ -27,3 +27,15 @@ variable "unique-include-numbers" {
   type        = bool
   default     = true
 }
+
+variable "resource-slug-overrides" {
+  description = "Optional per-resource slug override map keyed by module output name."
+  type        = map(string)
+  default     = {}
+  nullable    = false
+
+  validation {
+    condition     = alltrue([for slug in values(var.resource-slug-overrides) : slug != null && trimspace(slug) != ""])
+    error_message = "resource-slug-overrides values must be non-null and not empty or whitespace-only."
+  }
+}

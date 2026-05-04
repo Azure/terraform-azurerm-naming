@@ -87,11 +87,31 @@ postgresql_server = {
     }
 ```
 
+### Slug Overrides
+
+You can override the slug for specific resources by using the `resource-slug-overrides` input map.
+Each key must match the resource output key (for example `analysis_services_server` or `api_management`).
+When provided, the override value is normalized to lowercase and then applied to `slug`, `name`, and `name_unique`.
+Override values that are empty or whitespace-only are rejected at plan time.
+Keys that do not match a known resource output key do not affect naming outputs; a `check` assertion will still surface a warning with the offending key names during plan/apply.
+
+```tf
+module "naming" {
+  source = "Azure/naming/azurerm"
+
+  resource-slug-overrides = {
+    analysis_services_server = "asx"
+    api_management           = "gateway"
+  }
+}
+```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.3.2 |
 
 ## Providers
@@ -116,6 +136,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | It is not recommended that you use prefix by azure you should be using a suffix for your resources. | `list(string)` | `[]` | no |
+| <a name="input_resource-slug-overrides"></a> [resource-slug-overrides](#input\_resource-slug-overrides) | Optional per-resource slug override map keyed by module output name. | `map(string)` | `{}` | no |
 | <a name="input_suffix"></a> [suffix](#input\_suffix) | It is recommended that you specify a suffix for consistency. please use only lowercase characters when possible | `list(string)` | `[]` | no |
 | <a name="input_unique-include-numbers"></a> [unique-include-numbers](#input\_unique-include-numbers) | If you want to include numbers in the unique generation | `bool` | `true` | no |
 | <a name="input_unique-length"></a> [unique-length](#input\_unique-length) | Max length of the uniqueness suffix to be added | `number` | `4` | no |
@@ -425,7 +446,7 @@ No modules.
 
 # Contributing Guidelines
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
