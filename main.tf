@@ -2014,7 +2014,7 @@ locals {
       min_length  = 3
       max_length  = 63
       scope       = "region"
-      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+      regex       = "^[a-z][a-z0-9]*$"
     }
     private_dns_a_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)

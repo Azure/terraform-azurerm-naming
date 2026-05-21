@@ -1964,7 +1964,7 @@
       "min": 3,
       "max": 63
     },
-    "regex": "^(?=.{3,63}$)(?!.*--)[a-zA-Z0-9][a-zA-Z0-9-]+$",
+    "regex": "^(?=.{3,63}$)[a-z][a-z0-9]*$",
     "scope": "region",
     "slug": "pbi",
     "dashes": true
