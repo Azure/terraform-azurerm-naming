@@ -1563,6 +1563,17 @@
     "dashes": true
   },
   {
+    "name": "monitor_workspace",
+    "length": {
+      "min": 3,
+      "max": 44
+    },
+    "regex": "^(?=.{3,44}$)[a-zA-Z0-9-]+$",
+    "scope": "resourceGroup",
+    "slug": "amw",
+    "dashes": true
+  },
+  {
     "name": "logic_app_integration_account",
     "length": {
       "min": 1,
