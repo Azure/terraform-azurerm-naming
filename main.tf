@@ -1754,7 +1754,7 @@ locals {
       min_length  = 3
       max_length  = 44
       scope       = "resourceGroup"
-      regex       = "^[a-zA-Z0-9-]+$"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
     }
     mssql_database = {
       name        = substr(join("-", compact([local.prefix, "sqldb", local.suffix])), 0, 128)

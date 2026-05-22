@@ -100,7 +100,7 @@ az = {
     log_analytics_workspace = "log"
     application_insights    = "appi"
     recovery_services_vault = "rsv"
-    azure_monitor_workspace = "amw"
+    monitor_workspace       = "amw"
 
     //Migration
     azure_migrate_project               = "migr"

@@ -1568,7 +1568,7 @@
       "min": 3,
       "max": 44
     },
-    "regex": "^(?=.{3,44}$)[a-zA-Z0-9-]+$",
+    "regex": "^(?=.{3,44}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
     "scope": "resourceGroup",
     "slug": "amw",
     "dashes": true
