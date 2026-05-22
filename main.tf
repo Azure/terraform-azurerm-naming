@@ -5,6 +5,7 @@ terraform {
       version = ">= 3.3.2"
     }
   }
+  required_version = ">= 1.5.0"
 }
 
 resource "random_string" "main" {
@@ -33,9 +34,14 @@ locals {
   suffix_unique          = join("-", concat(var.suffix, [local.random]))
   suffix_safe            = lower(join("", var.suffix))
   suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
+  slug_overrides_safe = {
+    for resource_name, slug in var.resource-slug-overrides :
+    resource_name => lower(trimspace(coalesce(slug, "")))
+    if trimspace(coalesce(slug, "")) != "" && contains(keys(local.az_default), resource_name)
+  }
   // Names based on the recommendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
-  az = {
+  az_default = {
     analysis_services_server = {
       name        = substr(join("", compact([local.prefix_safe, "as", local.suffix_safe])), 0, 63)
       name_unique = substr(join("", compact([local.prefix_safe, "as", local.suffix_unique_safe])), 0, 63)
@@ -3017,6 +3023,16 @@ locals {
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
     }
   }
+  az = merge(
+    local.az_default,
+    {
+      for resource_name, slug in local.slug_overrides_safe : resource_name => merge(local.az_default[resource_name], {
+        slug        = slug
+        name        = local.az_default[resource_name].dashes ? substr(join("-", compact([local.prefix, slug, local.suffix])), 0, local.az_default[resource_name].max_length) : substr(join("", compact([local.prefix_safe, slug, local.suffix_safe])), 0, local.az_default[resource_name].max_length)
+        name_unique = local.az_default[resource_name].dashes ? substr(join("-", compact([local.prefix, slug, local.suffix_unique])), 0, local.az_default[resource_name].max_length) : substr(join("", compact([local.prefix_safe, slug, local.suffix_unique_safe])), 0, local.az_default[resource_name].max_length)
+      })
+    }
+  )
   validation = {
     analysis_services_server = {
       valid_name        = length(regexall(local.az.analysis_services_server.regex, local.az.analysis_services_server.name)) > 0 && length(local.az.analysis_services_server.name) > local.az.analysis_services_server.min_length
@@ -4210,5 +4226,12 @@ locals {
       valid_name        = length(regexall(local.az.windows_virtual_machine_scale_set.regex, local.az.windows_virtual_machine_scale_set.name)) > 0 && length(local.az.windows_virtual_machine_scale_set.name) > local.az.windows_virtual_machine_scale_set.min_length
       valid_name_unique = length(regexall(local.az.windows_virtual_machine_scale_set.regex, local.az.windows_virtual_machine_scale_set.name_unique)) > 0
     }
+  }
+}
+
+check "resource_slug_overrides_keys" {
+  assert {
+    condition     = length(setsubtract(keys(var.resource-slug-overrides), keys(local.az_default))) == 0
+    error_message = "resource-slug-overrides contains unknown resource key(s): ${join(", ", tolist(setsubtract(keys(var.resource-slug-overrides), keys(local.az_default))))}"
   }
 }
