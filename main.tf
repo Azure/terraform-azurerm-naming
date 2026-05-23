@@ -45,6 +45,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-z][a-z0-9]+$"
+      separator   = ""
     }
     api_management = {
       name        = substr(join("-", compact([local.prefix, "apim", local.suffix])), 0, 50)
@@ -55,6 +56,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]+$"
+      separator   = "-"
     }
     app_configuration = {
       name        = substr(join("-", compact([local.prefix, "appcg", local.suffix])), 0, 50)
@@ -65,6 +67,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9_-]+$"
+      separator   = "-"
     }
     app_service = {
       name        = substr(join("-", compact([local.prefix, "app", local.suffix])), 0, 60)
@@ -75,6 +78,7 @@ locals {
       max_length  = 60
       scope       = "global"
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]"
+      separator   = "-"
     }
     app_service_environment = {
       name        = substr(join("-", compact([local.prefix, "ase", local.suffix])), 0, 40)
@@ -85,6 +89,7 @@ locals {
       max_length  = 40
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     app_service_plan = {
       name        = substr(join("-", compact([local.prefix, "plan", local.suffix])), 0, 40)
@@ -95,6 +100,7 @@ locals {
       max_length  = 40
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     application_gateway = {
       name        = substr(join("-", compact([local.prefix, "agw", local.suffix])), 0, 80)
@@ -105,6 +111,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     application_insights = {
       name        = substr(join("-", compact([local.prefix, "appi", local.suffix])), 0, 260)
@@ -115,6 +122,7 @@ locals {
       max_length  = 260
       scope       = "resourceGroup"
       regex       = "^[^%\\&?/]+$"
+      separator   = "-"
     }
     application_security_group = {
       name        = substr(join("-", compact([local.prefix, "asg", local.suffix])), 0, 80)
@@ -125,6 +133,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     automation_account = {
       name        = substr(join("-", compact([local.prefix, "aa", local.suffix])), 0, 50)
@@ -135,6 +144,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     automation_certificate = {
       name        = substr(join("-", compact([local.prefix, "aacert", local.suffix])), 0, 128)
@@ -145,6 +155,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+      separator   = "-"
     }
     automation_credential = {
       name        = substr(join("-", compact([local.prefix, "aacred", local.suffix])), 0, 128)
@@ -155,6 +166,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+      separator   = "-"
     }
     automation_runbook = {
       name        = substr(join("-", compact([local.prefix, "aacred", local.suffix])), 0, 63)
@@ -165,6 +177,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     automation_schedule = {
       name        = substr(join("-", compact([local.prefix, "aasched", local.suffix])), 0, 128)
@@ -175,6 +188,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+      separator   = "-"
     }
     automation_variable = {
       name        = substr(join("-", compact([local.prefix, "aavar", local.suffix])), 0, 128)
@@ -185,6 +199,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+      separator   = "-"
     }
     availability_set = {
       name        = substr(join("-", compact([local.prefix, "avail", local.suffix])), 0, 80)
@@ -195,6 +210,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     backup_policy_vm = {
       name        = substr(join("-", compact([local.prefix, "bkpol", local.suffix])), 0, 150)
@@ -205,6 +221,7 @@ locals {
       max_length  = 150
       scope       = "parent"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     bastion_host = {
       name        = substr(join("-", compact([local.prefix, "snap", local.suffix])), 0, 80)
@@ -215,6 +232,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     batch_account = {
       name        = substr(join("", compact([local.prefix_safe, "ba", local.suffix_safe])), 0, 24)
@@ -225,6 +243,7 @@ locals {
       max_length  = 24
       scope       = "region"
       regex       = "^[a-z0-9]+$"
+      separator   = ""
     }
     batch_application = {
       name        = substr(join("-", compact([local.prefix, "baapp", local.suffix])), 0, 64)
@@ -235,6 +254,7 @@ locals {
       max_length  = 64
       scope       = "parent"
       regex       = "^[a-zA-Z0-9_-]+$"
+      separator   = "-"
     }
     batch_certificate = {
       name        = substr(join("-", compact([local.prefix, "bacert", local.suffix])), 0, 45)
@@ -245,6 +265,7 @@ locals {
       max_length  = 45
       scope       = "parent"
       regex       = "^[a-zA-Z0-9_-]+$"
+      separator   = "-"
     }
     batch_pool = {
       name        = substr(join("-", compact([local.prefix, "bapool", local.suffix])), 0, 24)
@@ -255,6 +276,7 @@ locals {
       max_length  = 24
       scope       = "parent"
       regex       = "^[a-zA-Z0-9_-]+$"
+      separator   = "-"
     }
     bot_channel_directline = {
       name        = substr(join("-", compact([local.prefix, "botline", local.suffix])), 0, 64)
@@ -265,6 +287,7 @@ locals {
       max_length  = 64
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      separator   = "-"
     }
     bot_channel_email = {
       name        = substr(join("-", compact([local.prefix, "botmail", local.suffix])), 0, 64)
@@ -275,6 +298,7 @@ locals {
       max_length  = 64
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      separator   = "-"
     }
     bot_channel_ms_teams = {
       name        = substr(join("-", compact([local.prefix, "botteams", local.suffix])), 0, 64)
@@ -285,6 +309,7 @@ locals {
       max_length  = 64
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      separator   = "-"
     }
     bot_channel_slack = {
       name        = substr(join("-", compact([local.prefix, "botslack", local.suffix])), 0, 64)
@@ -295,6 +320,7 @@ locals {
       max_length  = 64
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      separator   = "-"
     }
     bot_channels_registration = {
       name        = substr(join("-", compact([local.prefix, "botchan", local.suffix])), 0, 64)
@@ -305,6 +331,7 @@ locals {
       max_length  = 64
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      separator   = "-"
     }
     bot_connection = {
       name        = substr(join("-", compact([local.prefix, "botcon", local.suffix])), 0, 64)
@@ -315,6 +342,7 @@ locals {
       max_length  = 64
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      separator   = "-"
     }
     bot_web_app = {
       name        = substr(join("-", compact([local.prefix, "bot", local.suffix])), 0, 64)
@@ -325,6 +353,7 @@ locals {
       max_length  = 64
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      separator   = "-"
     }
     cdn_endpoint = {
       name        = substr(join("-", compact([local.prefix, "cdn", local.suffix])), 0, 50)
@@ -335,6 +364,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     cdn_frontdoor_endpoint = {
       name        = substr(join("-", compact([local.prefix, "fde", local.suffix])), 0, 50)
@@ -345,6 +375,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     cdn_frontdoor_origin = {
       name        = substr(join("-", compact([local.prefix, "cdno", local.suffix])), 0, 50)
@@ -355,6 +386,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     cdn_frontdoor_origin_group = {
       name        = substr(join("-", compact([local.prefix, "cdnog", local.suffix])), 0, 50)
@@ -365,6 +397,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     cdn_frontdoor_profile = {
       name        = substr(join("-", compact([local.prefix, "afd", local.suffix])), 0, 64)
@@ -375,6 +408,7 @@ locals {
       max_length  = 64
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     cdn_frontdoor_route = {
       name        = substr(join("-", compact([local.prefix, "cdnr", local.suffix])), 0, 50)
@@ -385,6 +419,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     cdn_profile = {
       name        = substr(join("-", compact([local.prefix, "cdnprof", local.suffix])), 0, 260)
@@ -395,6 +430,7 @@ locals {
       max_length  = 260
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     cognitive_account = {
       name        = substr(join("-", compact([local.prefix, "cog", local.suffix])), 0, 64)
@@ -405,6 +441,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     communication_service = {
       name        = substr(join("-", compact([local.prefix, "acs", local.suffix])), 0, 63)
@@ -415,6 +452,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     container_app = {
       name        = substr(join("-", compact([local.prefix, "ca", local.suffix])), 0, 32)
@@ -425,6 +463,7 @@ locals {
       max_length  = 32
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     container_app_environment = {
       name        = substr(join("-", compact([local.prefix, "cae", local.suffix])), 0, 60)
@@ -435,6 +474,7 @@ locals {
       max_length  = 60
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     container_app_job = {
       name        = substr(join("-", compact([local.prefix, "caj", local.suffix])), 0, 32)
@@ -445,6 +485,7 @@ locals {
       max_length  = 32
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     container_group = {
       name        = substr(join("-", compact([local.prefix, "cg", local.suffix])), 0, 63)
@@ -455,6 +496,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     container_registry = {
       name        = substr(join("", compact([local.prefix_safe, "acr", local.suffix_safe])), 0, 63)
@@ -465,6 +507,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9]+$"
+      separator   = ""
     }
     container_registry_webhook = {
       name        = substr(join("", compact([local.prefix_safe, "crwh", local.suffix_safe])), 0, 50)
@@ -475,6 +518,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9]+$"
+      separator   = ""
     }
     cosmosdb_account = {
       name        = substr(join("-", compact([local.prefix, "cosmos", local.suffix])), 0, 63)
@@ -485,6 +529,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+      separator   = "-"
     }
     cosmosdb_cassandra = {
       name        = substr(join("-", compact([local.prefix, "coscas", local.suffix])), 0, 44)
@@ -495,6 +540,7 @@ locals {
       max_length  = 44
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+      separator   = "-"
     }
     cosmosdb_cassandra_cluster = {
       name        = substr(join("-", compact([local.prefix, "mcc", local.suffix])), 0, 44)
@@ -505,6 +551,7 @@ locals {
       max_length  = 44
       scope       = "parent"
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     cosmosdb_cassandra_datacenter = {
       name        = substr(join("-", compact([local.prefix, "mcdc", local.suffix])), 0, 44)
@@ -515,6 +562,7 @@ locals {
       max_length  = 44
       scope       = "parent"
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     cosmosdb_gremlin = {
       name        = substr(join("-", compact([local.prefix, "cosgrm", local.suffix])), 0, 44)
@@ -525,6 +573,7 @@ locals {
       max_length  = 44
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+      separator   = "-"
     }
     cosmosdb_mongodb = {
       name        = substr(join("-", compact([local.prefix, "cosmon", local.suffix])), 0, 44)
@@ -535,6 +584,7 @@ locals {
       max_length  = 44
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+      separator   = "-"
     }
     cosmosdb_nosql = {
       name        = substr(join("-", compact([local.prefix, "cosno", local.suffix])), 0, 44)
@@ -545,6 +595,7 @@ locals {
       max_length  = 44
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+      separator   = "-"
     }
     cosmosdb_postgres = {
       name        = substr(join("-", compact([local.prefix, "cospos", local.suffix])), 0, 63)
@@ -555,6 +606,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+      separator   = "-"
     }
     cosmosdb_tables = {
       name        = substr(join("-", compact([local.prefix, "costab", local.suffix])), 0, 44)
@@ -565,6 +617,7 @@ locals {
       max_length  = 44
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-_.]+[a-z0-9]$"
+      separator   = "-"
     }
     custom_provider = {
       name        = substr(join("-", compact([local.prefix, "prov", local.suffix])), 0, 64)
@@ -575,6 +628,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[^&%?\\/]+[^&%.?\\/ ]$"
+      separator   = "-"
     }
     dashboard = {
       name        = substr(join("-", compact([local.prefix, "dsb", local.suffix])), 0, 160)
@@ -585,6 +639,7 @@ locals {
       max_length  = 160
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     dashboard_grafana = {
       name        = substr(join("-", compact([local.prefix, "amg", local.suffix])), 0, 80)
@@ -595,6 +650,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     data_factory = {
       name        = substr(join("-", compact([local.prefix, "adf", local.suffix])), 0, 63)
@@ -605,6 +661,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     data_factory_dataset_mysql = {
       name        = substr(join("-", compact([local.prefix, "adfmysql", local.suffix])), 0, 260)
@@ -615,6 +672,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     data_factory_dataset_postgresql = {
       name        = substr(join("-", compact([local.prefix, "adfpsql", local.suffix])), 0, 260)
@@ -625,6 +683,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     data_factory_dataset_sql_server_table = {
       name        = substr(join("-", compact([local.prefix, "adfmssql", local.suffix])), 0, 260)
@@ -635,6 +694,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     data_factory_integration_runtime_managed = {
       name        = substr(join("-", compact([local.prefix, "adfir", local.suffix])), 0, 63)
@@ -645,6 +705,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     data_factory_linked_service_data_lake_storage_gen2 = {
       name        = substr(join("-", compact([local.prefix, "adfsvst", local.suffix])), 0, 260)
@@ -655,6 +716,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+$"
+      separator   = "-"
     }
     data_factory_linked_service_key_vault = {
       name        = substr(join("-", compact([local.prefix, "adfsvkv", local.suffix])), 0, 260)
@@ -665,6 +727,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+$"
+      separator   = "-"
     }
     data_factory_linked_service_mysql = {
       name        = substr(join("-", compact([local.prefix, "adfsvmysql", local.suffix])), 0, 260)
@@ -675,6 +738,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+$"
+      separator   = "-"
     }
     data_factory_linked_service_postgresql = {
       name        = substr(join("-", compact([local.prefix, "adfsvpsql", local.suffix])), 0, 260)
@@ -685,6 +749,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+$"
+      separator   = "-"
     }
     data_factory_linked_service_sql_server = {
       name        = substr(join("-", compact([local.prefix, "adfsvmssql", local.suffix])), 0, 260)
@@ -695,6 +760,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+$"
+      separator   = "-"
     }
     data_factory_pipeline = {
       name        = substr(join("-", compact([local.prefix, "adfpl", local.suffix])), 0, 260)
@@ -705,6 +771,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     data_factory_trigger_schedule = {
       name        = substr(join("-", compact([local.prefix, "adftg", local.suffix])), 0, 260)
@@ -715,6 +782,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][^<>*%:.?\\+\\/]+$"
+      separator   = "-"
     }
     data_lake_analytics_account = {
       name        = substr(join("", compact([local.prefix_safe, "dla", local.suffix_safe])), 0, 24)
@@ -725,6 +793,7 @@ locals {
       max_length  = 24
       scope       = "global"
       regex       = "^[a-z0-9]+$"
+      separator   = ""
     }
     data_lake_analytics_firewall_rule = {
       name        = substr(join("-", compact([local.prefix, "dlfw", local.suffix])), 0, 50)
@@ -735,6 +804,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-z0-9-_]+$"
+      separator   = "-"
     }
     data_lake_store = {
       name        = substr(join("", compact([local.prefix_safe, "dls", local.suffix_safe])), 0, 24)
@@ -745,6 +815,7 @@ locals {
       max_length  = 24
       scope       = "parent"
       regex       = "^[a-z0-9]+$"
+      separator   = ""
     }
     data_lake_store_firewall_rule = {
       name        = substr(join("-", compact([local.prefix, "dlsfw", local.suffix])), 0, 50)
@@ -755,6 +826,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     data_protection_backup_vault = {
       name        = substr(join("-", compact([local.prefix, "bvault", local.suffix])), 0, 50)
@@ -765,6 +837,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     database_migration_project = {
       name        = substr(join("-", compact([local.prefix, "migr", local.suffix])), 0, 57)
@@ -775,6 +848,7 @@ locals {
       max_length  = 57
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      separator   = "-"
     }
     database_migration_service = {
       name        = substr(join("-", compact([local.prefix, "dms", local.suffix])), 0, 62)
@@ -785,6 +859,7 @@ locals {
       max_length  = 62
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+$"
+      separator   = "-"
     }
     databricks_access_connector = {
       name        = substr(join("-", compact([local.prefix, "dbac", local.suffix])), 0, 30)
@@ -795,6 +870,7 @@ locals {
       max_length  = 30
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     databricks_cluster = {
       name        = substr(join("-", compact([local.prefix, "dbc", local.suffix])), 0, 30)
@@ -805,6 +881,7 @@ locals {
       max_length  = 30
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     databricks_high_concurrency_cluster = {
       name        = substr(join("-", compact([local.prefix, "dbhcc", local.suffix])), 0, 30)
@@ -815,6 +892,7 @@ locals {
       max_length  = 30
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     databricks_standard_cluster = {
       name        = substr(join("-", compact([local.prefix, "dbsc", local.suffix])), 0, 30)
@@ -825,6 +903,7 @@ locals {
       max_length  = 30
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     databricks_workspace = {
       name        = substr(join("-", compact([local.prefix, "dbw", local.suffix])), 0, 30)
@@ -835,6 +914,7 @@ locals {
       max_length  = 30
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     dev_test_lab = {
       name        = substr(join("-", compact([local.prefix, "lab", local.suffix])), 0, 50)
@@ -845,6 +925,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     dev_test_linux_virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "labvm", local.suffix])), 0, 64)
@@ -855,6 +936,7 @@ locals {
       max_length  = 64
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     dev_test_windows_virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "labvm", local.suffix])), 0, 15)
@@ -865,6 +947,7 @@ locals {
       max_length  = 15
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     disk_encryption_set = {
       name        = substr(join("-", compact([local.prefix, "des", local.suffix])), 0, 80)
@@ -875,6 +958,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9_]+$"
+      separator   = "-"
     }
     dns_a_record = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
@@ -885,6 +969,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     dns_aaaa_record = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
@@ -895,6 +980,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     dns_caa_record = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
@@ -905,6 +991,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     dns_cname_record = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
@@ -915,6 +1002,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     dns_mx_record = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
@@ -925,6 +1013,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     dns_ns_record = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
@@ -935,6 +1024,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     dns_private_resolver = {
       name        = substr(join("-", compact([local.prefix, "dnspr", local.suffix])), 0, 80)
@@ -945,6 +1035,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     dns_ptr_record = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
@@ -955,6 +1046,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     dns_txt_record = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 80)
@@ -965,6 +1057,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     dns_zone = {
       name        = substr(join("-", compact([local.prefix, "dns", local.suffix])), 0, 63)
@@ -975,6 +1068,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     eventgrid_domain = {
       name        = substr(join("-", compact([local.prefix, "egd", local.suffix])), 0, 50)
@@ -985,6 +1079,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     eventgrid_domain_topic = {
       name        = substr(join("-", compact([local.prefix, "egdt", local.suffix])), 0, 50)
@@ -995,6 +1090,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     eventgrid_event_subscription = {
       name        = substr(join("-", compact([local.prefix, "egs", local.suffix])), 0, 64)
@@ -1005,6 +1101,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     eventgrid_namespace = {
       name        = substr(join("-", compact([local.prefix, "evgns", local.suffix])), 0, 50)
@@ -1015,6 +1112,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     eventgrid_system_topic = {
       name        = substr(join("-", compact([local.prefix, "egst", local.suffix])), 0, 50)
@@ -1025,6 +1123,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     eventgrid_topic = {
       name        = substr(join("-", compact([local.prefix, "egt", local.suffix])), 0, 50)
@@ -1035,6 +1134,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     eventhub = {
       name        = substr(join("-", compact([local.prefix, "evh", local.suffix])), 0, 50)
@@ -1045,6 +1145,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     eventhub_authorization_rule = {
       name        = substr(join("-", compact([local.prefix, "ehar", local.suffix])), 0, 50)
@@ -1055,6 +1156,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     eventhub_cluster = {
       name        = substr(join("-", compact([local.prefix, "evhcl", local.suffix])), 0, 50)
@@ -1065,6 +1167,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     eventhub_consumer_group = {
       name        = substr(join("-", compact([local.prefix, "ehcg", local.suffix])), 0, 50)
@@ -1075,6 +1178,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     eventhub_namespace = {
       name        = substr(join("-", compact([local.prefix, "ehn", local.suffix])), 0, 50)
@@ -1085,6 +1189,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     eventhub_namespace_authorization_rule = {
       name        = substr(join("-", compact([local.prefix, "ehnar", local.suffix])), 0, 50)
@@ -1095,6 +1200,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     eventhub_namespace_disaster_recovery_config = {
       name        = substr(join("-", compact([local.prefix, "ehdr", local.suffix])), 0, 50)
@@ -1105,6 +1211,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     express_route_circuit = {
       name        = substr(join("-", compact([local.prefix, "erc", local.suffix])), 0, 80)
@@ -1115,6 +1222,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     express_route_gateway = {
       name        = substr(join("-", compact([local.prefix, "ergw", local.suffix])), 0, 80)
@@ -1125,6 +1233,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     fabric_capacity = {
       name        = substr(join("", compact([local.prefix_safe, "fc", local.suffix_safe])), 0, 63)
@@ -1135,6 +1244,7 @@ locals {
       max_length  = 63
       scope       = "region"
       regex       = "^[a-z][a-z0-9]+$"
+      separator   = ""
     }
     firewall = {
       name        = substr(join("-", compact([local.prefix, "fw", local.suffix])), 0, 80)
@@ -1145,6 +1255,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     firewall_application_rule_collection = {
       name        = substr(join("-", compact([local.prefix, "fwapp", local.suffix])), 0, 80)
@@ -1155,6 +1266,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     firewall_ip_configuration = {
       name        = substr(join("-", compact([local.prefix, "fwipconf", local.suffix])), 0, 80)
@@ -1165,6 +1277,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     firewall_nat_rule_collection = {
       name        = substr(join("-", compact([local.prefix, "fwnatrc", local.suffix])), 0, 80)
@@ -1175,6 +1288,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     firewall_network_rule_collection = {
       name        = substr(join("-", compact([local.prefix, "fwnetrc", local.suffix])), 0, 80)
@@ -1185,6 +1299,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     firewall_policy = {
       name        = substr(join("-", compact([local.prefix, "afwp", local.suffix])), 0, 80)
@@ -1195,6 +1310,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     firewall_policy_rule_collection_group = {
       name        = substr(join("-", compact([local.prefix, "fwprcg", local.suffix])), 0, 80)
@@ -1205,6 +1321,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     frontdoor = {
       name        = substr(join("-", compact([local.prefix, "fd", local.suffix])), 0, 64)
@@ -1215,6 +1332,7 @@ locals {
       max_length  = 64
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     frontdoor_firewall_policy = {
       name        = substr(join("-", compact([local.prefix, "fdfw", local.suffix])), 0, 80)
@@ -1225,6 +1343,7 @@ locals {
       max_length  = 80
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     function_app = {
       name        = substr(join("-", compact([local.prefix, "func", local.suffix])), 0, 60)
@@ -1235,6 +1354,7 @@ locals {
       max_length  = 60
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     hdinsight_hadoop_cluster = {
       name        = substr(join("-", compact([local.prefix, "hadoop", local.suffix])), 0, 59)
@@ -1245,6 +1365,7 @@ locals {
       max_length  = 59
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     hdinsight_hbase_cluster = {
       name        = substr(join("-", compact([local.prefix, "hbase", local.suffix])), 0, 59)
@@ -1255,6 +1376,7 @@ locals {
       max_length  = 59
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     hdinsight_interactive_query_cluster = {
       name        = substr(join("-", compact([local.prefix, "iqr", local.suffix])), 0, 59)
@@ -1265,6 +1387,7 @@ locals {
       max_length  = 59
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     hdinsight_kafka_cluster = {
       name        = substr(join("-", compact([local.prefix, "kafka", local.suffix])), 0, 59)
@@ -1275,6 +1398,7 @@ locals {
       max_length  = 59
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     hdinsight_ml_services_cluster = {
       name        = substr(join("-", compact([local.prefix, "mls", local.suffix])), 0, 59)
@@ -1285,6 +1409,7 @@ locals {
       max_length  = 59
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     hdinsight_rserver_cluster = {
       name        = substr(join("-", compact([local.prefix, "rsv", local.suffix])), 0, 59)
@@ -1295,6 +1420,7 @@ locals {
       max_length  = 59
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     hdinsight_spark_cluster = {
       name        = substr(join("-", compact([local.prefix, "spark", local.suffix])), 0, 59)
@@ -1305,6 +1431,7 @@ locals {
       max_length  = 59
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     hdinsight_storm_cluster = {
       name        = substr(join("-", compact([local.prefix, "storm", local.suffix])), 0, 59)
@@ -1315,6 +1442,7 @@ locals {
       max_length  = 59
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     image = {
       name        = substr(join("-", compact([local.prefix, "img", local.suffix])), 0, 80)
@@ -1325,6 +1453,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     iotcentral_application = {
       name        = substr(join("-", compact([local.prefix, "iotapp", local.suffix])), 0, 63)
@@ -1335,6 +1464,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     iothub = {
       name        = substr(join("-", compact([local.prefix, "iot", local.suffix])), 0, 50)
@@ -1345,6 +1475,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     iothub_consumer_group = {
       name        = substr(join("-", compact([local.prefix, "iotcg", local.suffix])), 0, 50)
@@ -1355,6 +1486,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-._]+$"
+      separator   = "-"
     }
     iothub_dps = {
       name        = substr(join("-", compact([local.prefix, "dps", local.suffix])), 0, 64)
@@ -1365,6 +1497,7 @@ locals {
       max_length  = 64
       scope       = "resoureceGroup"
       regex       = "^[a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     iothub_dps_certificate = {
       name        = substr(join("-", compact([local.prefix, "dpscert", local.suffix])), 0, 64)
@@ -1375,6 +1508,7 @@ locals {
       max_length  = 64
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-._]+$"
+      separator   = "-"
     }
     ip_group = {
       name        = substr(join("-", compact([local.prefix, "ipg", local.suffix])), 0, 80)
@@ -1385,6 +1519,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     key_vault = {
       name        = substr(join("-", compact([local.prefix, "kv", local.suffix])), 0, 24)
@@ -1395,6 +1530,7 @@ locals {
       max_length  = 24
       scope       = "global"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     key_vault_certificate = {
       name        = substr(join("-", compact([local.prefix, "kvc", local.suffix])), 0, 127)
@@ -1405,6 +1541,7 @@ locals {
       max_length  = 127
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     key_vault_key = {
       name        = substr(join("-", compact([local.prefix, "kvk", local.suffix])), 0, 127)
@@ -1415,6 +1552,7 @@ locals {
       max_length  = 127
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     key_vault_secret = {
       name        = substr(join("-", compact([local.prefix, "kvs", local.suffix])), 0, 127)
@@ -1425,6 +1563,7 @@ locals {
       max_length  = 127
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     kubernetes_cluster = {
       name        = substr(join("-", compact([local.prefix, "aks", local.suffix])), 0, 63)
@@ -1435,6 +1574,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     kusto_cluster = {
       name        = substr(join("", compact([local.prefix_safe, "kc", local.suffix_safe])), 0, 22)
@@ -1445,6 +1585,7 @@ locals {
       max_length  = 22
       scope       = "global"
       regex       = "^[a-z][a-z0-9]+$"
+      separator   = ""
     }
     kusto_database = {
       name        = substr(join("-", compact([local.prefix, "kdb", local.suffix])), 0, 260)
@@ -1455,6 +1596,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9- .]+$"
+      separator   = "-"
     }
     kusto_eventhub_data_connection = {
       name        = substr(join("-", compact([local.prefix, "kehc", local.suffix])), 0, 40)
@@ -1465,6 +1607,7 @@ locals {
       max_length  = 40
       scope       = "parent"
       regex       = "^[a-zA-Z0-9- .]+$"
+      separator   = "-"
     }
     lb = {
       name        = substr(join("-", compact([local.prefix, "lb", local.suffix])), 0, 80)
@@ -1475,6 +1618,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     lb_nat_rule = {
       name        = substr(join("-", compact([local.prefix, "lbnatrl", local.suffix])), 0, 80)
@@ -1485,6 +1629,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     lb_rule = {
       name        = substr(join("-", compact([local.prefix, "rule", local.suffix])), 0, 80)
@@ -1495,6 +1640,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     linux_virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 64)
@@ -1505,6 +1651,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
+      separator   = "-"
     }
     linux_virtual_machine_scale_set = {
       name        = substr(join("-", compact([local.prefix, "vmss", local.suffix])), 0, 64)
@@ -1515,6 +1662,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
+      separator   = "-"
     }
     load_test = {
       name        = substr(join("-", compact([local.prefix, "lt", local.suffix])), 0, 64)
@@ -1525,6 +1673,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z][a-zA-Z0-9-_]{0,62}[a-zA-Z0-9|]$"
+      separator   = "-"
     }
     local_network_gateway = {
       name        = substr(join("-", compact([local.prefix, "lgw", local.suffix])), 0, 80)
@@ -1535,6 +1684,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     log_analytics_query_pack = {
       name        = substr(join("-", compact([local.prefix, "pack", local.suffix])), 0, 63)
@@ -1545,6 +1695,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     log_analytics_workspace = {
       name        = substr(join("-", compact([local.prefix, "log", local.suffix])), 0, 63)
@@ -1555,6 +1706,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     logic_app_integration_account = {
       name        = substr(join("-", compact([local.prefix, "ia", local.suffix])), 0, 80)
@@ -1565,6 +1717,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._()]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     logic_app_workflow = {
       name        = substr(join("-", compact([local.prefix, "logic", local.suffix])), 0, 80)
@@ -1575,6 +1728,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     machine_learning_registry = {
       name        = substr(join("-", compact([local.prefix, "mlr", local.suffix])), 0, 33)
@@ -1585,6 +1739,7 @@ locals {
       max_length  = 33
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9_-]{2,32}$"
+      separator   = "-"
     }
     machine_learning_workspace = {
       name        = substr(join("-", compact([local.prefix, "mlw", local.suffix])), 0, 260)
@@ -1595,6 +1750,7 @@ locals {
       max_length  = 260
       scope       = "resourceGroup"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+      separator   = "-"
     }
     maintenance_configuration = {
       name        = substr(join("-", compact([local.prefix, "mc", local.suffix])), 0, 80)
@@ -1605,6 +1761,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     managed_disk = {
       name        = substr(join("-", compact([local.prefix, "dsk", local.suffix])), 0, 80)
@@ -1615,6 +1772,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9_]+$"
+      separator   = "-"
     }
     management_group = {
       name        = substr(join("-", compact([local.prefix, "mg", local.suffix])), 0, 90)
@@ -1625,6 +1783,7 @@ locals {
       max_length  = 90
       scope       = "tenant"
       regex       = "^[a-zA-Z0-9-_().]+$"
+      separator   = "-"
     }
     maps_account = {
       name        = substr(join("-", compact([local.prefix, "map", local.suffix])), 0, 98)
@@ -1635,6 +1794,7 @@ locals {
       max_length  = 98
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+$"
+      separator   = "-"
     }
     mariadb_database = {
       name        = substr(join("-", compact([local.prefix, "mariadb", local.suffix])), 0, 63)
@@ -1645,6 +1805,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     mariadb_firewall_rule = {
       name        = substr(join("-", compact([local.prefix, "mariafw", local.suffix])), 0, 128)
@@ -1655,6 +1816,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     mariadb_server = {
       name        = substr(join("-", compact([local.prefix, "maria", local.suffix])), 0, 63)
@@ -1665,6 +1827,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     mariadb_virtual_network_rule = {
       name        = substr(join("-", compact([local.prefix, "mariavn", local.suffix])), 0, 128)
@@ -1675,6 +1838,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     monitor_action_group = {
       name        = substr(join("-", compact([local.prefix, "mag", local.suffix])), 0, 260)
@@ -1685,6 +1849,7 @@ locals {
       max_length  = 260
       scope       = "resourceGroup"
       regex       = "^[^%&?\\+\\/]+[^^%&?\\+\\/ ]$"
+      separator   = "-"
     }
     monitor_alert_processing_rule_action_group = {
       name        = substr(join("-", compact([local.prefix, "apr", local.suffix])), 0, 260)
@@ -1695,6 +1860,7 @@ locals {
       max_length  = 260
       scope       = "resourceGroup"
       regex       = "^[^<>*{}%&:\\?+/#|]+[^<>*{}%&:\\?+/#| ]$"
+      separator   = "-"
     }
     monitor_autoscale_setting = {
       name        = substr(join("-", compact([local.prefix, "mas", local.suffix])), 0, 260)
@@ -1705,6 +1871,7 @@ locals {
       max_length  = 260
       scope       = "resourceGroup"
       regex       = "^[^<>%&#.,?\\+\\/]+[^<>%&#.,?\\+\\/ ]$"
+      separator   = "-"
     }
     monitor_data_collection_endpoint = {
       name        = substr(join("-", compact([local.prefix, "dce", local.suffix])), 0, 64)
@@ -1715,6 +1882,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     monitor_data_collection_rule = {
       name        = substr(join("-", compact([local.prefix, "dcr", local.suffix])), 0, 64)
@@ -1725,6 +1893,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     monitor_diagnostic_setting = {
       name        = substr(join("-", compact([local.prefix, "mds", local.suffix])), 0, 260)
@@ -1735,6 +1904,7 @@ locals {
       max_length  = 260
       scope       = "resourceGroup"
       regex       = "^[^*<>%:&?\\+\\/]+[^*<>%:&?\\+\\/ ]$"
+      separator   = "-"
     }
     monitor_scheduled_query_rules_alert = {
       name        = substr(join("-", compact([local.prefix, "msqa", local.suffix])), 0, 260)
@@ -1745,6 +1915,7 @@ locals {
       max_length  = 260
       scope       = "resourceGroup"
       regex       = "^[^*<>%:{}&#.,?\\+\\/]+[^*<>%:{}&#.,?\\+\\/ ]$"
+      separator   = "-"
     }
     mssql_database = {
       name        = substr(join("-", compact([local.prefix, "sqldb", local.suffix])), 0, 128)
@@ -1755,6 +1926,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+      separator   = "-"
     }
     mssql_elasticpool = {
       name        = substr(join("-", compact([local.prefix, "sqlep", local.suffix])), 0, 128)
@@ -1765,6 +1937,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+      separator   = "-"
     }
     mssql_job_agent = {
       name        = substr(join("-", compact([local.prefix, "sqlja", local.suffix])), 0, 128)
@@ -1775,6 +1948,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+      separator   = "-"
     }
     mssql_managed_instance = {
       name        = substr(join("-", compact([local.prefix, "sqlmi", local.suffix])), 0, 63)
@@ -1785,6 +1959,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     mssql_server = {
       name        = substr(join("-", compact([local.prefix, "sql", local.suffix])), 0, 63)
@@ -1795,6 +1970,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     mysql_database = {
       name        = substr(join("-", compact([local.prefix, "mysqldb", local.suffix])), 0, 63)
@@ -1805,6 +1981,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     mysql_firewall_rule = {
       name        = substr(join("-", compact([local.prefix, "mysqlfw", local.suffix])), 0, 128)
@@ -1815,6 +1992,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     mysql_server = {
       name        = substr(join("-", compact([local.prefix, "mysql", local.suffix])), 0, 63)
@@ -1825,6 +2003,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     mysql_virtual_network_rule = {
       name        = substr(join("-", compact([local.prefix, "mysqlvn", local.suffix])), 0, 128)
@@ -1835,6 +2014,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     nat_gateway = {
       name        = substr(join("-", compact([local.prefix, "ng", local.suffix])), 0, 80)
@@ -1845,6 +2025,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     network_ddos_protection_plan = {
       name        = substr(join("-", compact([local.prefix, "ddospp", local.suffix])), 0, 80)
@@ -1855,6 +2036,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     network_interface = {
       name        = substr(join("-", compact([local.prefix, "nic", local.suffix])), 0, 80)
@@ -1865,6 +2047,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     network_manager = {
       name        = substr(join("-", compact([local.prefix, "vnm", local.suffix])), 0, 80)
@@ -1875,6 +2058,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     network_security_group = {
       name        = substr(join("-", compact([local.prefix, "nsg", local.suffix])), 0, 80)
@@ -1885,6 +2069,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     network_security_group_rule = {
       name        = substr(join("-", compact([local.prefix, "nsgr", local.suffix])), 0, 80)
@@ -1895,6 +2080,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     network_security_rule = {
       name        = substr(join("-", compact([local.prefix, "nsgr", local.suffix])), 0, 80)
@@ -1905,6 +2091,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     network_watcher = {
       name        = substr(join("-", compact([local.prefix, "nw", local.suffix])), 0, 80)
@@ -1915,6 +2102,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     notification_hub = {
       name        = substr(join("-", compact([local.prefix, "nh", local.suffix])), 0, 260)
@@ -1925,6 +2113,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+$"
+      separator   = "-"
     }
     notification_hub_authorization_rule = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 256)
@@ -1935,6 +2124,7 @@ locals {
       max_length  = 256
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+$"
+      separator   = "-"
     }
     notification_hub_namespace = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 50)
@@ -1945,6 +2135,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     point_to_site_vpn_gateway = {
       name        = substr(join("-", compact([local.prefix, "vpngw", local.suffix])), 0, 80)
@@ -1955,6 +2146,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     policy_definition = {
       name        = substr(join("-", compact([local.prefix, "pdef", local.suffix])), 0, 128)
@@ -1965,6 +2157,7 @@ locals {
       max_length  = 128
       scope       = "tenant"
       regex       = "^[^<>*%&:?./+]+[^<>*%&:?./+ ]$"
+      separator   = "-"
     }
     postgresql_database = {
       name        = substr(join("-", compact([local.prefix, "psqldb", local.suffix])), 0, 63)
@@ -1975,6 +2168,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     postgresql_firewall_rule = {
       name        = substr(join("-", compact([local.prefix, "psqlfw", local.suffix])), 0, 128)
@@ -1985,6 +2179,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     postgresql_server = {
       name        = substr(join("-", compact([local.prefix, "psql", local.suffix])), 0, 63)
@@ -1995,6 +2190,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     postgresql_virtual_network_rule = {
       name        = substr(join("-", compact([local.prefix, "psqlvn", local.suffix])), 0, 128)
@@ -2005,6 +2201,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     powerbi_embedded = {
       name        = substr(join("-", compact([local.prefix, "pbi", local.suffix])), 0, 63)
@@ -2015,6 +2212,7 @@ locals {
       max_length  = 63
       scope       = "region"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     private_dns_a_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
@@ -2025,6 +2223,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_dns_aaaa_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
@@ -2035,6 +2234,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_dns_cname_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
@@ -2045,6 +2245,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_dns_mx_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
@@ -2055,6 +2256,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_dns_ptr_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
@@ -2065,6 +2267,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_dns_srv_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
@@ -2075,6 +2278,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_dns_txt_record = {
       name        = substr(join("-", compact([local.prefix, "pdnsrec", local.suffix])), 0, 80)
@@ -2085,6 +2289,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_dns_zone = {
       name        = substr(join("-", compact([local.prefix, "pdns", local.suffix])), 0, 63)
@@ -2095,6 +2300,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_dns_zone_group = {
       name        = substr(join("-", compact([local.prefix, "pdnszg", local.suffix])), 0, 80)
@@ -2105,6 +2311,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_endpoint = {
       name        = substr(join("-", compact([local.prefix, "pe", local.suffix])), 0, 80)
@@ -2115,6 +2322,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_link_service = {
       name        = substr(join("-", compact([local.prefix, "pls", local.suffix])), 0, 80)
@@ -2125,6 +2333,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     private_service_connection = {
       name        = substr(join("-", compact([local.prefix, "psc", local.suffix])), 0, 80)
@@ -2135,6 +2344,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9\\-\\._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     proximity_placement_group = {
       name        = substr(join("-", compact([local.prefix, "ppg", local.suffix])), 0, 80)
@@ -2145,6 +2355,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     public_ip = {
       name        = substr(join("-", compact([local.prefix, "pip", local.suffix])), 0, 80)
@@ -2155,6 +2366,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     public_ip_prefix = {
       name        = substr(join("-", compact([local.prefix, "pippf", local.suffix])), 0, 80)
@@ -2165,6 +2377,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     purview_account = {
       name        = substr(join("-", compact([local.prefix, "pview", local.suffix])), 0, 63)
@@ -2175,6 +2388,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     recovery_services_vault = {
       name        = substr(join("-", compact([local.prefix, "rsv", local.suffix])), 0, 50)
@@ -2185,6 +2399,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     redhat_openshift_cluster = {
       name        = substr(join("-", compact([local.prefix, "aro", local.suffix])), 0, 63)
@@ -2195,6 +2410,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     redis_cache = {
       name        = substr(join("-", compact([local.prefix, "redis", local.suffix])), 0, 63)
@@ -2205,6 +2421,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     redis_firewall_rule = {
       name        = substr(join("", compact([local.prefix_safe, "redisfw", local.suffix_safe])), 0, 256)
@@ -2215,6 +2432,7 @@ locals {
       max_length  = 256
       scope       = "parent"
       regex       = "^[a-zA-Z0-9]+$"
+      separator   = ""
     }
     relay_hybrid_connection = {
       name        = substr(join("-", compact([local.prefix, "rlhc", local.suffix])), 0, 260)
@@ -2225,6 +2443,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     relay_namespace = {
       name        = substr(join("-", compact([local.prefix, "rln", local.suffix])), 0, 50)
@@ -2235,6 +2454,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     resource_group = {
       name        = substr(join("-", compact([local.prefix, "rg", local.suffix])), 0, 90)
@@ -2245,6 +2465,7 @@ locals {
       max_length  = 90
       scope       = "subscription"
       regex       = "^[a-zA-Z0-9-._\\(\\)]+[a-zA-Z0-9-_\\(\\)]$"
+      separator   = "-"
     }
     resource_group_template_deployment = {
       name        = substr(join("-", compact([local.prefix, "ts", local.suffix])), 0, 90)
@@ -2255,6 +2476,7 @@ locals {
       max_length  = 90
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-._()]+$"
+      separator   = "-"
     }
     role_assignment = {
       name        = substr(join("-", compact([local.prefix, "ra", local.suffix])), 0, 64)
@@ -2265,6 +2487,7 @@ locals {
       max_length  = 64
       scope       = "assignment"
       regex       = "^[^%]+[^ %.]$"
+      separator   = "-"
     }
     role_definition = {
       name        = substr(join("-", compact([local.prefix, "rd", local.suffix])), 0, 64)
@@ -2275,6 +2498,7 @@ locals {
       max_length  = 64
       scope       = "definition"
       regex       = "^[^%]+[^ %.]$"
+      separator   = "-"
     }
     route = {
       name        = substr(join("-", compact([local.prefix, "rt", local.suffix])), 0, 80)
@@ -2285,6 +2509,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     route_filter = {
       name        = substr(join("-", compact([local.prefix, "rf", local.suffix])), 0, 80)
@@ -2295,6 +2520,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     route_server = {
       name        = substr(join("-", compact([local.prefix, "rtserv", local.suffix])), 0, 80)
@@ -2305,6 +2531,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     route_table = {
       name        = substr(join("-", compact([local.prefix, "route", local.suffix])), 0, 80)
@@ -2315,6 +2542,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     search_service = {
       name        = substr(join("-", compact([local.prefix, "srch", local.suffix])), 0, 64)
@@ -2325,6 +2553,7 @@ locals {
       max_length  = 64
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+$"
+      separator   = "-"
     }
     service_fabric_cluster = {
       name        = substr(join("-", compact([local.prefix, "sf", local.suffix])), 0, 23)
@@ -2335,6 +2564,7 @@ locals {
       max_length  = 23
       scope       = "region"
       regex       = "^[a-z][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     servicebus_namespace = {
       name        = substr(join("-", compact([local.prefix, "sb", local.suffix])), 0, 50)
@@ -2345,6 +2575,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-zA-Z][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     servicebus_namespace_authorization_rule = {
       name        = substr(join("-", compact([local.prefix, "sbar", local.suffix])), 0, 50)
@@ -2355,6 +2586,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     servicebus_queue = {
       name        = substr(join("-", compact([local.prefix, "sbq", local.suffix])), 0, 260)
@@ -2365,6 +2597,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     servicebus_queue_authorization_rule = {
       name        = substr(join("-", compact([local.prefix, "sbqar", local.suffix])), 0, 50)
@@ -2375,6 +2608,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     servicebus_subscription = {
       name        = substr(join("-", compact([local.prefix, "sbs", local.suffix])), 0, 50)
@@ -2385,6 +2619,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     servicebus_subscription_rule = {
       name        = substr(join("-", compact([local.prefix, "sbsr", local.suffix])), 0, 50)
@@ -2395,6 +2630,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     servicebus_topic = {
       name        = substr(join("-", compact([local.prefix, "sbt", local.suffix])), 0, 260)
@@ -2405,6 +2641,7 @@ locals {
       max_length  = 260
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     servicebus_topic_authorization_rule = {
       name        = substr(join("-", compact([local.prefix, "dnsrec", local.suffix])), 0, 50)
@@ -2415,6 +2652,7 @@ locals {
       max_length  = 50
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     shared_image = {
       name        = substr(join("-", compact([local.prefix, "si", local.suffix])), 0, 80)
@@ -2425,6 +2663,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     shared_image_gallery = {
       name        = substr(join("", compact([local.prefix_safe, "sig", local.suffix_safe])), 0, 80)
@@ -2435,6 +2674,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9.]+[a-zA-Z0-9]$"
+      separator   = ""
     }
     signalr_service = {
       name        = substr(join("-", compact([local.prefix, "sgnlr", local.suffix])), 0, 63)
@@ -2445,6 +2685,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     snapshots = {
       name        = substr(join("-", compact([local.prefix, "snap", local.suffix])), 0, 80)
@@ -2455,6 +2696,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     sql_elasticpool = {
       name        = substr(join("-", compact([local.prefix, "sqlep", local.suffix])), 0, 128)
@@ -2465,6 +2707,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:.?\\+\\/]+[^<>*%:.?\\+\\/ ]$"
+      separator   = "-"
     }
     sql_failover_group = {
       name        = substr(join("-", compact([local.prefix, "sqlfg", local.suffix])), 0, 63)
@@ -2475,6 +2718,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     sql_firewall_rule = {
       name        = substr(join("-", compact([local.prefix, "sqlfw", local.suffix])), 0, 128)
@@ -2485,6 +2729,7 @@ locals {
       max_length  = 128
       scope       = "parent"
       regex       = "^[^<>*%:?\\+\\/]+[^<>*%:.?\\+\\/]$"
+      separator   = "-"
     }
     sql_server = {
       name        = substr(join("-", compact([local.prefix, "sql", local.suffix])), 0, 63)
@@ -2495,6 +2740,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     ssh_public_key = {
       name        = substr(join("-", compact([local.prefix, "sshkey", local.suffix])), 0, 80)
@@ -2505,6 +2751,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     static_web_app = {
       name        = substr(join("-", compact([local.prefix, "stapp", local.suffix])), 0, 40)
@@ -2515,6 +2762,7 @@ locals {
       max_length  = 40
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+      separator   = "-"
     }
     storage_account = {
       name        = substr(join("", compact([local.prefix_safe, "st", local.suffix_safe])), 0, 24)
@@ -2525,6 +2773,7 @@ locals {
       max_length  = 24
       scope       = "global"
       regex       = "^[a-z0-9]+$"
+      separator   = ""
     }
     storage_blob = {
       name        = substr(join("-", compact([local.prefix, "blob", local.suffix])), 0, 1024)
@@ -2535,6 +2784,7 @@ locals {
       max_length  = 1024
       scope       = "parent"
       regex       = "^[^\\s\\/$#&]+$"
+      separator   = "-"
     }
     storage_container = {
       name        = substr(join("-", compact([local.prefix, "stct", local.suffix])), 0, 63)
@@ -2545,6 +2795,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-z0-9][a-z0-9-]+$"
+      separator   = "-"
     }
     storage_data_lake_gen2_filesystem = {
       name        = substr(join("-", compact([local.prefix, "stdl", local.suffix])), 0, 63)
@@ -2555,6 +2806,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     storage_queue = {
       name        = substr(join("-", compact([local.prefix, "stq", local.suffix])), 0, 63)
@@ -2565,6 +2817,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     storage_share = {
       name        = substr(join("-", compact([local.prefix, "sts", local.suffix])), 0, 63)
@@ -2575,6 +2828,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     storage_share_directory = {
       name        = substr(join("-", compact([local.prefix, "sts", local.suffix])), 0, 63)
@@ -2585,6 +2839,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     storage_table = {
       name        = substr(join("-", compact([local.prefix, "stt", local.suffix])), 0, 63)
@@ -2595,6 +2850,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     stream_analytics_function_javascript_udf = {
       name        = substr(join("-", compact([local.prefix, "asafunc", local.suffix])), 0, 63)
@@ -2605,6 +2861,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_job = {
       name        = substr(join("-", compact([local.prefix, "asa", local.suffix])), 0, 63)
@@ -2615,6 +2872,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_output_blob = {
       name        = substr(join("-", compact([local.prefix, "asaoblob", local.suffix])), 0, 63)
@@ -2625,6 +2883,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_output_eventhub = {
       name        = substr(join("-", compact([local.prefix, "asaoeh", local.suffix])), 0, 63)
@@ -2635,6 +2894,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_output_mssql = {
       name        = substr(join("-", compact([local.prefix, "asaomssql", local.suffix])), 0, 63)
@@ -2645,6 +2905,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_output_servicebus_queue = {
       name        = substr(join("-", compact([local.prefix, "asaosbq", local.suffix])), 0, 63)
@@ -2655,6 +2916,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_output_servicebus_topic = {
       name        = substr(join("-", compact([local.prefix, "asaosbt", local.suffix])), 0, 63)
@@ -2665,6 +2927,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_reference_input_blob = {
       name        = substr(join("-", compact([local.prefix, "asarblob", local.suffix])), 0, 63)
@@ -2675,6 +2938,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_stream_input_blob = {
       name        = substr(join("-", compact([local.prefix, "asaiblob", local.suffix])), 0, 63)
@@ -2685,6 +2949,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_stream_input_eventhub = {
       name        = substr(join("-", compact([local.prefix, "asaieh", local.suffix])), 0, 63)
@@ -2695,6 +2960,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     stream_analytics_stream_input_iothub = {
       name        = substr(join("-", compact([local.prefix, "asaiiot", local.suffix])), 0, 63)
@@ -2705,6 +2971,7 @@ locals {
       max_length  = 63
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     subnet = {
       name        = substr(join("-", compact([local.prefix, "snet", local.suffix])), 0, 80)
@@ -2715,6 +2982,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     subnet_service_endpoint_storage_policy = {
       name        = substr(join("-", compact([local.prefix, "se", local.suffix])), 0, 80)
@@ -2725,6 +2993,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     synapse_private_link_hub = {
       name        = substr(join("-", compact([local.prefix, "synplh", local.suffix])), 0, 50)
@@ -2735,6 +3004,7 @@ locals {
       max_length  = 50
       scope       = "resourceGroup"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     synapse_spark_pool = {
       name        = substr(join("", compact([local.prefix_safe, "synsp", local.suffix_safe])), 0, 32)
@@ -2745,6 +3015,7 @@ locals {
       max_length  = 32
       scope       = "parent"
       regex       = "^[a-zA-Z0-9]+$"
+      separator   = ""
     }
     synapse_sql_pool = {
       name        = substr(join("", compact([local.prefix_safe, "syndp", local.suffix_safe])), 0, 60)
@@ -2755,6 +3026,7 @@ locals {
       max_length  = 60
       scope       = "parent"
       regex       = "^[a-zA-Z0-9]+$"
+      separator   = ""
     }
     synapse_workspace = {
       name        = substr(join("-", compact([local.prefix, "synw", local.suffix])), 0, 50)
@@ -2765,6 +3037,7 @@ locals {
       max_length  = 50
       scope       = "global"
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      separator   = "-"
     }
     template_deployment = {
       name        = substr(join("-", compact([local.prefix, "deploy", local.suffix])), 0, 64)
@@ -2775,6 +3048,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-._\\(\\)]+$"
+      separator   = "-"
     }
     traffic_manager_profile = {
       name        = substr(join("-", compact([local.prefix, "traf", local.suffix])), 0, 63)
@@ -2785,6 +3059,7 @@ locals {
       max_length  = 63
       scope       = "global"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     user_assigned_identity = {
       name        = substr(join("-", compact([local.prefix, "uai", local.suffix])), 0, 128)
@@ -2795,6 +3070,7 @@ locals {
       max_length  = 128
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9-_]+$"
+      separator   = "-"
     }
     virtual_desktop_application_group = {
       name        = substr(join("-", compact([local.prefix, "vdag", local.suffix])), 0, 63)
@@ -2805,6 +3081,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_desktop_host_pool = {
       name        = substr(join("-", compact([local.prefix, "vdpool", local.suffix])), 0, 63)
@@ -2815,6 +3092,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_desktop_scaling_plan = {
       name        = substr(join("-", compact([local.prefix, "vdscaling", local.suffix])), 0, 63)
@@ -2825,6 +3103,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_desktop_workspace = {
       name        = substr(join("-", compact([local.prefix, "vdws", local.suffix])), 0, 63)
@@ -2835,6 +3114,7 @@ locals {
       max_length  = 63
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_hub = {
       name        = substr(join("-", compact([local.prefix, "vhub", local.suffix])), 0, 80)
@@ -2845,6 +3125,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)
@@ -2855,6 +3136,7 @@ locals {
       max_length  = 15
       scope       = "resourceGroup"
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
+      separator   = "-"
     }
     virtual_machine_extension = {
       name        = substr(join("-", compact([local.prefix, "vmx", local.suffix])), 0, 80)
@@ -2865,6 +3147,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_machine_restore_point_collection = {
       name        = substr(join("-", compact([local.prefix, "rpc", local.suffix])), 0, 80)
@@ -2875,6 +3158,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_machine_scale_set = {
       name        = substr(join("-", compact([local.prefix, "vmss", local.suffix])), 0, 15)
@@ -2885,6 +3169,7 @@ locals {
       max_length  = 15
       scope       = "resourceGroup"
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
+      separator   = "-"
     }
     virtual_machine_scale_set_extension = {
       name        = substr(join("-", compact([local.prefix, "vmssx", local.suffix])), 0, 80)
@@ -2895,6 +3180,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_network = {
       name        = substr(join("-", compact([local.prefix, "vnet", local.suffix])), 0, 64)
@@ -2905,6 +3191,7 @@ locals {
       max_length  = 64
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_network_gateway = {
       name        = substr(join("-", compact([local.prefix, "vgw", local.suffix])), 0, 80)
@@ -2915,6 +3202,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_network_gateway_connection = {
       name        = substr(join("-", compact([local.prefix, "vcn", local.suffix])), 0, 80)
@@ -2925,6 +3213,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_network_peering = {
       name        = substr(join("-", compact([local.prefix, "vpeer", local.suffix])), 0, 80)
@@ -2935,6 +3224,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     virtual_wan = {
       name        = substr(join("-", compact([local.prefix, "vwan", local.suffix])), 0, 80)
@@ -2945,6 +3235,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     vpn_gateway = {
       name        = substr(join("-", compact([local.prefix, "vpng", local.suffix])), 0, 80)
@@ -2955,6 +3246,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     vpn_gateway_connection = {
       name        = substr(join("-", compact([local.prefix, "vcn", local.suffix])), 0, 80)
@@ -2965,6 +3257,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     vpn_site = {
       name        = substr(join("-", compact([local.prefix, "vst", local.suffix])), 0, 80)
@@ -2975,6 +3268,7 @@ locals {
       max_length  = 80
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     web_application_firewall_policy = {
       name        = substr(join("-", compact([local.prefix, "waf", local.suffix])), 0, 80)
@@ -2985,6 +3279,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     web_application_firewall_policy_rule_group = {
       name        = substr(join("-", compact([local.prefix, "wafrg", local.suffix])), 0, 80)
@@ -2995,6 +3290,7 @@ locals {
       max_length  = 80
       scope       = "parent"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+      separator   = "-"
     }
     windows_virtual_machine = {
       name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)
@@ -3005,6 +3301,7 @@ locals {
       max_length  = 15
       scope       = "resourceGroup"
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
+      separator   = "-"
     }
     windows_virtual_machine_scale_set = {
       name        = substr(join("-", compact([local.prefix, "vmss", local.suffix])), 0, 15)
@@ -3015,6 +3312,7 @@ locals {
       max_length  = 15
       scope       = "resourceGroup"
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
+      separator   = "-"
     }
   }
   validation = {
