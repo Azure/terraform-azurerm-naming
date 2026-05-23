@@ -1,7 +1,7 @@
 {{- define "resources" -}}
     {{- .Name }} = {
-      name        = substr(join({{if .Dashes}}"-"{{ else }}var.custom-separator{{ end }}, compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
-      name_unique = substr(join({{if .Dashes}}"-"{{ else }}var.custom-separator{{ end }}, compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix_unique{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
+      name        = substr(join({{if .Dashes}}"-"{{ else }}lower(var.custom-separator){{ end }}, compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
+      name_unique = substr(join({{if .Dashes}}"-"{{ else }}lower(var.custom-separator){{ end }}, compact([local.prefix{{if not .Dashes}}_safe{{ end }}, "{{ .Slug }}", local.suffix_unique{{if not .Dashes}}_safe{{ end }}])), 0, {{ .Length.Max }})
       dashes      = {{ .Dashes }}
       slug        = "{{ .Slug }}"
       min_length  = {{ .Length.Min }}

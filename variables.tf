@@ -34,7 +34,7 @@ variable "custom-separator" {
   default     = ""
 
   validation {
-    condition     = var.custom-separator != "-"
-    error_message = "The custom-separator value must not be a hyphen (-)"
+    condition     = !strcontains(var.custom-separator, "-")
+    error_message = "The custom-separator value must not contain a hyphen (-)"
   }
 }
