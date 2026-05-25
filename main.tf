@@ -11,14 +11,14 @@ resource "random_string" "main" {
   length  = 60
   special = false
   upper   = false
-  numeric = var.unique-include-numbers
+  numeric  = var.unique-include-numbers
 }
 
 resource "random_string" "first_letter" {
   length  = 1
   special = false
   upper   = false
-  numeric = false
+  numeric  = false
 }
 
 
@@ -2587,14 +2587,14 @@ locals {
       regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
     }
     storage_table = {
-      name        = substr(join("-", compact([local.prefix, "stt", local.suffix])), 0, 63)
-      name_unique = substr(join("-", compact([local.prefix, "stt", local.suffix_unique])), 0, 63)
-      dashes      = true
+      name        = substr(join("", compact([local.prefix_safe, "stt", local.suffix_safe])), 0, 63)
+      name_unique = substr(join("", compact([local.prefix_safe, "stt", local.suffix_unique_safe])), 0, 63)
+      dashes      = false
       slug        = "stt"
       min_length  = 3
       max_length  = 63
       scope       = "parent"
-      regex       = "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+      regex       = "^[a-zA-Z][a-z0-9]+$"
     }
     stream_analytics_function_javascript_udf = {
       name        = substr(join("-", compact([local.prefix, "asafunc", local.suffix])), 0, 63)
