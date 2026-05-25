@@ -7,8 +7,18 @@ jobs:
     name: TF Validate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: hashicorp/setup-terraform@v1
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Verify generated files are up-to-date
+        run: |
+          go run main.go
+          git diff --exit-code main.tf outputs.tf || (echo "Generated files are out of date. Run 'make generate' and commit the changes." && exit 1)
 
       - name: Terraform fmt
         id: fmt
