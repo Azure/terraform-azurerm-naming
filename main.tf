@@ -27,12 +27,12 @@ locals {
   // adding a first letter to guarantee that you always start with a letter
   random_safe_generation = join("", [random_string.first_letter.result, random_string.main.result])
   random                 = substr(coalesce(var.unique-seed, local.random_safe_generation), 0, var.unique-length)
-  prefix                 = join("-", var.prefix)
-  prefix_safe            = lower(join("", var.prefix))
-  suffix                 = join("-", var.suffix)
-  suffix_unique          = join("-", concat(var.suffix, [local.random]))
-  suffix_safe            = lower(join("", var.suffix))
-  suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
+  prefix                 = join("-", compact(var.prefix))
+  prefix_safe            = lower(join("", compact(var.prefix)))
+  suffix                 = join("-", compact(var.suffix))
+  suffix_unique          = join("-", concat(compact(var.suffix), [local.random]))
+  suffix_safe            = lower(join("", compact(var.suffix)))
+  suffix_unique_safe     = lower(join("", concat(compact(var.suffix), [local.random])))
   // Names based on the recommendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
