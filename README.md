@@ -3,7 +3,7 @@
 >
 > When migrating, set `legacy_mode = true` in the new module to retain the original naming behavior and legacy named outputs. The default is `false`, which uses the new JSON-driven naming rules and can produce different names.
 
-Thank you to Gabriel for creating and maintaining this module.
+A huge thanks to [Gabriel Monteiro Nepomuceno (@Nepomuceno)](https://github.com/Nepomuceno) for creating this module and for all the care and dedication he has put into maintaining it for the community. His fantastic work provided the foundation for the new Azure Verified Naming Utility, and we are incredibly grateful!
 
 # Azure Naming
 
