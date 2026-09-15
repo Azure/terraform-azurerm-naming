@@ -3,6 +3,8 @@
 >
 > When migrating, set `legacy_mode = true` in the new module to retain the original naming behavior and legacy named outputs. The default is `false`, which uses the new JSON-driven naming rules and can produce different names.
 
+Thank you to Gabriel for creating and maintaining this module.
+
 # Azure Naming
 
 This module helps you to keep consistency on your resources names for Terraform The goal of this module it is that for each resource that requires a name in Terraform you would be easily able to compose this name using this module and this will keep the consistency in your repositories.
