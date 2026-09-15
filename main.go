@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"log"
 	"os"
 	"regexp"
@@ -31,7 +30,7 @@ type Length struct {
 }
 
 func main() {
-	files, err := ioutil.ReadDir("templates")
+	files, err := os.ReadDir("templates")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -53,7 +52,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	sourceDefinitions, err := ioutil.ReadFile("resourceDefinition.json")
+	sourceDefinitions, err := os.ReadFile("resourceDefinition.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -64,7 +63,7 @@ func main() {
 	}
 
 	// Undocumented resource definitions
-	sourceDefinitionsUndocumented, err := ioutil.ReadFile("resourceDefinition_out_of_docs.json")
+	sourceDefinitionsUndocumented, err := os.ReadFile("resourceDefinition_out_of_docs.json")
 	if err != nil {
 		log.Fatal(err)
 	}
