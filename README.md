@@ -1,3 +1,8 @@
+> [!WARNING]
+> This module is archived and will no longer receive updates. Use the Azure Verified Naming Utility instead: [Terraform Registry](https://registry.terraform.io/modules/Azure/avm-utl-naming/azure/latest) | [GitHub](https://github.com/Azure/terraform-azure-avm-utl-naming).
+>
+> When migrating, set `legacy_mode = true` in the new module to retain the original naming behavior and legacy named outputs. The default is `false`, which uses the new JSON-driven naming rules and can produce different names.
+
 # Azure Naming
 
 This module helps you to keep consistency on your resources names for Terraform The goal of this module it is that for each resource that requires a name in Terraform you would be easily able to compose this name using this module and this will keep the consistency in your repositories.
