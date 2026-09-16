@@ -1,0 +1,11 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "resourceDefinition.json",
+        "resourceDefinition_out_of_docs.json"
+      ],
+      "url": "./resourceDefinition.schema.json"
+    }
+  ]
+}
