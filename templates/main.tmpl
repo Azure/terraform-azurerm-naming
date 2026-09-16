@@ -8,6 +8,7 @@
       max_length  = {{ .Length.Max }}
       scope       = "{{ .Scope }}"
       regex       = "{{ cleanRegex .Regex }}"
+      separator   = "{{if .Dashes}}-{{ end }}"
     }
 {{- end -}}
 
