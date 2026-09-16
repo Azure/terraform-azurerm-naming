@@ -1746,6 +1746,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[^*<>%:{}&#.,?\\+\\/]+[^*<>%:{}&#.,?\\+\\/ ]$"
     }
+    monitor_workspace = {
+      name        = substr(join("-", compact([local.prefix, "amw", local.suffix])), 0, 44)
+      name_unique = substr(join("-", compact([local.prefix, "amw", local.suffix_unique])), 0, 44)
+      dashes      = true
+      slug        = "amw"
+      min_length  = 3
+      max_length  = 44
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$"
+    }
     mssql_database = {
       name        = substr(join("-", compact([local.prefix, "sqldb", local.suffix])), 0, 128)
       name_unique = substr(join("-", compact([local.prefix, "sqldb", local.suffix_unique])), 0, 128)
@@ -3701,6 +3711,10 @@ locals {
     monitor_scheduled_query_rules_alert = {
       valid_name        = length(regexall(local.az.monitor_scheduled_query_rules_alert.regex, local.az.monitor_scheduled_query_rules_alert.name)) > 0 && length(local.az.monitor_scheduled_query_rules_alert.name) > local.az.monitor_scheduled_query_rules_alert.min_length
       valid_name_unique = length(regexall(local.az.monitor_scheduled_query_rules_alert.regex, local.az.monitor_scheduled_query_rules_alert.name_unique)) > 0
+    }
+    monitor_workspace = {
+      valid_name        = length(regexall(local.az.monitor_workspace.regex, local.az.monitor_workspace.name)) > 0 && length(local.az.monitor_workspace.name) > local.az.monitor_workspace.min_length
+      valid_name_unique = length(regexall(local.az.monitor_workspace.regex, local.az.monitor_workspace.name_unique)) > 0
     }
     mssql_database = {
       valid_name        = length(regexall(local.az.mssql_database.regex, local.az.mssql_database.name)) > 0 && length(local.az.mssql_database.name) > local.az.mssql_database.min_length

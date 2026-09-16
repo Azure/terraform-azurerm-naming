@@ -861,6 +861,11 @@ output "monitor_scheduled_query_rules_alert" {
   description = "Monitor Scheduled Query Rules Alert"
 }
 
+output "monitor_workspace" {
+  value       = local.az.monitor_workspace
+  description = "Monitor Workspace"
+}
+
 output "mssql_database" {
   value       = local.az.mssql_database
   description = "Mssql Database"
